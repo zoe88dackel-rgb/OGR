@@ -386,58 +386,24 @@ details.full summary::after{content:" ＋"}details.full[open] summary::after{con
 
 button.ico{border:0;padding:0;cursor:pointer;font:inherit;line-height:1;touch-action:manipulation}
 button.ico:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
-/* Section snapping follows the existing page order and original layout. */
+/* Reading anchors use the source UI without altering any animation. */
 html{scroll-snap-type:y proximity;scroll-padding-top:var(--snap-header,120px)}
 main>.phead,main>.ihero,main>section,.jr-steps>li{scroll-snap-align:start}
+.page-index{display:flex;flex-wrap:wrap;gap:4px 22px;align-items:center;font-size:13px;margin-bottom:20px}
+.page-index a{color:var(--muted);text-decoration:none;min-height:44px;display:inline-flex;align-items:center;border-bottom:1px solid transparent}
+.page-index a:hover,.page-index a:focus-visible{color:var(--blue);border-bottom-color:var(--blue)}
+.promoted-section>.in>.eyebrow:first-child{margin-top:0!important}
 .jr-stage{top:var(--snap-header,96px)}
-.jr-steps li{min-height:min(62vh,460px);opacity:1}
-.jr-map svg{display:block;width:100%;height:auto;max-height:none;margin:0}
-.jr-flow-country{font:600 18px var(--sans);fill:var(--ink)}
-.jr-flow-count{font:500 15px var(--sans);fill:var(--muted);font-variant-numeric:tabular-nums}
-.jr-flow-customs{font:13px var(--sans);fill:var(--muted)}
-.jr-flow-label{font:600 21px var(--sans);fill:var(--muted)}
-.jr-flow-node{cursor:pointer;color:var(--muted);outline:none}
-.jr-node-bg{fill:#f4f6fa;stroke:#e0e5ef;stroke-width:1.5;transition:fill .2s,stroke .2s}
-.jr-flow-node.on{color:var(--blue)}
-.jr-flow-node.on .jr-node-bg{fill:#e3ecff;stroke:#c3d5fc}
-.jr-flow-node.current{color:#fff}
-.jr-flow-node.current .jr-node-bg{fill:var(--blue);stroke:var(--blue)}
-.jr-flow-node.current .jr-flow-label{fill:var(--ink)}
-.jr-flow-node:hover .jr-node-bg,.jr-flow-node:focus-visible .jr-node-bg{stroke:var(--ink);stroke-width:2}
+.jr-steps li{min-height:min(62vh,460px)}
 @media(max-width:900px){
- .jr-stage{position:static;z-index:auto;background:none;padding-bottom:0}
+ .jr-stage{position:static;z-index:auto;padding-bottom:0}
  .jr-map svg{width:100%;height:auto;max-height:none;margin:0}
  .jr-steps li{min-height:0}
 }
 @media(max-height:640px){.jr-stage{position:static}}
 @media(min-width:821px) and (max-width:1180px){
- .menu{gap:12px;font-size:12px}
- header.site>.in:first-child{gap:12px}
- header.site .brand{white-space:nowrap;font-size:14px}
- header.site .btn{font-size:12px;padding:10px 14px}
+ .menu{display:none}
+ header.site .in.mnav{display:flex;gap:6px;overflow-x:auto;padding-bottom:10px;scrollbar-width:none}
+ .mnav a{flex:none;font-size:13px;text-decoration:none;padding:6px 12px;border-radius:999px;background:var(--soft);color:var(--muted)}
 }
-@media(prefers-reduced-motion:reduce){html{scroll-snap-type:none}.jr-node-bg{transition:none}}
-/* Homepage heading: preserve the copy and original icon palette at readable sizes. */
-.ihero h1.hero-heading{color:var(--ink);font-size:clamp(34px,4.5vw,56px);line-height:1.2;letter-spacing:-.035em}
-.hero-context{display:block;font-size:clamp(18px,2vw,24px);line-height:1.5;font-weight:500;color:var(--muted);letter-spacing:0;margin-bottom:14px}
-.hero-primary{display:block}
-.hero-primary>b{white-space:nowrap}
-.ihero .hero-primary>.ico{width:42px;height:42px;vertical-align:-.07em;margin-left:12px}
-.ihero .hero-primary>.ico svg{width:27px;height:27px}
-.hero-benefits{display:flex;gap:18px 32px;flex-wrap:wrap;align-items:center;margin-top:26px}
-.hero-benefit{display:inline-flex;align-items:center;gap:10px;font-size:16px;line-height:1.5;color:var(--ink)}
-.hero-benefit b{font-weight:500}
-.hero-benefit>.ico{width:30px;height:30px;border-radius:9px;margin:0;vertical-align:middle;font-size:28px}
-.hero-benefit>.ico svg{width:19px;height:19px}
-.hero-punctuation{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
-@media(max-width:700px){
- .ihero h1.hero-heading{font-size:34px;line-height:1.25}
- .hero-context{font-size:16px;margin-bottom:12px}
- .ihero .hero-primary>.ico{width:32px;height:32px;margin-left:8px}
- .ihero .hero-primary>.ico svg{width:22px;height:22px}
- .hero-benefits{gap:14px 18px;margin-top:24px}
- .hero-benefit{font-size:14px;gap:8px}
- .hero-benefit>.ico{width:27px;height:27px;border-radius:8px}
- .hero-benefit>.ico svg{width:18px;height:18px}
-}
-@media(max-width:370px){.ihero h1.hero-heading{font-size:30px}.hero-context{font-size:14px}}
+@media(prefers-reduced-motion:reduce){html{scroll-snap-type:none}}
