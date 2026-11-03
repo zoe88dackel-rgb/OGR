@@ -343,3 +343,6 @@ p[style*="font-size:13px"]{margin-top:20px!important;line-height:1.75}
   .commission-table{max-height:460px;border-radius:14px}
   .commission-table table{min-width:660px}
 }
+
+button.ico{border:0;padding:0;cursor:pointer;font:inherit;line-height:1;touch-action:manipulation}
+button.ico:focus-visible{outline:3px solid var(--ink);outline-offset:3px}

@@ -49,3 +49,19 @@
   }, { threshold: .6 });
   document.querySelectorAll('.big, .mock .v').forEach(function(el){ nio.observe(el); });
 })();
+
+// Replay a small icon animation on each click or keyboard activation.
+document.querySelectorAll('.ico').forEach(function(icon){
+  icon.addEventListener('click', function(){
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var picture = icon.querySelector('svg');
+    if (!picture) return;
+    picture.getAnimations().forEach(function(animation){ animation.cancel(); });
+    picture.animate([
+      { transform: 'translateY(0) rotate(0) scale(1)' },
+      { transform: 'translateY(-5px) rotate(-14deg) scale(1.15)', offset: .4 },
+      { transform: 'translateY(0) rotate(8deg) scale(.94)', offset: .72 },
+      { transform: 'translateY(0) rotate(0) scale(1)' }
+    ], { duration: 520, easing: 'ease-out' });
+  });
+});
