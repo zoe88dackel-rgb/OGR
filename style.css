@@ -395,3 +395,18 @@ html:has(.guide-page){scroll-behavior:smooth;scroll-snap-type:y proximity;scroll
 .guide-cards{margin-top:36px}.guide-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.guide-note{color:var(--muted);font-size:13px;margin-top:44px;max-width:680px}
 @media(max-width:700px){html:has(.guide-page){scroll-padding-top:120px}.guide-section{min-height:0;scroll-margin-top:120px}.guide-intro{font-size:16px}.guide-cards{margin-top:24px}}
 @media(prefers-reduced-motion:reduce){html:has(.guide-page){scroll-behavior:auto;scroll-snap-type:none}}
+/* Complete source guide: chapter navigation and gentle scroll snapping. */
+html:has(.complete-guide){scroll-behavior:smooth;scroll-snap-type:y proximity;scroll-padding-top:96px}
+.complete-guide>.chapter{scroll-snap-align:start;scroll-margin-top:0;min-width:0}
+header.site a[aria-current="location"]{color:var(--blue);font-weight:600;opacity:1}
+header.site .mnav a[aria-current="location"]{background:var(--blue)!important;color:white!important}
+@media(min-width:821px) and (max-width:1250px){header.site .menu{gap:12px;font-size:12px}header.site .brand{white-space:nowrap}header.site .btn{padding:10px 14px}}
+.complete-guide .tbl{max-width:100%}
+@media(max-width:700px){
+ html:has(.complete-guide){scroll-padding-top:120px}
+ .complete-guide .jr-stage{position:relative;top:auto}
+ .complete-guide .fields.t3{grid-template-columns:1fr 1fr}
+ .complete-guide .phead h1{font-size:36px}
+ .complete-guide .cmp{min-width:0}
+}
+@media(prefers-reduced-motion:reduce){html:has(.complete-guide){scroll-behavior:auto;scroll-snap-type:none}}

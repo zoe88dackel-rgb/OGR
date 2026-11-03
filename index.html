@@ -1,27 +1,371 @@
-<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>OGR 卖家指南</title>
-<meta name="claude:viewport-fit-sides" content="cover">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Onest:wght@400;500;600;800&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;500&display=swap">
-<link rel="stylesheet" href="style.css">
-<header class="site"><div class="in"><a class="brand" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9 4.9 19.1"/></svg>OGR 卖家指南</a><nav class="menu"><a href="model.html">认识 OGR</a><a href="compare.html">模式对比</a><a href="categories.html">品类与开通</a><a href="compliance.html">合规与认证</a><a href="commission.html">三种模式佣金</a><a href="calculator.html">利润计算器</a><a href="payout.html">回款与门槛</a></nav><a class="btn" href="calculator.html">算一算利润</a></div>
-<div class="in mnav"><a href="model.html">认识 OGR</a><a href="compare.html">模式对比</a><a href="categories.html">品类与开通</a><a href="compliance.html">合规与认证</a><a href="commission.html">三种模式佣金</a><a href="calculator.html">利润计算器</a><a href="payout.html">回款与门槛</a></div></header>
-<main class="guide-page">
-<div class="in ihero guide-section">
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>OGR 卖家指南 · 完整指南</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Onest:wght@400;500;600;800&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;500&display=swap"><link rel="stylesheet" href="style.css?v=complete-1"></head><body><header class="site"><div class="in"><a class="brand" href="#overview"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.6" viewbox="0 0 24 24"><path d="M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9 4.9 19.1"></path></svg>OGR 卖家指南</a><nav class="menu"><a href="#model">认识 OGR</a><a href="#compare">模式对比</a><a href="#categories">品类与开通</a><a href="#compliance">合规与认证</a><a href="#commission">三种模式佣金</a><a href="#calculator">利润计算器</a><a href="#payout">回款与门槛</a></nav><a class="btn" href="#calculator">算一算利润</a></div>
+<div class="in mnav" aria-label="指南章节"><a href="#model">认识 OGR</a><a href="#compare">模式对比</a><a href="#categories">品类与开通</a><a href="#compliance">合规与认证</a><a href="#commission">三种模式佣金</a><a href="#calculator">利润计算器</a><a href="#payout">回款与门槛</a></div></header><main class="complete-guide"><div class="in ihero chapter" id="overview">
 <div class="badge">10 月起取消预付押金</div>
-<h1>中国卖家不用注册俄罗斯公司，就能把货放进 <b>Ozon 本地仓</b><button type="button" class="ico b" aria-label="点击货车图标播放动画"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"><path d="M2 5h12v11H2zM14 9h4l3 3v4h-7z"/><circle cx="6.5" cy="18" r="2" fill="#3a78f5"/><circle cx="17.5" cy="18" r="2" fill="#3a78f5"/></svg></button><b>，1–2 天送达</b><button type="button" class="ico l" aria-label="点击包裹图标播放动画"><svg viewBox="0 0 24 24" fill="none" stroke="#1b2a05" stroke-width="2" stroke-linejoin="round"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/></svg></button><b>，佣金 8%</b><button type="button" class="ico o" aria-label="点击佣金图标播放动画"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M8 20V4h5a4 4 0 0 1 0 8H6M6 16h8"/></svg></button><b>，税务由 Ozon 处理</b><button type="button" class="ico p" aria-label="点击税务保障图标播放动画"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></button></h1>
+<h1>中国卖家不用注册俄罗斯公司，就能把货放进 <b>Ozon 本地仓</b><button aria-label="点击货车图标播放动画" class="ico b" type="button"><svg fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M2 5h12v11H2zM14 9h4l3 3v4h-7z"></path><circle cx="6.5" cy="18" fill="#3a78f5" r="2"></circle><circle cx="17.5" cy="18" fill="#3a78f5" r="2"></circle></svg></button><b>，1–2 天送达</b><button aria-label="点击包裹图标播放动画" class="ico l" type="button"><svg fill="none" stroke="#1b2a05" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"></path><path d="M3 7l9 4 9-4M12 11v10"></path></svg></button><b>，佣金 8%</b><button aria-label="点击佣金图标播放动画" class="ico o" type="button"><svg fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2.4" viewbox="0 0 24 24"><path d="M8 20V4h5a4 4 0 0 1 0 8H6M6 16h8"></path></svg></button><b>，税务由 Ozon 处理</b><button aria-label="点击税务保障图标播放动画" class="ico p" type="button"><svg fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path><path d="M8.5 12l2.5 2.5 4.5-5"></path></svg></button></h1>
 <p>OGR 是 Ozon 的跨境本土仓项目。你备货送到佛山，物流、清关、仓储、配送和客服都由 Ozon 负责。</p>
-<div class="cta"><a class="btn" href="model.html">跟着一箱货走一遍</a><a class="btn light" href="calculator.html">算一算利润</a></div>
+<div class="cta"><a class="btn" href="#model">跟着一箱货走一遍</a><a class="btn light" href="#calculator">算一算利润</a></div>
 <div class="mock">
 <div class="m b"><span class="tag" style="color:var(--blue)">时效</span><div class="v num">1–2 天</div><p>跨境店需要 15–25 天</p></div>
 <div class="m"><span class="tag">佣金</span><span class="tag">全品类</span><div class="v num">8%</div><p>按含税价计算，1 年免仓租</p></div>
 <div class="m l"><span class="tag">门槛</span><div class="v num">8 万元</div><p>备货值，扣除前期物流等费用后</p></div>
+</div></div><article class="chapter" id="model" aria-label="认识 OGR"><div class="phead"><div class="arc" style="position:absolute;left:50%;transform:translateX(-50%);width:min(900px,140vw);aspect-ratio:2/1;border-radius:50% 50% 0 0/100% 100% 0 0;background:linear-gradient(180deg,var(--sky),rgba(232,239,253,0) 80%)"></div><div class="in"><div class="badge" style="position:relative;background:#fff">01 · 认识 OGR</div><h1 class="serif">你管产品，<em>Ozon 管俄罗斯</em></h1><p>OGR 是中国主体运营、俄罗斯本土备货履约的模式。Ozon 承担分销商角色，管理俄罗斯端的进口与销售。</p></div></div>
+<section style="padding-top:20px"><div class="in">
+<div class="eyebrow">跟着一箱货走一遍</div><h2 class="h2">从佛山到莫斯科买家手里，<span>往下滑，看货和钱怎么走。</span></h2>
+<div class="jr">
+<div class="jr-stage">
+<div class="jr-map">
+<svg aria-hidden="true" viewbox="0 0 600 340">
+<defs><lineargradient id="jrsea" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#e9f0ff"></stop><stop offset="1" stop-color="#eef8e0"></stop></lineargradient></defs>
+<rect fill="url(#jrsea)" height="340" rx="24" width="600" x="0" y="0"></rect>
+<text class="jr-zone" x="40" y="44">中国</text><text class="jr-zone" x="430" y="44">俄罗斯</text>
+<line stroke="#c9d3e6" stroke-dasharray="6 8" stroke-width="2" x1="300" x2="300" y1="30" y2="310"></line>
+<text class="jr-small" x="308" y="300">海关</text>
+<path d="M70 250 C 130 250 150 200 200 190 S 280 120 330 130 S 420 210 470 180 S 530 90 540 80" fill="none" id="jrpath" stroke="#c9d3e6" stroke-linecap="round" stroke-width="5"></path>
+<path d="M70 250 C 130 250 150 200 200 190 S 280 120 330 130 S 420 210 470 180 S 530 90 540 80" fill="none" id="jrdone" stroke="#3a78f5" stroke-linecap="round" stroke-width="5"></path>
+<g class="jr-nodes"></g>
+<g id="jrbox"><rect fill="#e8692a" height="30" rx="7" width="30" x="-15" y="-15"></rect><path d="M-15 -4 H15 M0 -15 V15" opacity=".75" stroke="#fff" stroke-width="2"></path></g>
+</svg>
+</div>
+<div class="jr-hud">
+<div><small>现在在</small><b id="jrWhere">你的工厂</b></div>
+<div><small>谁在管</small><b class="who you" id="jrWho">你</b></div>
+<div><small>累计用时</small><b class="num" id="jrDays">第 0 天</b></div>
+</div>
+</div>
+<ol class="jr-steps">
+<li data-days="第 0 天" data-p="0" data-where="你的工厂" data-who="you"><span class="who you">你</span><h3>建供货单，拍照预审</h3><p>在 OGR 后台建一张供货单，只填制造商和地址。每个 SKU 拍 12 张以上的实拍图上传，平台判断要不要 EAC。</p><dl><dt>花钱</dt><dd>0 元，不用押金</dd><dt>等多久</dt><dd>约 1 周出审核结果</dd></dl></li>
+<li data-days="第 8 天" data-p="0.2" data-where="佛山集货仓" data-who="you"><span class="who you">你</span><h3>送货到佛山</h3><p>审核通过后，你自己安排国内物流，把货送到南海陆港仓。单件包装不超过 120×60×50 cm、25 kg。这是你最后一次碰这批货。</p><dl><dt>花钱</dt><dd>国内首公里，你自己付</dd><dt>门槛</dt><dd>备货值 8 万元以上</dd></dl></li>
+<li data-days="约第 12 天" data-p="0.47" data-where="中俄边境" data-who="oz"><span class="who oz">Ozon 伙伴</span><h3>出口报关，跨境运输</h3><p>从这里开始交给 Ozon 的物流伙伴：中国出口报关、国际运输，你不用找货代，也不用跑单证。</p><dl><dt>费用</dt><dd>1.79 元/升 · 1600 元/票 · 0.98 元/件 · 保险 0.09%</dd><dt>什么时候扣</dt><dd>卖出后从回款里扣</dd></dl></li>
+<li data-days="约第 25 天" data-p="0.68" data-where="俄罗斯本地仓" data-who="oz"><span class="who oz">Ozon</span><h3>俄罗斯清关，入本地仓</h3><p>Ozon 用自己的俄罗斯主体清关、缴关税和进口 VAT，货进 OGR 本地仓上架。你在后台能看到库存。</p><dl><dt>费用</dt><dd>关税 5–15%，按 HS Code</dd><dt>仓储</dt><dd>1 年免仓租</dd></dl></li>
+<li data-days="下单后 1–2 天" data-p="0.9" data-where="莫斯科买家家门口" data-who="oz"><span class="who oz">Ozon</span><h3>买家下单，1–2 天送到</h3><p>商品显示本地送达时间，带类自营徽标，还能继承跨境链接的评价和销量。拣货、打包、配送、客服、退货都由 Ozon 做。</p><dl><dt>费用</dt><dd>佣金 8% · 销售 VAT 22%（含在售价里）· 配送费</dd></dl></li>
+<li data-days="每周一次" data-p="1" data-where="你的连连账户" data-who="back"><span class="who back">回到你</span><h3>每周回款</h3><p>按实际卖出的件数结算，不用等整批卖完。可提现 = 供货单确认价 − 平台费用；卖得比确认价高，多出的部分只能抵广告。</p><dl><dt>到手</dt><dd>见下面「一件 120 元的货，钱去哪了」</dd></dl></li>
+</ol>
+</div>
+</div></section>
+<section class="soft"><div class="in">
+<div class="eyebrow">钱怎么分</div><h2 class="h2">一件 120 元的货，<span>钱去哪了？</span></h2>
+<p style="color:var(--muted);max-width:640px;margin-top:16px">示例：售价 120 元（含 VAT），1 升包装，一票 600 件，关税按 10%。本地段费率是估算，实际以后台为准。</p>
+<div class="mf" id="mf">
+<div aria-label="120 元的分配" class="mf-bar" role="img"></div>
+<ul class="mf-legend"></ul>
+</div>
+</div></section>
+<script defer="" src="journey.js"></script>
+<section class="soft"><div class="in">
+<div class="eyebrow">谁负责什么</div><h2 class="h2">分工很清楚，<span>你只管货。</span></h2>
+<div class="split" style="margin-top:28px">
+<div class="card"><h3>你负责</h3><ul class="clean"><li>选品</li><li>备货及文件</li><li>定价与促销（各阶段都能自主改价）</li><li>补货</li><li>国内首公里，把货送到佛山</li></ul></div>
+<div class="card panel-sky"><h3>Ozon 及合作伙伴负责</h3><ul class="clean"><li>出口报关、国际运输、俄罗斯清关</li><li>本地仓储、拣货、打包、配送</li><li>本地税务</li><li>销售、回款与库存跟踪</li><li>客服、退货验货与二次上架</li></ul></div>
+</div>
+<div class="card" style="margin-top:16px"><h3>佛山集货点</h3><p>广东省佛山市南海区狮山镇石澎大道 1 号三楼，运盟集团华南集运中心 15 号门（南海陆港仓）。电话 18028135969 / 18620009797。</p></div>
+</div></section>
+<section><div class="in">
+<div class="eyebrow">买家看到什么</div><h2 class="h2">时效变短，<span>转化跟着上来。</span></h2>
+<div class="grid g4" style="margin-top:28px">
+<div class="card"><h3>类自营徽标</h3><p>享受平台优先级的流量权重</p></div>
+<div class="card"><h3>OGR 集合店铺</h3><p>搜索页和详情页显示本地送达时间</p></div>
+<div class="card"><h3>克隆评价和销量</h3><p>新链接继承已有评价，不用冷启动</p></div>
+<div class="card"><h3>等待成本更低</h3><p>1–2 天到货，买家更愿意下单</p></div>
+</div>
+<div class="card" id="case" style="margin-top:16px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:center">
+<div><h3>案例：90 支彩笔套装</h3><p>同一款商品，跨境链接 7/1–7/31 的 GMV 是 5.8 万；OGR 链接 7/10–7/31 的 GMV 是 43 万，约 7.4 倍。</p><p style="margin-top:8px;font-size:12px;color:var(--faint)">两段观察窗口不同，属方向性证据，不是对照实验。</p></div>
+<div style="display:flex;align-items:flex-end;gap:24px;height:170px">
+<div style="flex:1;text-align:center;font-size:12px;color:var(--muted)"><b style="color:var(--ink);font-size:16px">5.8 万</b><div style="height:22px;background:var(--line);border-radius:10px 10px 4px 4px;margin:6px 0"></div>跨境链接</div>
+<div style="flex:1;text-align:center;font-size:12px;color:var(--muted)"><b style="color:var(--ink);font-size:16px">43 万</b><div style="height:130px;background:var(--blue);border-radius:10px 10px 4px 4px;margin:6px 0"></div>OGR 上线后</div>
 </div></div>
-
-<section class="guide-section soft" id="how"><div class="in"><div class="eyebrow">01 · 先了解模式</div><h2 class="h2">OGR 怎么运作？</h2><p class="guide-intro">你负责选品、备货和送货到佛山；Ozon 及其合作伙伴负责后续跨境运输、俄罗斯进口和本地履约。商品售出后再按规则结算。</p><div class="grid g3 guide-cards"><div class="card"><h3>① 准备商品</h3><p>确认品类和资质，提交供货单及商品照片，通过预审后备货。</p></div><div class="card"><h3>② 送货入仓</h3><p>卖家安排国内运输至佛山，之后由合作伙伴安排跨境运输和入仓。</p></div><div class="card"><h3>③ 销售与回款</h3><p>商品在俄罗斯本地仓销售，平台处理配送及客服，按实际销售结算。</p></div></div><div class="guide-links"><a class="btn" href="model.html">查看货物流转 →</a><a class="btn light" href="compare.html">对比三种模式</a></div></div></section>
-<section class="guide-section" id="fit"><div class="in"><div class="eyebrow">02 · 判断是否适合</div><h2 class="h2">先确认商品和开通条件</h2><p class="guide-intro">选品之前，先核对招募品类、禁售范围、备货要求及商品尺寸。不同商品可能需要不同认证或品牌授权。</p><div class="grid g2 guide-cards"><div class="card"><h3>品类与开通</h3><p>查看适合的品类、限制条件和入驻步骤。</p><div class="guide-links"><a class="btn light" href="categories.html">查看品类与开通 →</a></div></div><div class="card"><h3>合规与认证</h3><p>了解商品预审、EAC 认证及品牌授权要求。</p><div class="guide-links"><a class="btn light" href="compliance.html">查看合规要求 →</a></div></div></div></div></section>
-<section class="guide-section soft" id="cost"><div class="in"><div class="eyebrow">03 · 算清成本</div><h2 class="h2">佣金之外，还有哪些费用？</h2><p class="guide-intro">OGR 平台佣金为 8%，但评估利润还需考虑物流、关税、税费及本地配送等。具体费用与商品、价格和实际政策有关。</p><div class="grid g3 guide-cards"><div class="card"><h3>平台佣金</h3><p>按含税售价计算，查看不同模式与品类费率。</p></div><div class="card"><h3>物流与税费</h3><p>结合包装体积、数量、关税和销售税估算。</p></div><div class="card"><h3>利润测算</h3><p>输入自己的商品数据，查看估算结果。</p></div></div><div class="guide-links"><a class="btn" href="calculator.html">打开利润计算器 →</a><a class="btn light" href="commission.html">查看佣金表</a></div></div></section>
-<section class="guide-section" id="payout"><div class="in"><div class="eyebrow">04 · 确认回款与下一步</div><h2 class="h2">卖出以后，钱怎么回来？</h2><p class="guide-intro">商品按实际销售数量结算。了解回款方式、可提现金额和备货门槛后，再结合利润测算决定是否开通。</p><div class="guide-links"><a class="btn" href="payout.html">查看回款与门槛 →</a><a class="btn light" href="model.html">重新了解流程</a></div><p class="guide-note">本指南按 2026 年 10 月招商会议信息整理，仅供参考，实际条件与费用请以 Ozon 最新规则及后台为准。</p></div></section>
-</main>
-<footer><div class="in"><div><a class="brand" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9 4.9 19.1"/></svg>OGR 卖家指南</a><p style="margin:8px 0 0">按 2026 年 10 月 Ozon 招商会议口径整理，仅供参考，以 Ozon 经理确认为准。</p></div><nav><a href="index.html">首页</a><a href="model.html">认识 OGR</a><a href="compare.html">模式对比</a><a href="categories.html">品类与开通</a><a href="compliance.html">合规与认证</a><a href="commission.html">三种模式佣金</a><a href="calculator.html">利润计算器</a><a href="payout.html">回款与门槛</a></nav></div></footer>
-<script src="motion.js" defer></script>
+<style>@media (max-width:700px){#case{grid-template-columns:1fr!important}}</style>
+</div></section>
+<section class="soft"><div class="in">
+<div class="eyebrow">适合谁</div><h2 class="h2">这几类卖家，<span>最适合先上 OGR。</span></h2>
+<div class="grid g4" style="margin-top:28px">
+<div class="card"><h3>已在做 rFBS</h3><p>已有跨境店链接，可直接克隆评价和销量</p></div>
+<div class="card"><h3>想提升转化</h3><p>同款商品 1–2 天到货，搜索和详情页更有优势</p></div>
+<div class="card"><h3>货源稳定</h3><p>能批量备货、持续补货，周转跟得上</p></div>
+<div class="card"><h3>想测本土仓</h3><p>不想注册俄罗斯公司，先用低门槛方式试水</p></div>
+</div>
+<div class="eyebrow" style="margin-top:48px">启动路径</div><h2 class="h2">分三个阶段，<span>边跑边放大。</span></h2>
+<div class="grid g3" style="margin-top:28px">
+<div class="card step"><div class="n">01</div><h3 style="margin-top:12px">小件试水</h3><p>手机支架、家居小件等免认证产品，跑通清关、销量和回款。</p></div>
+<div class="card step"><div class="n">02</div><h3 style="margin-top:12px">扩大 SKU</h3><p>观察周转率、退货率和利润率，留下跑得动的款。</p></div>
+<div class="card step"><div class="n">03</div><h3 style="margin-top:12px">进高销量品类</h3><p>办好 EAC 和诚信标签，进入服饰、消费电子等品类。</p></div>
+</div></div></section>
+</article><article class="chapter" id="compare" aria-label="模式对比"><div class="phead"><div class="arc" style="position:absolute;left:50%;transform:translateX(-50%);width:min(900px,140vw);aspect-ratio:2/1;border-radius:50% 50% 0 0/100% 100% 0 0;background:linear-gradient(180deg,var(--sky),rgba(232,239,253,0) 80%)"></div><div class="in"><div class="badge" style="position:relative;background:#fff">02 · 模式对比</div><h1 class="serif">三种卖法，<em>一张表看清</em></h1><p>OGR 兼顾跨境主体的便利、本地履约的效率，和更优的税务结构。</p></div></div>
+<section style="padding-top:20px"><div class="in">
+<div class="tbl"><table>
+<thead><tr><th></th><th class="og">OGR</th><th>Global rFBS 跨境店</th><th>FBO 本土店</th></tr></thead>
+<tbody>
+<tr><th>俄罗斯法人</th><td class="og">不需要</td><td>不需要</td><td>需要</td></tr>
+<tr><th>库存位置</th><td class="og">OGR 本地仓</td><td>中国 / 跨境</td><td>俄罗斯本地仓</td></tr>
+<tr><th>消费者配送</th><td class="og">约 1–2 天</td><td>约 15–25 天</td><td>约 1–2 天</td></tr>
+<tr><th>跨境物流</th><td class="og">Ozon 合作物流</td><td>卖家 / 承运商</td><td>卖家本地补货</td></tr>
+<tr><th>本地税务</th><td class="og">Ozon 处理</td><td>无本地主体，时效受限</td><td>卖家自行管理</td></tr>
+<tr><th>佣金</th><td class="og">8%</td><td>较低</td><td>较高</td></tr>
+<tr class="sep"><th>销售 VAT</th><td class="og">22%</td><td>0% → 22%（2027）</td><td>22%</td></tr>
+<tr><th>进口 VAT</th><td class="og">0%（每 3 个月退税一次）</td><td>—</td><td>22%</td></tr>
+<tr><th>关税</th><td class="og">5–15%</td><td>0% → 5–15%</td><td>5–15%</td></tr>
+<tr><th>俄企业所得税</th><td class="og">由 Ozon 处理</td><td>—</td><td>6% / 15% / 25%</td></tr>
+</tbody></table></div>
+<p style="font-size:13px;color:var(--faint);margin-top:12px">跨境店的销售 VAT 和关税将逐步开征，OGR 的优势会更明显。</p>
+</div></section>
+<section class="soft"><div class="in">
+<div class="eyebrow">费用怎么构成</div><h2 class="h2">跨境段和本地段，<span>分开计算。</span></h2>
+<div class="split" style="margin-top:28px">
+<div class="card"><h3>跨境 B2B 段</h3><p style="margin-bottom:10px">中国仓到俄罗斯 OGR 仓</p><ul class="clean"><li>国际运费 1.79 元/升</li><li>清关 1600 元/票，与货量无关</li><li>仓库操作 0.98 元/件</li><li>货物保险 0.09%</li><li>进口关税 5–15%，按 HS Code</li></ul></div>
+<div class="card panel-sky"><h3>本地 B2C 段</h3><p style="margin-bottom:10px">进入俄罗斯之后</p><ul class="clean"><li>销售佣金全品类 8%</li><li>销售 VAT 22%，已含在售价里</li><li>1 年免仓租</li><li>物流处理 46 卢布起，末端配送最高 25 卢布/单</li><li>收单费由处理付款的银行定价，退货或取消时退回</li><li>超过 25 kg 的大件另收 3%，最高 280 卢布</li><li>来货有次品，每件收 30 卢布处理费</li></ul></div>
+</div>
+<div class="card" style="margin-top:16px"><h3>举例：售价 120 元</h3><p>120 元已含 VAT，其中 21.64 元是税，98.36 元是商品净价。佣金按 120 元全额计算，即 9.6 元。Ozon 自己补贴 20 元让买家只付 100 元时，你的价格仍按 120 元结算。</p></div>
+</div></section>
+<section><div class="in">
+<div class="eyebrow">价格段怎么选</div><h2 class="h2">每票有 1600 元固定清关费，<span>货值太低不划算。</span></h2>
+<div class="split" style="margin-top:28px">
+<div class="tbl"><table style="min-width:420px"><thead><tr><th>价格段</th><th>推荐度</th><th>策略</th></tr></thead><tbody>
+<tr><th>0–50 元</th><td>谨慎</td><td>只能高数量、多 SKU 拼票，容易压库存</td></tr>
+<tr><th>50–200 元</th><td class="og">最推荐</td><td class="og">客单价撑得住费用，风险可控</td></tr>
+<tr><th>200–500 元</th><td>可测试</td><td>汽配、电子配件、家居功能件；可能受 EAC 限制</td></tr>
+<tr><th>500 元以上</th><td>可测试</td><td>需要较强的品牌、售后、认证和库存能力</td></tr></tbody></table></div>
+<div class="tbl"><table style="min-width:380px"><thead><tr><th>单价</th><th>凑够 3.2 万约需</th><th>清关费占比 5% 时</th></tr></thead><tbody>
+<tr><th>20 元</th><td class="num">1600 件</td><td>不适合首批单独发</td></tr>
+<tr><th>50 元</th><td class="num">640 件</td><td>可以做，控制体积</td></tr>
+<tr><th>100 元</th><td class="num">320 件</td><td>比较适合</td></tr>
+<tr><th>200 元</th><td class="num">160 件</td><td>更容易摊薄固定费</td></tr></tbody></table></div>
+</div>
+<p style="font-size:13px;color:var(--muted);margin-top:12px">现在备货值门槛是 8 万元，按门槛备货，清关费占比可以压到 2% 左右。优先选售价 50–200 元、体积小、毛利高、能批量备货、认证简单的商品。</p>
+</div></section>
+<section class="soft"><div class="in">
+<div class="eyebrow">什么时候收钱</div><h2 class="h2">费用分三个阶段，<span>不用先垫押金。</span></h2>
+<div class="grid g3" style="margin-top:28px">
+<div class="card step"><div class="n">01</div><h3 style="margin-top:12px">发货前</h3><p>在后台供货单确认经济性。10 月起取消预付押金，费用改在回款时抵扣。</p></div>
+<div class="card step"><div class="n">02</div><h3 style="margin-top:12px">发货后</h3><p>按实际发生的国际物流和进出口清关费用核算。</p></div>
+<div class="card step"><div class="n">03</div><h3 style="margin-top:12px">卖出后</h3><p>扣除 B2B 费用、佣金和 B2C 配送费，余款每周结算给你。</p></div>
+</div></div></section>
+</article><article class="chapter" id="categories" aria-label="品类与开通"><div class="phead"><div class="arc" style="position:absolute;left:50%;transform:translateX(-50%);width:min(900px,140vw);aspect-ratio:2/1;border-radius:50% 50% 0 0/100% 100% 0 0;background:linear-gradient(180deg,var(--sky),rgba(232,239,253,0) 80%)"></div><div class="in"><div class="badge" style="position:relative;background:#fff">03 · 品类与开通</div><h1 class="serif">先从弱认证品类<em>开始跑通</em></h1><p>是否需要 EAC，由平台审核团队和清关行根据你上传的商品照片判断。</p></div></div>
+<section style="padding-top:20px"><div class="in">
+<div class="split">
+<div class="card"><h3>弱 EAC 资质</h3><p>认证简单，适合首批试水</p><div class="chips"><span>家居收纳</span><span>家装装饰摆件</span><span>五金卫浴</span><span>手机支架</span><span>文具用品</span><span>收藏玩具</span><span>鞋服</span><span>宠物用品</span></div></div>
+<div class="card"><h3>强 EAC 资质</h3><p>需要完整认证，适合已有资质的卖家</p><div class="chips dark"><span>手机平板</span><span>清洁电器</span><span>精密仪器</span></div></div>
+</div>
+<div class="card" style="margin-top:16px;background:var(--warn-soft);border:0"><h3>目前不能卖</h3><p>首饰、超过 100Wh 的电池、胶水、弓箭等军民两用产品。另外食品饮料、酒精烟草、药品保健品、化妆品香水、家用和汽车化学品、婴幼儿敏感商品、贵金属珠宝也不在标准流程内。</p></div>
+</div></section>
+<section class="soft"><div class="in">
+<div class="eyebrow">入驻条件</div><h2 class="h2">新卖家，<span>需要满足这五条。</span></h2>
+<div class="grid g5" style="margin-top:28px">
+<div class="card"><h3>企业营业执照</h3><p>有限公司，中国大陆或香港主体；不支持个体户</p></div>
+<div class="card"><h3>OGR 支付账户</h3><p>与开店主体一致，注册时关联连连支付</p></div>
+<div class="card"><h3>跨境经验</h3><p>优先有知名平台 2 年以上经验</p></div>
+<div class="card"><h3>供应链优势</h3><p>有竞争力的供货价和成本</p></div>
+<div class="card"><h3>品牌资源</h3><p>优先品牌方，具备俄罗斯及马德里商标</p></div>
+</div>
+<div class="card panel-sky" style="margin-top:16px"><h3>老卖家</h3><p>提交 Seller ID 给经理，即可开通 OGR。</p></div>
+</div></section>
+<section><div class="in">
+<div class="eyebrow">开通流程</div><h2 class="h2">五步，<span>从开通到卖出。</span></h2>
+<div class="grid g5" style="margin-top:28px">
+<div class="card step"><div class="n">01</div><h3 style="margin-top:12px">提交 Seller ID</h3><p>经理开通 OGR 权限</p><span class="tag">卖家输入</span></div>
+<div class="card step"><div class="n">02</div><h3 style="margin-top:12px">创建供货单</h3><p>填价格、尺寸重量、品牌；平台测算建议售价和备货量</p><span class="tag">双方协同</span></div>
+<div class="card step"><div class="n">03</div><h3 style="margin-top:12px">合规与出口预审</h3><p>品牌授权、EAC 与标签、报关和物流可行性</p><span class="tag">双方协同</span></div>
+<div class="card step"><div class="n">04</div><h3 style="margin-top:12px">确认首批发运</h3><p>确认费用，送达佛山集货点</p><span class="tag">双方协同</span></div>
+<div class="card step"><div class="n">05</div><h3 style="margin-top:12px">俄罗斯本地销售</h3><p>销售追踪、库存与退货、滚动补货</p><span class="tag">销售闭环</span></div>
+</div>
+<div class="card" style="margin-top:16px"><h3>拍照预审</h3><p>不用寄样。供货单只填制造商和地址，每个 SKU 拍至少 12 张：包装六面、商品多角度 6 张以上、说明书逐页、铭牌和标签特写。约一周内反馈。</p></div>
+</div></section>
+<section class="soft"><div class="in">
+<div class="eyebrow">招商分级</div><h2 class="h2">S 级优先，<span>A 级要看材质，B 级要认证。</span></h2>
+<div class="tbl" style="margin-top:28px"><table><thead><tr><th>等级</th><th>品类</th><th>要点和排除项</th></tr></thead><tbody>
+<tr><th>S</th><td>家居收纳、清洁工具、家居装饰</td><td>清洁仅限物理工具；不含香薰液体、活体植物、种子、烟花</td></tr>
+<tr><th>S</th><td>家具</td><td>优先可拆装、平板包装、中小尺寸；大件降级</td></tr>
+<tr><th>S</th><td>五金、手工具、测量工具、紧固件</td><td>复杂电子测量设备降为 B</td></tr>
+<tr><th>S</th><td>运动健身、球类、宠物耐用品</td><td>不含宠物食品、营养品、兽药、驱虫产品</td></tr>
+<tr><th>S/A</th><td>厨房非电工具、餐具、园艺工具、户外露营、汽车普通用品、文具</td><td>食品接触先确认材质；不含燃料、气罐、汽车化学品、农药</td></tr>
+<tr><th>A</th><td>家纺、骑行游泳、箱包、时尚配件、玩具、手工工具</td><td>不含贵金属珠宝；儿童商品有安全认证要求</td></tr>
+<tr><th>A/B</th><td>电动工具、小家电、灯具</td><td>确认 EAC、电气安全、型号覆盖、电池运输</td></tr>
+<tr><th>B</th><td>消费电子配件、成人服饰、成人鞋</td><td>以配件为主；服鞋涉及诚信标签、尺码 SKU、退换货</td></tr>
+</tbody></table></div>
+<p style="font-size:13px;color:var(--muted);margin-top:12px">判断顺序：商品大类 → 商品属性 → 品牌/IP → 认证 → 特殊监管 → 物流仓储 → 最终 SKU 确认。</p>
+<div class="eyebrow" style="margin-top:48px">准入三级</div><h2 class="h2">先自查，<span>再提交。</span></h2>
+<div class="grid g3" style="margin-top:28px">
+<div class="card" style="background:var(--warn-soft)"><h3>A 类：禁止</h3><p>武器、成人用品、酒精烟草、食品饮料、活体动物、服务和数字商品。不提交、不备货、不发运。</p></div>
+<div class="card"><h3>B 类：暂不接收</h3><p>医疗器械、药品保健品、化妆品香水、家用和汽车化学品、婴幼儿敏感商品、贵金属珠宝。需书面确认。</p></div>
+<div class="card"><h3>C 类：前置审核</h3><p>品牌 IP、制裁合规、RNPT 税务追踪、尺寸重量、特殊海关要求、追踪标签。提交完整资料等审核。</p></div>
+</div>
+<div class="card" style="margin-top:16px"><h3>RNPT 重点编码</h3><p>8528 显示器投影仪、8418 冰箱冰柜、8450 洗衣机、8715 婴儿车、9401 儿童安全座椅、8427/8429/8709 叉车和工程车辆。另外落入第 2240 号决议高关税清单的商品需要原产地证，目前原则上不做。</p></div>
+</div></section>
+</article><article class="chapter" id="compliance" aria-label="合规与认证"><div class="phead"><div class="arc" style="position:absolute;left:50%;transform:translateX(-50%);width:min(900px,140vw);aspect-ratio:2/1;border-radius:50% 50% 0 0/100% 100% 0 0;background:linear-gradient(180deg,var(--sky),rgba(232,239,253,0) 80%)"></div><div class="in"><div class="badge" style="position:relative;background:#fff">04 · 合规与认证</div><h1 class="serif">先审 SKU，<em>再备货</em></h1><p>是否需要 EAC，由平台审核团队和清关行根据你提交的信息和照片决定。不确定的，先预审，不要先发货。</p></div></div>
+<section style="padding-top:20px"><div class="in">
+<div class="grid g3">
+<div class="card"><h3>正规 EAC 要寄样实测</h3><p>样品寄到俄罗斯实验室，通常 5 件，空运 7–10 天，检测 2–4 周，多数 1 个月内出证。</p></div>
+<div class="card"><h3>证书必须 FGIS 可查</h3><p>申请人须是俄罗斯法人；HS Code、制造商、型号范围要和实际发货一致。</p></div>
+<div class="card"><h3>1Д 方案要当心</h3><p>1Д 方案、实验室在 EAEU 境内、又查不到样品进口记录，证书不被接受。</p></div>
+<div class="card"><h3>CoC 与 DoC</h3><p>法律效力相同，按风险等级区分。服装常用 DoC TP TC 017，玩具 CoC TP TC 008，电子 CoC TP TC 004+020。</p></div>
+<div class="card"><h3>有效期与年审</h3><p>最长 5 年，每年要做年审；KG、KZ 签发的证书 2026 年起审核更严。</p></div>
+<div class="card"><h3>诚信标签</h3><p>不再拦截 SKU 添加，但依法需要 Data Matrix 的商品仍要贴，且要能扫描。</p></div>
+</div></div></section>
+<section class="soft"><div class="in">
+<div class="eyebrow">常见被拒</div><h2 class="h2">这十种情况，<span>最容易被打回。</span></h2>
+<div class="tbl" style="margin-top:28px"><table><thead><tr><th>#</th><th>被拒原因</th><th>正确做法</th></tr></thead><tbody>
+<tr><th>1</th><td>只给 HS Code</td><td>同时给图片、用途、材质、型号、生产商、适用年龄</td></tr>
+<tr><th>2</th><td>证书范围没覆盖 SKU</td><td>逐个核对品名、型号、材质、生产商</td></tr>
+<tr><th>3</th><td>成人款儿童款共用证书</td><td>分开判断、分开办证</td></tr>
+<tr><th>4</th><td>不同工厂共用证书</td><td>制造商必须完全一致</td></tr>
+<tr><th>5</th><td>没有检测报告</td><td>保留报告、实验室资质和样品记录</td></tr>
+<tr><th>6</th><td>样品没合法进口记录</td><td>走正规渠道寄样，保留申报记录</td></tr>
+<tr><th>7</th><td>用 1Д 规避检测</td><td>按法规选方案，不只看价格</td></tr>
+<tr><th>8</th><td>证书过期或没年审</td><td>确认有效期、年审和注册状态</td></tr>
+<tr><th>9</th><td>漏了充电器或无线模块</td><td>套装拆开逐项判断</td></tr>
+<tr><th>10</th><td>缺品牌授权</td><td>EAC 不等于销售权，授权链要完整</td></tr>
+</tbody></table></div>
+<p style="font-size:13px;color:var(--muted);margin-top:12px">文件出错的后果：清关延误、补材料、罚款、注册被拒；重新办证期间货压在海关仓 1–1.5 个月。</p>
+</div></section>
+<section><div class="in">
+<div class="split">
+<div class="card" style="background:var(--bg)"><h3>品牌限制</h3><ul class="clean"><li>授权须写明可在俄罗斯 Ozon 销售，缺授权可被索赔 GMV 两倍</li><li>TROIS 清单且不在平行进口清单的品牌不能发</li><li>在俄罗斯有诉讼记录、平台有活跃版权方的品牌不能发</li><li>跨境店认可过的品牌文件，OGR 不能直接沿用</li></ul></div>
+<div class="card" style="background:var(--bg)"><h3>识别不靠谱服务商</h3><ul class="clean"><li>「不用寄样」「3 天出证」</li><li>报价特别低</li><li>「HS Code 差不多就行」</li><li>说不出适用哪个 TP TC 法规</li></ul></div>
+</div>
+<div class="eyebrow" style="margin-top:48px">拍照预审</div><h2 class="h2">不寄样，<span>每个 SKU 拍 12 张以上。</span></h2>
+<div class="grid g4" style="margin-top:28px">
+<div class="card" style="background:var(--bg)"><div class="big num">6</div><h3>外包装六面</h3><p>品牌、型号、产地、条码不被遮挡</p></div>
+<div class="card" style="background:var(--bg)"><div class="big num">6+</div><h3>商品多角度</h3><p>配件、赠品、可拆部件都要拍</p></div>
+<div class="card" style="background:var(--bg)"><div class="big">全部</div><h3>说明书逐页</h3><p>折页展开，多语言页都要</p></div>
+<div class="card" style="background:var(--bg)"><div class="big">特写</div><h3>铭牌与标签</h3><p>服装拍洗水唛，鞋拍鞋舌和鞋垫</p></div>
+</div>
+<p style="font-size:13px;color:var(--muted);margin-top:12px">只用实拍，不用详情页或网络图；纯色背景，JPG/PNG 3–10MB；同款同色不同尺码可共用一组，不同颜色分开拍。供货单只填制造商和地址，约一周反馈，不限重拍次数。</p>
+</div></section>
+<section class="soft"><div class="in">
+<div class="eyebrow">认证服务商</div><h2 class="h2">后台「公司列表」里有推荐，<span>也可以自己选。</span></h2>
+<div class="tbl" style="margin-top:28px"><table><thead><tr><th>公司</th><th>经理</th><th>联系方式</th></tr></thead><tbody>
+<tr><th>YG</th><td>Liu Ya</td><td>微信 +86 130 0311 5437 · lyudmila@dmlcompany.com</td></tr>
+<tr><th>YG</th><td>Yang Yujia</td><td>微信 +86 136 8192 6087 · yangyujia@shug.work</td></tr>
+<tr><th>QIROSS</th><td>Alex Tse</td><td>微信 szmoscow · 39373048@qq.com · +86 137 138 09037</td></tr>
+<tr><th>Status</th><td>Yuliya Popazova</td><td>微信 Sertlogistik39 · sertlogistik39@yandex.ru · +7 911 492 1794</td></tr>
+</tbody></table></div>
+</div></section>
+</article><article class="chapter" id="commission" aria-label="三种模式佣金"><div class="phead"><div class="arc" style="position:absolute;left:50%;transform:translateX(-50%);width:min(900px,140vw);aspect-ratio:2/1;border-radius:50% 50% 0 0/100% 100% 0 0;background:linear-gradient(180deg,var(--sky),rgba(232,239,253,0) 80%)"></div><div class="in"><div class="badge" style="position:relative;background:#fff">05 · 三种模式佣金</div><h1 class="serif">同一件货，<em>佣金差多少？</em></h1><p>OGR、跨境 rFBS、本土 FBO 三种卖法的平台佣金，数字整理自 Ozon 官方类目表。</p></div></div>
+<section style="padding-top:20px"><div class="in">
+<div class="grid g3">
+<div class="card"><p>OGR</p><div class="big num">8%</div><h3>全品类统一</h3><p>按含税售价计算。物流、关税、VAT 另计。</p></div>
+<div class="card"><p>Global rFBS 跨境店</p><div class="big num">6–24%</div><h3>按类目和售价分三档</h3><p>1500 卢布以下多为 10–12%，越贵越高。</p></div>
+<div class="card"><p>FBO / FBS 本土店</p><div class="big num">17–52%</div><h3>按类目和售价分三档</h3><p>300 卢布以下为 17% / 23%；300 卢布以上多数类目在 40–52%。</p></div>
+</div>
+<p style="font-size:13px;color:var(--muted);margin-top:20px">三种模式的佣金口径不同，不能只比数字：跨境店卖家要自己承担国际运输且时效 15–25 天；本土店需要俄罗斯法人，自己负责进口和税务；OGR 的 8% 之外还有跨境物流、关税和 22% 销售 VAT。</p>
+</div></section>
+<section class="soft"><div class="in">
+<div class="eyebrow">一键对比</div><h2 class="h2">选类目和售价，<span>直接看三种模式各收多少。</span></h2>
+<div class="cmp" id="cmp">
+<div class="cmp-pick">
+<div class="cmp-lbl">类目</div>
+<div aria-label="类目" class="cmp-chips" id="cmpCat" role="group"></div>
+<div class="cmp-lbl" style="margin-top:24px">前台售价</div>
+<div aria-label="售价" class="cmp-chips" id="cmpPrice" role="group"></div>
+</div>
+<div class="cmp-out">
+<div class="cmp-head"><span id="cmpTitle"></span></div>
+<div class="cmp-rows" id="cmpRows"></div>
+<p class="cmp-note" id="cmpNote"></p>
+</div>
+</div>
+</div></section>
+<section><div class="in">
+<div class="eyebrow">一张图看全</div><h2 class="h2">售价 1000 卢布时，<span>13 个常见类目的佣金。</span></h2>
+<div class="dot-legend"><span style="--c:#3a9a2f">OGR</span><span style="--c:#3a78f5">跨境 rFBS</span><span style="--c:#e8692a">本土 FBO</span></div>
+<div class="dots" id="dots"></div>
+<p style="font-size:13px;color:var(--muted);margin-top:20px">1000 卢布约合 88 元。跨境 rFBS 取 1500 卢布以下档，本土 FBO 取 300 卢布以上档。</p>
+</div></section>
+<section style="padding-top:0"><div class="in"><button aria-expanded="false" class="btn light" id="fullBtn" style="border:1px solid var(--line)" type="button">查看完整类目表（跨境 80 个类目 · 本土 28 个大类）</button></div></section>
+<section class="soft fullsec" hidden=""><div class="in">
+<div class="eyebrow">Global rFBS 跨境店</div><h2 class="h2">80 个类目，<span>按售价分三档。</span></h2>
+<p style="color:var(--muted);margin-top:16px;max-width:680px">远邻国家卖家的服务费不含俄罗斯 VAT。佣金按下单当天汇率换算成卢布判断档位，表中为最高费率，不含地区和推广系数。自 2025 年 12 月 1 日起适用。</p>
+<label class="f" for="q1" style="margin-top:28px;max-width:360px"><div class="ipt" style="background:#fff"><input id="q1" placeholder="搜索类目，如 玩具、厨房" type="search"/><span>筛选</span></div></label>
+<p class="table-hint">表格可上下、左右滑动查看完整费率</p><div aria-label="跨境店佣金表" class="tbl commission-table" role="region" tabindex="0"><table id="t1"><thead><tr><th>类目</th><th>大类</th><th>≤1500 ₽</th><th>1500–5000 ₽</th><th>&gt;5000 ₽</th></tr></thead><tbody><tr data-q="药房商品药店"><th>药店</th><td>药房商品</td><td class="num">12%</td><td class="num">14%</td><td class="num">18%</td></tr><tr data-q="药房商品矫形用品"><th>矫形用品</th><td>药房商品</td><td class="num">12%</td><td class="num">17%</td><td class="num">17%</td></tr><tr data-q="药房商品成人用品"><th>成人用品</th><td>药房商品</td><td class="num">12%</td><td class="num">14%</td><td class="num">21%</td></tr><tr data-q="药房商品辅助药品"><th>辅助药品</th><td>药房商品</td><td class="num">12%</td><td class="num">15%</td><td class="num">15%</td></tr><tr data-q="药房商品电子烟及加热系统配件"><th>电子烟及加热系统配件</th><td>药房商品</td><td class="num">12%</td><td class="num">24%</td><td class="num">24%</td></tr><tr data-q="药房商品维生素和膳食补充剂"><th>维生素和膳食补充剂</th><td>药房商品</td><td class="num">12%</td><td class="num">18%</td><td class="num">18%</td></tr><tr data-q="家居与汽车用品装饰、清洁与储物"><th>装饰、清洁与储物</th><td>家居与汽车用品</td><td class="num">12%</td><td class="num">14%</td><td class="num">18%</td></tr><tr data-q="家居与汽车用品住宅和花园"><th>住宅和花园</th><td>家居与汽车用品</td><td class="num">12%</td><td class="num">14%</td><td class="num">20%</td></tr><tr data-q="家居与汽车用品汽车用品"><th>汽车用品</th><td>家居与汽车用品</td><td class="num">12%</td><td class="num">17%</td><td class="num">17%</td></tr><tr data-q="家居与汽车用品手动工具和测量仪器"><th>手动工具和测量仪器</th><td>家居与汽车用品</td><td class="num">12%</td><td class="num">17%</td><td class="num">17%</td></tr><tr data-q="家居与汽车用品建筑和装修"><th>建筑和装修</th><td>家居与汽车用品</td><td class="num">12%</td><td class="num">18%</td><td class="num">18%</td></tr><tr data-q="家居与汽车用品康复设备"><th>康复设备</th><td>家居与汽车用品</td><td class="num">12%</td><td class="num">14%</td><td class="num">17%</td></tr><tr data-q="家居与汽车用品重型建筑"><th>重型建筑</th><td>家居与汽车用品</td><td class="num">11%</td><td class="num">11%</td><td class="num">11%</td></tr><tr data-q="家居与汽车用品儿童餐具"><th>儿童餐具</th><td>家居与汽车用品</td><td class="num">12%</td><td class="num">14%</td><td class="num">18%</td></tr><tr data-q="家居与汽车用品家具"><th>家具</th><td>家居与汽车用品</td><td class="num">10%</td><td class="num">10%</td><td class="num">10%</td></tr><tr data-q="家居与汽车用品轮胎"><th>轮胎</th><td>家居与汽车用品</td><td class="num">10%</td><td class="num">10%</td><td class="num">10%</td></tr><tr data-q="家居与汽车用品装饰材料"><th>装饰材料</th><td>家居与汽车用品</td><td class="num">12%</td><td class="num">14%</td><td class="num">14%</td></tr><tr data-q="家居与汽车用品卫浴设备"><th>卫浴设备</th><td>家居与汽车用品</td><td class="num">12%</td><td class="num">14%</td><td class="num">14%</td></tr><tr data-q="家居与汽车用品日化"><th>日化</th><td>家居与汽车用品</td><td class="num">12%</td><td class="num">18%</td><td class="num">18%</td></tr><tr data-q="家居与汽车用品建筑、装修和园艺设备"><th>建筑、装修和园艺设备</th><td>家居与汽车用品</td><td class="num">12%</td><td class="num">16%</td><td class="num">16%</td></tr><tr data-q="家居与汽车用品新年装饰用品"><th>新年装饰用品</th><td>家居与汽车用品</td><td class="num">12%</td><td class="num">14%</td><td class="num">20%</td></tr><tr data-q="家居与汽车用品电动滑板车"><th>电动滑板车</th><td>家居与汽车用品</td><td class="num">12%</td><td class="num">17%</td><td class="num">17%</td></tr><tr data-q="家居与汽车用品船只、马达和充气艇"><th>船只、马达和充气艇</th><td>家居与汽车用品</td><td class="num">12%</td><td class="num">15%</td><td class="num">15%</td></tr><tr data-q="家居与汽车用品自行车"><th>自行车</th><td>家居与汽车用品</td><td class="num">12%</td><td class="num">15%</td><td class="num">15%</td></tr><tr data-q="家居与汽车用品水过滤器"><th>水过滤器</th><td>家居与汽车用品</td><td class="num">12%</td><td class="num">17%</td><td class="num">17%</td></tr><tr data-q="家居与汽车用品运动手表"><th>运动手表</th><td>家居与汽车用品</td><td class="num">12%</td><td class="num">12%</td><td class="num">12%</td></tr><tr data-q="家居与汽车用品成品房"><th>成品房</th><td>家居与汽车用品</td><td class="num">12%</td><td class="num">14.5%</td><td class="num">14.5%</td></tr><tr data-q="家居与汽车用品汽车、汽车房和特种设备"><th>汽车、汽车房和特种设备</th><td>家居与汽车用品</td><td class="num">10%</td><td class="num">10%</td><td class="num">10%</td></tr><tr data-q="美容服装和配饰"><th>服装和配饰</th><td>美容</td><td class="num">12%</td><td class="num">14%</td><td class="num">20.5%</td></tr><tr data-q="美容鞋类"><th>鞋类</th><td>美容</td><td class="num">12%</td><td class="num">12%</td><td class="num">12%</td></tr><tr data-q="美容美容与健康"><th>美容与健康</th><td>美容</td><td class="num">12%</td><td class="num">14%</td><td class="num">18%</td></tr><tr data-q="美容专业口腔护理"><th>专业口腔护理</th><td>美容</td><td class="num">12%</td><td class="num">17%</td><td class="num">17%</td></tr><tr data-q="美容外衣"><th>外衣</th><td>美容</td><td class="num">10%</td><td class="num">10%</td><td class="num">10%</td></tr><tr data-q="美容专业医疗设备"><th>专业医疗设备</th><td>美容</td><td class="num">12%</td><td class="num">17%</td><td class="num">17%</td></tr><tr data-q="其它包装袋"><th>包装袋</th><td>其它</td><td class="num">10%</td><td class="num">10%</td><td class="num">10%</td></tr><tr data-q="儿童用品儿童纺织品"><th>儿童纺织品</th><td>儿童用品</td><td class="num">12%</td><td class="num">19%</td><td class="num">19%</td></tr><tr data-q="儿童用品儿童运动用品"><th>儿童运动用品</th><td>儿童用品</td><td class="num">12%</td><td class="num">14%</td><td class="num">14%</td></tr><tr data-q="儿童用品儿童电子产品、家具、配件"><th>儿童电子产品、家具、配件</th><td>儿童用品</td><td class="num">12%</td><td class="num">14%</td><td class="num">20%</td></tr><tr data-q="儿童用品玩具"><th>玩具</th><td>儿童用品</td><td class="num">12%</td><td class="num">14%</td><td class="num">17.5%</td></tr><tr data-q="儿童用品儿童卫生用品"><th>儿童卫生用品</th><td>儿童用品</td><td class="num">12%</td><td class="num">18%</td><td class="num">18%</td></tr><tr data-q="儿童用品婴儿推车和汽车安全座椅"><th>婴儿推车和汽车安全座椅</th><td>儿童用品</td><td class="num">12%</td><td class="num">14%</td><td class="num">20%</td></tr><tr data-q="宠物用品宠物饲料与农场用品"><th>宠物饲料与农场用品</th><td>宠物用品</td><td class="num">12%</td><td class="num">13%</td><td class="num">13%</td></tr><tr data-q="宠物用品宠物用品"><th>宠物用品</th><td>宠物用品</td><td class="num">12%</td><td class="num">14%</td><td class="num">15%</td></tr><tr data-q="宠物用品宠物卫生与护理"><th>宠物卫生与护理</th><td>宠物用品</td><td class="num">12%</td><td class="num">13%</td><td class="num">13%</td></tr><tr data-q="快速消费品（FMCG）食品"><th>食品</th><td>快速消费品（FMCG）</td><td class="num">11%</td><td class="num">11%</td><td class="num">11%</td></tr><tr data-q="快速消费品（FMCG）新鲜食品"><th>新鲜食品</th><td>快速消费品（FMCG）</td><td class="num">11%</td><td class="num">11%</td><td class="num">11%</td></tr><tr data-q="快速消费品（FMCG）个人卫生用品"><th>个人卫生用品</th><td>快速消费品（FMCG）</td><td class="num">12%</td><td class="num">18%</td><td class="num">18%</td></tr><tr data-q="快速消费品（FMCG）隐形眼镜"><th>隐形眼镜</th><td>快速消费品（FMCG）</td><td class="num">12%</td><td class="num">18%</td><td class="num">18%</td></tr><tr data-q="爱好与运动运动和休闲用品"><th>运动和休闲用品</th><td>爱好与运动</td><td class="num">12%</td><td class="num">19%</td><td class="num">19%</td></tr><tr data-q="爱好与运动兴趣、创意与文具"><th>兴趣、创意与文具</th><td>爱好与运动</td><td class="num">12%</td><td class="num">14%</td><td class="num">16%</td></tr><tr data-q="爱好与运动书籍"><th>书籍</th><td>爱好与运动</td><td class="num">12%</td><td class="num">22%</td><td class="num">22%</td></tr><tr data-q="爱好与运动蹦床、游泳池和立式桨板"><th>蹦床、游泳池和立式桨板</th><td>爱好与运动</td><td class="num">12%</td><td class="num">16%</td><td class="num">16%</td></tr><tr data-q="爱好与运动运动营养"><th>运动营养</th><td>爱好与运动</td><td class="num">12%</td><td class="num">15%</td><td class="num">15%</td></tr><tr data-q="爱好与运动运动员营养补充剂"><th>运动员营养补充剂</th><td>爱好与运动</td><td class="num">12%</td><td class="num">18%</td><td class="num">18%</td></tr><tr data-q="电子产品电子产品配饰"><th>电子产品配饰</th><td>电子产品</td><td class="num">12%</td><td class="num">20%</td><td class="num">20%</td></tr><tr data-q="电子产品音频和视频设备配件"><th>音频和视频设备配件</th><td>电子产品</td><td class="num">12%</td><td class="num">14.5%</td><td class="num">14.5%</td></tr><tr data-q="电子产品家用电器"><th>家用电器</th><td>电子产品</td><td class="num">10%</td><td class="num">10%</td><td class="num">10%</td></tr><tr data-q="电子产品电视机"><th>电视机</th><td>电子产品</td><td class="num">9%</td><td class="num">9%</td><td class="num">9%</td></tr><tr data-q="电子产品美容设备"><th>美容设备</th><td>电子产品</td><td class="num">12%</td><td class="num">14%</td><td class="num">16%</td></tr><tr data-q="电子产品办公电脑设备、收银及仓储设备"><th>办公电脑设备、收银及仓储设备</th><td>电子产品</td><td class="num">12%</td><td class="num">16%</td><td class="num">16%</td></tr><tr data-q="电子产品游戏主机及配件、摄影器材"><th>游戏主机及配件、摄影器材</th><td>电子产品</td><td class="num">12%</td><td class="num">12.5%</td><td class="num">12.5%</td></tr><tr data-q="电子产品电脑外设设备及耗材"><th>电脑外设设备及耗材</th><td>电子产品</td><td class="num">12%</td><td class="num">14.5%</td><td class="num">14.5%</td></tr><tr data-q="电子产品非内置式大型家用电器"><th>非内置式大型家用电器</th><td>电子产品</td><td class="num">9%</td><td class="num">9%</td><td class="num">9%</td></tr><tr data-q="电子产品智能手机和平板电脑"><th>智能手机和平板电脑</th><td>电子产品</td><td class="num">11.5%</td><td class="num">11.5%</td><td class="num">11.5%</td></tr><tr data-q="电子产品电脑及笔记本配件"><th>电脑及笔记本配件</th><td>电子产品</td><td class="num">12%</td><td class="num">12.5%</td><td class="num">12.5%</td></tr><tr data-q="电子产品Yandex 智能音箱"><th>Yandex 智能音箱</th><td>电子产品</td><td class="num">12%</td><td class="num">14.5%</td><td class="num">14.5%</td></tr><tr data-q="电子产品嵌入式大型家用电器"><th>嵌入式大型家用电器</th><td>电子产品</td><td class="num">9%</td><td class="num">9%</td><td class="num">9%</td></tr><tr data-q="电子产品显示器"><th>显示器</th><td>电子产品</td><td class="num">12%</td><td class="num">12.5%</td><td class="num">12.5%</td></tr><tr data-q="电子产品智能手表与健身手环"><th>智能手表与健身手环</th><td>电子产品</td><td class="num">11.5%</td><td class="num">11.5%</td><td class="num">11.5%</td></tr><tr data-q="电子产品电子游戏"><th>电子游戏</th><td>电子产品</td><td class="num">12%</td><td class="num">14.5%</td><td class="num">14.5%</td></tr><tr data-q="电子产品台式电脑"><th>台式电脑</th><td>电子产品</td><td class="num">9%</td><td class="num">9%</td><td class="num">9%</td></tr><tr data-q="电子产品电脑设备配件"><th>电脑设备配件</th><td>电子产品</td><td class="num">12%</td><td class="num">13.5%</td><td class="num">13.5%</td></tr><tr data-q="电子产品笔记本电脑"><th>笔记本电脑</th><td>电子产品</td><td class="num">8%</td><td class="num">8%</td><td class="num">8%</td></tr><tr data-q="电子产品戴森配件"><th>戴森配件</th><td>电子产品</td><td class="num">6%</td><td class="num">6%</td><td class="num">6%</td></tr><tr data-q="电子产品索尼耳机"><th>索尼耳机</th><td>电子产品</td><td class="num">8%</td><td class="num">8%</td><td class="num">8%</td></tr><tr data-q="电子产品三星 TWS 耳机"><th>三星 TWS 耳机</th><td>电子产品</td><td class="num">8%</td><td class="num">8%</td><td class="num">8%</td></tr><tr data-q="电子产品三星智能手表与健身手环"><th>三星智能手表与健身手环</th><td>电子产品</td><td class="num">8%</td><td class="num">8%</td><td class="num">8%</td></tr><tr data-q="电子产品三星智能手机和平板电脑"><th>三星智能手机和平板电脑</th><td>电子产品</td><td class="num">8%</td><td class="num">8%</td><td class="num">8%</td></tr><tr data-q="电子产品苹果设备"><th>苹果设备</th><td>电子产品</td><td class="num">7%</td><td class="num">7%</td><td class="num">7%</td></tr><tr data-q="电子产品戴森设备"><th>戴森设备</th><td>电子产品</td><td class="num">8%</td><td class="num">8%</td><td class="num">8%</td></tr></tbody></table></div>
+</div></section>
+<section class="fullsec" hidden=""><div class="in">
+<div class="eyebrow">FBO / FBS 本土店</div><h2 class="h2">28 个大类，<span>按售价分三档。</span></h2>
+<p style="color:var(--muted);margin-top:16px;max-width:680px">数字是大类下最常见的费率，括号里是该大类内的最低到最高。表格为 Ozon 2026 年 10 月 7 日版类目表，官方注明为最高费率，不含地区系数。本地集群内销售、延期回款等还可再降。</p>
+<label class="f" for="q2" style="margin-top:28px;max-width:360px"><div class="ipt"><input id="q2" placeholder="搜索大类，如 服装、电子" type="search"/><span>筛选</span></div></label>
+<p class="table-hint">表格可上下、左右滑动查看完整费率</p><div aria-label="本土店佣金表" class="tbl commission-table" role="region" tabindex="0"><table id="t2"><thead><tr><th>大类</th><th>FBO ≤100 ₽</th><th>FBO 100–300 ₽</th><th>FBO &gt;300 ₽</th><th>FBS &gt;300 ₽</th></tr></thead><tbody><tr data-q="乐器"><th>乐器</th><td class="num">17%</td><td class="num">23%</td><td class="num">47%</td><td class="num">47%</td></tr><tr data-q="儿童用品"><th>儿童用品</th><td class="num">17%</td><td class="num">23%</td><td class="num">52%</td><td class="num">52%</td></tr><tr data-q="农业用品"><th>农业用品</th><td class="num">17%</td><td class="num">23%</td><td class="num">48%</td><td class="num">48%</td></tr><tr data-q="古董与收藏"><th>古董与收藏</th><td class="num">17%</td><td class="num">23%</td><td class="num">50%</td><td class="num">50%</td></tr><tr data-q="图书"><th>图书</th><td class="num">17%<small>（5–17%）</small></td><td class="num">23%<small>（5–23%）</small></td><td class="num">45%<small>（5–45%）</small></td><td class="num">45%<small>（7–45%）</small></td></tr><tr data-q="宠物用品"><th>宠物用品</th><td class="num">17%</td><td class="num">23%</td><td class="num">48%</td><td class="num">48%</td></tr><tr data-q="家具"><th>家具</th><td class="num">17%</td><td class="num">23%</td><td class="num">51%</td><td class="num">51%</td></tr><tr data-q="家居与园艺"><th>家居与园艺</th><td class="num">17%<small>（10–17%）</small></td><td class="num">23%<small>（10–23%）</small></td><td class="num">52%<small>（10–52%）</small></td><td class="num">52%<small>（10–52%）</small></td></tr><tr data-q="家用化学品"><th>家用化学品</th><td class="num">17%<small>（14–17%）</small></td><td class="num">23%<small>（20–23%）</small></td><td class="num">48%<small>（21–48%）</small></td><td class="num">48%<small>（18–48%）</small></td></tr><tr data-q="家用电器"><th>家用电器</th><td class="num">17%</td><td class="num">23%</td><td class="num">51%</td><td class="num">51%</td></tr><tr data-q="建材五金"><th>建材五金</th><td class="num">17%<small>（14–17%）</small></td><td class="num">23%<small>（20–23%）</small></td><td class="num">51%<small>（18–51%）</small></td><td class="num">51%<small>（18–51%）</small></td></tr><tr data-q="影音游戏软件"><th>影音游戏软件</th><td class="num">15%<small>（5–35%）</small></td><td class="num">15%<small>（5–35%）</small></td><td class="num">15%<small>（5–48%）</small></td><td class="num">15%<small>（6–48%）</small></td></tr><tr data-q="成人用品"><th>成人用品</th><td class="num">17%</td><td class="num">23%</td><td class="num">43%</td><td class="num">43%</td></tr><tr data-q="摩托及机动车"><th>摩托及机动车</th><td class="num">14%<small>（14–17%）</small></td><td class="num">20%<small>（20–23%）</small></td><td class="num">4%<small>（0–43%）</small></td><td class="num">5%<small>（0–43%）</small></td></tr><tr data-q="文具办公"><th>文具办公</th><td class="num">17%<small>（10–17%）</small></td><td class="num">23%<small>（10–23%）</small></td><td class="num">50%<small>（10–50%）</small></td><td class="num">50%<small>（10–50%）</small></td></tr><tr data-q="服装"><th>服装</th><td class="num">17%</td><td class="num">23%</td><td class="num">52%</td><td class="num">52%</td></tr><tr data-q="汽车用品"><th>汽车用品</th><td class="num">17%<small>（14–17%）</small></td><td class="num">23%<small>（20–23%）</small></td><td class="num">47%<small>（4–47%）</small></td><td class="num">47%<small>（5–47%）</small></td></tr><tr data-q="烟具"><th>烟具</th><td class="num">17%</td><td class="num">23%</td><td class="num">50%</td><td class="num">50%</td></tr><tr data-q="爱好与手工"><th>爱好与手工</th><td class="num">17%<small>（14–17%）</small></td><td class="num">23%<small>（20–23%）</small></td><td class="num">50%<small>（21–50%）</small></td><td class="num">50%<small>（18–50%）</small></td></tr><tr data-q="珠宝首饰"><th>珠宝首饰</th><td class="num">17%</td><td class="num">23%</td><td class="num">47%</td><td class="num">47%</td></tr><tr data-q="生鲜（Ozon Fresh）"><th>生鲜（Ozon Fresh）</th><td class="num">14%<small>（14–17%）</small></td><td class="num">20%<small>（20–23%）</small></td><td class="num">23%<small>（23–50%）</small></td><td class="num">26%<small>（26–50%）</small></td></tr><tr data-q="电子产品"><th>电子产品</th><td class="num">17%<small>（10–17%）</small></td><td class="num">23%<small>（10–23%）</small></td><td class="num">47%<small>（10–47%）</small></td><td class="num">47%<small>（10–47%）</small></td></tr><tr data-q="箱包配饰"><th>箱包配饰</th><td class="num">17%</td><td class="num">23%</td><td class="num">52%</td><td class="num">52%</td></tr><tr data-q="美妆个护"><th>美妆个护</th><td class="num">17%</td><td class="num">23%</td><td class="num">52%</td><td class="num">52%</td></tr><tr data-q="药房"><th>药房</th><td class="num">17%<small>（2–17%）</small></td><td class="num">23%<small>（2–23%）</small></td><td class="num">51%<small>（2–51%）</small></td><td class="num">51%<small>（3–51%）</small></td></tr><tr data-q="运动户外"><th>运动户外</th><td class="num">17%<small>（14–17%）</small></td><td class="num">23%<small>（20–23%）</small></td><td class="num">52%<small>（2–52%）</small></td><td class="num">52%<small>（2–52%）</small></td></tr><tr data-q="鞋"><th>鞋</th><td class="num">17%</td><td class="num">23%</td><td class="num">52%</td><td class="num">52%</td></tr><tr data-q="食品"><th>食品</th><td class="num">17%<small>（14–17%）</small></td><td class="num">23%<small>（20–23%）</small></td><td class="num">40%<small>（23–40%）</small></td><td class="num">40%<small>（26–40%）</small></td></tr></tbody></table></div>
+<p style="font-size:13px;color:var(--faint);margin-top:20px">来源：Ozon Global 卖家知识库「各类商品销售佣金标准」类目表（2025-12-01 起）；Ozon 卖家教育中心「Вознаграждение Ozon за продажу товаров」类目表（2026-10-07 版）。以卖家后台显示为准。</p>
+</div></section>
+<script>window.CMP=[["家居装饰收纳", [12.0, 14.0, 18.0], [17, 23, 52]], ["五金工具", [12.0, 17.0, 17.0], [17, 23, 51]], ["汽车用品", [12.0, 17.0, 17.0], [17, 23, 47]], ["服装", [12.0, 14.0, 20.5], [17, 23, 52]], ["鞋", [12.0, 12.0, 12.0], [17, 23, 52]], ["玩具", [12.0, 14.0, 17.5], [17, 23, 52]], ["文具手工", [12.0, 14.0, 16.0], [17, 23, 50]], ["宠物用品", [12.0, 14.0, 15.0], [17, 23, 48]], ["运动户外", [12.0, 19.0, 19.0], [17, 23, 52]], ["美妆个护", [12.0, 14.0, 18.0], [17, 23, 52]], ["电子配件", [12.0, 20.0, 20.0], [17, 23, 47]], ["家用电器", [10.0, 10.0, 10.0], [17, 23, 51]], ["家具", [10.0, 10.0, 10.0], [17, 23, 51]]];</script><script defer="" src="cmp.js"></script>
+<script>
+var fb=document.getElementById("fullBtn");fb.addEventListener("click",function(){var o=fb.getAttribute("aria-expanded")!=="true";fb.setAttribute("aria-expanded",o);fb.textContent=o?"收起完整类目表":"查看完整类目表（跨境 80 个类目 · 本土 28 个大类）";document.querySelectorAll(".fullsec").forEach(function(s){s.hidden=!o})});
+function flt(i,t){var q=document.getElementById(i);q.addEventListener("input",function(){var v=q.value.trim();document.querySelectorAll("#"+t+" tbody tr").forEach(function(r){r.hidden=v&&r.dataset.q.indexOf(v)<0})})}
+flt("q1","t1");flt("q2","t2");
+</script>
+</article><article class="chapter" id="calculator" aria-label="利润计算器"><div class="phead"><div class="arc" style="position:absolute;left:50%;transform:translateX(-50%);width:min(900px,140vw);aspect-ratio:2/1;border-radius:50% 50% 0 0/100% 100% 0 0;background:linear-gradient(180deg,var(--sky),rgba(232,239,253,0) 80%)"></div><div class="in"><div class="badge" style="position:relative;background:#fff">06 · 利润计算器</div><h1 class="serif">这一票<em>能回多少钱？</em></h1><p>输入售价、件数、成本和包装尺寸，按最新口径逐项算出跨境段、本地段费用和你的到手利润。</p></div></div>
+<section style="padding-top:20px"><div class="in"><div class="calc">
+<div class="card form">
+<div aria-label="示例商品" class="presets" role="group"><button aria-pressed="true" class="pre" data-p="pen">90 支彩笔套装</button><button class="pre" data-p="stand">手机支架</button><button class="pre" data-p="box">收纳箱</button></div>
+<div class="blk"><h3>价格与数量</h3><div class="fields"><label class="f" for="price">前台售价（含 VAT）<div class="ipt"><input id="price" inputmode="decimal" min="0" step="any" type="number"/><span>元/件</span></div></label><label class="f" for="qty">本票件数<div class="ipt"><input id="qty" inputmode="decimal" min="0" step="any" type="number"/><span>件</span></div></label><label class="f" for="cost">采购成本<div class="ipt"><input id="cost" inputmode="decimal" min="0" step="any" type="number"/><span>元/件</span></div></label><label class="f" for="first">国内首公里<div class="ipt"><input id="first" inputmode="decimal" min="0" step="any" type="number"/><span>元/票</span></div></label></div></div>
+<div class="blk"><h3>单件销售包装</h3><div class="fields t3"><label class="f" for="L">长<div class="ipt"><input id="L" inputmode="decimal" min="0" step="any" type="number"/><span>cm</span></div></label><label class="f" for="W">宽<div class="ipt"><input id="W" inputmode="decimal" min="0" step="any" type="number"/><span>cm</span></div></label><label class="f" for="H">高<div class="ipt"><input id="H" inputmode="decimal" min="0" step="any" type="number"/><span>cm</span></div></label></div><div class="fields" style="margin-top:12px"><label class="f" for="kg">毛重<div class="ipt"><input id="kg" inputmode="decimal" min="0" step="any" type="number"/><span>kg</span></div></label><label class="f" for="duty">关税率<div class="ipt"><input id="duty" inputmode="decimal" min="0" step="any" type="number"/><span>%</span></div></label></div></div>
+<div class="blk"><h3>本地段估算</h3><p style="margin:-6px 0 12px;font-size:13px;color:var(--muted)">标「估」的费率 Ozon 尚未公布统一数字。收单费由处理买家付款的银行定价，退货、取消、拒收时会退回。填后台给的每件回款可校准全部结果。</p><div class="fields"><label class="f" for="rub">汇率<span class="est">估</span><div class="ipt"><input id="rub" inputmode="decimal" min="0" step="any" type="number"/><span>元/卢布</span></div></label><label class="f" for="volfee">体积附加费<span class="est">估</span><div class="ipt"><input id="volfee" inputmode="decimal" min="0" step="any" type="number"/><span>卢布/升</span></div></label><label class="f" for="acq">收单费<span class="est">估</span><div class="ipt"><input id="acq" inputmode="decimal" min="0" step="any" type="number"/><span>%</span></div></label><label class="f" for="ret">退货率<span class="est">估</span><div class="ipt"><input id="ret" inputmode="decimal" min="0" step="any" type="number"/><span>%</span></div></label></div><div style="margin-top:12px"><label class="f" for="calib">后台预估回款（可选）<div class="ipt"><input id="calib" inputmode="decimal" min="0" placeholder="用后台数字校准" step="any" type="number"/><span>元/件</span></div></label></div></div>
+</div>
+<div class="res">
+<div class="head"><div class="k">整票净利润</div><div class="big num" id="profit">—</div><div id="note" style="font-size:13px;color:var(--muted)">—</div>
+<div class="row"><div><small>每件可提现</small><b class="num" id="perPay">—</b></div><div><small>每件利润</small><b class="num" id="perProfit">—</b></div><div><small>利润率</small><b class="num" id="margin">—</b></div></div></div>
+<div class="card" style="margin-top:14px"><h3>销售额去了哪里</h3><div class="bar" id="bar"></div>
+<div class="legend"><span style="--c:#2b5fd9">跨境段</span><span style="--c:#a0a6b1">VAT</span><span style="--c:#8fb4f5">本地段</span><span style="--c:#dfe3ea">采购+首公里</span><span style="--c:#2f7a52">净利润</span></div>
+<table class="fee" id="fee"></table><div class="checks" id="checks"></div></div>
+</div></div></div></section>
+<script>
+const $=id=>document.getElementById(id);
+const P={pen:{price:199,qty:600,cost:38,first:400,L:30,W:22,H:4,kg:.9,duty:10},stand:{price:59,qty:1500,cost:9,first:300,L:15,W:9,H:4,kg:.15,duty:8},box:{price:149,qty:600,cost:32,first:600,L:40,W:30,H:22,kg:1.6,duty:10}};
+const D={rub:.088,volfee:2,acq:1.5,ret:5};for(const i in D)$(i).value=D[i];
+const v=id=>Math.max(0,parseFloat($(id).value)||0);
+const y=(n,d=0)=>(n<0?"−":"")+"¥"+Math.abs(n).toLocaleString("zh-CN",{minimumFractionDigits:d,maximumFractionDigits:d});
+function load(k){const p=P[k];for(const i in p)$(i).value=p[i];document.querySelectorAll(".pre").forEach(c=>c.setAttribute("aria-pressed",c.dataset.p===k));run()}
+function run(){
+ const p=v("price"),n=Math.max(1,v("qty")),c=v("cost"),fk=v("first"),L=v("L"),W=v("W"),H=v("H"),kg=v("kg"),dr=v("duty")/100,rub=v("rub"),vf=v("volfee"),acq=v("acq")/100,ret=v("ret")/100;
+ const lit=L*W*H/1000,S=p*n,vat=S*22/122,com=S*.08,ship=lit*1.79*n,clr=1600,wh=.98*n,lastU=(46+vf*lit+25)*rub,b2c=lastU*n,acqF=S*acq,retF=ret*n*lastU*2;
+ let pay=S*.5,ins=0,dut=0;for(let k=0;k<6;k++){ins=pay*.0009;dut=pay*dr;pay=S-vat-com-ship-clr-wh-ins-dut-b2c-acqF-retF}
+ const b2b=ship+clr+wh+ins+dut,local=com+b2c+acqF+retF,cal=v("calib"),use=cal>0?cal*n:pay,profit=use-c*n-fk,stock=S-b2b;
+ $("profit").textContent=y(profit);
+ $("note").textContent=cal>0?`按后台回款 ${y(cal,2)}/件 校准，估算为 ${y(pay/n,2)}/件`:`${n} 件 × ${y(p)}，销售额 ${y(S)}`;
+ $("perPay").textContent=y(use/n,2);$("perProfit").textContent=y(profit/n,2);$("margin").textContent=S?(profit/S*100).toFixed(1)+"%":"—";
+ const sg=[[b2b,"#2b5fd9"],[vat,"#a0a6b1"],[local,"#8fb4f5"],[c*n+fk,"#dfe3ea"],[Math.max(0,profit),"#2f7a52"]],t=sg.reduce((a,s)=>a+s[0],0)||1;
+ $("bar").innerHTML=sg.map(s=>`<i style="width:${s[0]/t*100}%;background:${s[1]}"></i>`).join("");
+ const r=(a,b,m="")=>`<tr><td>${a}${m?` <small>${m}</small>`:""}</td><td>${b}</td></tr>`;
+ $("fee").innerHTML=r("销售额",y(S))+`<tr class="h"><td colspan="2">跨境 B2B 段</td></tr>`+r("国际运费",y(-ship),`${lit.toFixed(2)} 升 × 1.79 × ${n}`)+r("清关",y(-clr),"每票固定")+r("仓库操作",y(-wh),"0.98 元/件")+r("关税",y(-dut),v("duty")+"%")+r("货物保险",y(-ins,2),"0.09%")+`<tr class="h"><td colspan="2">本地 B2C 段</td></tr>`+r("销售 VAT",y(-vat),"22/122")+r("佣金",y(-com),"8%")+r("物流处理 + 末端配送",y(-b2c),"估")+r("收单费",y(-acqF),"估 · 银行定价")+r("退货处理",y(-retF),"估")+r("仓储",y(0),"1 年免仓租")+`<tr class="t"><td>平台回款（估）</td><td>${y(pay)}</td></tr>`+r("采购成本 + 首公里",y(-(c*n+fk)))+`<tr class="t"><td>净利润</td><td>${y(profit)}</td></tr>`;
+ const sz=[L,W,H].sort((a,b)=>b-a),okSz=sz[0]<=120&&sz[1]<=60&&sz[2]<=50&&kg<=25,sh=clr/S*100,ck=[
+ [stock>=80000,stock>=80000?`备货值 ${y(stock)}，达到 8 万元门槛`:`备货值 ${y(stock)}，还差 ${y(80000-stock)}，约再加 ${Math.ceil((80000-stock)/Math.max(1,stock/n))} 件`],
+ [okSz,okSz?"单件包装在 120×60×50 cm、25 kg 以内":"单件包装超出投递点上限，先和经理确认"],
+ [sh<=5,`清关费占销售额 ${sh.toFixed(1)}%${sh<=5?"，已摊薄":"，偏高，建议多拼 SKU"}`],
+ [profit>0,profit>0?"这票货赚钱":"这票货亏损，先调价或换品"]];
+ $("checks").innerHTML=ck.map(([o,tx])=>`<div class="chk${o?"":" bad"}"><b>${o?"✓":"!"}</b><span>${tx}</span></div>`).join("");
+}
+document.querySelectorAll(".pre").forEach(b=>b.addEventListener("click",()=>load(b.dataset.p)));
+document.querySelectorAll(".form input").forEach(i=>i.addEventListener("input",run));
+load("pen");
+</script>
+</article><article class="chapter" id="payout" aria-label="回款与门槛"><div class="phead"><div class="arc" style="position:absolute;left:50%;transform:translateX(-50%);width:min(900px,140vw);aspect-ratio:2/1;border-radius:50% 50% 0 0/100% 100% 0 0;background:linear-gradient(180deg,var(--sky),rgba(232,239,253,0) 80%)"></div><div class="in"><div class="badge" style="position:relative;background:#fff">07 · 回款与门槛</div><h1 class="serif">卖高了不多拿，<em>卖低了按实价</em></h1><p>每周回款一次，按实际卖出的件数结算，不用等整批卖完。</p></div></div>
+<section style="padding-top:20px"><div class="in">
+<div class="split">
+<div class="card"><h3>三条规则</h3><table class="fee"><tr><td>平台回款</td><td>成交价 − 平台费用</td></tr><tr><td>不可提现</td><td>超出确认价的部分</td></tr><tr class="t"><td>可提现</td><td>回款 − 不可提现</td></tr></table><p style="margin-top:12px">不可提现的部分可用于广告投放和折扣活动，直接抵扣。</p></div>
+<div class="card panel-sky"><h3>举例：确认价 100 元，平台费用 50 元</h3>
+<div class="tbl" style="margin-top:12px"><table style="min-width:420px"><thead><tr><th>场景</th><th>成交价</th><th>回款</th><th>不可提现</th><th class="og">可提现</th></tr></thead><tbody>
+<tr><th>等于确认价</th><td class="num">100</td><td class="num">50</td><td class="num">0</td><td class="og num">50</td></tr>
+<tr><th>高于确认价</th><td class="num">110</td><td class="num">60</td><td class="num">10</td><td class="og num">50</td></tr>
+<tr><th>低于确认价</th><td class="num">90</td><td class="num">40</td><td class="num">0</td><td class="og num">40</td></tr></tbody></table></div></div>
+</div>
+<div class="grid g3" style="margin-top:16px">
+<div class="card"><h3>押金</h3><p>10 月起取消预付押金，费用改为在回款时抵扣。</p></div>
+<div class="card"><h3>退货</h3><p>买家拒收或退货后，Ozon 验货并二次上架；退货费用从回款中扣除。</p></div>
+<div class="card"><h3>定价</h3><p>由你决定，提交供货单前后都能改价。</p></div>
+</div></div></section>
+<section class="soft"><div class="in">
+<div class="eyebrow">发货前</div><h2 class="h2">先过这三关。</h2>
+<div class="grid g3" style="margin-top:28px">
+<div class="card" style="background:var(--ink);color:#fff;border:0"><p style="color:#c9cdd4">备货值</p><div class="big num">≥ 8 万元</div><p style="color:#c9cdd4">售价 × 件数，减去前期物流等费用</p></div>
+<div class="card"><h3>单件包装上限</h3><ul class="clean"><li>高 50 cm、长 120 cm、宽 60 cm</li><li>重量 25 kg</li><li>按销售包装填，不按外箱</li></ul></div>
+<div class="card"><h3>合规预审</h3><ul class="clean"><li>先审 SKU，再备货</li><li>EAC 需寄样实测，FGIS 可查</li><li>品牌商品需俄罗斯销售授权</li></ul></div>
+</div></div></section>
+<section><div class="in">
+<div class="eyebrow">常见问题</div><h2 class="h2">卖家最常问的，<span>都在这里。</span></h2>
+<div class="grid g2" style="margin-top:28px">
+<div class="card"><h3>需要俄罗斯公司吗？</h3><p>不需要，由 Ozon 提供俄罗斯主体。</p></div>
+<div class="card"><h3>要交押金吗？</h3><p>10 月起取消预付押金，费用在回款时抵扣。</p></div>
+<div class="card"><h3>谁决定要不要 EAC？</h3><p>开通后提交信息和照片，由平台审核团队和清关行决定。</p></div>
+<div class="card"><h3>定价权在谁？</h3><p>在你，各阶段都可以自主定价。</p></div>
+<div class="card"><h3>要处理俄罗斯税务吗？</h3><p>不需要，由 Ozon 体系处理。</p></div>
+<div class="card"><h3>不在禁止清单就能发吗？</h3><p>不一定，仍以 SKU 审核结果为准。</p></div>
+<div class="card"><h3>中国的证书能用吗？</h3><p>不一定，要单独核验产品范围、型号和检测链路。</p></div>
+<div class="card"><h3>货卖不掉怎么办？</h3><p>可以继续销售，或按项目规则后续处理。</p></div>
+</div></div></section>
+</article></main><footer><div class="in"><div><a class="brand" href="#overview"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.6" viewbox="0 0 24 24"><path d="M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9 4.9 19.1"></path></svg>OGR 卖家指南</a><p style="margin:8px 0 0">按 2026 年 10 月 Ozon 招商会议口径整理，仅供参考，以 Ozon 经理确认为准。</p></div><nav><a href="#overview">首页</a><a href="#model">认识 OGR</a><a href="#compare">模式对比</a><a href="#categories">品类与开通</a><a href="#compliance">合规与认证</a><a href="#commission">三种模式佣金</a><a href="#calculator">利润计算器</a><a href="#payout">回款与门槛</a></nav></div></footer><script src="motion.js?v=complete-1" defer></script><script src="guide.js?v=complete-1" defer></script></body></html>
