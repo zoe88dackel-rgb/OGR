@@ -386,3 +386,12 @@ details.full summary::after{content:" ＋"}details.full[open] summary::after{con
 
 button.ico{border:0;padding:0;cursor:pointer;font:inherit;line-height:1;touch-action:manipulation}
 button.ico:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+
+/* A readable chapter-by-chapter guide; proximity keeps long content scrollable. */
+html:has(.guide-page){scroll-behavior:smooth;scroll-snap-type:y proximity;scroll-padding-top:100px}
+.guide-section{scroll-snap-align:start;scroll-margin-top:100px;min-height:min(70vh,720px);display:flex;align-items:center}
+.guide-section>.in{width:100%}.ihero.guide-section{display:block}
+.guide-intro{max-width:720px;margin:24px 0 0;color:var(--muted);font-size:18px;line-height:1.85}
+.guide-cards{margin-top:36px}.guide-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.guide-note{color:var(--muted);font-size:13px;margin-top:44px;max-width:680px}
+@media(max-width:700px){html:has(.guide-page){scroll-padding-top:120px}.guide-section{min-height:0;scroll-margin-top:120px}.guide-intro{font-size:16px}.guide-cards{margin-top:24px}}
+@media(prefers-reduced-motion:reduce){html:has(.guide-page){scroll-behavior:auto;scroll-snap-type:none}}
