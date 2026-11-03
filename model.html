@@ -1,0 +1,93 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>认识 OGR</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Onest:wght@400;500;600;800&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+<header class="site"><div class="in"><a class="brand" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9 4.9 19.1"/></svg>OGR 卖家指南</a><nav class="menu"><a href="model.html" aria-current="page">认识 OGR</a><a href="compare.html">模式对比</a><a href="categories.html">品类与开通</a><a href="compliance.html">合规与认证</a><a href="commission.html">三种模式佣金</a><a href="calculator.html">利润计算器</a><a href="payout.html">回款与门槛</a></nav><a class="btn" href="calculator.html">算一算利润</a></div>
+<div class="in mnav"><a href="model.html" aria-current="page">认识 OGR</a><a href="compare.html">模式对比</a><a href="categories.html">品类与开通</a><a href="compliance.html">合规与认证</a><a href="commission.html">三种模式佣金</a><a href="calculator.html">利润计算器</a><a href="payout.html">回款与门槛</a></div></header>
+<main><div class="phead"><div class="arc" style="position:absolute;left:50%;transform:translateX(-50%);width:min(900px,140vw);aspect-ratio:2/1;border-radius:50% 50% 0 0/100% 100% 0 0;background:linear-gradient(180deg,var(--sky),rgba(232,239,253,0) 80%)"></div><div class="in"><div class="badge" style="position:relative;background:#fff">认识 OGR</div><h1 class="serif">你管产品，<em>Ozon 管俄罗斯</em></h1><p>OGR 是中国主体运营、俄罗斯本土备货履约的模式。Ozon 承担分销商角色，管理俄罗斯端的进口与销售。</p></div></div>
+<section style="padding-top:20px"><div class="in">
+<div class="eyebrow">跟着一箱货走一遍</div><h2 class="h2">从佛山到莫斯科买家手里，<span>往下滑，看货和钱怎么走。</span></h2>
+<div class="jr">
+  <div class="jr-stage">
+    <div class="jr-map">
+      <svg viewBox="0 0 600 340" aria-hidden="true">
+        <defs><linearGradient id="jrsea" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e9f0ff"/><stop offset="1" stop-color="#eef8e0"/></linearGradient></defs>
+        <rect x="0" y="0" width="600" height="340" rx="24" fill="url(#jrsea)"/>
+        <text x="40" y="44" class="jr-zone">中国</text><text x="430" y="44" class="jr-zone">俄罗斯</text>
+        <line x1="300" y1="30" x2="300" y2="310" stroke="#c9d3e6" stroke-width="2" stroke-dasharray="6 8"/>
+        <text x="308" y="300" class="jr-small">海关</text>
+        <path id="jrpath" d="M70 250 C 130 250 150 200 200 190 S 280 120 330 130 S 420 210 470 180 S 530 90 540 80" fill="none" stroke="#c9d3e6" stroke-width="5" stroke-linecap="round"/>
+        <path id="jrdone" d="M70 250 C 130 250 150 200 200 190 S 280 120 330 130 S 420 210 470 180 S 530 90 540 80" fill="none" stroke="#3a78f5" stroke-width="5" stroke-linecap="round"/>
+        <g class="jr-nodes"></g>
+        <g id="jrbox"><rect x="-15" y="-15" width="30" height="30" rx="7" fill="#e8692a"/><path d="M-15 -4 H15 M0 -15 V15" stroke="#fff" stroke-width="2" opacity=".75"/></g>
+      </svg>
+    </div>
+    <div class="jr-hud">
+      <div><small>现在在</small><b id="jrWhere">你的工厂</b></div>
+      <div><small>谁在管</small><b id="jrWho" class="who you">你</b></div>
+      <div><small>累计用时</small><b id="jrDays" class="num">第 0 天</b></div>
+    </div>
+  </div>
+  <ol class="jr-steps">
+    <li data-p="0" data-where="你的工厂" data-who="you" data-days="第 0 天"><span class="who you">你</span><h3>建供货单，拍照预审</h3><p>在 OGR 后台建一张供货单，只填制造商和地址。每个 SKU 拍 12 张以上的实拍图上传，平台判断要不要 EAC。</p><dl><dt>花钱</dt><dd>0 元，不用押金</dd><dt>等多久</dt><dd>约 1 周出审核结果</dd></dl></li>
+    <li data-p="0.2" data-where="佛山集货仓" data-who="you" data-days="第 8 天"><span class="who you">你</span><h3>送货到佛山</h3><p>审核通过后，你自己安排国内物流，把货送到南海陆港仓。单件包装不超过 120×60×50 cm、25 kg。这是你最后一次碰这批货。</p><dl><dt>花钱</dt><dd>国内首公里，你自己付</dd><dt>门槛</dt><dd>备货值 8 万元以上</dd></dl></li>
+    <li data-p="0.47" data-where="中俄边境" data-who="oz" data-days="约第 12 天"><span class="who oz">Ozon 伙伴</span><h3>出口报关，跨境运输</h3><p>从这里开始交给 Ozon 的物流伙伴：中国出口报关、国际运输，你不用找货代，也不用跑单证。</p><dl><dt>费用</dt><dd>1.79 元/升 · 1600 元/票 · 0.98 元/件 · 保险 0.09%</dd><dt>什么时候扣</dt><dd>卖出后从回款里扣</dd></dl></li>
+    <li data-p="0.68" data-where="俄罗斯本地仓" data-who="oz" data-days="约第 25 天"><span class="who oz">Ozon</span><h3>俄罗斯清关，入本地仓</h3><p>Ozon 用自己的俄罗斯主体清关、缴关税和进口 VAT，货进 OGR 本地仓上架。你在后台能看到库存。</p><dl><dt>费用</dt><dd>关税 5–15%，按 HS Code</dd><dt>仓储</dt><dd>1 年免仓租</dd></dl></li>
+    <li data-p="0.9" data-where="莫斯科买家家门口" data-who="oz" data-days="下单后 1–2 天"><span class="who oz">Ozon</span><h3>买家下单，1–2 天送到</h3><p>商品显示本地送达时间，带类自营徽标，还能继承跨境链接的评价和销量。拣货、打包、配送、客服、退货都由 Ozon 做。</p><dl><dt>费用</dt><dd>佣金 8% · 销售 VAT 22%（含在售价里）· 配送费</dd></dl></li>
+    <li data-p="1" data-where="你的连连账户" data-who="back" data-days="每周一次"><span class="who back">回到你</span><h3>每周回款</h3><p>按实际卖出的件数结算，不用等整批卖完。可提现 = 供货单确认价 − 平台费用；卖得比确认价高，多出的部分只能抵广告。</p><dl><dt>到手</dt><dd>见下面「一件 120 元的货，钱去哪了」</dd></dl></li>
+  </ol>
+</div>
+</div></section>
+
+<section class="soft"><div class="in">
+<div class="eyebrow">钱怎么分</div><h2 class="h2">一件 120 元的货，<span>钱去哪了？</span></h2>
+<p style="color:var(--muted);max-width:640px;margin-top:16px">示例：售价 120 元（含 VAT），1 升包装，一票 600 件，关税按 10%。本地段费率是估算，实际以后台为准。</p>
+<div class="mf" id="mf">
+  <div class="mf-bar" role="img" aria-label="120 元的分配"></div>
+  <ul class="mf-legend"></ul>
+</div>
+</div></section>
+<script src="journey.js" defer></script>
+<section class="soft"><div class="in">
+<div class="eyebrow">谁负责什么</div><h2 class="h2">分工很清楚，<span>你只管货。</span></h2>
+<div class="split" style="margin-top:28px">
+<div class="card"><h3>你负责</h3><ul class="clean"><li>选品</li><li>备货及文件</li><li>定价与促销（各阶段都能自主改价）</li><li>补货</li><li>国内首公里，把货送到佛山</li></ul></div>
+<div class="card panel-sky"><h3>Ozon 及合作伙伴负责</h3><ul class="clean"><li>出口报关、国际运输、俄罗斯清关</li><li>本地仓储、拣货、打包、配送</li><li>本地税务</li><li>销售、回款与库存跟踪</li><li>客服、退货验货与二次上架</li></ul></div>
+</div>
+<div class="card" style="margin-top:16px"><h3>佛山集货点</h3><p>广东省佛山市南海区狮山镇石澎大道 1 号三楼，运盟集团华南集运中心 15 号门（南海陆港仓）。电话 18028135969 / 18620009797。</p></div>
+</div></section>
+<section><div class="in">
+<div class="eyebrow">买家看到什么</div><h2 class="h2">时效变短，<span>转化跟着上来。</span></h2>
+<div class="grid g4" style="margin-top:28px">
+<div class="card"><h3>类自营徽标</h3><p>享受平台优先级的流量权重</p></div>
+<div class="card"><h3>OGR 集合店铺</h3><p>搜索页和详情页显示本地送达时间</p></div>
+<div class="card"><h3>克隆评价和销量</h3><p>新链接继承已有评价，不用冷启动</p></div>
+<div class="card"><h3>等待成本更低</h3><p>1–2 天到货，买家更愿意下单</p></div>
+</div>
+<div class="card" style="margin-top:16px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:center" id="case">
+<div><h3>案例：90 支彩笔套装</h3><p>同一款商品，跨境链接 7/1–7/31 的 GMV 是 5.8 万；OGR 链接 7/10–7/31 的 GMV 是 43 万，约 7.4 倍。</p><p style="margin-top:8px;font-size:12px;color:var(--faint)">两段观察窗口不同，属方向性证据，不是对照实验。</p></div>
+<div style="display:flex;align-items:flex-end;gap:24px;height:170px">
+<div style="flex:1;text-align:center;font-size:12px;color:var(--muted)"><b style="color:var(--ink);font-size:16px">5.8 万</b><div style="height:22px;background:var(--line);border-radius:10px 10px 4px 4px;margin:6px 0"></div>跨境链接</div>
+<div style="flex:1;text-align:center;font-size:12px;color:var(--muted)"><b style="color:var(--ink);font-size:16px">43 万</b><div style="height:130px;background:var(--blue);border-radius:10px 10px 4px 4px;margin:6px 0"></div>OGR 上线后</div>
+</div></div>
+<style>@media (max-width:700px){#case{grid-template-columns:1fr!important}}</style>
+</div></section>
+<section class="soft"><div class="in">
+<div class="eyebrow">适合谁</div><h2 class="h2">这几类卖家，<span>最适合先上 OGR。</span></h2>
+<div class="grid g4" style="margin-top:28px">
+<div class="card"><h3>已在做 rFBS</h3><p>已有跨境店链接，可直接克隆评价和销量</p></div>
+<div class="card"><h3>想提升转化</h3><p>同款商品 1–2 天到货，搜索和详情页更有优势</p></div>
+<div class="card"><h3>货源稳定</h3><p>能批量备货、持续补货，周转跟得上</p></div>
+<div class="card"><h3>想测本土仓</h3><p>不想注册俄罗斯公司，先用低门槛方式试水</p></div>
+</div>
+<div class="eyebrow" style="margin-top:48px">启动路径</div><h2 class="h2">分三个阶段，<span>边跑边放大。</span></h2>
+<div class="grid g3" style="margin-top:28px">
+<div class="card step"><div class="n">01</div><h3 style="margin-top:12px">小件试水</h3><p>手机支架、家居小件等免认证产品，跑通清关、销量和回款。</p></div>
+<div class="card step"><div class="n">02</div><h3 style="margin-top:12px">扩大 SKU</h3><p>观察周转率、退货率和利润率，留下跑得动的款。</p></div>
+<div class="card step"><div class="n">03</div><h3 style="margin-top:12px">进高销量品类</h3><p>办好 EAC 和诚信标签，进入服饰、消费电子等品类。</p></div>
+</div></div></section>
+<div class="in next"><div><div class="eyebrow">下一步</div><div class="h2">和跨境店、本土店比，OGR 好在哪</div></div><a class="btn" href="compare.html">看模式对比 →</a></div></main>
+<footer><div class="in"><div><a class="brand" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9 4.9 19.1"/></svg>OGR 卖家指南</a><p style="margin:8px 0 0">按 2026 年 10 月 Ozon 招商会议口径整理，仅供参考，以 Ozon 经理确认为准。</p></div><nav><a href="index.html">首页</a><a href="model.html">认识 OGR</a><a href="compare.html">模式对比</a><a href="categories.html">品类与开通</a><a href="compliance.html">合规与认证</a><a href="commission.html">三种模式佣金</a><a href="calculator.html">利润计算器</a><a href="payout.html">回款与门槛</a></nav></div></footer>
+<script src="motion.js" defer></script>
