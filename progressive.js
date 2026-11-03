@@ -50,8 +50,16 @@
   function layout(){
     resizeQueued=false;
     if(story){
+      // Keep the same point in the story when a monitor, zoom or orientation changes.
+      const previous=story.enabled&&Number.isFinite(story.position)?{
+        progress:(story.position-story.start)/story.distance,
+        beyond:story.position-story.start-story.distance-story.height
+      }:null;
       const top=header?Math.ceil(header.getBoundingClientRect().height):0;
-      const available=innerHeight-top;
+      // The source UI has a bounded reading width. Its animation frame must also
+      // be bounded, rather than stretching into thousands of empty pixels at 4K.
+      const available=Math.min(innerHeight-top,960);
+      story.height=available;
       story.wrapper.style.setProperty('--story-top',top+'px');
       story.wrapper.style.setProperty('--story-height',available+'px');
       // Measure the two original content groups independently at the real width.
@@ -64,6 +72,7 @@
       story.distance=available*(innerWidth<=700?1.65:2.15);
       story.wrapper.style.height=story.enabled?(available+story.distance)+'px':'auto';
       story.top=top;
+      story.start=story.wrapper.getBoundingClientRect().top+scrollY-top;
       const pinRect=story.pin.getBoundingClientRect(),heroRect=hero.getBoundingClientRect();
       story.items.forEach(({button},i)=>{
         const r=button.getBoundingClientRect();
@@ -72,6 +81,14 @@
         story.items[i].to={x:mobile?innerWidth*(i%2? .73:.27):heroRect.left-pinRect.left+heroRect.width*(i+.5)/4,y:available*(mobile?(i<2?.34:.63):.48)};
       });
       if(!story.enabled){story.intro.inert=false;story.phrases.forEach(el=>el.style.removeProperty('opacity'));story.items.forEach(({button})=>button.style.removeProperty('visibility'));}
+      if(previous&&story.enabled){
+        if(previous.progress>=0&&previous.progress<=1){
+          scrollTo({top:story.start+previous.progress*story.distance,behavior:'instant'});
+        }else if(previous.progress>1){
+          scrollTo({top:story.start+story.distance+story.height+previous.beyond,behavior:'instant'});
+        }
+      }
+      story.position=scrollY;
     }
     requestUpdate();
   }
@@ -82,6 +99,7 @@
     if(story&&story.enabled){
       const r=story.wrapper.getBoundingClientRect();
       stage=clamp((story.top-r.top)/story.distance);
+      story.position=scrollY;
     }
     const reveal=[];
     groups.forEach((members,anchor)=>{
