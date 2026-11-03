@@ -187,7 +187,7 @@ footer{background:#fff;border:0}
 .ipt{background:var(--bg);border-color:transparent}
 .next .h2{font-weight:800}
 
-/* v3b: restrained — neutral cards, blue for numbers, lime only for OGR highlight */
+/* v3b: restrained — neutral cards, blue for numbers, lime only for Ozon 本土仓模式 highlight */
 .grid>.card .n,.grid>.card .big{color:var(--blue)}
 .step .tag{background:var(--c1s,#e3ecff);color:var(--blue)}
 .chips span{background:#fff;color:var(--ink)}
