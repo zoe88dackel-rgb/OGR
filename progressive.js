@@ -142,8 +142,7 @@
         card.style.opacity=.1+p*.9;
       });
       story.phrases.forEach((phrase,i)=>{
-        const p=smooth((stage-(i*.055))/.13);
-        phrase.style.opacity=stage<.35?String(.42+.58*p):'1';
+        phrase.style.opacity='1';
       });
       story.items.forEach(({item,button,label,from,to},i)=>{
         if(!from)return;
