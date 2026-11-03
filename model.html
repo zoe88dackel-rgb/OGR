@@ -3,7 +3,7 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Onest:wght@400;500;600;800&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;500&display=swap">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=flow-1">
 <header class="site"><div class="in"><a class="brand" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9 4.9 19.1"/></svg>OGR 卖家指南</a><nav class="menu"><a href="model.html" aria-current="page">认识 OGR</a><a href="compare.html">模式对比</a><a href="categories.html">品类与开通</a><a href="compliance.html">合规与认证</a><a href="commission.html">三种模式佣金</a><a href="calculator.html">利润计算器</a><a href="payout.html">回款与门槛</a></nav><a class="btn" href="calculator.html">算一算利润</a></div>
 <div class="in mnav"><a href="model.html" aria-current="page">认识 OGR</a><a href="compare.html">模式对比</a><a href="categories.html">品类与开通</a><a href="compliance.html">合规与认证</a><a href="commission.html">三种模式佣金</a><a href="calculator.html">利润计算器</a><a href="payout.html">回款与门槛</a></div></header>
 <main><div class="phead"><div class="arc" style="position:absolute;left:50%;transform:translateX(-50%);width:min(900px,140vw);aspect-ratio:2/1;border-radius:50% 50% 0 0/100% 100% 0 0;background:linear-gradient(180deg,var(--sky),rgba(232,239,253,0) 80%)"></div><div class="in"><div class="badge" style="position:relative;background:#fff">认识 OGR</div><h1 class="serif">你管产品，<em>Ozon 管俄罗斯</em></h1><p>OGR 是中国主体运营、俄罗斯本土备货履约的模式。Ozon 承担分销商角色，管理俄罗斯端的进口与销售。</p></div></div>
@@ -12,17 +12,20 @@
 <div class="jr">
   <div class="jr-stage">
     <div class="jr-map">
-      <svg viewBox="0 0 600 340" aria-hidden="true">
-        <defs><linearGradient id="jrsea" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e9f0ff"/><stop offset="1" stop-color="#eef8e0"/></linearGradient></defs>
-        <rect x="0" y="0" width="600" height="340" rx="24" fill="url(#jrsea)"/>
-        <text x="40" y="44" class="jr-zone">中国</text><text x="430" y="44" class="jr-zone">俄罗斯</text>
-        <line x1="300" y1="30" x2="300" y2="310" stroke="#c9d3e6" stroke-width="2" stroke-dasharray="6 8"/>
-        <text x="308" y="300" class="jr-small">海关</text>
-        <path id="jrpath" d="M70 250 C 130 250 150 200 200 190 S 280 120 330 130 S 420 210 470 180 S 530 90 540 80" fill="none" stroke="#c9d3e6" stroke-width="5" stroke-linecap="round"/>
-        <path id="jrdone" d="M70 250 C 130 250 150 200 200 190 S 280 120 330 130 S 420 210 470 180 S 530 90 540 80" fill="none" stroke="#3a78f5" stroke-width="5" stroke-linecap="round"/>
-        <g class="jr-nodes"></g>
-        <g id="jrbox"><rect x="-15" y="-15" width="30" height="30" rx="7" fill="#e8692a"/><path d="M-15 -4 H15 M0 -15 V15" stroke="#fff" stroke-width="2" opacity=".75"/></g>
-      </svg>
+      <svg viewBox="0 0 600 340" role="group" aria-label="工厂、佛山、边境、本地仓、买家、回款流程">
+<rect x="1" y="1" width="598" height="338" rx="24" fill="#fff" stroke="#e6e7eb"/>
+<rect x="26" y="22" width="78" height="30" rx="15" fill="#e3ecff"/>
+<text x="65" y="43" text-anchor="middle" class="jr-flow-country">中国</text>
+<path d="M116 37H170m-5-5 5 5-5 5" fill="none" stroke="#a5a8b0" stroke-width="1.5"/>
+<text x="190" y="43" class="jr-flow-country">俄罗斯</text>
+<text id="jrCounter" x="566" y="43" text-anchor="end" class="jr-flow-count">01 / 06</text>
+<path id="jrpath" d="M70 104H520V244H70" fill="none" stroke="#e6eaf1" stroke-width="3" stroke-linejoin="round"/>
+<path id="jrdone" d="M70 104H520V244H70" fill="none" stroke="#3a78f5" stroke-width="3" stroke-linejoin="round"/>
+<path d="m174 99 5 5-5 5m225-10 5 5-5 5m111 62 5 5-5 5m-106 63-5 5 5 5m-225-10-5 5 5 5" fill="none" stroke="#aebacf" stroke-width="1.6"/>
+<g id="jrbox" pointer-events="none"><circle r="7" fill="#3a78f5" stroke="#fff" stroke-width="3"/></g>
+<g class="jr-nodes"></g>
+<text x="520" y="171" text-anchor="middle" class="jr-flow-customs">海关</text>
+</svg>
     </div>
     <div class="jr-hud">
       <div><small>现在在</small><b id="jrWhere">你的工厂</b></div>
@@ -49,7 +52,7 @@
   <ul class="mf-legend"></ul>
 </div>
 </div></section>
-<script src="journey.js" defer></script>
+<script src="journey.js?v=flow-1" defer></script>
 <section class="soft"><div class="in">
 <div class="eyebrow">谁负责什么</div><h2 class="h2">分工很清楚，<span>你只管货。</span></h2>
 <div class="split" style="margin-top:28px">
@@ -91,3 +94,4 @@
 <div class="in next"><div><div class="eyebrow">下一步</div><div class="h2">和跨境店、本土店比，OGR 好在哪</div></div><a class="btn" href="compare.html">看模式对比 →</a></div></main>
 <footer><div class="in"><div><a class="brand" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9 4.9 19.1"/></svg>OGR 卖家指南</a><p style="margin:8px 0 0">按 2026 年 10 月 Ozon 招商会议口径整理，仅供参考，以 Ozon 经理确认为准。</p></div><nav><a href="index.html">首页</a><a href="model.html">认识 OGR</a><a href="compare.html">模式对比</a><a href="categories.html">品类与开通</a><a href="compliance.html">合规与认证</a><a href="commission.html">三种模式佣金</a><a href="calculator.html">利润计算器</a><a href="payout.html">回款与门槛</a></nav></div></footer>
 <script src="motion.js" defer></script>
+<script src="scroll.js?v=flow-1" defer></script>
