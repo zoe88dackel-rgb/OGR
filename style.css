@@ -322,3 +322,24 @@ p[style*="font-size:13px"]{margin-top:20px!important;line-height:1.75}
   .jr-hud b{font-size:13px}
   .jr-hud b.who{font-size:12px;padding:2px 8px}
 }
+
+/* Commission tables: keep long lists contained and column labels visible. */
+.table-hint{font-size:13px;color:var(--muted);margin:18px 0 8px}
+.commission-table{max-width:100%;max-height:540px;overflow:auto;border:1px solid var(--line);border-radius:18px;background:#fff;overscroll-behavior:contain}
+.commission-table table{min-width:720px;table-layout:fixed}
+.commission-table th,.commission-table td{padding:13px 16px;vertical-align:middle;overflow-wrap:anywhere}
+.commission-table thead th{position:sticky;top:0;z-index:2;background:#f3f6fc;border-bottom:1px solid #d7deeb}
+.commission-table tbody tr:nth-child(even){background:#f8f9fc}
+.commission-table td small{display:block;color:var(--muted);font-size:12px;white-space:nowrap}
+.commission-table th:first-child{width:24%}
+@media(max-width:700px){
+  .in{padding-left:16px;padding-right:16px}
+  header.site .in{gap:8px;padding-block:10px}
+  header.site .in.mnav{padding-top:0;padding-bottom:10px}
+  .brand{font-size:14px;white-space:nowrap}
+  .phead{padding-block:48px 30px}
+  section{padding-block:48px}
+  .fields.t3{grid-template-columns:1fr 1fr}
+  .commission-table{max-height:460px;border-radius:14px}
+  .commission-table table{min-width:660px}
+}
