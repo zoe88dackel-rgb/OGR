@@ -12,6 +12,10 @@ OGR 中国卖家指南，纯静态网站，无需构建。
 2. 仓库 Settings → Pages → Source 选 `Deploy from a branch`，分支 `main`，目录 `/ (root)`
 3. 约 1 分钟后访问 `https://<用户名>.github.io/<仓库名>/`
 
-内容按 2026 年 10 月 Ozon 招商会议口径整理，仅供参考。
+主资料：
+- OGR 卖家手册（项目、费用、结算、退货、FAQ）：https://mcnr4asdohn7.feishu.cn/wiki/GHFMwMTVVi674Xk6fSncdgdinuc
+- OGR 发货全流程（操作八步与发货前自查）：https://mcnr4asdohn7.feishu.cn/wiki/HeK6wvasciYfHKkxq6pcEM03nAe
+
+主资料优先于旧会议、旧源码及其他补充材料。本次核对日期：2026-11-05；手册页面显示更新于 11 月 4 日。
 
 利润计算器独立于阅读章节，由顶部「算一算利润」进入。费用说明位于 finance.html。佣金原始表保留 108 行数据，提供目录切换、搜索和分页；手机改为按类目展示费率。

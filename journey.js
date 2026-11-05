@@ -3,7 +3,7 @@
   var done=document.getElementById('jrdone'), box=document.getElementById('jrbox'), L=path.getTotalLength();
   done.style.strokeDasharray=L; done.style.strokeDashoffset=L;
   var steps=[].slice.call(document.querySelectorAll('.jr-steps li'));
-  var names=['工厂','佛山','边境','本地仓','买家','回款'];
+  var names=['工厂','集货点','边境','本地仓','买家','回款'];
   var g=document.querySelector('.jr-nodes'), ns='http://www.w3.org/2000/svg';
   steps.forEach(function(s,i){var p=path.getPointAtLength(L*Math.min(+s.dataset.p,.999));
     var n=document.createElementNS(ns,'g');n.setAttribute('class','jr-node');
