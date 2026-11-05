@@ -26,4 +26,14 @@
   });
   compact.addEventListener('change', function () { close(false); });
   close(false);
+  const readingLinks=Array.from(document.querySelectorAll('.page-index a[href^="#"]'));
+  function markReadingLink(){
+    const active=readingLinks.find(link=>link.hash===location.hash)||readingLinks[0];
+    readingLinks.forEach(link=>{
+      if(link===active)link.setAttribute('aria-current','location');
+      else link.removeAttribute('aria-current');
+    });
+  }
+  addEventListener('hashchange',markReadingLink);
+  markReadingLink();
 })();
