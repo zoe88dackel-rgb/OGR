@@ -11,7 +11,7 @@
     [].forEach.call(cats.children,function(b,k){b.setAttribute('aria-pressed',k===ci)});
     [].forEach.call(pb.children,function(b,k){b.setAttribute('aria-pressed',k===pi)});
     var d=D[ci],p=prices[pi][0],y=p*R;
-    var rows=[['OGR',8,'#3a9a2f','全品类统一。物流、关税、VAT 另计，但不用俄罗斯公司，1–2 天送达'],
+    var rows=[['OGR',8,'#3a9a2f','开放类目统一。物流、关税、VAT 另计，但不用俄罗斯公司，1–2 天送达'],
               ['跨境 rFBS',rb(d[1],p),'#3a78f5','佣金低，但自己发国际物流，买家等 15–25 天'],
               ['本土 FBO',fb(d[2],p),'#e8692a','需要俄罗斯法人，自己负责进口和税务']];
     document.getElementById('cmpTitle').innerHTML='<b>'+d[0]+'</b>，售价 <b>'+p+' ₽</b>（约 '+Math.round(y)+' 元）';
