@@ -8,7 +8,7 @@
     if(target&&!document.getElementById(id)){
       var destination=new URL(target,location.href);
       destination.search=location.search;
-      destination.searchParams.set('v','guide-5');
+      destination.searchParams.set('v','ogr-name-1');
       destination.hash=location.hash;
       // Skip capturing the intermediate page during a bookmark redirect.
       addEventListener('pageswap',function(event){
