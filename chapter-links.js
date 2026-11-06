@@ -8,7 +8,7 @@
     if(target&&!document.getElementById(id)){
       var destination=new URL(target,location.href);
       destination.search=location.search;
-      destination.searchParams.set('v','motion-8');
+      destination.searchParams.set('v','reading-9');
       destination.hash=location.hash;
       // Skip capturing the intermediate page during a bookmark redirect.
       addEventListener('pageswap',function(event){

@@ -8,6 +8,12 @@
   const highlight=document.getElementById('paper-highlight');
   const detail=document.getElementById('paper-detail');
   const fieldBox=document.getElementById('paper-fields');
+  // Keep choosing, inspecting and reading together at both viewport sizes.
+  const explainer=fieldBox.parentElement;
+  const tools=document.createElement('div');tools.className='paper-tools';
+  tools.append(explainer.querySelector('.muted-note'),fieldBox);
+  reader.prepend(tools);reader.append(detail);explainer.remove();
+  reader.classList.add('paper-reader-linked');
   const stage=image.parentElement;
   const sheet=document.createElement('div');sheet.className='paper-sheet';
   stage.append(sheet);sheet.append(image,highlight);
@@ -37,6 +43,20 @@
     doc:{src:'assets/eac-doc-original.png',width:880,height:787,alt:'项目指南中的 DoC 声明教学样张，含中文字段标注',caption:'DoC：项目认证指南中的标注原图。示例产品是聚合物包装，不代表其他品类被覆盖。',url:'https://mcnr4asdohn7.feishu.cn/wiki/VZ6hwKx2fiRFkskrBdcchBUDnZn#TGwWdxgmKorieYxVbUWc6o6Nn1f'},
     coc:{src:'assets/eac-coc-official.png',width:1224,height:984,alt:'Ozon 官方文章中的 CoC 历史教学样张，纸面有效期至 2025 年 9 月 30 日',caption:'CoC：Ozon 官方文章中的历史样张。纸面有效期至 30.09.2025，已结束；仅用于字段识读，不可作为当前有效证书使用。',url:'https://seller.ozon.ru/media/instructions/sertifikat-sootvetstviya-na-produkciyu-chto-eto-i-zachem-on-nuzhen/'}
   };
+  const previewCache=new Map();
+  function preview(value){
+    if(!previewCache.has(value)){
+      const picture=new Image();picture.src=sources[value].src;
+      previewCache.set(value,picture);
+    }
+    return previewCache.get(value);
+  }
+  if('IntersectionObserver' in window){
+    const preload=new IntersectionObserver(entries=>{
+      if(entries.some(entry=>entry.isIntersecting)){preview('coc');preload.disconnect();}
+    },{rootMargin:'400px'});
+    preload.observe(reader);
+  }
   const buttons=fields.map(function(field,i){
     const button=document.createElement('button');button.type='button';button.textContent=(i+1)+'. '+field.label;
     button.setAttribute('aria-pressed','false');button.setAttribute('aria-controls','paper-detail');
@@ -62,10 +82,12 @@
   async function choose(value){
     const ticket=++request;
     tabs.forEach(tab=>{const active=tab.dataset.paper===value;tab.setAttribute('aria-selected',String(active));tab.tabIndex=active?0:-1;});
-    if(ready && value===type)return;
-    const nextImage=new Image();nextImage.src=sources[value].src;
+    if(ready && value===type){reader.removeAttribute('aria-busy');return;}
+    reader.setAttribute('aria-busy','true');
+    const nextImage=preview(value);
     try{await nextImage.decode();}catch(error){
       if(ticket===request) tabs.forEach(tab=>{const active=tab.dataset.paper===type;tab.setAttribute('aria-selected',String(active));tab.tabIndex=active?0:-1;});
+      if(ticket===request)reader.removeAttribute('aria-busy');
       return;
     }
     if(ticket!==request)return;
@@ -94,6 +116,7 @@
     }
     if(previousType!==type) reader.dataset.paper=type;
     ready=true;
+    reader.removeAttribute('aria-busy');
   }
   tabs.forEach(tab=>{
     tab.addEventListener('click',()=>choose(tab.dataset.paper));

@@ -51,12 +51,28 @@
   const readingLinks=Array.from(document.querySelectorAll('.page-index a[href^="#"]'));
   const readingNav=document.querySelector('.page-index');
   if (!readingNav || !readingLinks.length) return;
+  const readingCompact=matchMedia('(max-width:700px)');
+  const disclosure=document.createElement('details');disclosure.className='reading-disclosure';
+  const summary=document.createElement('summary');summary.append('本页内容');
+  const currentChapter=document.createElement('span');currentChapter.className='reading-current';summary.append(currentChapter);
+  const linkTrack=document.createElement('div');linkTrack.className='reading-links';
+  readingLinks.forEach(link=>linkTrack.append(link));
+  disclosure.append(summary,linkTrack);readingNav.append(disclosure);readingNav.classList.add('chapter-enhanced');
+  function fitReading(){disclosure.open=!readingCompact.matches;}
+  fitReading();readingCompact.addEventListener('change',fitReading);
+  disclosure.addEventListener('toggle',()=>{
+    if(disclosure.open&&readingCompact.matches&&!reduced.matches)linkTrack.animate([{opacity:.3,transform:'translateY(-5px)'},{opacity:1,transform:'translateY(0)'}],{duration:200,easing:'ease-out'});
+  });
+  disclosure.addEventListener('keydown',event=>{
+    if(event.key==='Escape'&&readingCompact.matches){disclosure.open=false;summary.focus();}
+  });
   const indicator=document.createElement('span');
   indicator.className='reading-indicator';indicator.setAttribute('aria-hidden','true');
-  readingNav.append(indicator);
+  linkTrack.append(indicator);
   let activeLink,scrollingTo,scrollFallback;
   function selectLink(active){
     activeLink=active;
+    currentChapter.textContent=active.textContent;
     readingLinks.forEach(link=>{
       if(link===active)link.setAttribute('aria-current','location');
       else link.removeAttribute('aria-current');
@@ -88,6 +104,7 @@
     const link=event.target.closest('a');
     if(!readingLinks.includes(link)||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
     scrollingTo=link;selectLink(link);
+    if(readingCompact.matches)disclosure.open=false;
     clearTimeout(scrollFallback);scrollFallback=setTimeout(finishScroll,1600);
   });
   addEventListener('scrollend',finishScroll);
