@@ -13,7 +13,7 @@ html.progress-enhanced{scroll-snap-type:none}
 .story-intro h1>b,.story-intro h1>.ico{will-change:opacity}
 .story-artifacts{position:absolute;inset:0;pointer-events:none;z-index:2}
 .story-artifact{position:absolute;left:0;top:0;width:180px;display:flex;flex-direction:column;align-items:center;gap:18px;transform-origin:50% 32px;opacity:0;will-change:transform,opacity}
-.story-artifact .ico{width:64px;height:64px;margin:0;border-radius:18px;flex:none}
+.story-artifact .ico{width:64px;height:64px;margin:0;border-radius:var(--radius-panel);flex:none}
 .story-artifact .ico svg{width:39px;height:39px}
 .story-artifact-label{font-size:16px;line-height:1.6;font-weight:500;white-space:nowrap;color:var(--ink)}
 .scroll-story.story-static{height:auto!important}

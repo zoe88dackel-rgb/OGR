@@ -8,7 +8,8 @@
   const smooth=n=>{n=clamp(n);return n*n*(3-2*n);};
   let story=null,route=null,queued=false,resizeQueued=false;
   // Reuse the original hero nodes, keeping all copy, icons and event handlers.
-  const hero=document.querySelector('main>.ihero');
+  // Pinned storytelling needs explicit opt-in; guide content uses normal flow.
+  const hero=document.querySelector('main>.ihero[data-scroll-story]');
   if(hero){
     const wrapper=document.createElement('section');wrapper.className='scroll-story';
     const pin=document.createElement('div');pin.className='story-pin';

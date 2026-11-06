@@ -1,0 +1,167 @@
+/* Task-first hierarchy. Shared surfaces and spacing inherit the existing tokens. */
+:root{--content-width:1180px}
+body{margin:0}
+.in{max-width:var(--content-width)}
+a{text-underline-offset:4px}
+.journey-location{display:flex;align-items:center;gap:10px;padding-top:24px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+.journey-location a{text-decoration:none}
+header.site{border-bottom:1px solid var(--line)}
+header.site .header-row{gap:24px;padding-block:16px}
+header.site .brand{flex:none}
+header.site .menu{display:flex;gap:24px;margin-left:auto;font-size:13px}
+header.site .menu a{opacity:1;color:var(--muted);padding:8px 0}
+header.site .menu a[aria-current]{color:var(--blue)}
+.header-tools{display:flex;align-items:center;gap:16px;border-left:1px solid var(--line);padding-left:24px;font-size:13px;flex:none}
+.header-tools a{text-decoration:none;white-space:nowrap}
+.header-tools a:hover,.header-tools a[aria-current]{color:var(--blue)}
+header.site .site-menu-toggle{display:none}
+header.site .in.mnav{right:max(20px,calc((100% - 1132px)/2));border-radius:var(--radius-panel)}
+header.site .mnav .nav-stage a{min-height:44px}
+.phead,.compliance-page>.phead{text-align:left;padding-block:32px 32px}
+.phead h1,.compliance-page .phead h1{font-size:clamp(30px,4.2vw,48px);line-height:1.2;letter-spacing:-.035em;max-width:960px}
+.phead h1 em{display:inline;font:inherit}
+.phead p{margin:16px 0 0;max-width:780px;font-size:16px;line-height:1.85}
+.phead .badge{padding:0;border-radius:0;background:transparent!important;color:var(--blue);font-size:12px;margin-bottom:16px}
+.page-index{margin-left:max(24px,calc((100% - 1132px)/2));margin-right:24px}
+.h2{font-family:var(--sans);font-weight:650;font-size:clamp(24px,3vw,32px);line-height:1.4;letter-spacing:-.02em}
+.eyebrow{background:transparent!important;padding:0;font-size:12px;color:var(--muted);letter-spacing:.06em}
+main>section{padding-block:48px}
+.guide-readable>section{padding-block:40px}
+.logistics-section .dispatch-contact{margin-top:0}
+.section-lead{max-width:780px}
+.task-home{padding-block:64px 48px}
+.task-home .eyebrow{color:var(--blue);margin-bottom:20px}
+.task-home h1{font-size:clamp(36px,5vw,64px);letter-spacing:-.04em;line-height:1.2;font-weight:750;max-width:900px}
+.home-lead{max-width:700px;font-size:17px;line-height:1.85;color:var(--muted);margin:24px 0 28px}
+.home-actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn{min-height:44px;justify-content:center;line-height:1.5}
+.btn.light{box-shadow:none;border:1px solid #d8dee8}
+.quiet-link{font-size:13px;color:var(--muted);margin:20px 0 0}
+.quiet-link a{margin-left:8px}
+.home-path{background:#fff}
+.section-heading,.task-entry{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:28px}
+.section-heading>a,.text-action{font-size:13px;color:var(--blue);flex:none}
+.task-path,.resource-list{list-style:none;padding:0;margin:28px 0 0}
+.task-path li,.resource-list li{display:flex;align-items:center;gap:24px;padding:24px 0;border-top:1px solid var(--line)}
+.task-path li:last-child,.resource-list li:last-child{border-bottom:1px solid var(--line)}
+.path-number{font-size:14px;font-variant-numeric:tabular-nums;color:var(--blue);min-width:28px;align-self:flex-start;padding-top:3px}
+.task-path h3,.resource-list h3{font-size:19px;font-weight:600;margin:0 0 6px}
+.task-path h3 a{text-decoration:none}
+.task-path p,.resource-list p{margin:0;color:var(--muted);font-size:14px}
+.path-link,.resource-list li>a{margin-left:auto;font-size:13px;color:var(--blue);white-space:nowrap}
+.editorial-columns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:28px}
+.editorial-columns article{min-width:0;border-top:2px solid #d9e1ef;padding-top:20px}
+.editorial-columns h3{font-size:18px;margin:0 0 12px}
+.editorial-columns p{font-size:14px;line-height:1.85;color:var(--muted);margin:0}
+.editorial-columns p+p{margin-top:12px}
+.editorial-columns a{color:var(--blue)}
+.tool-strip{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:32px;padding:24px;border:1px solid #d8e2f2;border-radius:var(--radius-panel);background:#edf3ff}
+.tool-strip h3{font-size:17px;margin:0 0 8px}
+.tool-strip p{font-size:14px;color:var(--muted);margin:0;max-width:720px}
+.tool-strip .btn{flex:none}
+.task-note{padding:20px 24px;background:#eaf1ff;border-left:3px solid #8caff5;border-radius:0 var(--radius-control) var(--radius-control) 0;margin:24px 0;font-size:14px;line-height:1.85;min-width:0}
+.task-note strong{font-weight:600;color:var(--ink)}
+.task-note p{margin:8px 0;color:var(--muted)}
+.task-note a,.context-links a,.action-list a,.step-resource{font-size:13px;color:var(--blue)}
+.context-links{display:flex;flex-wrap:wrap;gap:12px 24px;margin-top:24px}
+.task-checklist{list-style:none;margin:24px 0;padding:0;max-width:850px}
+.task-checklist li{position:relative;padding:16px 0 16px 28px;border-bottom:1px solid var(--line);font-size:15px;line-height:1.85}
+.task-checklist li::before{content:'—';position:absolute;left:0;color:var(--blue)}
+.task-disclosure{margin-top:24px}
+.task-disclosure>summary{font-size:16px;font-weight:550}
+.disclosure-body{padding-top:24px}
+.disclosure-body .h2{font-size:24px!important}
+.disclosure-body>.eyebrow{display:none}
+.action-list{counter-reset:action;list-style:none;margin:0;padding:0}
+.action-list li{position:relative;padding:24px 0 24px 48px;border-top:1px solid var(--line);counter-increment:action}
+.action-list li::before{content:'0' counter(action);position:absolute;left:0;top:26px;font-size:13px;color:var(--blue)}
+.action-list h3{font-size:19px;margin:0 0 12px}
+.action-list p{margin:0 0 12px;max-width:850px;font-size:15px;line-height:1.85;color:var(--muted)}
+.outcome-heading{font-size:20px;margin:32px 0 20px}
+.outcome-list{border:1px solid var(--line);background:#fff;border-radius:var(--radius-panel);padding-inline:24px}
+.outcome-list article{display:grid;grid-template-columns:140px minmax(0,1fr);gap:8px 24px;padding-block:24px}
+.outcome-list article+article{border-top:1px solid var(--line)}
+.outcome-label{font-size:13px;color:var(--blue);grid-row:span 2;padding-top:3px}
+.outcome-list h3{font-size:17px;margin:0 0 8px}
+.outcome-list p{margin:0;color:var(--muted);font-size:14px;line-height:1.8}
+.outcome-list a{grid-column:2;font-size:13px;color:var(--blue)}
+.compliance-page #eac-basics,.compliance-page #eac-papers{padding-block:12px}
+.compliance-page .task-entry .h2{margin:0}
+.compliance-page .source-appendix{max-width:none}
+.source-eight-steps.launch-steps{display:block;background:#fff;border:1px solid var(--line);border-radius:var(--radius-card);padding:8px 28px}
+.source-eight-steps.launch-steps .step{position:relative;display:block;padding:28px 0 28px 56px;background:transparent;border:0;border-radius:0;transform:none;box-shadow:none;transition:none}
+.source-eight-steps.launch-steps .step+.step{border-top:1px solid var(--line)}
+.source-eight-steps .step .n{position:absolute;top:26px;left:0;font:500 15px var(--sans)}
+.source-eight-steps.launch-steps .step h3{margin:0 0 12px!important;font-size:19px}
+.source-eight-steps.launch-steps .step>p{margin:0;max-width:900px;font-size:14px;line-height:1.85}
+.step-expectation{margin:20px 0 0;font-size:13px;display:grid;gap:8px;max-width:900px}
+.step-expectation>div{display:grid;grid-template-columns:72px minmax(0,1fr);gap:12px}
+.step-expectation dt{color:var(--muted)}
+.step-expectation dd{margin:0;line-height:1.85}
+.step-resource{display:inline-block;margin-top:16px;min-height:32px}
+.advanced-inputs{border-top:1px solid var(--line);margin-top:24px;padding-top:24px}
+.advanced-inputs>summary{cursor:pointer;font-size:15px;font-weight:600}
+.advanced-inputs>summary span{display:block;font-size:12px;font-weight:400;color:var(--muted);margin:8px 0 0}
+.advanced-body{padding-top:24px}
+.advanced-body .blk>h3{display:none}
+.res>.task-note{margin:16px 0}
+.next{align-items:center}
+.next .h2{font-size:24px;max-width:780px}
+.next p{margin:12px 0 0;font-size:13px;color:var(--muted);max-width:720px}
+main [id]{scroll-margin-top:100px}
+@media(prefers-reduced-motion:reduce){
+ ::view-transition-old(root),::view-transition-new(root){animation:none}
+}
+@media(max-width:1100px){
+ header.site .menu{display:none}
+ header.site .site-menu-toggle{display:inline-flex}
+ .header-tools{margin-left:auto;border-left:0;padding-left:0}
+}
+@media(max-width:700px){
+ header.site .header-row{gap:12px;padding-block:12px}
+ header.site .brand{font-size:14px}
+ .header-tools{font-size:12px;gap:12px}
+ header.site .site-menu-toggle{min-width:42px;min-height:42px;padding:8px}
+ header.site .site-menu-toggle span{display:none}
+ .journey-location{padding-top:20px;font-size:11px}
+ .phead,.compliance-page>.phead{padding-block:24px}
+ .phead h1,.compliance-page .phead h1{font-size:30px}
+ .phead p{font-size:14px;line-height:1.85}
+ .page-index{margin-left:20px;margin-right:20px}
+ .task-home{padding-block:40px 32px}
+ .task-home h1{font-size:36px}
+ .home-lead{font-size:15px;margin:20px 0 24px}
+ .home-actions{flex-direction:column;align-items:stretch}
+ .home-actions .btn{min-height:48px}
+ .quiet-link{line-height:1.9}
+ .quiet-link a{margin-left:0;display:block}
+ .section-heading,.task-entry{align-items:flex-start;flex-direction:column;gap:16px;margin-bottom:24px}
+ .task-path li{align-items:flex-start;gap:16px;flex-wrap:wrap;padding-block:24px}
+ .task-path li>div{flex:1;min-width:0}
+ .path-link{margin-left:44px;flex-basis:100%}
+ .task-path h3{font-size:18px}
+ .editorial-columns{grid-template-columns:1fr;gap:24px}
+ .tool-strip{flex-direction:column;align-items:flex-start;padding:20px}
+ .tool-strip .btn{width:100%}
+ .resource-list li{flex-direction:column;align-items:flex-start;gap:12px}
+ .resource-list li>a{margin-left:0}
+ .task-note{padding:16px 20px}
+ .action-list li{padding-left:36px}
+ .action-list h3{font-size:17px}
+ .outcome-list{padding-inline:20px}
+ .outcome-list article{grid-template-columns:1fr;gap:12px}
+ .outcome-label{grid-row:auto}
+ .outcome-list a{grid-column:1}
+ .source-eight-steps.launch-steps{padding:0 20px}
+ .source-eight-steps.launch-steps .step{padding:24px 0 24px 36px}
+ .source-eight-steps .step .n{top:26px;font-size:13px}
+ .source-eight-steps.launch-steps .step h3{font-size:17px}
+ .step-expectation>div{grid-template-columns:1fr;gap:4px}
+ .task-disclosure>summary{font-size:14px}
+ .disclosure-body{padding-top:20px}
+ .next{align-items:stretch}
+ .next>.btn{width:100%}
+ main>section{padding-block:36px}
+ .guide-readable>section{padding-block:28px}
+ footer nav{gap:12px 20px}
+}
