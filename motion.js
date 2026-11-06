@@ -18,7 +18,16 @@
   var items = document.querySelectorAll('.card, .tbl, .mock .m, .h2, .eyebrow, .next, .chips span');
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(e){
-      if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); }
+      if (e.isIntersecting) {
+        e.target.classList.add('in-view'); io.unobserve(e.target);
+        // Reading pages stay legible before enhancement; movement never gates content.
+        if (e.target.closest('.guide-readable') && e.target.animate) {
+          e.target.animate([{opacity:.72,transform:'translateY(16px)'},{opacity:1,transform:'translateY(0)'}], {
+            duration:520,delay:Math.min(parseFloat(e.target.style.transitionDelay)||0,210),
+            easing:'cubic-bezier(.25,.8,.25,1)',fill:'backwards'
+          });
+        }
+      }
     });
   }, { rootMargin: '0px 0px -8% 0px' });
   items.forEach(function(el){
@@ -57,11 +66,21 @@ document.querySelectorAll('.ico').forEach(function(icon){
     var picture = icon.querySelector('svg');
     if (!picture) return;
     picture.getAnimations().forEach(function(animation){ animation.cancel(); });
-    picture.animate([
-      { transform: 'translateY(0) rotate(0) scale(1)' },
-      { transform: 'translateY(-5px) rotate(-14deg) scale(1.15)', offset: .4 },
-      { transform: 'translateY(0) rotate(8deg) scale(.94)', offset: .72 },
-      { transform: 'translateY(0) rotate(0) scale(1)' }
-    ], { duration: 520, easing: 'ease-out' });
+    // Keep the original artwork; each object responds to its own action.
+    var frames;
+    if (icon.classList.contains('b')) {
+      frames = ['translate(0,0)', 'translate(-4px,1px) rotate(-3deg)', 'translate(9px,-2px) rotate(2deg)', 'translate(0,0)'];
+    } else if (icon.classList.contains('l')) {
+      frames = ['translateY(0) rotate(0)', 'translateY(-6px) rotate(-10deg)', 'translateY(1px) rotate(4deg)', 'translateY(0) rotate(0)'];
+    } else if (icon.classList.contains('o')) {
+      frames = ['translateY(0)', 'translateY(-5px) rotate(10deg)', 'translateY(1px) rotate(-4deg)', 'translateY(0)'];
+    } else {
+      frames = ['scale(1)', 'scale(.9)', 'scale(1.08)', 'scale(1)'];
+      var check = picture.querySelector('path:last-child');
+      if (check) check.animate([{opacity:.2,strokeDasharray:'30',strokeDashoffset:'30'},{opacity:1,strokeDasharray:'30',strokeDashoffset:'0'}],{duration:480,easing:'ease-out'});
+    }
+    picture.animate(frames.map(function(transform,i){return {transform:transform,offset:[0,.22,.56,1][i]};}), {
+      duration:680,easing:'cubic-bezier(.25,.8,.25,1)'
+    });
   });
 });
