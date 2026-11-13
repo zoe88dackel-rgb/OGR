@@ -38,22 +38,24 @@ section.content{padding-top:80px}section.content .label{color:var(--blue);font-s
 footer{margin-top:90px;padding:26px 0;background:#eaf1fb;color:#8292a5;font-size:12px}footer .container{display:flex;justify-content:space-between;gap:20px}
 @media(max-width:850px){.hero-inner{grid-template-columns:1fr}.visual{display:none}.steps{grid-template-columns:1fr}.info{grid-template-columns:1fr}}
 @media(max-width:620px){.container{padding:0 17px}header{height:64px}.brand{font-size:15px}nav{gap:11px;font-size:12px}nav a:first-child{display:none}.hero{padding:48px 0 37px}.hero h1{font-size:40px}.hero p{font-size:14px}.stats{gap:15px}.stats span{font-size:16px}.search-panel{padding:22px 18px;border-radius:17px}.panel-head{align-items:flex-start;flex-direction:column;gap:12px}.panel-head h2{font-size:22px}form{flex-direction:column}form button{height:52px}.item{flex-direction:column}.actions{flex-direction:row;justify-content:flex-start}.callout{flex-direction:column;align-items:flex-start}section.content{padding-top:59px}section.content h2{font-size:29px}footer .container{flex-direction:column}}
+.item .desc-zh{font-size:17px;font-weight:700;color:#203d65;margin:12px 0 10px}
+.item .desc-ru{font-size:13px;color:#7487a1;margin:4px 0 8px}
 </style>
 </head>
 <body>
 <header><div class="container"><a href="#top" class="brand"><span class="logo">T/V</span>TN VED 海关编码查询</a><nav><a href="#query">立即查码</a><a href="#guide">怎么使用</a><a href="#rules">合规说明</a></nav></div></header>
 <main id="top">
-<section class="hero"><div class="container hero-inner"><div><div class="over">EAEU · CUSTOMS NOMENCLATURE</div><h1>查清商品编码，<br><em>从这里开始。</em></h1><p>免费查询俄罗斯与欧亚经济联盟 TN VED 商品海关编码。按 10 位编码、编码前缀或俄文商品名称检索，并了解如何核对归类及 EAC 合规要求。</p><div class="stats"><div><span id="total-hero">13,000+</span><small>官方目录有效编码</small></div><div><span>10 位</span><small>TN VED ЕАЭС</small></div><div><span>免费</span><small>纯静态 · 无需注册</small></div></div></div><div class="visual" aria-hidden="true"><div class="illustration"><small>CUSTOMS CLASSIFICATION</small><strong>9503 00 3500</strong><div class="stripe"></div><div class="stripe short"></div><div class="stripe"></div></div><div class="sticker">EAEU / 10 DIGITS</div></div></div></section>
+<section class="hero"><div class="container hero-inner"><div><div class="over">EAEU · CUSTOMS NOMENCLATURE</div><h1>查清商品编码，<br><em>从这里开始。</em></h1><p>免费查询俄罗斯与欧亚经济联盟 TN VED 商品海关编码。支持俄文原文、中文机译对照、中文关键词和 10 位编码查询。</p><div class="stats"><div><span id="total-hero">13,000+</span><small>官方目录有效编码</small></div><div><span>10 位</span><small>TN VED ЕАЭС</small></div><div><span>免费</span><small>纯静态 · 无需注册</small></div></div></div><div class="visual" aria-hidden="true"><div class="illustration"><small>CUSTOMS CLASSIFICATION</small><strong>9503 00 3500</strong><div class="stripe"></div><div class="stripe short"></div><div class="stripe"></div></div><div class="sticker">EAEU / 10 DIGITS</div></div></div></section>
 <section class="container" id="query"><div class="search-panel"><div class="panel-head"><div><div class="over">SEARCH THE DIRECTORY</div><h2>查询 TN VED 海关编码</h2></div><span class="tag" id="version">正在加载官方快照…</span></div>
 <form id="form"><input id="input" type="search" aria-label="编码或商品名称" placeholder="输入 950300 / игрушки / 儿童积木" required autocomplete="off"><button type="submit">查询编码</button></form>
 <div class="examples"><span>试试：</span><button type="button" data-q="950300">950300</button><button type="button" data-q="儿童积木">儿童积木</button><button type="button" data-q="игрушки">игрушки（玩具）</button><button type="button" data-q="пластмассы">пластмассы（塑料）</button></div>
 <div class="status"><span id="status">首次打开需加载完整编码目录。</span><span id="shown"></span></div>
 <div class="results" id="results" aria-live="polite"></div><button type="button" class="more" id="more" hidden>查看更多结果</button>
-<p class="hint">本工具显示官方快照中可检索的候选编码。俄文与数字支持全目录查询；中文仅覆盖少量示例，不等于自动归类结论。</p>
+<p class="hint">查询结果同时显示中文辅助译名和俄文官方原文。中文由开源模型自动翻译，可能不准确；实际归类、税则解释及报关应以最新俄文官方规定为准。<button type="button" id="download-csv" style="margin-left:8px;background:#fff;color:#1e67d0;border:1px solid #c7dcf8;border-radius:8px;padding:7px 10px">下载全量中俄对照 CSV</button></p>
 </div></section>
 <section class="container content" id="guide"><div class="label">HOW TO USE</div><h2>三步找到商品编码</h2><div class="steps">
 <article class="step"><small>STEP 01</small><h3>确认商品具体信息</h3><p>记录名称、材质、功能、用途及结构。仅凭「儿童用品」「电子产品」等笼统名称，无法准确确定 10 位编码。</p></article>
-<article class="step"><small>STEP 02</small><h3>搜索候选编码</h3><p>有 HS 编码时先按前 4–6 位查找，再核对下级分类；或用准确的俄文商品名搜索。中文仅支持少量常见词。</p></article>
+<article class="step"><small>STEP 02</small><h3>搜索候选编码</h3><p>有 HS 编码时先按前 4–6 位查找，再核对下级分类；也可以用中文或俄文关键词检索。中文为机器翻译，仅供辅助。</p></article>
 <article class="step"><small>STEP 03</small><h3>核对现行法规</h3><p>对照俄文品目描述、实际商品属性及 EEC 最新目录，复核税率、进口监管和适用的技术法规。</p></article>
 </div><div class="callout"><div><small>示例 · 儿童拼搭积木</small><strong>试试「儿童积木」，查看塑料和其他材质对应的候选编码</strong></div><button type="button" id="example">查询这个例子</button></div></section>
 <section class="container content" id="rules"><div class="label">CUSTOMS ≠ CERTIFICATION</div><h2>海关编码与 EAC 的关系</h2><div class="info">
@@ -62,7 +64,7 @@ footer{margin-top:90px;padding:26px 0;background:#eaf1fb;color:#8292a5;font-size
 <article class="panel-mini refs"><h3>官方信息源</h3><p><a target="_blank" rel="noopener" href="https://eec.eaeunion.org/comission/department/catr/ett/">欧亚经济委员会 · 现行目录</a><br><a target="_blank" rel="noopener" href="https://www.nalog.gov.ru/rn77/program/5961290/">俄罗斯联邦税务局 · 数据下载</a></p></article>
 <article class="panel-mini refs"><h3>进一步查询</h3><p><a target="_blank" rel="noopener" href="https://www.alta.ru/tnved/">Alta-Soft 编码目录</a><br>可辅助交叉核对，但最终以现行官方法规及必要的正式归类结论为准。</p></article></div></section>
 <section class="container content faq"><div class="label">FAQ</div><h2>常见问题</h2>
-<details><summary>为什么输入中文可能查不到？</summary><p>原始官方目录使用俄文名称。我们只为少数高频商品设置了中文搜索示例；其他商品建议先确认俄文术语再检索。</p></details>
+<details><summary>为什么输入中文可能查不到？</summary><p>每个官方编码均保留俄文原文，并提供机器翻译中文对照。如中文检索找不到合适结果，请尝试同义词、俄文原文或编码；译文可能存在漏译和术语偏差。</p></details>
 <details><summary>中国 HS 编码可以直接当作俄罗斯 TN VED 使用吗？</summary><p>不可以直接照搬完整编码。国际 HS 的前 6 位具有协调基础，但欧亚经济联盟的后续细分需要单独核对。</p></details>
 <details><summary>这里的编码是否可以直接拿去报关？</summary><p>这是基于公开资料的候选码搜索工具，不构成正式归类裁定。需要结合具体商品资料与最新法规进行专业复核。</p></details>
 </section>
@@ -72,7 +74,7 @@ footer{margin-top:90px;padding:26px 0;background:#eaf1fb;color:#8292a5;font-size
 (function(){
 'use strict';
 var $=function(s){return document.getElementById(s)};
-var cache=null,busy=null,matching=[],visible=20,tip='';
+var cache=null,busy=null,matching=[],visible=20,tip='',translations=Object.create(null),zhReady=false,zhCount=0;
 var aliases=[
  {re:/儿童积木|塑料积木|木质积木|乐高|拼插积木|积木/,codes:['9503003500','9503003900'],note:'积木按材质有不同的候选分类，请核对实际商品'},
  {re:/玩具/,prefix:['9503'],note:'按玩具品目筛选，最终编码仍需细分'},
@@ -92,19 +94,45 @@ function load(){
  cache=data;var count=data.rows.length.toLocaleString('zh-CN');
  text('total-hero',count);text('version',count+' 条 · FNS '+(data.meta.snapshot||'公开快照'));
  text('footer-version','数据来源：俄罗斯 FNS · '+(data.meta.snapshot||'2026-04-27')+' 快照');
- text('status','完整目录已加载，现在可以查询');return data;
+ return fetch('./zh.json',{cache:'no-cache'}).then(function(response){
+ if(!response.ok)throw Error('中文对照文件未发布');
+ return response.json();
+}).then(function(payload){
+ var dict=payload.translations||{};
+ if(Number(payload.meta&&payload.meta.count)!==data.rows.length || Object.keys(dict).length!==data.rows.length){
+  throw Error('中文对照与俄文目录数量不一致');
+ }
+ if(payload.meta.source_sha256 && payload.meta.source_sha256!==undefined && payload.meta.source_sha256.length!==64){
+  throw Error('中文版本元数据不完整');
+ }
+ translations=dict;zhReady=true;zhCount=Object.keys(dict).length;
+ text('version',count+' 条 · 中俄对照已加载');
+ text('status','已加载 '+zhCount.toLocaleString('zh-CN')+' 条中文辅助译名，支持中俄双语查询');
+ return data;
+}).catch(function(e){
+ zhReady=false;
+ text('status','俄文完整目录已加载。中文译文暂不可用：'+e.message);
+ return data;
+});
  }).catch(function(e){text('status','载入失败：'+e.message+'。请刷新重试。');return null}).finally(function(){busy=null});
  return busy;
 }
 function find(q){
  var n=normal(q),rows=cache.rows,selected=[],note='';
- if(/^\d{2,10}$/.test(n)){selected=rows.filter(function(r){return r[0].indexOf(n)===0})}
- else if(/[\u4e00-\u9fff]/.test(n)){
+ if(/^\d{2,10}$/.test(n)){
+  selected=rows.filter(function(r){return r[0].indexOf(n)===0})
+ }else if(/[\u4e00-\u9fff]/.test(n)){
   var rules=aliases.filter(function(a){return a.re.test(n)});
-  var codes=[],prefix=[];rules.forEach(function(a){codes=codes.concat(a.codes||[]);prefix=prefix.concat(a.prefix||[])});
-  selected=rows.filter(function(r){return codes.indexOf(r[0])>-1||prefix.some(function(p){return r[0].indexOf(p)===0})});
-  note=rules.length?rules.map(function(a){return a.note}).join('；'):'此中文词尚未支持，请输入俄文名称或编码';
- }else{selected=rows.filter(function(r){return normal(r[1]).indexOf(n)>-1})}
+  var codes=[],prefix=[];
+  rules.forEach(function(a){codes=codes.concat(a.codes||[]);prefix=prefix.concat(a.prefix||[])});
+  selected=rows.filter(function(r){
+   var zh=normal(translations[r[0]]||'');
+   return (zh&&zh.indexOf(n)>-1)||codes.indexOf(r[0])>-1||prefix.some(function(p){return r[0].indexOf(p)===0})
+  });
+  note=zhReady?'中文为非官方机器译文，请对照俄文原文': '中文对照尚未加载，只能识别部分示例关键词';
+ }else{
+  selected=rows.filter(function(r){return normal(r[1]).indexOf(n)>-1})
+ }
  return {results:selected,note:note};
 }
 function paint(){
@@ -112,7 +140,13 @@ function paint(){
  if(!matching.length)root.appendChild(node('div','empty',tip||'没有匹配结果，请试试短编码前缀或更准确的俄文描述。'));
  matching.slice(0,visible).forEach(function(r){
   var card=node('article','item'),left=node('div'),actions=node('div','actions');
-  left.append(node('div','num',r[0]),node('div','minor','第 '+r[0].slice(0,2)+' 章'),node('p','desc',r[1]));
+  left.append(node('div','num',r[0]),node('div','minor','第 '+r[0].slice(0,2)+' 章'));
+  var chinese=translations[r[0]];
+  if(chinese){
+    left.append(node('p','desc desc-zh',chinese),node('div','minor','俄文原文 · Описание'),node('p','desc desc-ru',r[1]));
+  }else{
+    left.append(node('p','desc desc-ru',r[1]));
+  }
   var copy=node('button',null,'复制编码');copy.type='button';
   copy.addEventListener('click',function(){
    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(r[0]).then(function(){copy.textContent='已复制'}).catch(function(){copy.textContent=r[0]})}
@@ -124,6 +158,20 @@ function paint(){
  $('more').hidden=matching.length<=visible;
  text('shown',matching.length?'显示 '+Math.min(visible,matching.length)+' / '+matching.length.toLocaleString('zh-CN'):'');
 }
+$('download-csv').addEventListener('click',function(){
+  load().then(function(data){
+    if(!data)return;
+    if(!zhReady){text('status','中文对照尚未全部生成，暂不可下载 CSV');return}
+    function csv(s){return '"'+String(s==null?'':s).replace(/"/g,'""')+'"'}
+    var lines=['code,name_zh_machine,name_ru_official'];
+    data.rows.forEach(function(r){lines.push([r[0],translations[r[0]]||'',r[1]].map(csv).join(','))});
+    var blob=new Blob(['\uFEFF'+lines.join('\r\n')],{type:'text/csv;charset=utf-8'});
+    var url=URL.createObjectURL(blob),a=document.createElement('a');
+    a.href=url;a.download='TN-VED-中俄对照-机器翻译.csv';
+    document.body.appendChild(a);a.click();a.remove();
+    setTimeout(function(){URL.revokeObjectURL(url)},1000);
+  })
+});
 function search(q){
  q=(q||'').trim();if(q.length<2){text('status','请输入至少两个字符');return}
  $('input').value=q;
