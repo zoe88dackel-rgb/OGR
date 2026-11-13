@@ -10,7 +10,10 @@ assert db.execute("SELECT count(*) FROM code_translations").fetchone()[0]==13293
 assert db.execute("SELECT count(*) FROM eac_knowledge_regulations").fetchone()[0]==6
 assert db.execute("SELECT count(*) FROM eac_clause_summaries").fetchone()[0]>=20
 assert db.execute("SELECT count(*) FROM eac_candidate_rules").fetchone()[0]>=12
-assert db.execute("SELECT count(*) FROM eac_verified_candidate_rules").fetchone()[0]==0
+reviews=json.loads((HERE.parent/"eac"/"reviews.json").read_text("utf-8"))
+assert db.execute("SELECT count(*) FROM eac_verified_candidate_rules").fetchone()[0]==len(reviews.get("rules",{}))
+for row in db.execute("SELECT id,reviewed_by,reviewed_at,required_attributes_json FROM eac_verified_candidate_rules"):
+  assert row["reviewed_by"] and row["reviewed_at"] and len(json.loads(row["required_attributes_json"]))>=2
 assert db.execute("SELECT count(*) FROM eac_certificate_records").fetchone()[0]==0
 assert db.execute("SELECT count(*) FROM eac_certificate_checks").fetchone()[0]==0
 assert db.execute("SELECT count(*) FROM eac_document_forms").fetchone()[0]==5
