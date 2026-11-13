@@ -34,3 +34,7 @@
 
 站点运行时不依赖任何付费 API、数据库、Node、Python 或 CDN。翻译构建时采用MIT 许可的 M2M100 418M 模型（Apache 2.0 许可证）和 GitHub Actions。
 
+
+## EAC 法规知识库
+
+另设 **独立 EAC 查询页面**： https://zoe88dackel-rgb.github.io/OGR/tnved/eac/ 。不使用 N55 源码，引用 11 部技术法规来源目录。包括法规搜索、中文辅助说明、文件区别、法规修订记录和 6 类商品案例。所有合格评定规则在未经法律审核前只做候选提示。
