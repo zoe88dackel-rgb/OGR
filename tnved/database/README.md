@@ -54,3 +54,14 @@ SELECT * FROM verified_applicability;
 以后接 Cloudflare D1 时，可以基于此 schema 做迁移和分页接口。若要多用户在线编辑审核记录，需要另外部署受控后台和权限系统；目前的纯 GitHub Pages 静态站不具备这些能力。
 
 **官方来源**：FNS https://www.nalog.gov.ru/rn77/program/5961290/ ，EEC TR CU 008/2011 https://eec.eaeunion.org/upload/medialibrary/419/TR-TS-Toys.pdf 。必须检查快照后续的修订，中文翻译不得用于正式报关归类裁定。
+
+
+## EAC 专项资料库（已实现）
+
+- 独立网页： https://zoe88dackel-rgb.github.io/OGR/tnved/eac/
+- 11 部技术法规首批参考条目，50 个待核条款索引，22 条待审候选规则，19 个法规/注册来源，5 种文件/标识类型，6 个商品案例。
+- 数据源： `tnved/eac/knowledge.json`，已通过 `enrich_eac.py` 写入 `compliance.sqlite`。数据库还保存版本事件、商品参数、证书登记核验记录表。
+- 人工审核流程：`tnved/eac/review.py` 和 `tnved/eac/reviews.json`。规则仅在审核人、证据链接、时间、版本指纹齐备时可进入 `verified`。未经审核不提供 CoC、DoC、SGR 最终判断。
+- 官方来源巡检：`tnved/eac/source_watch.py` 及独立 GitHub Actions 工作流（周四巡检）。动态 HTML 只检查可访问性，不能把页面字节变化当作法律修订。
+- 当前数据库中 **0 条经人工审核通过的 EAC 判断规则**。11 部属于来源参考，不代表全文法律审查完成。
+
