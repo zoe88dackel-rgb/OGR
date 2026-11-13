@@ -1,0 +1,57 @@
+{
+  "sources": [
+    {
+      "id": "eec_tr_cu_008_2011",
+      "kind": "regulation",
+      "publisher": "Eurasian Economic Commission",
+      "title": "TR CU 008/2011 — On the Safety of Toys (original regulation text)",
+      "url": "https://eec.eaeunion.org/upload/medialibrary/419/TR-TS-Toys.pdf",
+      "published_at": "2011-09-23",
+      "version_label": "Original consolidated-status NOT verified; check EEC amendments",
+      "notes": "Reference entry only. Must check amendments/effective date before decisions."
+    }
+  ],
+  "regulations": [
+    {
+      "regulation_id": "TR_CU_008_2011",
+      "title_ru": "О безопасности игрушек",
+      "title_zh": "玩具安全技术法规",
+      "jurisdiction": "EAEU",
+      "source_id": "eec_tr_cu_008_2011",
+      "review_status": "reference",
+      "effective_from": null,
+      "effective_to": null
+    }
+  ],
+  "clauses": [
+    {
+      "clause_id": "008_2011_art_1",
+      "regulation_id": "TR_CU_008_2011",
+      "clause_reference": "Article 1 / Статья 1",
+      "source_id": "eec_tr_cu_008_2011",
+      "scope_zh": "规定玩具的适用范围以及排除项目；需对照现行修订文本判断。",
+      "review_status": "draft"
+    },
+    {
+      "clause_id": "008_2011_art_6",
+      "regulation_id": "TR_CU_008_2011",
+      "clause_reference": "Article 6 / Статья 6",
+      "source_id": "eec_tr_cu_008_2011",
+      "scope_zh": "规定玩具的符合性评定方式；需确认现行修订版本及产品属性。",
+      "review_status": "draft"
+    },
+    {
+      "clause_id": "008_2011_annex_1",
+      "regulation_id": "TR_CU_008_2011",
+      "clause_reference": "Annex 1 / Приложение 1",
+      "source_id": "eec_tr_cu_008_2011",
+      "scope_zh": "不被视为玩具的排除产品清单；需对照最新版本。",
+      "review_status": "draft"
+    }
+  ],
+  "applicability_rules": [],
+  "translations_reviewed": {},
+  "products": [],
+  "product_classifications": [],
+  "compliance_assessments": []
+}
