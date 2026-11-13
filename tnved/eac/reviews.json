@@ -1,0 +1,9 @@
+{
+  "meta": {
+    "purpose": "Human-reviewed EAC rule approvals; no approvals by default",
+    "policy": "A source change invalidates the approval via knowledge.json SHA256",
+    "last_reviewed": null
+  },
+  "rules": {},
+  "clauses": {}
+}
