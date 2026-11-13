@@ -7,7 +7,19 @@
   "regulations": 6,
   "verified_EAC_rules": 0,
   "snapshot": "2026-04-27",
-  "db_bytes": 9949184,
+  "db_bytes": 10043392,
   "integrity": "ok",
-  "warning": "Unofficial machine translation; EAC results must be reviewed against current law."
+  "warning": "Unofficial machine translation; EAC results must be reviewed against current law.",
+  "eac_library": {
+    "regulations": 6,
+    "clauses_to_review": 25,
+    "draft_rules": 12,
+    "verified_rules": 0,
+    "official_source_references": 14,
+    "regulation_events": 5,
+    "document_types": 5,
+    "seller_cases": 4,
+    "registered_certificates": 0,
+    "integrity": "ok"
+  }
 }
