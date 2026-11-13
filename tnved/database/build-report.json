@@ -1,0 +1,13 @@
+{
+  "tariff_codes": 13293,
+  "zh_translations": 13293,
+  "human_approved": 0,
+  "machine_unreviewed": 13293,
+  "needs_context": 5791,
+  "regulations": 1,
+  "verified_EAC_rules": 0,
+  "snapshot": "2026-04-27",
+  "db_bytes": 8429568,
+  "integrity": "ok",
+  "warning": "Unofficial machine translation; EAC results must be reviewed against current law."
+}
