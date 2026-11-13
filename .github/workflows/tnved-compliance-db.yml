@@ -12,6 +12,8 @@ on:
       - 'tnved/database/enrich_eac.py'
       - 'tnved/database/eac_extra_schema.sql'
       - 'tnved/eac/knowledge.json'
+      - 'tnved/eac/reviews.json'
+      - 'tnved/eac/review.py'
       - 'tnved/database/test_eac.py'
       - '.github/workflows/tnved-compliance-db.yml'
 permissions:
@@ -48,7 +50,8 @@ jobs:
           assert db.execute("SELECT count(*) FROM eac_knowledge_regulations").fetchone()[0]==6
           assert db.execute("SELECT count(*) FROM eac_clause_summaries").fetchone()[0]>=20
           assert db.execute("SELECT count(*) FROM eac_candidate_rules").fetchone()[0]>=12
-          assert db.execute("SELECT count(*) FROM eac_verified_candidate_rules").fetchone()[0]==0
+          reviews=json.load(open('tnved/eac/reviews.json',encoding='utf-8'))
+          assert db.execute("SELECT count(*) FROM eac_verified_candidate_rules").fetchone()[0]==len(reviews.get('rules',{}))
           assert db.execute("SELECT count(*) FROM eac_document_forms").fetchone()[0]>=5
           assert db.execute("SELECT count(*) FROM eac_regulation_events").fetchone()[0]>=5
           assert db.execute("SELECT count(*) FROM eac_case_templates").fetchone()[0]>=4
