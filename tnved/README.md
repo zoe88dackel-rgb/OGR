@@ -18,7 +18,7 @@
 - `catalog.json`：FNS 官方快照，字段 `rows: [[code, russian_name], ...]`
 - `zh.json`：全量中文**机器翻译**，由翻译 Workflow 自动生成，不是官方译本
 - `build_catalog.py`：从 FNS 的 TNVED.ZIP 构建原始全量目录
-- `translate_zh.py`：使用开放模型 `utrobinmv/t5_translate_en_ru_zh_small_1024` 进行离线直译，16 个分片并行，合并后验证 100% 编码覆盖
+- `translate_zh.py`：使用开放模型 `facebook/m2m100_418M` 进行离线直译，16 个分片并行，合并后验证 100% 编码覆盖
 - `.github/workflows/tnved-catalog.yml`：每周同步官方数据源
 - `.github/workflows/tnved-translate-zh.yml`：运行全量机器翻译、校验及提交中文对照文件
 
@@ -32,5 +32,5 @@
 
 ## 依赖
 
-站点运行时不依赖任何付费 API、数据库、Node、Python 或 CDN。翻译构建时采用开源 T5 模型（Apache 2.0 许可证）和 GitHub Actions。
+站点运行时不依赖任何付费 API、数据库、Node、Python 或 CDN。翻译构建时采用MIT 许可的 M2M100 418M 模型（Apache 2.0 许可证）和 GitHub Actions。
 
