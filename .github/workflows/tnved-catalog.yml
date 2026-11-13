@@ -1,0 +1,41 @@
+name: Refresh standalone TN VED catalogue
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tnved/**'
+      - '.github/workflows/tnved-catalog.yml'
+  workflow_dispatch:
+  schedule:
+    - cron: '30 3 * * 1'
+permissions:
+  contents: write
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build full official static catalogue
+        run: python3 tnved/build_catalog.py
+      - name: Validate full catalogue
+        run: |
+          python3 - <<'PY'
+          import json
+          d=json.load(open('tnved/catalog.json',encoding='utf-8'))
+          rows=d['rows']
+          assert len(rows)>=10000 and len(rows)==d['meta']['count']
+          assert len({r[0] for r in rows})==len(rows)
+          assert all(len(r[0])==10 and r[0].isdigit() for r in rows)
+          assert any(r[0]=='9503003500' for r in rows)
+          print('Validated',len(rows),'codes')
+          PY
+      - name: Commit dataset to public static directory
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add tnved/catalog.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'data: refresh independent TN VED static catalogue [skip ci]'
+            git push
+          fi
