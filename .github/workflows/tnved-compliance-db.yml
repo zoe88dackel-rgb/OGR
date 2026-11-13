@@ -9,6 +9,10 @@ on:
       - 'tnved/database/schema.sql'
       - 'tnved/database/curated.json'
       - 'tnved/database/build.py'
+      - 'tnved/database/enrich_eac.py'
+      - 'tnved/database/eac_extra_schema.sql'
+      - 'tnved/eac/knowledge.json'
+      - 'tnved/database/test_eac.py'
       - '.github/workflows/tnved-compliance-db.yml'
 permissions:
   contents: write
@@ -25,7 +29,9 @@ jobs:
         with:
           python-version: '3.11'
       - name: Build complete bilingual source and compliance schema
-        run: python3 tnved/database/build.py
+        run: |
+          python3 tnved/database/build.py
+          python3 tnved/database/enrich_eac.py
       - name: Validate schema / no unverified compliance conclusions
         shell: bash
         run: |
@@ -39,6 +45,13 @@ jobs:
           assert db.execute('SELECT count(*) FROM tariff_codes').fetchone()[0]==13293
           assert db.execute("SELECT count(*) FROM code_translations WHERE lang='zh'").fetchone()[0]==13293
           assert db.execute("SELECT count(*) FROM verified_applicability").fetchone()[0]==0, 'No fabricated EAC rules'
+          assert db.execute("SELECT count(*) FROM eac_knowledge_regulations").fetchone()[0]==6
+          assert db.execute("SELECT count(*) FROM eac_clause_summaries").fetchone()[0]>=20
+          assert db.execute("SELECT count(*) FROM eac_candidate_rules").fetchone()[0]>=12
+          assert db.execute("SELECT count(*) FROM eac_verified_candidate_rules").fetchone()[0]==0
+          assert db.execute("SELECT count(*) FROM eac_document_forms").fetchone()[0]>=5
+          assert db.execute("SELECT count(*) FROM eac_regulation_events").fetchone()[0]>=5
+          assert db.execute("SELECT count(*) FROM eac_case_templates").fetchone()[0]>=4
           for table in ['sources','tariff_codes','code_translations','regulations','regulation_clauses','applicability_rules','products','product_classifications','compliance_assessments','review_tasks','audit_events']:
               db.execute('SELECT count(*) FROM '+table).fetchone()
           row=db.execute("""SELECT c.code,c.name_ru,t.translated_name,
@@ -49,6 +62,8 @@ jobs:
           print('VALIDATED: 13293 TN VED codes + 13293 Chinese translations + future EAC schema')
           print('Sample:',row)
           PY
+      - name: Exercise sample cases and verification gates
+        run: python3 tnved/database/test_eac.py
       - uses: actions/upload-artifact@v4
         with:
           name: reusable-compliance-database
