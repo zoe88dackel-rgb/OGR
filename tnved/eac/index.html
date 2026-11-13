@@ -39,7 +39,7 @@ footer{background:#ebf1f9;margin-top:76px;padding:26px 0;font-size:12px;color:#7
 <header class="site"><div class="inner head"><a href="#top" class="mark"><b>EAC</b>欧亚法规知识库</a><nav><a href="../">TN VED 编码</a><a href="#laws">技术法规</a><a href="#examples">商品案例</a><a href="#documents">证明文件</a></nav></div></header>
 <main id="top">
 <div class="hero"><div class="inner"><div class="kicker">EAEU · CONFORMITY REFERENCE LIBRARY</div><h1>俄罗斯商品合规，<br>从法规依据开始查。</h1><p>整理技术法规、适用范围、排除条件、文件形式及版本来源。可结合商品资料初步定位适用法规，并跳转官方来源核对。</p><div class="metrics"><div><strong id="n-reg">11</strong><span>首批技术法规</span></div><div><strong id="n-clause">50</strong><span>待审条款索引</span></div><div><strong id="n-doc">5</strong><span>文件及标识类型</span></div></div><div class="notice"><b>使用说明：</b>当前为法规资料库，所有商品判断及规则仍待专业审核。任何 EAC、CoC、DoC、SGR 结果都需结合实际商品、现行法规及登记状态确认。</div></div></div>
-<section id="laws" class="inner section"><h2 class="section-title">技术法规查询</h2><div class="controls"><input id="search" type="search" placeholder="搜索玩具 / 童装 / 低压 / TR CU 017/2011" aria-label="搜索技术法规"><select id="kind" aria-label="领域筛选"><option value="all">全部法规</option><option value="玩具">玩具</option><option value="儿童">儿童用品</option><option value="服饰">服饰</option><option value="电气">电子电气</option></select></div><div class="layout"><div id="side" class="side">读取法规目录中…</div><article id="detail" class="detail">请选择法规查看具体内容</article></div></section>
+<section id="laws" class="inner section"><h2 class="section-title">技术法规查询</h2><div class="controls"><input id="search" type="search" placeholder="搜索玩具 / 童装 / 低压 / TR CU 017/2011" aria-label="搜索技术法规"><select id="kind" aria-label="领域筛选"><option value="all">全部法规</option><option value="玩具">玩具</option><option value="儿童">儿童用品</option><option value="服饰">服饰</option><option value="电气">电子电气</option><option value="包装">包装</option><option value="化妆品">化妆品</option><option value="机械">机械</option><option value="防护">防护用品</option><option value="食品">食品</option></select></div><div class="layout"><div id="side" class="side">读取法规目录中…</div><article id="detail" class="detail">请选择法规查看具体内容</article></div></section>
 <section id="examples" class="inner section"><h2 class="section-title">商品参考案例</h2><div class="cards" id="cases"></div></section>
 <section id="documents" class="inner section"><h2 class="section-title">合规文件区别与官方核验</h2><div class="table" id="docs"></div></section>
 <section class="inner section"><h2 class="section-title">法规修订与生效日期</h2><div class="timeline" id="timeline"></div></section>
@@ -67,7 +67,8 @@ function drawList(){
   if(kind==='服饰')return r.id==='TR_CU_017_2011';
   if(kind==='玩具')return r.id==='TR_CU_008_2011';
   if(kind==='儿童')return r.id==='TR_CU_007_2011';
-  return ['TR_CU_004_2011','TR_CU_020_2011','TR_EAEU_037_2016'].includes(r.id);
+  if(kind==='电气')return ['TR_CU_004_2011','TR_CU_020_2011','TR_EAEU_037_2016'].includes(r.id);
+  return r.sector.includes(kind)||r.zh.includes(kind);
  });
  const side=el('side');side.replaceChildren();
  matches.forEach(r=>{
