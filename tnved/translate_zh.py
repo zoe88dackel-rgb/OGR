@@ -10,7 +10,7 @@ from hashlib import sha256
 from pathlib import Path
 HERE=Path(__file__).resolve().parent
 CATALOG=HERE/"catalog.json"
-MODEL="utrobinmv/t5_translate_en_ru_zh_small_1024"
+MODEL="facebook/m2m100_418M"
 def catalogue():
     d=json.loads(CATALOG.read_text(encoding="utf-8"))
     if len(d["rows"])<10000 or len(d["rows"])!=int(d["meta"]["count"]):
@@ -18,20 +18,20 @@ def catalogue():
     return d
 def shard(index,count):
     import torch
-    from transformers import T5Tokenizer, T5ForConditionalGeneration
+    from transformers import M2M100Tokenizer, M2M100ForConditionalGeneration
     torch.set_num_threads(min(4,os.cpu_count() or 2))
     d=catalogue()
     rows=[r for n,r in enumerate(d["rows"]) if n%count==index]
     print("Translating",len(rows),"items; shard",index,"model",MODEL,flush=True)
-    tok=T5Tokenizer.from_pretrained(MODEL)
-    model=T5ForConditionalGeneration.from_pretrained(MODEL,torch_dtype=torch.float32).eval()
+    tok=M2M100Tokenizer.from_pretrained(MODEL,src_lang="ru")
+    model=M2M100ForConditionalGeneration.from_pretrained(MODEL,torch_dtype=torch.float32).eval()
     result={}
     with torch.inference_mode():
-        for start in range(0,len(rows),12):
-            group=rows[start:start+12]
-            prompts=["translate to zh: "+r[1] for r in group]
-            inputs=tok(prompts,return_tensors="pt",padding=True,truncation=True,max_length=440)
-            output=model.generate(**inputs,max_new_tokens=210,num_beams=1,do_sample=False)
+        for start in range(0,len(rows),8):
+            group=rows[start:start+8]
+            prompts=[r[1] for r in group]
+            inputs=tok(prompts,return_tensors="pt",padding=True,truncation=True,max_length=400)
+            output=model.generate(**inputs,forced_bos_token_id=tok.get_lang_id("zh"),max_new_tokens=210,num_beams=1,do_sample=False)
             translations=tok.batch_decode(output,skip_special_tokens=True)
             for (code,ru),zh in zip(group,translations):
                 zh=zh.strip()
