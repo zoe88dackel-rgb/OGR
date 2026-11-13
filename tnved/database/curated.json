@@ -9,6 +9,61 @@
       "published_at": "2011-09-23",
       "version_label": "Original consolidated-status NOT verified; check EEC amendments",
       "notes": "Reference entry only. Must check amendments/effective date before decisions."
+    },
+    {
+      "id": "gost_index_tr_cu_007_2011",
+      "kind": "regulation",
+      "publisher": "Rosstandart (Federal Agency on Technical Regulating and Metrology)",
+      "title": "TR CU 007 2011 — О безопасности продукции, предназначенной для детей и подростков (regulatory index)",
+      "url": "https://protect.gost.ru/tr/details/20172201-a028-437f-9355-43beb60f3b0d",
+      "notes": "Russian official technical-regulation catalog. This record is an index, not proof of consolidated amendment-by-amendment full-text review.",
+      "version_label": "Catalog reference; later amendments require verification"
+    },
+    {
+      "id": "gost_index_tr_cu_017_2011",
+      "kind": "regulation",
+      "publisher": "Rosstandart (Federal Agency on Technical Regulating and Metrology)",
+      "title": "TR CU 017 2011 — О безопасности продукции легкой промышленности (regulatory index)",
+      "url": "https://protect.gost.ru/tr/details/aabbc77b-bd8e-4dc8-9c1a-5ec3435d4cbf",
+      "notes": "Russian official technical-regulation catalog. This record is an index, not proof of consolidated amendment-by-amendment full-text review.",
+      "version_label": "Catalog reference; later amendments require verification"
+    },
+    {
+      "id": "gost_index_tr_cu_004_2011",
+      "kind": "regulation",
+      "publisher": "Rosstandart (Federal Agency on Technical Regulating and Metrology)",
+      "title": "TR CU 004 2011 — О безопасности низковольтного оборудования (regulatory index)",
+      "url": "https://protect.gost.ru/tr/details/4c5fbddd-d1c6-40c1-ab38-30808cc48049",
+      "notes": "Russian official technical-regulation catalog. This record is an index, not proof of consolidated amendment-by-amendment full-text review.",
+      "version_label": "Catalog reference; later amendments require verification"
+    },
+    {
+      "id": "gost_index_tr_cu_020_2011",
+      "kind": "regulation",
+      "publisher": "Rosstandart (Federal Agency on Technical Regulating and Metrology)",
+      "title": "TR CU 020 2011 — Электромагнитная совместимость технических средств (regulatory index)",
+      "url": "https://protect.gost.ru/tr/details/7681d60c-888c-427c-9cc9-07406a770d22",
+      "notes": "Russian official technical-regulation catalog. This record is an index, not proof of consolidated amendment-by-amendment full-text review.",
+      "version_label": "Catalog reference; later amendments require verification"
+    },
+    {
+      "id": "gost_index_tr_eaeu_037_2016",
+      "kind": "regulation",
+      "publisher": "Rosstandart (Federal Agency on Technical Regulating and Metrology)",
+      "title": "TR EAEU 037 2016 — Об ограничении применения опасных веществ в изделиях электроники и радиоэлектроники (regulatory index)",
+      "url": "https://protect.gost.ru/tr/details/6fd673a1-aace-4020-9920-d1da42d8f551",
+      "notes": "Russian official technical-regulation catalog. This record is an index, not proof of consolidated amendment-by-amendment full-text review.",
+      "version_label": "Catalog reference; later amendments require verification"
+    },
+    {
+      "id": "eec_decision_106_2026",
+      "kind": "regulation",
+      "publisher": "Council of the Eurasian Economic Commission",
+      "title": "Decision No.106 dated 2026-09-09 amending TR CU 008/2011 (toy safety)",
+      "url": "https://docs.eaeunion.org/documents/461/10947/",
+      "published_at": "2026-09-28",
+      "version_label": "Decision No. 106; effective 2027-03-27",
+      "notes": "As at 2026-11-13 NOT YET EFFECTIVE. Keep current and future legal versions separate. Amendment body not yet reviewed into any compliance rules."
     }
   ],
   "regulations": [
@@ -21,6 +76,56 @@
       "review_status": "reference",
       "effective_from": null,
       "effective_to": null
+    },
+    {
+      "regulation_id": "TR_CU_007_2011",
+      "title_ru": "О безопасности продукции, предназначенной для детей и подростков",
+      "title_zh": "儿童和青少年用品安全",
+      "jurisdiction": "EAEU",
+      "source_id": "gost_index_tr_cu_007_2011",
+      "effective_from": null,
+      "effective_to": null,
+      "review_status": "reference"
+    },
+    {
+      "regulation_id": "TR_CU_017_2011",
+      "title_ru": "О безопасности продукции легкой промышленности",
+      "title_zh": "轻工业产品安全",
+      "jurisdiction": "EAEU",
+      "source_id": "gost_index_tr_cu_017_2011",
+      "effective_from": null,
+      "effective_to": null,
+      "review_status": "reference"
+    },
+    {
+      "regulation_id": "TR_CU_004_2011",
+      "title_ru": "О безопасности низковольтного оборудования",
+      "title_zh": "低压设备安全",
+      "jurisdiction": "EAEU",
+      "source_id": "gost_index_tr_cu_004_2011",
+      "effective_from": null,
+      "effective_to": null,
+      "review_status": "reference"
+    },
+    {
+      "regulation_id": "TR_CU_020_2011",
+      "title_ru": "Электромагнитная совместимость технических средств",
+      "title_zh": "技术设备电磁兼容性",
+      "jurisdiction": "EAEU",
+      "source_id": "gost_index_tr_cu_020_2011",
+      "effective_from": null,
+      "effective_to": null,
+      "review_status": "reference"
+    },
+    {
+      "regulation_id": "TR_EAEU_037_2016",
+      "title_ru": "Об ограничении применения опасных веществ в изделиях электроники и радиоэлектроники",
+      "title_zh": "电子电气产品有害物质限制",
+      "jurisdiction": "EAEU",
+      "source_id": "gost_index_tr_eaeu_037_2016",
+      "effective_from": null,
+      "effective_to": null,
+      "review_status": "reference"
     }
   ],
   "clauses": [
@@ -47,11 +152,90 @@
       "source_id": "eec_tr_cu_008_2011",
       "scope_zh": "不被视为玩具的排除产品清单；需对照最新版本。",
       "review_status": "draft"
+    },
+    {
+      "clause_id": "008_2011_future_amendment_106_2026",
+      "regulation_id": "TR_CU_008_2011",
+      "clause_reference": "EEC Council Decision 106/2026, future change",
+      "source_id": "eec_decision_106_2026",
+      "scope_zh": "已公布修订，2027-03-27 生效；本记录仅用于提示版本变更，不据此更改现行认证规则。",
+      "effective_from": "2027-03-27",
+      "review_status": "draft"
     }
   ],
-  "applicability_rules": [],
+  "applicability_rules": [
+    {
+      "rule_id": "toy_008_certification_candidate",
+      "regulation_id": "TR_CU_008_2011",
+      "clause_id": "008_2011_art_6",
+      "rule_type": "assessment",
+      "code_prefix": null,
+      "predicates": {
+        "intended_for": "play_by_children_under_14",
+        "is_toy_under_regulation": true,
+        "excluded_by_annex_1": false,
+        "product_attributes_confirmed": true
+      },
+      "result_document": "COC",
+      "rationale": "TR CU 008/2011 Article 6 identifies certification as conformity assessment for in-scope toys. Requires verification of toy definition, Annex 1 exclusions, current amendment version, production and scheme. Not activated until human review.",
+      "source_id": "eec_tr_cu_008_2011",
+      "valid_from": null,
+      "valid_to": null,
+      "review_status": "draft"
+    }
+  ],
   "translations_reviewed": {},
-  "products": [],
-  "product_classifications": [],
-  "compliance_assessments": []
+  "products": [
+    {
+      "product_id": "example_plastic_blocks",
+      "name_zh": "儿童塑料拼插积木（示例）",
+      "name_ru": "Детский пластиковый конструктор (пример)",
+      "material": "plastic",
+      "function": "building toy",
+      "intended_use": "children play",
+      "age_range": "unspecified",
+      "powered": 0,
+      "specifications": {
+        "sample_data": true,
+        "packaging_age_marking": "unknown",
+        "components_safety": "unverified",
+        "exact_product_photos": "not_supplied",
+        "market": "EAEU"
+      }
+    }
+  ],
+  "product_classifications": [
+    {
+      "classification_id": "example_blocks_9503003500",
+      "product_id": "example_plastic_blocks",
+      "code": "9503003500",
+      "decision": "candidate",
+      "rationale": "Candidate from 9503 building toys / plastic, subject to material and product checks.",
+      "evidence_url": "https://eec.eaeunion.org/comission/department/catr/ett/"
+    }
+  ],
+  "compliance_assessments": [
+    {
+      "assessment_id": "example_blocks_eac_008",
+      "product_id": "example_plastic_blocks",
+      "regulation_id": "TR_CU_008_2011",
+      "status": "insufficient_data",
+      "result_document": null,
+      "rule_ids": [],
+      "evidence": [
+        {
+          "type": "regulation_reference",
+          "source_id": "eec_tr_cu_008_2011",
+          "clause": "Article 1, Article 6, Annex 1"
+        },
+        {
+          "type": "scheduled_change",
+          "source_id": "eec_decision_106_2026",
+          "effective_date": "2027-03-27"
+        }
+      ],
+      "rationale": "Example only. Intended age and exact article scope, Annex 1 exclusions and current text need verification; no document conclusion auto-issued.",
+      "review_status": "draft"
+    }
+  ]
 }
