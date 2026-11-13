@@ -7,9 +7,9 @@ db.row_factory=sqlite3.Row
 assert db.execute("PRAGMA integrity_check").fetchone()[0]=="ok"
 assert db.execute("SELECT count(*) FROM tariff_codes").fetchone()[0]==13293
 assert db.execute("SELECT count(*) FROM code_translations").fetchone()[0]==13293
-assert db.execute("SELECT count(*) FROM eac_knowledge_regulations").fetchone()[0]==6
-assert db.execute("SELECT count(*) FROM eac_clause_summaries").fetchone()[0]>=20
-assert db.execute("SELECT count(*) FROM eac_candidate_rules").fetchone()[0]>=12
+assert db.execute("SELECT count(*) FROM eac_knowledge_regulations").fetchone()[0]==11
+assert db.execute("SELECT count(*) FROM eac_clause_summaries").fetchone()[0]>=50
+assert db.execute("SELECT count(*) FROM eac_candidate_rules").fetchone()[0]>=22
 reviews=json.loads((HERE.parent/"eac"/"reviews.json").read_text("utf-8"))
 assert db.execute("SELECT count(*) FROM eac_verified_candidate_rules").fetchone()[0]==len(reviews.get("rules",{}))
 for row in db.execute("SELECT id,reviewed_by,reviewed_at,required_attributes_json FROM eac_verified_candidate_rules"):
@@ -18,7 +18,7 @@ assert db.execute("SELECT count(*) FROM eac_certificate_records").fetchone()[0]=
 assert db.execute("SELECT count(*) FROM eac_certificate_checks").fetchone()[0]==0
 assert db.execute("SELECT count(*) FROM eac_document_forms").fetchone()[0]==5
 assert db.execute("SELECT count(*) FROM eac_regulation_events").fetchone()[0]>=5
-assert db.execute("SELECT count(*) FROM eac_case_templates").fetchone()[0]==4
+assert db.execute("SELECT count(*) FROM eac_case_templates").fetchone()[0]==6
 assert db.execute("PRAGMA foreign_key_check").fetchall()==[]
 assert db.execute("SELECT COUNT(*) FROM eac_candidate_rules WHERE required_attributes_json='[]'").fetchone()[0]==0
 assert db.execute("SELECT COUNT(*) FROM eac_candidate_rules WHERE source_id NOT IN (SELECT id FROM eac_reference_sources)").fetchone()[0]==0
@@ -38,5 +38,5 @@ for row in db.execute("SELECT status,review_status FROM compliance_assessments")
   assert row["review_status"]!="verified" or row["status"]!="insufficient_data"
 # Reference-only clauses and draft rules can never drive determinate claims
 assert db.execute("SELECT count(*) FROM eac_pending_review").fetchone()[0]>=32
-print("PASS: EAC 6 regulations, 25 clause references, 12 draft applicability checks, "+
+print("PASS: EAC 11 regulations, 50 clause references, 22 candidate rule outlines, "+
       "5 document types, 4 seller cases and 5 source-linked versions; 0 unreviewed 'verified' outcomes")
