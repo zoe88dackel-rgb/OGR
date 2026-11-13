@@ -26,7 +26,7 @@ def reviewed(kind,item_id):
     return item
 
 regulations=data["regulations"]
-if len(regulations)<6:raise SystemExit("Less than 6 verified reference entries in catalogue")
+if len(regulations)<11:raise SystemExit("Less than 11 source-backed reference entries in catalogue")
 if any(len(r.get("conditions",[]))<1 or len(r.get("clauses",[]))<2 for r in regulations):
     raise SystemExit("Missing regulation clause/rule outlines")
 if not DB.exists():raise SystemExit("Build base TN VED database first")
@@ -113,7 +113,7 @@ stats={
 "seller_cases":con.execute("SELECT COUNT(*) FROM eac_case_templates").fetchone()[0],
 "registered_certificates":con.execute("SELECT COUNT(*) FROM eac_certificate_records").fetchone()[0],
 "integrity":"ok"}
-if stats["regulations"]!=6 or stats["draft_rules"]+stats["verified_rules"]<12 or stats["verified_rules"]!=len(reviews.get("rules",{})):
+if stats["regulations"]!=11 or stats["draft_rules"]+stats["verified_rules"]<22 or stats["verified_rules"]!=len(reviews.get("rules",{})):
     raise SystemExit("Unexpected EAC verification state "+dump(stats))
 report_file=HERE/"build-report.json"
 report=json.loads(report_file.read_text("utf-8"))
