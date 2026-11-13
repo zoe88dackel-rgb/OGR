@@ -64,6 +64,56 @@
       "published_at": "2026-09-28",
       "version_label": "Decision No. 106; effective 2027-03-27",
       "notes": "As at 2026-11-13 NOT YET EFFECTIVE. Keep current and future legal versions separate. Amendment body not yet reviewed into any compliance rules."
+    },
+    {
+      "id": "eec_005_adoption",
+      "kind": "regulation",
+      "publisher": "Eurasian Economic Commission",
+      "title": "EEC 2011 Decision 769 and annex TR CU 005/2011",
+      "url": "https://docs.eaeunion.org/documents/162/?PAGEN_1=5",
+      "published_at": "2011-09-02",
+      "version_label": "Original adoption; consolidated version needs review",
+      "notes": "原文附件可在官方决议目录找到；修订需另查"
+    },
+    {
+      "id": "eec_009_adoption",
+      "kind": "regulation",
+      "publisher": "Eurasian Economic Commission",
+      "title": "EEC 2011 Decision 799 and annex TR CU 009/2011",
+      "url": "https://docs.eaeunion.org/documents/162/?PAGEN_1=4",
+      "published_at": "2011-09-30",
+      "version_label": "Original adoption; consolidated version needs review",
+      "notes": "原文附件可在官方决议目录找到"
+    },
+    {
+      "id": "eec_010_adoption",
+      "kind": "regulation",
+      "publisher": "Eurasian Economic Commission",
+      "title": "EEC 2011 Decision 823 and annex TR CU 010/2011",
+      "url": "https://docs.eaeunion.org/documents/162/?PAGEN_1=4",
+      "published_at": "2011-10-21",
+      "version_label": "Original adoption; consolidated version needs review",
+      "notes": "原文附件可在官方决议目录找到"
+    },
+    {
+      "id": "eec_019_adoption",
+      "kind": "regulation",
+      "publisher": "Eurasian Economic Commission",
+      "title": "EEC 2011 Decision 878 and annex TR CU 019/2011",
+      "url": "https://docs.eaeunion.org/documents/162/?PAGEN_1=3",
+      "published_at": "2011-12-15",
+      "version_label": "Original adoption; consolidated version needs review",
+      "notes": "原文附件可在官方决议目录找到"
+    },
+    {
+      "id": "eec_021_adoption",
+      "kind": "regulation",
+      "publisher": "Eurasian Economic Commission",
+      "title": "EEC 2011 Decision 880 and annex TR CU 021/2011",
+      "url": "https://docs.eaeunion.org/documents/162/?PAGEN_1=3",
+      "published_at": "2011-12-15",
+      "version_label": "Original adoption; consolidated version needs review",
+      "notes": "原文附件可在官方决议目录找到"
     }
   ],
   "regulations": [
@@ -123,6 +173,56 @@
       "title_zh": "电子电气产品有害物质限制",
       "jurisdiction": "EAEU",
       "source_id": "gost_index_tr_eaeu_037_2016",
+      "effective_from": null,
+      "effective_to": null,
+      "review_status": "reference"
+    },
+    {
+      "regulation_id": "TR_CU_005_2011",
+      "title_ru": "О безопасности упаковки",
+      "title_zh": "包装安全",
+      "jurisdiction": "EAEU",
+      "source_id": "eec_005_adoption",
+      "effective_from": null,
+      "effective_to": null,
+      "review_status": "reference"
+    },
+    {
+      "regulation_id": "TR_CU_009_2011",
+      "title_ru": "О безопасности парфюмерно-косметической продукции",
+      "title_zh": "化妆品及香水安全",
+      "jurisdiction": "EAEU",
+      "source_id": "eec_009_adoption",
+      "effective_from": null,
+      "effective_to": null,
+      "review_status": "reference"
+    },
+    {
+      "regulation_id": "TR_CU_010_2011",
+      "title_ru": "О безопасности машин и оборудования",
+      "title_zh": "机械与设备安全",
+      "jurisdiction": "EAEU",
+      "source_id": "eec_010_adoption",
+      "effective_from": null,
+      "effective_to": null,
+      "review_status": "reference"
+    },
+    {
+      "regulation_id": "TR_CU_019_2011",
+      "title_ru": "О безопасности средств индивидуальной защиты",
+      "title_zh": "个人防护装备安全",
+      "jurisdiction": "EAEU",
+      "source_id": "eec_019_adoption",
+      "effective_from": null,
+      "effective_to": null,
+      "review_status": "reference"
+    },
+    {
+      "regulation_id": "TR_CU_021_2011",
+      "title_ru": "О безопасности пищевой продукции",
+      "title_zh": "食品安全",
+      "jurisdiction": "EAEU",
+      "source_id": "eec_021_adoption",
       "effective_from": null,
       "effective_to": null,
       "review_status": "reference"
