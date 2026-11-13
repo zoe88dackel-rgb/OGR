@@ -55,7 +55,7 @@
 
 建议每周检查官方目录或法规索引是否存在新修订。发现变更时，为受影响条款生成 `review_tasks`，暂停基于旧规则的确定性建议，直到审查完毕。
 
-## 首批法规（2026-11-13 已建立参考条目；未全部审核）
+## 首批法规（扩展至 11 部来源参考，未作最终法律审核）
 
 | 法规 | 常见方向 | 法规编号 | 说明 |
 |---|---|---|---|
@@ -111,3 +111,14 @@
 5. 根据官方支持的条件接入证书登记查询；对无法确认状态的号码不输出“有效”。
 
 公开使用时不要写“只要查到 TN VED 就知道 EAC 必须办哪种文件”。
+
+
+## 2026-11-13 建库进展
+
+已从原六部法规增加到 **11 部**，新增：TR CU 005/2011 包装、TR CU 009/2011 化妆品、TR CU 010/2011 机械设备、TR CU 019/2011 防护用品、TR CU 021/2011 食品安全。分别保存官方 EEC 原始决议目录。当前数据库包含 50 个分条参考位置、22 条候选规则及 6 个案例。全部维持参考或待审状态。
+
+数据库生成：`python tnved/database/build.py && python tnved/database/enrich_eac.py && python tnved/database/test_eac.py`。
+
+人工审条款：`python tnved/eac/review.py --type clause --id TR_CU_008_2011_clause_1 --reviewer '审核人' --evidence-url 'https://docs.eaeunion.org/...' --note '逐项核对适用范围、排除条件、版本和相关附录的完整记录'`。规则可通过 `--type rule --id toy_scope` 审核。该命令仅记录人工审查结果，不能替代专业法律核实。
+
+正式网页： https://zoe88dackel-rgb.github.io/OGR/tnved/eac/
