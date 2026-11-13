@@ -1,0 +1,69 @@
+name: Build reusable TN VED + EAC compliance database
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'tnved/catalog.json'
+      - 'tnved/zh.json'
+      - 'tnved/database/schema.sql'
+      - 'tnved/database/curated.json'
+      - 'tnved/database/build.py'
+      - '.github/workflows/tnved-compliance-db.yml'
+permissions:
+  contents: write
+concurrency:
+  group: tnved-compliance-database
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build complete bilingual source and compliance schema
+        run: python3 tnved/database/build.py
+      - name: Validate schema / no unverified compliance conclusions
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json,sqlite3,pathlib
+          path=pathlib.Path('tnved/database/compliance.sqlite')
+          report=json.loads(pathlib.Path('tnved/database/build-report.json').read_text(encoding='utf-8'))
+          db=sqlite3.connect(path)
+          db.execute('PRAGMA foreign_keys=ON')
+          assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
+          assert db.execute('SELECT count(*) FROM tariff_codes').fetchone()[0]==13293
+          assert db.execute("SELECT count(*) FROM code_translations WHERE lang='zh'").fetchone()[0]==13293
+          assert db.execute("SELECT count(*) FROM verified_applicability").fetchone()[0]==0, 'No fabricated EAC rules'
+          for table in ['sources','tariff_codes','code_translations','regulations','regulation_clauses','applicability_rules','products','product_classifications','compliance_assessments','review_tasks','audit_events']:
+              db.execute('SELECT count(*) FROM '+table).fetchone()
+          row=db.execute("""SELECT c.code,c.name_ru,t.translated_name,
+            t.review_status FROM tariff_codes c
+            JOIN code_translations t USING(code) WHERE c.code='9503003500'""").fetchone()
+          assert row and row[2], 'Toy blocks bilingual example is missing'
+          assert report['tariff_codes']==13293
+          print('VALIDATED: 13293 TN VED codes + 13293 Chinese translations + future EAC schema')
+          print('Sample:',row)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reusable-compliance-database
+          path: |
+            tnved/database/compliance.sqlite
+            tnved/database/build-report.json
+          retention-days: 14
+      - name: Commit ready-to-use SQLite database and validation report
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add tnved/database/compliance.sqlite tnved/database/build-report.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'data: refresh reusable bilingual TN VED + EAC SQLite database [skip ci]'
+            git pull --rebase
+            git push
+          fi
