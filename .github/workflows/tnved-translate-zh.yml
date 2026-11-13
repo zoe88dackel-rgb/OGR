@@ -1,0 +1,68 @@
+name: Translate all TN VED names to Chinese
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'tnved/translate_zh.py'
+      - '.github/workflows/tnved-translate-zh.yml'
+permissions:
+  contents: write
+concurrency:
+  group: tnved-full-zh
+  cancel-in-progress: false
+jobs:
+  translate:
+    strategy:
+      fail-fast: false
+      max-parallel: 16
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+    runs-on: ubuntu-latest
+    timeout-minutes: 125
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: 'tnved/translation-requirements.txt'
+      - name: Install open-source CPU translation dependencies
+        shell: bash
+        run: |
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
+          pip install -r tnved/translation-requirements.txt
+      - name: Translate assigned TN VED items offline
+        env:
+          HF_HUB_DISABLE_XET: "1"
+          TOKENIZERS_PARALLELISM: "false"
+        run: python tnved/translate_zh.py shard ${{ matrix.shard }} 16
+      - uses: actions/upload-artifact@v4
+        with:
+          name: zh-part-${{ matrix.shard }}
+          path: translation-parts/zh-*.json
+          if-no-files-found: error
+          retention-days: 3
+  merge:
+    needs: [translate]
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: zh-part-*
+          path: translation-parts
+          merge-multiple: true
+      - name: Validate all translations and create Chinese data
+        run: python tnved/translate_zh.py merge translation-parts
+      - name: Commit Chinese labels to Pages site
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add tnved/zh.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'data: Chinese translations for every TN VED code [skip ci]'
+            git pull --rebase
+            git push
+          fi
