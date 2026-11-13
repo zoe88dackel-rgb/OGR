@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="欧亚经济联盟EAC技术法规知识库：法规、适用范围、文件形式、版本、证书核验。官方来源链接，所有候选规则均明确审核状态。">
+<title>EAC 技术法规知识库｜俄罗斯合规工具</title>
+<style>
+:root{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;--ink:#19304e;--muted:#7286a0;--blue:#2269dc;--line:#dae6f4;--bg:#f6f9fe;color:var(--ink);background:var(--bg)}
+*{box-sizing:border-box}body{margin:0}button,input,select{font:inherit}a{text-decoration:none;color:inherit}
+.site{position:sticky;top:0;z-index:10;background:#ffffffee;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.inner{width:min(1050px,calc(100% - 40px));margin:auto}.head{height:67px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.mark{font-weight:800;font-size:16px;letter-spacing:-.02em}.mark b{background:var(--blue);border-radius:8px;color:white;padding:6px 9px;margin-right:9px}
+nav{display:flex;gap:22px;font-size:13px;font-weight:600;color:#637c9b}nav a:hover{color:var(--blue)}
+.hero{background:radial-gradient(ellipse at 80% 3%,#e4efff 5%,transparent 47%),#f7faff;padding:73px 0 46px}
+.kicker{font-size:12px;letter-spacing:.18em;color:var(--blue);font-weight:780}.hero h1{font-size:clamp(32px,6vw,54px);letter-spacing:-.06em;margin:15px 0 18px;line-height:1.2}.hero p{color:#6d829c;font-size:15px;line-height:1.85;max-width:760px}.metrics{display:flex;gap:36px;flex-wrap:wrap;margin-top:29px}.metrics strong{display:block;font-size:23px}.metrics span{color:var(--muted);font-size:12px}
+.notice{margin-top:26px;padding:15px 18px;border:1px solid #cbdcf4;border-radius:12px;color:#536f91;background:#ecf4ff;font-size:13px;line-height:1.7}
+.section{padding-top:58px}.section-title{font-size:25px;letter-spacing:-.04em;margin:0 0 20px}.controls{display:flex;align-items:center;gap:10px;background:white;padding:10px;border:1px solid var(--line);border-radius:16px}
+.controls input{flex:1;min-width:0;padding:13px 15px;border:0;outline:none;font-size:15px}.controls select{padding:13px 12px;border:1px solid #e2eaf5;border-radius:9px;background:#f8fbff;color:#34567f}
+.layout{display:grid;grid-template-columns:300px minmax(0,1fr);gap:17px;align-items:start;margin-top:20px}
+.side,.detail,.panel{background:#fff;border:1px solid var(--line);border-radius:16px}
+.side{padding:12px;max-height:670px;overflow:auto}.side button{width:100%;text-align:left;padding:15px 13px;border:0;border-radius:11px;background:transparent;color:var(--ink);cursor:pointer;margin-bottom:3px}
+.side button:hover,.side button.active{background:#edf4ff}.side .id{font-size:11px;color:#3770bf;font-weight:800;letter-spacing:.04em}
+.side .name{font-weight:760;display:block;margin-top:5px;font-size:14px}.side .sector{color:var(--muted);font-size:12px;display:block;margin-top:5px}
+.detail{padding:30px;min-height:370px}.detail .flag{display:inline-block;color:#687f9a;background:#f0f5fb;border-radius:7px;padding:6px 9px;font-size:11px;font-weight:700}
+.detail h3{font-size:25px;margin:17px 0 7px;letter-spacing:-.03em}.detail .ru{font-size:13px;color:#8093aa;line-height:1.65;margin-bottom:24px}
+.detail h4{font-size:14px;margin:22px 0 10px}.detail p{font-size:14px;color:#5b728c;line-height:1.85;margin:0 0 8px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}.chip{border:1px solid #d7e6fa;background:#f2f7ff;color:#376ca9;font-size:12px;padding:7px 11px;border-radius:8px}
+.refs{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:23px}.refs a,.case a,.footer a{font-size:12px;color:#2569c5;text-decoration:underline;text-underline-offset:3px}.small{color:var(--muted);font-size:12px}
+.rules-list{display:grid;gap:9px;margin-top:13px}.rule{border-left:3px solid #d6e4f8;padding:9px 12px;background:#f8fbff}.rule strong{font-size:12px}.rule p{margin-top:5px;font-size:12px}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.panel{padding:22px}.panel small{font-weight:700;letter-spacing:.06em;color:#3978c8;font-size:11px}.panel h3{font-size:19px;margin:12px 0}.panel p{color:#6a7e96;line-height:1.8;font-size:13px;margin:8px 0}.case-head{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.case-badge{padding:6px 9px;border-radius:10px;background:#edf5ff;font-size:11px;color:#3b71b2;font-weight:700}
+.open-reg{border:0;background:#e9f2ff;color:#185db7;padding:9px 13px;font-weight:700;border-radius:9px;cursor:pointer;font-size:12px}
+.table{display:grid;gap:12px}.doc{border:1px solid var(--line);border-radius:14px;background:white;padding:19px;display:grid;grid-template-columns:130px 1fr;gap:15px}.doc strong{font-size:20px;color:#2167ca}.doc p{font-size:13px;line-height:1.7;color:#71859e;margin:4px 0}.doc a{color:#2367be;text-decoration:underline;font-size:12px}
+.timeline{display:grid;gap:10px}.event{border:1px solid var(--line);border-radius:12px;padding:17px;background:white}.event strong{font-size:13px}.event p{font-size:13px;color:#70859b;line-height:1.75;margin:8px 0 0}.event .date{font-size:11px;color:#2470bf;display:block;margin-top:9px}
+footer{background:#ebf1f9;margin-top:76px;padding:26px 0;font-size:12px;color:#7588a0}
+.footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.empty{padding:36px;font-size:14px;color:#7185a0}
+@media(max-width:760px){.layout{grid-template-columns:1fr}.side{max-height:255px}.cards{grid-template-columns:1fr}.detail{padding:23px}.doc{grid-template-columns:1fr}.hero{padding:44px 0 33px}nav{gap:12px;font-size:12px}nav a:first-child{display:none}.controls{flex-wrap:wrap}.controls input{flex-basis:100%}.controls select{flex:1}}
+</style></head>
+<body>
+<header class="site"><div class="inner head"><a href="#top" class="mark"><b>EAC</b>欧亚法规知识库</a><nav><a href="../">TN VED 编码</a><a href="#laws">技术法规</a><a href="#examples">商品案例</a><a href="#documents">证明文件</a></nav></div></header>
+<main id="top">
+<div class="hero"><div class="inner"><div class="kicker">EAEU · CONFORMITY REFERENCE LIBRARY</div><h1>俄罗斯商品合规，<br>从法规依据开始查。</h1><p>整理技术法规、适用范围、排除条件、文件形式及版本来源。可结合商品资料初步定位适用法规，并跳转官方来源核对。</p><div class="metrics"><div><strong id="n-reg">6</strong><span>首批技术法规</span></div><div><strong id="n-clause">25</strong><span>待审条款索引</span></div><div><strong id="n-doc">5</strong><span>文件及标识类型</span></div></div><div class="notice"><b>使用说明：</b>当前为法规资料库，所有商品判断及规则仍待专业审核。任何 EAC、CoC、DoC、SGR 结果都需结合实际商品、现行法规及登记状态确认。</div></div></div>
+<section id="laws" class="inner section"><h2 class="section-title">技术法规查询</h2><div class="controls"><input id="search" type="search" placeholder="搜索玩具 / 童装 / 低压 / TR CU 017/2011" aria-label="搜索技术法规"><select id="kind" aria-label="领域筛选"><option value="all">全部法规</option><option value="玩具">玩具</option><option value="儿童">儿童用品</option><option value="服饰">服饰</option><option value="电气">电子电气</option></select></div><div class="layout"><div id="side" class="side">读取法规目录中…</div><article id="detail" class="detail">请选择法规查看具体内容</article></div></section>
+<section id="examples" class="inner section"><h2 class="section-title">商品参考案例</h2><div class="cards" id="cases"></div></section>
+<section id="documents" class="inner section"><h2 class="section-title">合规文件区别与官方核验</h2><div class="table" id="docs"></div></section>
+<section class="inner section"><h2 class="section-title">法规修订与生效日期</h2><div class="timeline" id="timeline"></div></section>
+</main>
+<footer><div class="inner footer"><span>独立 EAC 法规知识库 · 资料检索与审核参考</span><a href="https://docs.eaeunion.org" target="_blank" rel="noopener">欧亚经济联盟官方法律门户</a></div></footer>
+<script>
+(function(){
+'use strict';
+const el=id=>document.getElementById(id),make=(tag,cls,txt)=>{const x=document.createElement(tag);if(cls)x.className=cls;if(txt!==undefined)x.textContent=String(txt);return x};
+let data=null,selected=null;
+const findSource=id=>data.sources.find(x=>x.id===id);
+function sourceLink(id,label){
+ const s=findSource(id),a=make('a','',label||'官方来源');
+ if(s&&/^https:\/\/(docs\.eaeunion\.org|eec\.eaeunion\.org|pub\.fsa\.gov\.ru|protect\.gost\.ru)/.test(s.url)){
+  a.href=s.url;a.target='_blank';a.rel='noopener noreferrer';
+ }else a.textContent='来源待核实';
+ return a;
+}
+function drawList(){
+ const q=el('search').value.trim().toLowerCase(),kind=el('kind').value;
+ const matches=data.regulations.filter(r=>{
+  const txt=[r.code,r.zh,r.ru,r.sector,r.scope,r.assessment,r.exclude].join(' ').toLowerCase();
+  if(!txt.includes(q))return false;
+  if(kind==='all')return true;
+  if(kind==='服饰')return r.id==='TR_CU_017_2011';
+  if(kind==='玩具')return r.id==='TR_CU_008_2011';
+  if(kind==='儿童')return r.id==='TR_CU_007_2011';
+  return ['TR_CU_004_2011','TR_CU_020_2011','TR_EAEU_037_2016'].includes(r.id);
+ });
+ const side=el('side');side.replaceChildren();
+ matches.forEach(r=>{
+  const b=make('button',selected===r.id?'active':'');
+  b.type='button';b.append(make('span','id',r.code),make('span','name',r.zh),make('span','sector',r.sector));
+  b.addEventListener('click',()=>{selected=r.id;drawList();drawDetail()});side.append(b);
+ });
+ if(!matches.length)side.append(make('div','empty','没有匹配法规，尝试名称或编号'));
+ if(matches.length&&!matches.some(x=>x.id===selected))selected=matches[0].id;
+ drawDetail();
+}
+function pair(root,title,value){
+ root.append(make('h4','',title),make('p','',value));
+}
+function drawDetail(){
+ const root=el('detail');root.replaceChildren();
+ const r=data.regulations.find(x=>x.id===selected);
+ if(!r){root.append(make('div','empty','暂无详情'));return}
+ root.append(make('span','flag',r.code+' · 资料待专家审核'),make('h3','',r.zh),make('p','ru',r.ru));
+ pair(root,'法规适用范围（辅助中文概述）',r.scope);
+ pair(root,'例外和排除项目',r.exclude);
+ pair(root,'合格评定形式',r.assessment);
+ root.append(make('h4','','需要补充的商品参数'));
+ const chips=make('div','chips');r.attributes.forEach(s=>chips.append(make('span','chip',s)));root.append(chips);
+ root.append(make('h4','','条款索引（内容待逐条核对）'));
+ const box=make('div','rules-list');
+ r.clauses.forEach(([id,zh])=>{const node=make('div','rule');node.append(make('strong','',id),make('p','',zh));box.append(node)});root.append(box);
+ root.append(make('h4','','拟建立的判断规则（未审核，不自动执行）'));
+ const rules=make('div','rules-list');
+ r.conditions.forEach(x=>{
+  const item=make('div','rule');item.append(make('strong','',x.type==='scope'?'适用范围待判断':'文件形式待核实'),make('p','',x.note),
+   make('p','','必要属性：'+x.when.join('、')));rules.append(item);
+ });root.append(rules);
+ const ref=make('div','refs');ref.append(make('span','small','法规原文/目录：'),sourceLink(r.original,'查看欧亚经济联盟官方文件'));root.append(ref);
+}
+function drawDocs(){
+ const root=el('docs');root.replaceChildren();
+ data.documents.forEach(d=>{
+  const card=make('article','doc'),head=make('div');head.append(make('strong','',d.id),make('p','',d.zh));
+  const body=make('div');body.append(make('p','',d.ru),make('p','',d.notes));
+  if(d.verify)body.append(sourceLink(d.verify,'打开官方登记系统'));
+  card.append(head,body);root.append(card);
+ });
+}
+function drawCases(){
+ const root=el('cases');root.replaceChildren();
+ data.cases.forEach(c=>{
+  const card=make('article','panel case'),head=make('div','case-head');
+  head.append(make('small','',c.category),make('span','case-badge','示例 · 待核实'));
+  card.append(head,make('h3','',c.zh),make('p','',c.description),
+   make('p','','需要确认：'+c.fields.join('、')));
+  const reg=c.regulations.map(id=>data.regulations.find(x=>x.id===id)?.code||id).join(' · ');
+  card.append(make('p','','可能相关法规：'+reg));
+  const btn=make('button','open-reg','查看相关法规');
+  btn.addEventListener('click',()=>{selected=c.regulations[0];el('search').value='';el('kind').value='all';drawList();el('laws').scrollIntoView({behavior:'smooth'})});
+  card.append(btn);root.append(card);
+ });
+}
+function drawVersion(){
+ const root=el('timeline');root.replaceChildren();
+ const list=[...data.versions].sort((a,b)=>(b.effective||b.published||'').localeCompare(a.effective||a.published||''));
+ list.forEach(v=>{
+  const r=data.regulations.find(x=>x.id===v.regulation);
+  const item=make('article','event');
+  item.append(make('strong','',(r?r.code:'')+' · '+v.decision),make('p','',v.note));
+  item.append(make('span','date','生效日期：'+(v.effective||'待核实')+(v.state==='future'?' · 尚未生效':'')));
+  const row=make('div','refs');row.append(sourceLink(v.source,'查看决议来源'));item.append(row);root.append(item);
+ });
+}
+fetch('./knowledge.json').then(r=>{if(!r.ok)throw Error('知识库文件加载失败');return r.json()}).then(d=>{
+ if(!d.regulations||d.regulations.length<6)throw Error('法规资料不完整');
+ data=d;el('n-reg').textContent=d.regulations.length;el('n-clause').textContent=d.regulations.reduce((n,r)=>n+r.clauses.length,0);el('n-doc').textContent=d.documents.length;
+ selected=d.regulations[0].id;drawList();drawCases();drawDocs();drawVersion();
+ }).catch(e=>{el('side').textContent=e.message});
+el('search').addEventListener('input',drawList);el('kind').addEventListener('change',drawList);
+})();
+</script>
+</body></html>
