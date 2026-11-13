@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "EAC 合规法规知识库",
-    "version": "2026-11-13-seed-v2",
+    "version": "2026-11-13-reference-11-regulations",
     "status": "reference_only",
     "reviewed_rules": 0,
     "compiled_at": "2026-11-13",
@@ -133,6 +133,51 @@
       "published": null,
       "type": "registry",
       "note": "Check accredited organizations and laboratories"
+    },
+    {
+      "id": "eec_005_adoption",
+      "url": "https://docs.eaeunion.org/documents/162/?PAGEN_1=5",
+      "name": "EEC 2011 Decision 769 and annex TR CU 005/2011",
+      "publisher": "Eurasian Economic Commission",
+      "published": "2011-09-02",
+      "type": "adoption_listing",
+      "note": "原文附件可在官方决议目录找到；修订需另查"
+    },
+    {
+      "id": "eec_009_adoption",
+      "url": "https://docs.eaeunion.org/documents/162/?PAGEN_1=4",
+      "name": "EEC 2011 Decision 799 and annex TR CU 009/2011",
+      "publisher": "Eurasian Economic Commission",
+      "published": "2011-09-30",
+      "type": "adoption_listing",
+      "note": "原文附件可在官方决议目录找到"
+    },
+    {
+      "id": "eec_010_adoption",
+      "url": "https://docs.eaeunion.org/documents/162/?PAGEN_1=4",
+      "name": "EEC 2011 Decision 823 and annex TR CU 010/2011",
+      "publisher": "Eurasian Economic Commission",
+      "published": "2011-10-21",
+      "type": "adoption_listing",
+      "note": "原文附件可在官方决议目录找到"
+    },
+    {
+      "id": "eec_019_adoption",
+      "url": "https://docs.eaeunion.org/documents/162/?PAGEN_1=3",
+      "name": "EEC 2011 Decision 878 and annex TR CU 019/2011",
+      "publisher": "Eurasian Economic Commission",
+      "published": "2011-12-15",
+      "type": "adoption_listing",
+      "note": "原文附件可在官方决议目录找到"
+    },
+    {
+      "id": "eec_021_adoption",
+      "url": "https://docs.eaeunion.org/documents/162/?PAGEN_1=3",
+      "name": "EEC 2011 Decision 880 and annex TR CU 021/2011",
+      "publisher": "Eurasian Economic Commission",
+      "published": "2011-12-15",
+      "type": "adoption_listing",
+      "note": "原文附件可在官方决议目录找到"
     }
   ],
   "regulations": [
@@ -527,6 +572,349 @@
           "note": "法规提供声明方案，部分情形具体证书替代规定须复核当前文本"
         }
       ]
+    },
+    {
+      "id": "TR_CU_005_2011",
+      "code": "TR CU 005/2011",
+      "zh": "包装安全",
+      "ru": "О безопасности упаковки",
+      "sector": "食品包装 / 运输及销售包装",
+      "original": "eec_005_adoption",
+      "scope": "投放市场的包装及封口材料，需按用途及与包装内容物的接触情况确认",
+      "exclude": "纯商品收纳用途未必属于法规所称包装；先识别是否为包装",
+      "assessment": "包装合格评定通常涉及 DoC，需依据法规现行条款核对",
+      "attributes": [
+        "包装用途",
+        "接触食品/非食品",
+        "材料种类",
+        "是包装还是收纳用品",
+        "一次性/可重复使用"
+      ],
+      "clauses": [
+        [
+          "第1条",
+          "适用范围"
+        ],
+        [
+          "第2条",
+          "包装定义"
+        ],
+        [
+          "第5条",
+          "安全要求"
+        ],
+        [
+          "第7条",
+          "符合性评定"
+        ],
+        [
+          "附录",
+          "材料及安全指标"
+        ]
+      ],
+      "documents": [
+        "DOC"
+      ],
+      "conditions": [
+        {
+          "id": "pack_scope",
+          "type": "scope",
+          "form": null,
+          "when": [
+            "packaging_function",
+            "material_type",
+            "contact_use"
+          ],
+          "note": "判断是否为法规意义上的包装和适用用途"
+        },
+        {
+          "id": "pack_assess",
+          "type": "assessment",
+          "form": "DOC",
+          "when": [
+            "confirmed_in_scope",
+            "packaging_type",
+            "current_version_verified"
+          ],
+          "note": "需复核现行声明方案和特定类别要求"
+        }
+      ]
+    },
+    {
+      "id": "TR_CU_009_2011",
+      "code": "TR CU 009/2011",
+      "zh": "化妆品及香水安全",
+      "ru": "О безопасности парфюмерно-косметической продукции",
+      "sector": "护肤 / 香水 / 化妆品",
+      "original": "eec_009_adoption",
+      "scope": "适用范围内的香水、个人护理和化妆品产品，需结合具体用途与成分确认",
+      "exclude": "具有药品属性的产品及其他排除项需另核对适用法规",
+      "assessment": "不同产品可能需 DoC 或 SGR，必须核查列示的特殊产品范围",
+      "attributes": [
+        "使用部位",
+        "功效宣称",
+        "成分表",
+        "是否儿童使用",
+        "特殊产品类别",
+        "进口主体"
+      ],
+      "clauses": [
+        [
+          "第1条",
+          "适用范围及排除"
+        ],
+        [
+          "第3条",
+          "术语和定义"
+        ],
+        [
+          "第5条",
+          "安全要求"
+        ],
+        [
+          "合格评定条款",
+          "声明及国家注册形式"
+        ],
+        [
+          "附录",
+          "特殊产品及限制物质清单"
+        ]
+      ],
+      "documents": [
+        "DOC",
+        "SGR"
+      ],
+      "conditions": [
+        {
+          "id": "cosmetics_scope",
+          "type": "scope",
+          "form": null,
+          "when": [
+            "ingredients",
+            "claimed_use",
+            "contact_area"
+          ],
+          "note": "需区分普通化妆品、特殊功效与其他监管产品"
+        },
+        {
+          "id": "cosmetics_assess",
+          "type": "assessment",
+          "form": null,
+          "when": [
+            "special_registration_group",
+            "age_or_use_group",
+            "current_annex_checked"
+          ],
+          "note": "SGR 不等于 CoC，应按法规规定的产品清单核实"
+        }
+      ]
+    },
+    {
+      "id": "TR_CU_010_2011",
+      "code": "TR CU 010/2011",
+      "zh": "机械与设备安全",
+      "ru": "О безопасности машин и оборудования",
+      "sector": "工业机械 / 设备",
+      "original": "eec_010_adoption",
+      "scope": "法规列明的机械与设备类型，具体以用途、危险因素及附录确定",
+      "exclude": "其他专项技术法规已经覆盖的设备及排除项应分别核查",
+      "assessment": "依据产品附录区分 CoC 或 DoC，并核对安全资料及技术文件",
+      "attributes": [
+        "机械类型",
+        "额定参数",
+        "主要用途",
+        "附录类别",
+        "机器安全装置",
+        "是否单机/生产线"
+      ],
+      "clauses": [
+        [
+          "第1条",
+          "范围和排除"
+        ],
+        [
+          "第5条",
+          "安全设计基本要求"
+        ],
+        [
+          "第8条",
+          "符合性评定"
+        ],
+        [
+          "附录3",
+          "认证类别"
+        ],
+        [
+          "附录4",
+          "声明类别"
+        ]
+      ],
+      "documents": [
+        "COC",
+        "DOC"
+      ],
+      "conditions": [
+        {
+          "id": "machine_scope",
+          "type": "scope",
+          "form": null,
+          "when": [
+            "equipment_category",
+            "intended_use",
+            "special_regulation_exclusion"
+          ],
+          "note": "技术法规的适用性不能仅靠 HS84 章直接认定"
+        },
+        {
+          "id": "machine_assess",
+          "type": "assessment",
+          "form": null,
+          "when": [
+            "annex_cert_or_doc",
+            "equipment_configuration",
+            "technical_files"
+          ],
+          "note": "机械类型和附录决定文件方式，需核对当前文本"
+        }
+      ]
+    },
+    {
+      "id": "TR_CU_019_2011",
+      "code": "TR CU 019/2011",
+      "zh": "个人防护装备安全",
+      "ru": "О безопасности средств индивидуальной защиты",
+      "sector": "安全帽 / 防护用品",
+      "original": "eec_019_adoption",
+      "scope": "用于防止工作或其他场景中特定危害的个人防护用品",
+      "exclude": "运动装饰用品与法定个人防护装备不可混用；排除项需核实",
+      "assessment": "依 PPE 危害防护类别及适用条款决定合格评定形式，可能为 CoC 或 DoC",
+      "attributes": [
+        "防护目的",
+        "危险等级",
+        "实际使用场景",
+        "技术规格",
+        "是否运动装备",
+        "防护分类"
+      ],
+      "clauses": [
+        [
+          "第1条",
+          "适用范围"
+        ],
+        [
+          "第3条",
+          "定义及产品类型"
+        ],
+        [
+          "第4条",
+          "安全要求"
+        ],
+        [
+          "合格评定条款",
+          "依据防护类别选择形式"
+        ],
+        [
+          "附录",
+          "风险与产品分类"
+        ]
+      ],
+      "documents": [
+        "COC",
+        "DOC"
+      ],
+      "conditions": [
+        {
+          "id": "ppe_scope",
+          "type": "scope",
+          "form": null,
+          "when": [
+            "protective_purpose",
+            "risk_level",
+            "product_type"
+          ],
+          "note": "先区分一般消费品与职业/安全防护装备"
+        },
+        {
+          "id": "ppe_assess",
+          "type": "assessment",
+          "form": null,
+          "when": [
+            "ppe_classification",
+            "hazard_exposure",
+            "current_assessment_scheme"
+          ],
+          "note": "不能把摩托车耳机或普通帽子直接归入 PPE"
+        }
+      ]
+    },
+    {
+      "id": "TR_CU_021_2011",
+      "code": "TR CU 021/2011",
+      "zh": "食品安全",
+      "ru": "О безопасности пищевой продукции",
+      "sector": "食品 / 食品经营",
+      "original": "eec_021_adoption",
+      "scope": "进入市场的食品及其生产流通过程中的适用安全要求",
+      "exclude": "针对具体食品品类的专项法规可能同时适用；不直接涵盖所有配套设备",
+      "assessment": "普通食品可能按规定 DoC，特殊类别可能涉及国家注册及其他合格评定流程",
+      "attributes": [
+        "食品组成",
+        "加工方法",
+        "消费者人群",
+        "食品用途",
+        "标签信息",
+        "特殊食品类别"
+      ],
+      "clauses": [
+        [
+          "第1条",
+          "食品适用范围"
+        ],
+        [
+          "第7条",
+          "安全要求"
+        ],
+        [
+          "第21–24条",
+          "国家注册与特殊食品程序"
+        ],
+        [
+          "第23条",
+          "国家注册相关条款"
+        ],
+        [
+          "附录",
+          "适用安全指标"
+        ]
+      ],
+      "documents": [
+        "DOC",
+        "SGR"
+      ],
+      "conditions": [
+        {
+          "id": "food_scope",
+          "type": "scope",
+          "form": null,
+          "when": [
+            "food_composition",
+            "intended_consumer",
+            "production_category"
+          ],
+          "note": "按食品类别及专项法规共同核对"
+        },
+        {
+          "id": "food_assess",
+          "type": "assessment",
+          "form": null,
+          "when": [
+            "food_class",
+            "special_registration_scope",
+            "current_conformity_path"
+          ],
+          "note": "不同食品类的国家注册、声明程序不可混同"
+        }
+      ]
     }
   ],
   "documents": [
@@ -721,6 +1109,45 @@
       ],
       "result": "需判断是否为单独无电气配件",
       "description": "不自动判定为豁免函；先确认法规不适用的依据"
+    },
+    {
+      "id": "cosmetic_cream",
+      "zh": "普通面部护肤霜",
+      "category": "化妆品",
+      "regulations": [
+        "TR_CU_009_2011"
+      ],
+      "fields": [
+        "完整成分与用途",
+        "儿童或成人",
+        "是否有特殊宣称",
+        "包装标签"
+      ],
+      "docs": [
+        "DOC",
+        "SGR"
+      ],
+      "result": "需要确认类别和注册要求",
+      "description": "普通化妆品与需国家注册的特殊产品不同，具体以法规附件及用途核定"
+    },
+    {
+      "id": "food_wrap_packaging",
+      "zh": "食品接触包装袋",
+      "category": "包装",
+      "regulations": [
+        "TR_CU_005_2011"
+      ],
+      "fields": [
+        "材料",
+        "食品接触用途",
+        "耐温条件",
+        "具体包装形态"
+      ],
+      "docs": [
+        "DOC"
+      ],
+      "result": "需确定包装类适用范围",
+      "description": "食品接触包装不等同食品本体，需核对包装安全与适用测试"
     }
   ]
 }
