@@ -161,6 +161,13 @@ def main():
           c.get("result_document"),sql(c.get("rule_ids",[])),sql(c.get("evidence",[])),
           c.get("rationale"),c.get("review_status","draft"),c.get("reviewer"),c.get("reviewed_at")
         ))
+    for event in curated.get("review_events",[]):
+        con.execute("""INSERT INTO audit_events
+        (event_id,entity_type,entity_id,action,payload_json,actor,event_at)
+        VALUES(?,?,?,?,?,?,?)""",(
+          event["event_id"],event["entity_type"],event["entity_id"],
+          event["action"],sql(event.get("payload",{})),event["actor"],event["event_at"]
+        ))
     # Review priorities: every machine translation is unreviewed. Short or
     # context-dependent translations get a higher-priority review task.
     for code,status,zh in con.execute("""SELECT code,review_status,translated_name
