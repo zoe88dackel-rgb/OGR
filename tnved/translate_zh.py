@@ -23,6 +23,8 @@ def shard(index,count):
     d=catalogue()
     rows=[r for n,r in enumerate(d["rows"]) if n%count==index]
     print("Translating",len(rows),"items; shard",index,"model",MODEL,flush=True)
+    previous_file=HERE/"zh.json"
+    previous=json.loads(previous_file.read_text(encoding="utf-8")).get("translations",{}) if previous_file.exists() else {}
     tok=M2M100Tokenizer.from_pretrained(MODEL,src_lang="ru")
     model=M2M100ForConditionalGeneration.from_pretrained(MODEL,torch_dtype=torch.float32).eval()
     result={}
@@ -35,6 +37,8 @@ def shard(index,count):
             translations=tok.batch_decode(output,skip_special_tokens=True)
             for (code,ru),zh in zip(group,translations):
                 zh=zh.strip()
+                if not zh:
+                    zh=previous.get(code) or ("译名未确认，请对照俄文原文："+ru)
                 if not zh:raise RuntimeError("Empty translation "+code)
                 result[code]=zh
             if start%120==0:print("Shard",index,"translated",len(result),"/",len(rows),flush=True)
