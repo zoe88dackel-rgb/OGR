@@ -1,0 +1,48 @@
+name: EAC official source change monitor
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'tnved/eac/source_watch.py'
+      - 'tnved/eac/knowledge.json'
+      - '.github/workflows/eac-source-watch.yml'
+  schedule:
+    - cron: '12 3 * * 4'
+permissions:
+  contents: write
+concurrency:
+  group: eac-source-watch
+  cancel-in-progress: false
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check legal source updates
+        run: python3 tnved/eac/source_watch.py
+      - name: Publish source health report
+        uses: actions/upload-artifact@v4
+        with:
+          name: eac-legal-source-watch
+          path: tnved/eac/source_watch.json
+          retention-days: 30
+      - name: Save report safely without overwriting concurrently edited documents
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            python3 tnved/eac/source_watch.py
+            git add tnved/eac/source_watch.json
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m 'data: monitor official EAC source changes [skip ci]'
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
