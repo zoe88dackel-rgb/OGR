@@ -1,0 +1,726 @@
+{
+  "meta": {
+    "title": "EAC 合规法规知识库",
+    "version": "2026-11-13-seed-v2",
+    "status": "reference_only",
+    "reviewed_rules": 0,
+    "compiled_at": "2026-11-13",
+    "notice": "所有分类和文件形式仅作候选提示。未进行完整修订文本及适用条款人工核验，不提供最终认证结论。"
+  },
+  "sources": [
+    {
+      "id": "eec_008_adoption",
+      "url": "https://docs.eaeunion.org/documents/162/?PAGEN_1=4",
+      "name": "EEC 2011 Decision 798 and annex TR CU 008/2011",
+      "publisher": "Eurasian Economic Commission",
+      "published": "2011-09-30",
+      "type": "adoption_listing",
+      "note": "官方决议目录，原文附件在同页面"
+    },
+    {
+      "id": "eec_007_adoption",
+      "url": "https://docs.eaeunion.org/documents/162/?PAGEN_1=4",
+      "name": "EEC 2011 Decision 797 and annex TR CU 007/2011",
+      "publisher": "Eurasian Economic Commission",
+      "published": "2011-09-30",
+      "type": "adoption_listing",
+      "note": "官方决议目录，原文附件在同页面"
+    },
+    {
+      "id": "eec_004_adoption",
+      "url": "https://docs.eaeunion.org/documents/162/?PAGEN_1=5",
+      "name": "EEC 2011 Decision 768 and annex TR CU 004/2011",
+      "publisher": "Eurasian Economic Commission",
+      "published": "2011-09-02",
+      "type": "adoption_listing",
+      "note": "官方决议目录，原文附件在同页面"
+    },
+    {
+      "id": "eec_020_adoption",
+      "url": "https://docs.eaeunion.org/documents/162/?PAGEN_1=3",
+      "name": "EEC 2011 Decision 879 and annex TR CU 020/2011",
+      "publisher": "Eurasian Economic Commission",
+      "published": "2011-12-15",
+      "type": "adoption_listing",
+      "note": "官方决议目录，原文附件在同页面"
+    },
+    {
+      "id": "eec_017_adoption",
+      "url": "https://docs.eaeunion.org/documents/162/?PAGEN_1=3",
+      "name": "EEC 2011 Decision 876 and annex TR CU 017/2011",
+      "publisher": "Eurasian Economic Commission",
+      "published": "2011-12-15",
+      "type": "adoption_listing",
+      "note": "官方决议目录，现行修订应单独追踪"
+    },
+    {
+      "id": "eec_037_adoption",
+      "url": "https://docs.eaeunion.org/documents/306/2684/",
+      "name": "EEC Council 2016 Decision 113 TR EAEU 037/2016",
+      "publisher": "Eurasian Economic Commission",
+      "published": null,
+      "type": "adoption_decision",
+      "note": "2016-10-18 adopted, effective 2018-03-01; page reference"
+    },
+    {
+      "id": "eec_008_amend_2026",
+      "url": "https://docs.eaeunion.org/documents/461/10947/",
+      "name": "EEC Council Decision 106 2026 TR CU 008/2011 amendment",
+      "publisher": "Eurasian Economic Commission",
+      "published": "2026-09-28",
+      "type": "amendment",
+      "note": "2027-03-27 future effective, not current"
+    },
+    {
+      "id": "eec_017_amend_2025",
+      "url": "https://docs.eaeunion.org/upload/iblock/ac7/fe00uoaukmwdjjff1wnl49fp18t8bl8t/Reshenie-Soveta-_-75-ot-12-sentyabrya-2025-goda.pdf",
+      "name": "EEC Council Decision 75 2025 TR CU 017/2011 amendment",
+      "publisher": "Eurasian Economic Commission",
+      "published": "2025-10-28",
+      "type": "amendment",
+      "note": "Product assessments require review against the effective consolidated version"
+    },
+    {
+      "id": "eec_017_transition_2026",
+      "url": "https://docs.eaeunion.org/upload/iblock/45f/srfiurn2jlmk30ylmvibqdqzfhx0vxxz/Reshenie-Kollegii-_-44-ot-7-aprelya-2026-g.pdf",
+      "name": "EEC College Decision 44 2026 transitional procedure for 017/2011",
+      "publisher": "Eurasian Economic Commission",
+      "published": null,
+      "type": "transition",
+      "note": "Transition handling requires document-specific review"
+    },
+    {
+      "id": "eec_037_customs_2018",
+      "url": "https://docs.eaeunion.org/documents/253/3910/",
+      "name": "EEC College Decision 167 2018: customs presentation list for TR EAEU 037",
+      "publisher": "Eurasian Economic Commission",
+      "published": "2018-10-19",
+      "type": "customs_document_list",
+      "note": "Separate customs presentation list, not same as scope"
+    },
+    {
+      "id": "eec_037_customs_2021",
+      "url": "https://docs.eaeunion.org/documents/379/6309/",
+      "name": "EEC College Decision 180 2021 changes to 037 customs list",
+      "publisher": "Eurasian Economic Commission",
+      "published": "2021-12-24",
+      "type": "customs_document_list_amendment",
+      "note": "Customs documentation obligations separate from conformity procedure"
+    },
+    {
+      "id": "fsa_coc_registry",
+      "url": "https://pub.fsa.gov.ru/rss/certificate",
+      "name": "Rosakkreditatsiya official certificate registry",
+      "publisher": "Federal Accreditation Service (Russia)",
+      "published": null,
+      "type": "registry",
+      "note": "For Russia-issued certificates only; live checks require opening the record"
+    },
+    {
+      "id": "fsa_doc_registry",
+      "url": "https://pub.fsa.gov.ru/rds/declaration",
+      "name": "Rosakkreditatsiya official declaration registry",
+      "publisher": "Federal Accreditation Service (Russia)",
+      "published": null,
+      "type": "registry",
+      "note": "For Russia-registered declarations only; no bulk API verified"
+    },
+    {
+      "id": "fsa_accreditation_registry",
+      "url": "https://pub.fsa.gov.ru/ral",
+      "name": "Rosakkreditatsiya accreditation register",
+      "publisher": "Federal Accreditation Service (Russia)",
+      "published": null,
+      "type": "registry",
+      "note": "Check accredited organizations and laboratories"
+    }
+  ],
+  "regulations": [
+    {
+      "id": "TR_CU_008_2011",
+      "code": "TR CU 008/2011",
+      "zh": "玩具安全",
+      "ru": "О безопасности игрушек",
+      "sector": "玩具 / 儿童积木",
+      "original": "eec_008_adoption",
+      "scope": "用于儿童游戏的玩具（具体以法规第1、2条及附录为准）",
+      "exclude": "附录1列示的非玩具产品需要排除；不得仅凭商品名称判断",
+      "assessment": "适用范围内玩具的合格评定参考第6条；需核对当前修订",
+      "attributes": [
+        "商品实际用途",
+        "目标年龄",
+        "零件/材料",
+        "电动情况",
+        "是否为附录排除商品"
+      ],
+      "clauses": [
+        [
+          "第1条",
+          "适用范围与排除"
+        ],
+        [
+          "第2条",
+          "玩具术语及定义"
+        ],
+        [
+          "第4条",
+          "安全要求"
+        ],
+        [
+          "第6条",
+          "合格评定及认证"
+        ],
+        [
+          "附录1",
+          "排除清单"
+        ]
+      ],
+      "documents": [
+        "COC"
+      ],
+      "conditions": [
+        {
+          "id": "toy_scope",
+          "type": "scope",
+          "form": null,
+          "when": [
+            "intended_use",
+            "target_age",
+            "is_toy_legal_definition",
+            "annex_exclusion_checked"
+          ],
+          "note": "先确认是否为法规意义上的玩具，核对附录1；普通儿童玩具才进入认证环节"
+        },
+        {
+          "id": "toy_assessment",
+          "type": "assessment",
+          "form": "COC",
+          "when": [
+            "in_scope_by_article_1",
+            "excluded_by_annex_1_false",
+            "current_amendments_checked"
+          ],
+          "note": "第6条规定适用玩具的认证形式，但产品具体适用性及版本必须审核"
+        }
+      ]
+    },
+    {
+      "id": "TR_CU_007_2011",
+      "code": "TR CU 007/2011",
+      "zh": "儿童及青少年用品安全",
+      "ru": "О безопасности продукции, предназначенной для детей и подростков",
+      "sector": "童装 / 儿童生活用品",
+      "original": "eec_007_adoption",
+      "scope": "特定儿童及青少年用品，按法规列示产品、年龄和用途确认",
+      "exclude": "玩具等由其他技术法规覆盖的产品不能自动套用",
+      "assessment": "SGR/CoC/DoC 可能按类别与年龄不同，必须逐类核对附录和适用条款",
+      "attributes": [
+        "品类",
+        "目标年龄",
+        "服饰层级",
+        "材质",
+        "是否卫生相关产品",
+        "法规附录类别"
+      ],
+      "clauses": [
+        [
+          "第1条",
+          "适用范围及产品种类"
+        ],
+        [
+          "第2条",
+          "定义"
+        ],
+        [
+          "第3条及附录",
+          "年龄/类别和安全要求"
+        ],
+        [
+          "合格评定条款",
+          "国家注册、认证、声明适用条件"
+        ]
+      ],
+      "documents": [
+        "SGR",
+        "COC",
+        "DOC"
+      ],
+      "conditions": [
+        {
+          "id": "children_scope",
+          "type": "scope",
+          "form": null,
+          "when": [
+            "product_category",
+            "target_age",
+            "materials",
+            "legal_product_group"
+          ],
+          "note": "童用品不代表统一认证形式，须确定细分组别"
+        },
+        {
+          "id": "children_assessment",
+          "type": "assessment",
+          "form": null,
+          "when": [
+            "group_in_regulation",
+            "age_group",
+            "scheme_verified"
+          ],
+          "note": "SGR、认证和声明按细分组别适用，不以童装大类直接判定"
+        }
+      ]
+    },
+    {
+      "id": "TR_CU_017_2011",
+      "code": "TR CU 017/2011",
+      "zh": "轻工业产品安全",
+      "ru": "О безопасности продукции легкой промышленности",
+      "sector": "成人服饰 / 纺织 / 鞋类",
+      "original": "eec_017_adoption",
+      "scope": "轻工业产品，包括部分成人服饰、纺织品和鞋类等",
+      "exclude": "儿童用品、专用个人防护装备等应先核对是否由其他法规覆盖",
+      "assessment": "第11条规定按产品子类实施声明或认证，需按现行修订版本核对",
+      "attributes": [
+        "商品类别",
+        "是否儿童用品",
+        "材料",
+        "服装接触层级",
+        "用途",
+        "是否个人防护装备"
+      ],
+      "clauses": [
+        [
+          "第1条",
+          "适用范围与除外"
+        ],
+        [
+          "第9条",
+          "产品标识"
+        ],
+        [
+          "第11条",
+          "合格评定、声明或认证"
+        ],
+        [
+          "附录",
+          "产品组、要求及方案（如适用）"
+        ]
+      ],
+      "documents": [
+        "DOC",
+        "COC"
+      ],
+      "conditions": [
+        {
+          "id": "light_scope",
+          "type": "scope",
+          "form": null,
+          "when": [
+            "adult_or_child",
+            "type_of_textile",
+            "contact_layer",
+            "special_purpose"
+          ],
+          "note": "确定成人/儿童、接触层级及是否属于排除类别"
+        },
+        {
+          "id": "light_assessment",
+          "type": "assessment",
+          "form": null,
+          "when": [
+            "garment_subtype",
+            "article_11_scheme",
+            "2025_amendment_checked"
+          ],
+          "note": "第11条存在 CoC/DoC 路径差异，不可以统一认定衣服都用 DoC"
+        }
+      ]
+    },
+    {
+      "id": "TR_CU_004_2011",
+      "code": "TR CU 004/2011",
+      "zh": "低压设备安全",
+      "ru": "О безопасности низковольтного оборудования",
+      "sector": "电气设备 / 家电",
+      "original": "eec_004_adoption",
+      "scope": "额定交流电压50–1000V或直流电压75–1500V的部分低压电气设备，须核对范围和排除项",
+      "exclude": "低于范围或存在法规排除条件不自动适用；电压不是唯一依据",
+      "assessment": "第7条与附录区分证书和声明的适用产品组",
+      "attributes": [
+        "交流/直流",
+        "额定电压",
+        "产品用途",
+        "是否属于附录认证清单",
+        "是否具备电源输入"
+      ],
+      "clauses": [
+        [
+          "第1条",
+          "适用范围、额定电压及排除"
+        ],
+        [
+          "第2条",
+          "定义"
+        ],
+        [
+          "第7条",
+          "认证与声明程序"
+        ],
+        [
+          "附录",
+          "强制认证设备清单"
+        ]
+      ],
+      "documents": [
+        "COC",
+        "DOC"
+      ],
+      "conditions": [
+        {
+          "id": "low_voltage_scope",
+          "type": "scope",
+          "form": null,
+          "when": [
+            "ac_or_dc",
+            "rated_voltage",
+            "excluded_product_group"
+          ],
+          "note": "电压门槛与排除项必须一起检查"
+        },
+        {
+          "id": "low_voltage_assessment",
+          "type": "assessment",
+          "form": null,
+          "when": [
+            "annex_list_status",
+            "actual_equipment_group",
+            "current_version_checked"
+          ],
+          "note": "附录清单内与清单外设备可能适用不同形式"
+        }
+      ]
+    },
+    {
+      "id": "TR_CU_020_2011",
+      "code": "TR CU 020/2011",
+      "zh": "电磁兼容性",
+      "ru": "Электромагнитная совместимость технических средств",
+      "sector": "电子设备 / 有源电器",
+      "original": "eec_020_adoption",
+      "scope": "可能产生电磁干扰或受电磁干扰影响的相关技术设备，依适用范围核对",
+      "exclude": "被动设备等例外需要核对现行第1条及相关排除",
+      "assessment": "第7条及附录相关设备类别可能涉及声明或认证",
+      "attributes": [
+        "是否有源电路",
+        "电磁干扰特性",
+        "具体用途",
+        "设备类型",
+        "附录分类"
+      ],
+      "clauses": [
+        [
+          "第1条",
+          "适用与排除"
+        ],
+        [
+          "第4条",
+          "电磁兼容安全要求"
+        ],
+        [
+          "第7条",
+          "符合性评定形式及程序"
+        ],
+        [
+          "附录",
+          "认证清单及要求"
+        ]
+      ],
+      "documents": [
+        "COC",
+        "DOC"
+      ],
+      "conditions": [
+        {
+          "id": "emc_scope",
+          "type": "scope",
+          "form": null,
+          "when": [
+            "emc_emissions",
+            "emc_immunity",
+            "passive_device_check"
+          ],
+          "note": "是否有源不足以直接判断，需核对法律定义和产品性质"
+        },
+        {
+          "id": "emc_assessment",
+          "type": "assessment",
+          "form": null,
+          "when": [
+            "applicable_product_group",
+            "current_article_7",
+            "annex_list_status"
+          ],
+          "note": "第7条中具体文件形式需按产品类别判定"
+        }
+      ]
+    },
+    {
+      "id": "TR_EAEU_037_2016",
+      "code": "TR EAEU 037/2016",
+      "zh": "电子电气产品有害物质限制",
+      "ru": "Об ограничении применения опасных веществ в изделиях электротехники и радиоэлектроники",
+      "sector": "电子电气 / RoHS",
+      "original": "eec_037_adoption",
+      "scope": "仅适用于法规附录所列的电子电气产品与零部件范围",
+      "exclude": "不在附录产品范围或其他明文排除条件须单独检查",
+      "assessment": "第18–25段主要涉及符合性声明路径、批次/系列方案；不得用 CE/RoHS 报告直接替代 EAEU 文件",
+      "attributes": [
+        "产品功能",
+        "电子电气类别",
+        "附录产品列表",
+        "系列或单批次",
+        "材料有害物质测试资料"
+      ],
+      "clauses": [
+        [
+          "第I节",
+          "适用范围及定义"
+        ],
+        [
+          "第V节",
+          "符合性评定总则"
+        ],
+        [
+          "第18–25段",
+          "符合性声明、方案和证据"
+        ],
+        [
+          "附录1",
+          "适用电子电气产品清单"
+        ]
+      ],
+      "documents": [
+        "DOC"
+      ],
+      "conditions": [
+        {
+          "id": "rohs_scope",
+          "type": "scope",
+          "form": null,
+          "when": [
+            "product_is_in_annex",
+            "exclusion_checked",
+            "hazardous_substances_data"
+          ],
+          "note": "需要先判断附录所列类别"
+        },
+        {
+          "id": "rohs_assessment",
+          "type": "assessment",
+          "form": "DOC",
+          "when": [
+            "in_scope_annex",
+            "manufacturer_or_importer",
+            "scheme_chosen"
+          ],
+          "note": "法规提供声明方案，部分情形具体证书替代规定须复核当前文本"
+        }
+      ]
+    }
+  ],
+  "documents": [
+    {
+      "id": "COC",
+      "zh": "合格证书",
+      "ru": "Сертификат соответствия",
+      "type": "conformity",
+      "verify": "fsa_coc_registry",
+      "notes": "适用产品经规定认证程序，必须核对具体技术法规及登记记录"
+    },
+    {
+      "id": "DOC",
+      "zh": "符合性声明",
+      "ru": "Декларация о соответствии",
+      "type": "conformity",
+      "verify": "fsa_doc_registry",
+      "notes": "在法律适用的情况下由符合条件的申请人声明并按程序登记"
+    },
+    {
+      "id": "SGR",
+      "zh": "国家注册证明",
+      "ru": "Свидетельство о государственной регистрации",
+      "type": "state_registration",
+      "verify": null,
+      "notes": "不同于 CoC/DoC，官方登记信息应到适用的国家/EAEU 登记系统核实"
+    },
+    {
+      "id": "EXEMPTION_OPINION",
+      "zh": "不适用/豁免说明函",
+      "ru": "Отказное письмо (в практике)",
+      "type": "nonconformity_opinion",
+      "verify": null,
+      "notes": "不等于官方统一的 EAC 证书，也不当然替代法定要求"
+    },
+    {
+      "id": "EAC_MARK",
+      "zh": "欧亚符合性标志",
+      "ru": "Единый знак обращения продукции на рынке ЕАЭС",
+      "type": "mark_not_document",
+      "verify": null,
+      "notes": "是标志，不是可登记的证书文件；只有满足相关条件才使用"
+    }
+  ],
+  "versions": [
+    {
+      "id": "toy_2026_106",
+      "regulation": "TR_CU_008_2011",
+      "kind": "amendment",
+      "source": "eec_008_amend_2026",
+      "decision": "EEC Council No.106",
+      "adopted": "2026-09-09",
+      "published": "2026-09-28",
+      "effective": "2027-03-27",
+      "state": "future",
+      "note": "截至2026-11-13为未来生效变更，独立追踪"
+    },
+    {
+      "id": "light_2025_75",
+      "regulation": "TR_CU_017_2011",
+      "kind": "amendment",
+      "source": "eec_017_amend_2025",
+      "decision": "EEC Council No.75",
+      "adopted": "2025-09-12",
+      "published": "2025-10-28",
+      "effective": null,
+      "state": "date_needs_review",
+      "note": "已公布修订，应复核具体条款及生效日"
+    },
+    {
+      "id": "light_2026_44",
+      "regulation": "TR_CU_017_2011",
+      "kind": "transition",
+      "source": "eec_017_transition_2026",
+      "decision": "EEC College No.44",
+      "adopted": "2026-04-07",
+      "published": null,
+      "effective": null,
+      "state": "date_needs_review",
+      "note": "原有证书/声明过渡安排需单独核对"
+    },
+    {
+      "id": "rohs_customs_2018_167",
+      "regulation": "TR_EAEU_037_2016",
+      "kind": "customs_list",
+      "source": "eec_037_customs_2018",
+      "decision": "EEC College No.167",
+      "adopted": "2018-10-16",
+      "published": "2018-10-19",
+      "effective": "2018-11-18",
+      "state": "historical_source",
+      "note": "报关随附合格评定文件清单，区别产品本体评定"
+    },
+    {
+      "id": "rohs_customs_2021_180",
+      "regulation": "TR_EAEU_037_2016",
+      "kind": "customs_list_amendment",
+      "source": "eec_037_customs_2021",
+      "decision": "EEC College No.180",
+      "adopted": "2021-12-21",
+      "published": "2021-12-24",
+      "effective": "2022-01-23",
+      "state": "historical_source",
+      "note": "修改 2018 年报关清单"
+    }
+  ],
+  "cases": [
+    {
+      "id": "plastic_blocks",
+      "zh": "塑料儿童拼插积木",
+      "category": "儿童玩具",
+      "regulations": [
+        "TR_CU_008_2011"
+      ],
+      "fields": [
+        "用途与目标年龄",
+        "产品图片与说明书",
+        "材料/组件",
+        "附录1排除是否适用"
+      ],
+      "docs": [
+        "COC"
+      ],
+      "result": "待核对法规范围",
+      "description": "玩具范围成立后，参考 TR CU 008/2011 第6条；不得只凭 9503003500 作最终判断"
+    },
+    {
+      "id": "outdoor_jacket",
+      "zh": "加绒冲锋衣",
+      "category": "服饰",
+      "regulations": [
+        "TR_CU_017_2011",
+        "TR_CU_007_2011"
+      ],
+      "fields": [
+        "成人或儿童",
+        "面料",
+        "接触层级",
+        "是否专业防护服装",
+        "成套或单件"
+      ],
+      "docs": [
+        "DOC",
+        "COC"
+      ],
+      "result": "缺少具体属性，不能判定文件",
+      "description": "成人服饰与童装可能适用不同法规，文件形式需进一步确认"
+    },
+    {
+      "id": "motorcycle_headset",
+      "zh": "摩托车头盔用耳机",
+      "category": "电子配件",
+      "regulations": [
+        "TR_CU_020_2011",
+        "TR_CU_004_2011",
+        "TR_EAEU_037_2016"
+      ],
+      "fields": [
+        "供电形式/额定电压",
+        "无线功能/无线频段",
+        "实际用途",
+        "电子电路",
+        "是否安装于安全头盔",
+        "设备技术资料"
+      ],
+      "docs": [
+        "COC",
+        "DOC"
+      ],
+      "result": "多法规候选，另需核对无线设备要求",
+      "description": "不会直接断定必须同时获得 CoC+DoC"
+    },
+    {
+      "id": "lampshade",
+      "zh": "灯罩",
+      "category": "灯具配件",
+      "regulations": [
+        "TR_CU_004_2011",
+        "TR_CU_020_2011"
+      ],
+      "fields": [
+        "独立无电气结构还是成品灯具",
+        "额定电压",
+        "材料",
+        "是否带电子驱动",
+        "商品包装用途"
+      ],
+      "docs": [
+        "EXEMPTION_OPINION",
+        "DOC",
+        "COC"
+      ],
+      "result": "需判断是否为单独无电气配件",
+      "description": "不自动判定为豁免函；先确认法规不适用的依据"
+    }
+  ]
+}
