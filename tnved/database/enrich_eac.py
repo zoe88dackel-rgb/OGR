@@ -2,13 +2,29 @@
 """Validate and attach the EAC library to the reproducible SQLite knowledge DB.
 Never generates legally final CoC/DoC/SGR outcomes from the draft rules.
 """
-import json,sqlite3,sys
+import json,sqlite3,sys,hashlib
 from pathlib import Path
 HERE=Path(__file__).resolve().parent
 ROOT=HERE.parent
 LIB=ROOT/"eac"/"knowledge.json"
 DB=HERE/"compliance.sqlite"
 data=json.loads(LIB.read_text("utf-8"))
+knowledge_sha=hashlib.sha256(LIB.read_bytes()).hexdigest()
+review_file=ROOT/"eac"/"reviews.json"
+reviews=json.loads(review_file.read_text("utf-8"))
+def reviewed(kind,item_id):
+    item=reviews.get(kind,{}).get(item_id)
+    if not item:return None
+    if item.get("knowledge_sha256")!=knowledge_sha:
+        raise SystemExit("EAC review invalidated by source change: "+item_id)
+    if not all(item.get(k) for k in ("reviewer","reviewed_at","evidence_url","review_note")):
+        raise SystemExit("Incomplete EAC review audit: "+item_id)
+    source_url=item["evidence_url"]
+    if not source_url.startswith("https://") or not any(x in source_url for x in (
+        "docs.eaeunion.org","eec.eaeunion.org","protect.gost.ru")):
+        raise SystemExit("Reviewer source must be official: "+item_id)
+    return item
+
 regulations=data["regulations"]
 if len(regulations)<6:raise SystemExit("Less than 6 verified reference entries in catalogue")
 if any(len(r.get("conditions",[]))<1 or len(r.get("clauses",[]))<2 for r in regulations):
@@ -35,22 +51,29 @@ for reg in regulations:
         reg["exclude"],reg["assessment"],dump(reg["attributes"]),"reference"))
     for idx,(ref,summary) in enumerate(reg["clauses"],1):
         cid=reg["id"]+"_clause_"+str(idx)
+        approval=reviewed("clauses",cid)
         con.execute("""INSERT OR REPLACE INTO eac_clause_summaries
-          (id,regulation_id,reference,summary_zh,source_id,review_status)
-          VALUES(?,?,?,?,?,?)""",
-          (cid,reg["id"],ref,summary,reg["original"],"draft"))
+          (id,regulation_id,reference,summary_zh,source_id,review_status,reviewed_by,reviewed_at)
+          VALUES(?,?,?,?,?,?,?,?)""",
+          (cid,reg["id"],ref,summary,reg["original"],"verified" if approval else "draft",
+           approval.get("reviewer") if approval else None,
+           approval.get("reviewed_at") if approval else None))
     for rule in reg["conditions"]:
         if len(rule.get("when",[]))<2:
             raise SystemExit("Rule missing non-code product attributes "+rule["id"])
         if rule.get("status")=="verified":
-            raise SystemExit("Refusing to publish unreviewed EAC rule "+rule["id"])
+            raise SystemExit("Unreviewed EAC rule cannot be prelabelled verified "+rule["id"])
+        approval=reviewed("rules",rule["id"])
         if rule["form"] is not None and rule["form"] not in ("COC","DOC","SGR","OTHER"):
             raise SystemExit("Unsupported assessment form "+str(rule["form"]))
         con.execute("""INSERT OR REPLACE INTO eac_candidate_rules
-        (id,regulation_id,rule_type,proposed_document,required_attributes_json,explanation_zh,source_id,review_status)
-        VALUES(?,?,?,?,?,?,?,?)""",
+        (id,regulation_id,rule_type,proposed_document,required_attributes_json,explanation_zh,source_id,review_status,reviewed_by,reviewed_at)
+        VALUES(?,?,?,?,?,?,?,?,?,?)""",
          (rule["id"],reg["id"],rule["type"],rule["form"],
-          dump(rule["when"]),rule["note"],reg["original"],"draft"))
+          dump(rule["when"]),rule["note"],reg["original"],
+          "verified" if approval else "draft",
+          approval.get("reviewer") if approval else None,
+          approval.get("reviewed_at") if approval else None))
 for doc in data["documents"]:
     con.execute("""INSERT OR REPLACE INTO eac_document_forms
        (document_code,title_zh,title_ru,document_category,verify_source_id,notes)
@@ -90,7 +113,7 @@ stats={
 "seller_cases":con.execute("SELECT COUNT(*) FROM eac_case_templates").fetchone()[0],
 "registered_certificates":con.execute("SELECT COUNT(*) FROM eac_certificate_records").fetchone()[0],
 "integrity":"ok"}
-if stats["regulations"]!=6 or stats["verified_rules"]!=0 or stats["draft_rules"]<12:
+if stats["regulations"]!=6 or stats["draft_rules"]+stats["verified_rules"]<12 or stats["verified_rules"]!=len(reviews.get("rules",{})):
     raise SystemExit("Unexpected EAC verification state "+dump(stats))
 report_file=HERE/"build-report.json"
 report=json.loads(report_file.read_text("utf-8"))
