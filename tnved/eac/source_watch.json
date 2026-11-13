@@ -1,0 +1,183 @@
+{
+  "changes_needing_review": 14,
+  "checked_sources": 16,
+  "generated_at": "2026-11-13T16:11:05.124496+00:00",
+  "inaccessible_sources": 0,
+  "items": {
+    "eec_004_adoption": {
+      "checked_at": "2026-11-13T16:11:05.124496+00:00",
+      "content_type": "text/html; charset=utf-8",
+      "http_status": 200,
+      "prior_sha256": "c0c41baddcaf0cdacff1005da5d7b8c2e8cb22a05143e764273629a2d8fdd6d6",
+      "publisher": "Eurasian Economic Commission",
+      "requires_manual_review": true,
+      "sha256": "d26c3373e008c319e05e698ecd4e6766d12abd628c7a6750e720e578bf5bd2f6",
+      "status": "source_bytes_changed_needs_review",
+      "url": "https://docs.eaeunion.org/documents/162/?PAGEN_1=5"
+    },
+    "eec_005_adoption": {
+      "checked_at": "2026-11-13T16:11:05.124496+00:00",
+      "content_type": "text/html; charset=utf-8",
+      "http_status": 200,
+      "prior_sha256": "cdc19480328d2bf508bf82d8775a1e71ebfed7ce330093e36d5cfb583578a314",
+      "publisher": "Eurasian Economic Commission",
+      "requires_manual_review": true,
+      "sha256": "4c488cb98ca3d7549fbb6e02b18279cddf9856e6790cdf245fa6caf916a5e028",
+      "status": "source_bytes_changed_needs_review",
+      "url": "https://docs.eaeunion.org/documents/162/?PAGEN_1=5"
+    },
+    "eec_007_adoption": {
+      "checked_at": "2026-11-13T16:11:05.124496+00:00",
+      "content_type": "text/html; charset=utf-8",
+      "http_status": 200,
+      "prior_sha256": "002079c330010e814c7fd9b4a22eec136f9d4696f6737499e4d8f1ef535f895d",
+      "publisher": "Eurasian Economic Commission",
+      "requires_manual_review": true,
+      "sha256": "10d6037f9a0e21ccd98b2fad704c083258d5a60461078b4c4bfa6389f25497fe",
+      "status": "source_bytes_changed_needs_review",
+      "url": "https://docs.eaeunion.org/documents/162/?PAGEN_1=4"
+    },
+    "eec_008_adoption": {
+      "checked_at": "2026-11-13T16:11:05.124496+00:00",
+      "content_type": "text/html; charset=utf-8",
+      "http_status": 200,
+      "prior_sha256": "a746bba148a1603c1113ee893c3cf0b8324071b1d0315018278c0a901d82d88c",
+      "publisher": "Eurasian Economic Commission",
+      "requires_manual_review": true,
+      "sha256": "82306e1c534b4effc6772e7d49a03ec2f5b5c3e6f7d528bab2e158f58637dd2d",
+      "status": "source_bytes_changed_needs_review",
+      "url": "https://docs.eaeunion.org/documents/162/?PAGEN_1=4"
+    },
+    "eec_008_amend_2026": {
+      "checked_at": "2026-11-13T16:11:05.124496+00:00",
+      "content_type": "text/html; charset=utf-8",
+      "http_status": 200,
+      "prior_sha256": "c70f965792437366e4b803ffffbcaf9bd927418fc340864f5b197430fab8949a",
+      "publisher": "Eurasian Economic Commission",
+      "requires_manual_review": true,
+      "sha256": "94f91eca4b8ba45ca63b9812ac447c42a95c676d583ee72404bd2184beb923fd",
+      "status": "source_bytes_changed_needs_review",
+      "url": "https://docs.eaeunion.org/documents/461/10947/"
+    },
+    "eec_009_adoption": {
+      "checked_at": "2026-11-13T16:11:05.124496+00:00",
+      "content_type": "text/html; charset=utf-8",
+      "http_status": 200,
+      "prior_sha256": "c74910ccbb845bb3c6a36f0d69d680401c0125dd8c692dd478ab00874f43d647",
+      "publisher": "Eurasian Economic Commission",
+      "requires_manual_review": true,
+      "sha256": "e9e6689da1d97b968d04a808f41f5d20acad22ca3184da191cf34756daf254fe",
+      "status": "source_bytes_changed_needs_review",
+      "url": "https://docs.eaeunion.org/documents/162/?PAGEN_1=4"
+    },
+    "eec_010_adoption": {
+      "checked_at": "2026-11-13T16:11:05.124496+00:00",
+      "content_type": "text/html; charset=utf-8",
+      "http_status": 200,
+      "prior_sha256": "4eaec5454d0bdb8a0f7ba871bd7b1d55fc5df673471881209ffb771339c8aca3",
+      "publisher": "Eurasian Economic Commission",
+      "requires_manual_review": true,
+      "sha256": "fb994f7140f6390499786507dfe3e2a2b653e9203cf650a8520d4a9acac0d817",
+      "status": "source_bytes_changed_needs_review",
+      "url": "https://docs.eaeunion.org/documents/162/?PAGEN_1=4"
+    },
+    "eec_017_adoption": {
+      "checked_at": "2026-11-13T16:11:05.124496+00:00",
+      "content_type": "text/html; charset=utf-8",
+      "http_status": 200,
+      "prior_sha256": "19e1c1d8caf3d524fee13886fd706d7f0afe9c5a5641c0831ac3b8bae9a65872",
+      "publisher": "Eurasian Economic Commission",
+      "requires_manual_review": true,
+      "sha256": "346c9c470d3909d1661ed9147603c82b8fcc4844cb26f313ec7eebdd3ae8a3a1",
+      "status": "source_bytes_changed_needs_review",
+      "url": "https://docs.eaeunion.org/documents/162/?PAGEN_1=3"
+    },
+    "eec_017_amend_2025": {
+      "checked_at": "2026-11-13T16:11:05.124496+00:00",
+      "content_type": "application/pdf",
+      "http_status": 200,
+      "prior_sha256": "0840828b43016b0383d1cc121bc3d6bb5f816ec791029e5b1ae62818ed9869a4",
+      "publisher": "Eurasian Economic Commission",
+      "sha256": "0840828b43016b0383d1cc121bc3d6bb5f816ec791029e5b1ae62818ed9869a4",
+      "status": "unchanged",
+      "url": "https://docs.eaeunion.org/upload/iblock/ac7/fe00uoaukmwdjjff1wnl49fp18t8bl8t/Reshenie-Soveta-_-75-ot-12-sentyabrya-2025-goda.pdf"
+    },
+    "eec_017_transition_2026": {
+      "checked_at": "2026-11-13T16:11:05.124496+00:00",
+      "content_type": "application/pdf",
+      "http_status": 200,
+      "prior_sha256": "399644dc4d96a19fee1e1e26e390dd05cccfbeb6b94c68685114b60b0746817c",
+      "publisher": "Eurasian Economic Commission",
+      "sha256": "399644dc4d96a19fee1e1e26e390dd05cccfbeb6b94c68685114b60b0746817c",
+      "status": "unchanged",
+      "url": "https://docs.eaeunion.org/upload/iblock/45f/srfiurn2jlmk30ylmvibqdqzfhx0vxxz/Reshenie-Kollegii-_-44-ot-7-aprelya-2026-g.pdf"
+    },
+    "eec_019_adoption": {
+      "checked_at": "2026-11-13T16:11:05.124496+00:00",
+      "content_type": "text/html; charset=utf-8",
+      "http_status": 200,
+      "prior_sha256": "f42ca0d1d60bb05aadcf27aa89a6533010d1f61c1bc01493cd7c1927859a53ee",
+      "publisher": "Eurasian Economic Commission",
+      "requires_manual_review": true,
+      "sha256": "f6d67ee613f1dcc6bc4ec1cfd6cc5209a629b171e182c4e060e388be444816bc",
+      "status": "source_bytes_changed_needs_review",
+      "url": "https://docs.eaeunion.org/documents/162/?PAGEN_1=3"
+    },
+    "eec_020_adoption": {
+      "checked_at": "2026-11-13T16:11:05.124496+00:00",
+      "content_type": "text/html; charset=utf-8",
+      "http_status": 200,
+      "prior_sha256": "1db21f537c85f8565814bcbaf655a082ddd08bb909e294ce53a9c4b1cfd0e645",
+      "publisher": "Eurasian Economic Commission",
+      "requires_manual_review": true,
+      "sha256": "97e96f5332a634258b2f295eb4f1375e7ff933099b10d20886e83d1e85763171",
+      "status": "source_bytes_changed_needs_review",
+      "url": "https://docs.eaeunion.org/documents/162/?PAGEN_1=3"
+    },
+    "eec_021_adoption": {
+      "checked_at": "2026-11-13T16:11:05.124496+00:00",
+      "content_type": "text/html; charset=utf-8",
+      "http_status": 200,
+      "prior_sha256": "012000c8f73376b434db5631cc687e060fcb22f93f1bbf67d9e0d5f002513c83",
+      "publisher": "Eurasian Economic Commission",
+      "requires_manual_review": true,
+      "sha256": "ac88dfb9a2e29350bd396b6edcfc37a45e409668f2852833318f9534ebbe7665",
+      "status": "source_bytes_changed_needs_review",
+      "url": "https://docs.eaeunion.org/documents/162/?PAGEN_1=3"
+    },
+    "eec_037_adoption": {
+      "checked_at": "2026-11-13T16:11:05.124496+00:00",
+      "content_type": "text/html; charset=utf-8",
+      "http_status": 200,
+      "prior_sha256": "6e4946cab43a08f7682178590992b8253b73ae5a17441b8d4a51576dfbf29bc5",
+      "publisher": "Eurasian Economic Commission",
+      "requires_manual_review": true,
+      "sha256": "eb38ed7efc5d963c1a7d48db186dc2c07fe2bedc0218193fe83b0d28345617b8",
+      "status": "source_bytes_changed_needs_review",
+      "url": "https://docs.eaeunion.org/documents/306/2684/"
+    },
+    "eec_037_customs_2018": {
+      "checked_at": "2026-11-13T16:11:05.124496+00:00",
+      "content_type": "text/html; charset=utf-8",
+      "http_status": 200,
+      "prior_sha256": "398d3bf21bcbbc8670411a495c14341d869c98000d55e9f958d28d79e3099f5d",
+      "publisher": "Eurasian Economic Commission",
+      "requires_manual_review": true,
+      "sha256": "d2c06f76d420a2fcf84790cc2c68fb18a8364bd442cce945818a1d1bacfd3b72",
+      "status": "source_bytes_changed_needs_review",
+      "url": "https://docs.eaeunion.org/documents/253/3910/"
+    },
+    "eec_037_customs_2021": {
+      "checked_at": "2026-11-13T16:11:05.124496+00:00",
+      "content_type": "text/html; charset=utf-8",
+      "http_status": 200,
+      "prior_sha256": "283523e1107b1a987f635664c6a71bd22d013a3de165fa93aa93c071134a56f7",
+      "publisher": "Eurasian Economic Commission",
+      "requires_manual_review": true,
+      "sha256": "ad831af94c0b1fb87f8cdcd228ad63b176334e43fdd0c176369dc50ca44a38f5",
+      "status": "source_bytes_changed_needs_review",
+      "url": "https://docs.eaeunion.org/documents/379/6309/"
+    }
+  },
+  "notice": "Bytes changing is a signal for manual legal review; not verified amendment or document status."
+}
