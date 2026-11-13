@@ -47,14 +47,14 @@ jobs:
           assert db.execute('SELECT count(*) FROM tariff_codes').fetchone()[0]==13293
           assert db.execute("SELECT count(*) FROM code_translations WHERE lang='zh'").fetchone()[0]==13293
           assert db.execute("SELECT count(*) FROM verified_applicability").fetchone()[0]==0, 'No fabricated EAC rules'
-          assert db.execute("SELECT count(*) FROM eac_knowledge_regulations").fetchone()[0]==6
-          assert db.execute("SELECT count(*) FROM eac_clause_summaries").fetchone()[0]>=20
-          assert db.execute("SELECT count(*) FROM eac_candidate_rules").fetchone()[0]>=12
+          assert db.execute("SELECT count(*) FROM eac_knowledge_regulations").fetchone()[0]==11
+          assert db.execute("SELECT count(*) FROM eac_clause_summaries").fetchone()[0]>=50
+          assert db.execute("SELECT count(*) FROM eac_candidate_rules").fetchone()[0]>=22
           reviews=json.load(open('tnved/eac/reviews.json',encoding='utf-8'))
           assert db.execute("SELECT count(*) FROM eac_verified_candidate_rules").fetchone()[0]==len(reviews.get('rules',{}))
           assert db.execute("SELECT count(*) FROM eac_document_forms").fetchone()[0]>=5
           assert db.execute("SELECT count(*) FROM eac_regulation_events").fetchone()[0]>=5
-          assert db.execute("SELECT count(*) FROM eac_case_templates").fetchone()[0]>=4
+          assert db.execute("SELECT count(*) FROM eac_case_templates").fetchone()[0]>=6
           for table in ['sources','tariff_codes','code_translations','regulations','regulation_clauses','applicability_rules','products','product_classifications','compliance_assessments','review_tasks','audit_events']:
               db.execute('SELECT count(*) FROM '+table).fetchone()
           row=db.execute("""SELECT c.code,c.name_ru,t.translated_name,
