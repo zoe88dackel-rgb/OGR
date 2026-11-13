@@ -41,8 +41,17 @@ def inspect(s):
         dig=sha256(raw).hexdigest()
         prior=item.get("sha256")
         out["sha256"]=dig
-        out["status"]="baseline" if not prior else ("unchanged" if prior==dig else "source_bytes_changed_needs_review")
-        if prior and prior!=dig:out["requires_manual_review"]=True
+        # EEC HTML portals include dynamic date, session, and navigation markup.
+        # A whole-HTML hash is not a stable indicator of actual legal amendments.
+        # Track accessibility only for HTML, never emit a false "amendment" alert.
+        if "html" in content_type:
+            out["status"]="html_page_accessible_not_version_verified"
+            out["requires_manual_review"]=False
+        else:
+            # PDF is more stable, though byte changes still require a human check.
+            out["status"]="baseline" if not prior else ("unchanged" if prior==dig else "pdf_bytes_changed_needs_review")
+            if prior and prior!=dig and item.get("content_type","").find("pdf")>=0:
+                out["requires_manual_review"]=True
     except Exception as exc:
         out["status"]="unavailable"
         out["error"]=type(exc).__name__+': '+str(exc)[:120]
