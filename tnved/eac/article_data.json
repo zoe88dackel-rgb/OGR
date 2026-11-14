@@ -1,0 +1,695 @@
+{
+  "meta": {
+    "compiled_at": "2026-11-14",
+    "source_type": "reviewed_public_legal_text_excerpts_and_summaries",
+    "review_status": "reference_only_no_human_legal_signoff",
+    "count_regulations": 11,
+    "count_items": 52,
+    "notice": "条款摘要依据公开法规文本进行人工整理与交叉核对，但尚未经持证认证专家或法律人员最终审定，不能作为自动发证建议；法规生效版本须再次核验。"
+  },
+  "items_by_regulation": {
+    "TR_CU_008_2011": [
+      {
+        "article": "第1条、附录1",
+        "title": "确认玩具范围",
+        "description": "需要先核对商品是否属于面向儿童的玩具，并排查附录所列不作为玩具的产品；商品名称含“玩具”不等于自动适用。",
+        "condition": "产品用途、年龄标识、套装结构、附录排除情况",
+        "document": "需判定",
+        "schemes": [],
+        "source_url": "https://tr-ts.ru/tr-ts/008-igrushki/",
+        "examples": [
+          "儿童积木",
+          "模型摆件"
+        ],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第6条第2款",
+        "title": "认证形式：CoC",
+        "description": "属于该法规适用范围的玩具采取产品认证；不能用 DoC 取代法规要求的认证。",
+        "condition": "已确定属于法规规定的玩具，且未落入排除范围",
+        "document": "COC",
+        "schemes": [
+          "1c",
+          "3c"
+        ],
+        "source_url": "https://sudact.ru/law/reshenie-komissii-tamozhennogo-soiuza-ot-23092011-n_10/tr-ts-0082011/statia-6_1/",
+        "examples": [
+          "塑料拼插玩具"
+        ],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第6条第3–4款",
+        "title": "系列生产与批次",
+        "description": "1c 对应系列生产，3c 对应产品批次。批次申请人可包含符合条件的卖方（进口商）；系列生产主要由制造商或其授权主体申请。",
+        "condition": "生产模式（系列/批次）、申请人注册地、授权关系",
+        "document": "COC",
+        "schemes": [
+          "1c",
+          "3c"
+        ],
+        "source_url": "https://sudact.ru/law/reshenie-komissii-tamozhennogo-soiuza-ot-23092011-n_10/tr-ts-0082011/statia-6_1/",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第6条第4–8款",
+        "title": "样品检测和登记",
+        "description": "认证涉及样品识别与检测；1c 方案还需生产情况分析，证书信息纳入统一登记记录，适用时需进行定期评价。",
+        "condition": "样品、产品描述、材料资料、申请人资料、检测与生产审核",
+        "document": "COC",
+        "schemes": [
+          "1c",
+          "3c"
+        ],
+        "source_url": "https://sudact.ru/law/reshenie-komissii-tamozhennogo-soiuza-ot-23092011-n_10/tr-ts-0082011/statia-6_1/",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第6条第10款",
+        "title": "证书有效期",
+        "description": "系列生产证书有效期上限通常为5年；批次证书不设置同类固定年限，仍要核对证书及覆盖的产品批次。",
+        "condition": "证书对象为系列还是批次",
+        "document": "COC",
+        "schemes": [],
+        "source_url": "https://sudact.ru/law/reshenie-komissii-tamozhennogo-soiuza-ot-23092011-n_10/tr-ts-0082011/statia-6_1/",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      }
+    ],
+    "TR_CU_007_2011": [
+      {
+        "article": "第1条",
+        "title": "儿童商品范围",
+        "description": "覆盖法规列示的儿童及青少年生活用品，需先区分玩具和童用品，再依据适用年龄、产品组别判断。",
+        "condition": "年龄、商品分类、接触身体部位、是否为玩具",
+        "document": "需判定",
+        "schemes": [],
+        "source_url": "https://rags.ru/documents/dop_documents/1/gost_26981/0/reshe.html",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第12条第1款",
+        "title": "多种合格评定路径",
+        "description": "可能是国家注册后再进行符合性声明、单独符合性声明，或认证。最终形式取决于细分产品组别。",
+        "condition": "产品组别、适用年龄、是否属需国家注册商品",
+        "document": "SGR / DOC / COC",
+        "schemes": [],
+        "source_url": "https://rags.ru/documents/dop_documents/1/gost_26981/0/reshe.html",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第12条第2款",
+        "title": "婴幼儿部分用品",
+        "description": "法规列举的某些3岁以下儿童用品（如部分一次性卫生用品、婴幼儿餐具、第一层贴身衣物）涉及国家注册后声明路径。",
+        "condition": "具体品种、3岁以下使用属性、产品材质与层级",
+        "document": "SGR + DOC",
+        "schemes": [],
+        "source_url": "https://rags.ru/documents/dop_documents/1/gost_26981/0/reshe.html",
+        "examples": [
+          "纸尿裤",
+          "部分婴儿贴身衣物"
+        ],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第12条（其他产品组别）",
+        "title": "确认其他儿童服饰的路径",
+        "description": "没有统一的“童装=CoC”或“童装=DoC”。需对照法规定义与产品分组逐项核对。",
+        "condition": "服装接触层级、年龄、材料、产品附录",
+        "document": "COC / DOC",
+        "schemes": [],
+        "source_url": "https://rags.ru/documents/dop_documents/1/gost_26981/0/reshe.html",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      }
+    ],
+    "TR_CU_017_2011": [
+      {
+        "article": "第1条",
+        "title": "适用轻工业产品",
+        "description": "主要针对适用范围内的服装、纺织品及部分鞋类；儿童用品和防护装备可能受其他技术法规调整。",
+        "condition": "成人/儿童、产品用途、是否专业防护装备",
+        "document": "需判定",
+        "schemes": [],
+        "source_url": "https://sudact.ru/law/reshenie-komissii-tamozhennogo-soiuza-ot-09122011-n_23/tr-ts-0172011/statia-11_1/",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第11条第15款",
+        "title": "认证的典型产品组",
+        "description": "贴身内衣、紧身衣和泳装、床上用品及第一层袜类等列于认证产品组。",
+        "condition": "具体商品类别、第一层接触属性",
+        "document": "COC",
+        "schemes": [
+          "1c",
+          "2c",
+          "3c"
+        ],
+        "source_url": "https://sudact.ru/law/reshenie-komissii-tamozhennogo-soiuza-ot-09122011-n_23/tr-ts-0172011/statia-11_1/",
+        "examples": [
+          "成人内衣",
+          "床单/床品"
+        ],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第11条第4款",
+        "title": "第二、三层服饰的声明路径",
+        "description": "包括第二、三层服装在内的部分轻工业产品采用声明方式，适用 3d/4d/6d 等方案，需依据产品种类、供货方式核对。",
+        "condition": "成人服饰、第二/三层分类、系列或批次",
+        "document": "DOC",
+        "schemes": [
+          "3d",
+          "4d",
+          "6d"
+        ],
+        "source_url": "https://sudact.ru/law/reshenie-komissii-tamozhennogo-soiuza-ot-09122011-n_23/tr-ts-0172011/statia-11_1/",
+        "examples": [
+          "普通成人冲锋衣"
+        ],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第11条第4、11款",
+        "title": "其他声明方案及自愿升级",
+        "description": "未列入特别分组的部分产品可能适用 1d/2d；符合法规规定的声明路径可以按条件选择其他方案或改用认证。",
+        "condition": "产品组别和证据条件",
+        "document": "DOC / COC",
+        "schemes": [
+          "1d",
+          "2d",
+          "3d",
+          "4d",
+          "6d"
+        ],
+        "source_url": "https://sudact.ru/law/reshenie-komissii-tamozhennogo-soiuza-ot-09122011-n_23/tr-ts-0172011/statia-11_1/",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第11条第1、14款",
+        "title": "申请人及系列/批次",
+        "description": "系列生产的申请人应是符合资格的制造商或授权代表；批次可包含卖方（进口商）；认证系列可用1c或2c，批次用3c。",
+        "condition": "主体注册地、合同、系列/批次",
+        "document": "COC / DOC",
+        "schemes": [
+          "1c",
+          "2c",
+          "3c"
+        ],
+        "source_url": "https://sudact.ru/law/reshenie-komissii-tamozhennogo-soiuza-ot-09122011-n_23/tr-ts-0172011/statia-11_1/",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      }
+    ],
+    "TR_CU_004_2011": [
+      {
+        "article": "第1条第1款",
+        "title": "额定电压范围",
+        "description": "适用范围中的电气设备额定电压为交流50–1000V（含端点），直流75–1500V（含端点）。",
+        "condition": "AC/DC类别、铭牌额定电压",
+        "document": "需判定",
+        "schemes": [],
+        "source_url": "https://xn--c1ad2agd.xn--p1ai/documents/dop_documents/0/gost_77720/0/reshe.html",
+        "examples": [
+          "220V 家用电器"
+        ],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第1条第2款",
+        "title": "排除设备与组件",
+        "description": "部分医疗设备、特定运输设备及仅作为内部嵌入组件的产品等存在法定排除条件，不应仅凭电压判断。",
+        "condition": "产品是否独立销售、是否医疗器械、组件用途",
+        "document": "需判定",
+        "schemes": [],
+        "source_url": "https://xn--c1ad2agd.xn--p1ai/documents/dop_documents/0/gost_77720/0/reshe.html",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第7条第2款及附录",
+        "title": "附录列示产品须认证",
+        "description": "列于法规附录清单的适用低压设备须采取 CoC 认证，方案通常包括1c/3c/4c。",
+        "condition": "设备类别是否列入附录",
+        "document": "COC",
+        "schemes": [
+          "1c",
+          "3c",
+          "4c"
+        ],
+        "source_url": "https://sudact.ru/law/reshenie-komissii-tamozhennogo-soiuza-ot-16082011-n_26/tr-ts-0042011/statia-7/",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第7条第2款",
+        "title": "未列附录的声明路径",
+        "description": "符合适用范围但不在附录认证清单内的设备，通常按声明路径；申请人可依规定选择改为认证。",
+        "condition": "设备类型、附录状态和证据条件",
+        "document": "DOC / COC",
+        "schemes": [
+          "1d",
+          "2d",
+          "3d",
+          "4d",
+          "6d"
+        ],
+        "source_url": "https://sudact.ru/law/reshenie-komissii-tamozhennogo-soiuza-ot-16082011-n_26/tr-ts-0042011/statia-7/",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第7条（标准适用条件）",
+        "title": "无适用标准时的处理",
+        "description": "适用标准未采用或标准缺失等情形可能需要改走认证，须进一步核对法规具体程序。",
+        "condition": "适用标准及测试依据",
+        "document": "COC",
+        "schemes": [
+          "1c",
+          "3c",
+          "4c"
+        ],
+        "source_url": "https://sudact.ru/law/reshenie-komissii-tamozhennogo-soiuza-ot-16082011-n_26/tr-ts-0042011/statia-7/",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      }
+    ],
+    "TR_CU_020_2011": [
+      {
+        "article": "第1条",
+        "title": "电磁兼容适用范围",
+        "description": "对可能产生或受到电磁干扰的相关技术设备提出要求；被动部件等排除应按法规文本核对。",
+        "condition": "设备功能、电磁干扰特性、无源或有源属性",
+        "document": "需判定",
+        "schemes": [],
+        "source_url": "https://mahachkala.intecocert.ru/stati/normativno-pravovyie-aktyi/tr-ts-0202011-elektromagnitnaya-sovmestimost-texnicheskix-sredstv",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第7条第2款与附录3",
+        "title": "附录3产品认证",
+        "description": "列在该法规附录3中的适用设备采用 CoC，方案为1c/3c/4c。",
+        "condition": "产品是否属于附录3名单",
+        "document": "COC",
+        "schemes": [
+          "1c",
+          "3c",
+          "4c"
+        ],
+        "source_url": "https://mahachkala.intecocert.ru/stati/normativno-pravovyie-aktyi/tr-ts-0202011-elektromagnitnaya-sovmestimost-texnicheskix-sredstv",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第7条第2款",
+        "title": "其他适用设备声明",
+        "description": "未列入附录3、但属于法规适用范围的设备通常采用DoC；法规亦允许依条件改走认证。",
+        "condition": "设备功能、产品组别、附录3覆盖情况",
+        "document": "DOC / COC",
+        "schemes": [
+          "1d",
+          "2d",
+          "3d",
+          "4d",
+          "6d"
+        ],
+        "source_url": "https://mahachkala.intecocert.ru/stati/normativno-pravovyie-aktyi/tr-ts-0202011-elektromagnitnaya-sovmestimost-texnicheskix-sredstv",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第7条第3款",
+        "title": "生产与供货方式",
+        "description": "系列认证可为1c、批次认证为3c、单件认证为4c；必须看具体产品与认证机构流程。",
+        "condition": "系列/批次/单件、申请人",
+        "document": "COC",
+        "schemes": [
+          "1c",
+          "3c",
+          "4c"
+        ],
+        "source_url": "https://mahachkala.intecocert.ru/stati/normativno-pravovyie-aktyi/tr-ts-0202011-elektromagnitnaya-sovmestimost-texnicheskix-sredstv",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      }
+    ],
+    "TR_EAEU_037_2016": [
+      {
+        "article": "附录1",
+        "title": "电子电气适用产品清单",
+        "description": "是否属于 RoHS 限制范围，需要核对附录列举的电子电气类别，不能仅依据是否有电池判断。",
+        "condition": "设备类型、组成部件、附录项目",
+        "document": "需判定",
+        "schemes": [],
+        "source_url": "https://bazanpa.ru/sovet-evraziiskoi-ekonomicheskoi-komissii-reshenie-n113-ot18102016-h2894337/",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第18款",
+        "title": "声明方案划分",
+        "description": "适用产品通常采取 DoC：系列生产可选择1d/3d/6d；批次可选择2d/4d。",
+        "condition": "系列/批次、生产与申请主体",
+        "document": "DOC",
+        "schemes": [
+          "1d",
+          "3d",
+          "6d",
+          "2d",
+          "4d"
+        ],
+        "source_url": "https://bazanpa.ru/sovet-evraziiskoi-ekonomicheskoi-komissii-reshenie-n113-ot18102016-h2894337/",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第19款",
+        "title": "申请人资格",
+        "description": "系列生产声明申请人一般为制造商或其授权代表；批次声明可为制造商、授权代表或进口商（卖方），并要求EAEU内注册资格。",
+        "condition": "申请人身份、注册地、授权与合同",
+        "document": "DOC",
+        "schemes": [],
+        "source_url": "https://bazanpa.ru/sovet-evraziiskoi-ekonomicheskoi-komissii-reshenie-n113-ot18102016-h2894337/",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第21–22款",
+        "title": "证据与实验室要求",
+        "description": "1d/2d 可按法规规定的自有证据方案开展；3d/4d/6d 包含认可实验室参与的证据。需保存技术文件和试验记录。",
+        "condition": "技术说明、材料数据、试验报告、证据来源",
+        "document": "DOC",
+        "schemes": [
+          "1d",
+          "2d",
+          "3d",
+          "4d",
+          "6d"
+        ],
+        "source_url": "https://bazanpa.ru/sovet-evraziiskoi-ekonomicheskoi-komissii-reshenie-n113-ot18102016-h2894337/",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第24–25款",
+        "title": "有效期与认证替代",
+        "description": "系列声明有效期上限为5年，批次不设相同固定年限；按申请人选择与法规条件，声明可改以认证形式办理。",
+        "condition": "系列/批次、证书路径",
+        "document": "DOC / COC",
+        "schemes": [],
+        "source_url": "https://bazanpa.ru/sovet-evraziiskoi-ekonomicheskoi-komissii-reshenie-n113-ot18102016-h2894337/",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      }
+    ],
+    "TR_CU_005_2011": [
+      {
+        "article": "第1条",
+        "title": "包装与封口件范围",
+        "description": "针对适用范围内包装及封口材料，不应把商品收纳盒、日常用品自动视为包装。",
+        "condition": "包装用途、材料、接触商品种类",
+        "document": "需判定",
+        "schemes": [],
+        "source_url": "https://sudact.ru/law/reshenie-komissii-tamozhennogo-soiuza-ot-16082011-n_15/tr-ts-0052011/statia-7_1/",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第7条第2.1款",
+        "title": "食品接触等特定包装",
+        "description": "拟用于食品（含婴儿食品）、与化妆品直接接触的包装等特定组别，声明方案包括3d/4d/6d。",
+        "condition": "包装内容物、接触方式、材料类型",
+        "document": "DOC",
+        "schemes": [
+          "3d",
+          "4d",
+          "6d"
+        ],
+        "source_url": "https://sudact.ru/law/reshenie-komissii-tamozhennogo-soiuza-ot-16082011-n_15/tr-ts-0052011/statia-7_1/",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第7条第2.2款",
+        "title": "其他一般包装",
+        "description": "不在第2.1款特殊范围内的包装，声明方案通常采用1d/2d。",
+        "condition": "包装用途、是否列入特殊接触组",
+        "document": "DOC",
+        "schemes": [
+          "1d",
+          "2d"
+        ],
+        "source_url": "https://sudact.ru/law/reshenie-komissii-tamozhennogo-soiuza-ot-16082011-n_15/tr-ts-0052011/statia-7_1/",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第7条第2款",
+        "title": "旧包装处理",
+        "description": "已经使用过的包装在法定条款中有特殊处理，并非所有重复利用产品都自动适用同一结论。",
+        "condition": "是否已使用、产品是否新投放市场",
+        "document": "需判定",
+        "schemes": [],
+        "source_url": "https://sudact.ru/law/reshenie-komissii-tamozhennogo-soiuza-ot-16082011-n_15/tr-ts-0052011/statia-7_1/",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第7条第3–4款",
+        "title": "申请人与证明资料",
+        "description": "根据系列或批次，核对制造商、授权代表或进口商资格；技术文件、合同、测试证据等需按适用方案准备。",
+        "condition": "注册主体、生产/批次、材料检测",
+        "document": "DOC",
+        "schemes": [],
+        "source_url": "https://sudact.ru/law/reshenie-komissii-tamozhennogo-soiuza-ot-16082011-n_15/tr-ts-0052011/statia-7_1/",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      }
+    ],
+    "TR_CU_009_2011": [
+      {
+        "article": "第1条",
+        "title": "确定化妆品属性",
+        "description": "需判断产品是否落入香水和化妆品法规范围，并结合功效宣称、用途与成分识别特殊类别。",
+        "condition": "配方/成分、用途、功效、标签",
+        "document": "需判定",
+        "schemes": [],
+        "source_url": "https://sudact.ru/law/reshenie-komissii-tamozhennogo-soiuza-ot-23092011-n_14/tr-ts-0092011/statia-6/",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第6条第1–2款、附录12",
+        "title": "普通声明与国家注册",
+        "description": "附录12所列的化妆品须办理国家注册；其他适用的普通化妆品采取符合性声明。",
+        "condition": "是否列入附录12、实际品类和配方",
+        "document": "SGR / DOC",
+        "schemes": [],
+        "source_url": "https://sudact.ru/law/reshenie-komissii-tamozhennogo-soiuza-ot-23092011-n_14/tr-ts-0092011/statia-6/",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第6条第3款",
+        "title": "进口商品的注册时间",
+        "description": "适用国家注册的进口化妆品通常须在进口欧亚经济联盟关境前完成注册。",
+        "condition": "进口时点、产品是否适用SGR",
+        "document": "SGR",
+        "schemes": [],
+        "source_url": "https://sudact.ru/law/reshenie-komissii-tamozhennogo-soiuza-ot-23092011-n_14/tr-ts-0092011/statia-6/",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第6条第5款",
+        "title": "典型材料",
+        "description": "国家注册申报可能要求配方明细、标签、检验报告、制造文件及有关声明材料，具体遵循现行法规。",
+        "condition": "成分、检验报告、标签、制造信息",
+        "document": "SGR",
+        "schemes": [],
+        "source_url": "https://sudact.ru/law/reshenie-komissii-tamozhennogo-soiuza-ot-23092011-n_14/tr-ts-0092011/statia-6/",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第6条（2026修订）",
+        "title": "注意2026新版规定",
+        "description": "法规第6条在2026年又有修订，尤其是注册和声明程序。不可直接照搬此前版本的方案及有效期。",
+        "condition": "是否使用最新生效文本、产品名称/配方变化",
+        "document": "需核定",
+        "schemes": [],
+        "source_url": "https://sudact.ru/law/reshenie-komissii-tamozhennogo-soiuza-ot-23092011-n_14/tr-ts-0092011/statia-6/",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      }
+    ],
+    "TR_CU_010_2011": [
+      {
+        "article": "第1条",
+        "title": "机械设备范围",
+        "description": "工业设备等应先核对机械设备法规的范围与排除条件；同一设备可能同时涉及其他EAEU技术法规。",
+        "condition": "设备类型、用途、安全风险及其他法规覆盖",
+        "document": "需判定",
+        "schemes": [],
+        "source_url": "https://sudact.ru/law/reshenie-komissii-tamozhennogo-soiuza-ot-18102011-n_11/tr-ts-0102011/statia-8/",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第8条第3款及附录3",
+        "title": "认证设备清单",
+        "description": "列于最新附录3认证清单的机械和设备采用 CoC，不能仅凭 TN VED 84章认定。",
+        "condition": "设备精确类别、附录3最新版",
+        "document": "COC",
+        "schemes": [],
+        "source_url": "https://sudact.ru/law/reshenie-komissii-tamozhennogo-soiuza-ot-18102011-n_11/tr-ts-0102011/statia-8/",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第8条第4–5款",
+        "title": "声明设备与替代路径",
+        "description": "最新规定区分认证名单和声明名单；部分允许依条件用认证替代声明。",
+        "condition": "设备类别、最新附录清单、证据资料",
+        "document": "DOC / COC",
+        "schemes": [],
+        "source_url": "https://sudact.ru/law/reshenie-komissii-tamozhennogo-soiuza-ot-18102011-n_11/tr-ts-0102011/statia-8/",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第8条第10款",
+        "title": "技术文件与安全论证",
+        "description": "证明材料应包括安全论证、技术/使用文件、相关测试结果和合同等适用文件。",
+        "condition": "安全技术说明、使用手册、检测与合同",
+        "document": "COC / DOC",
+        "schemes": [],
+        "source_url": "https://sudact.ru/law/reshenie-komissii-tamozhennogo-soiuza-ot-18102011-n_11/tr-ts-0102011/statia-8/",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第8条与2026修订",
+        "title": "新旧版本生效日",
+        "description": "2026年修订分阶段生效，附录3的替换可能有晚于正文的生效日期，必须按具体条款适用日期核对。",
+        "condition": "生产/申报日期、法规版本、附录生效日期",
+        "document": "需核定",
+        "schemes": [],
+        "source_url": "https://sudact.ru/law/reshenie-komissii-tamozhennogo-soiuza-ot-18102011-n_11/tr-ts-0102011/statia-8/",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      }
+    ],
+    "TR_CU_019_2011": [
+      {
+        "article": "第1条",
+        "title": "个人防护用品范围",
+        "description": "确认产品是否用于保护使用者免遭特定危害；普通服装或运动配件不一定属于法定PPE。",
+        "condition": "危害类型、用途、产品防护功能",
+        "document": "需判定",
+        "schemes": [],
+        "source_url": "https://sudact.ru/law/reshenie-komissii-tamozhennogo-soiuza-ot-09122011-n_1/tr-ts-0192011/5/",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第5.4–5.5款",
+        "title": "按风险等级区分形式",
+        "description": "第一风险等级通常采用符合性声明；第二等级（防护较高严重风险）采用强制认证。",
+        "condition": "PPE产品分类、危害等级",
+        "document": "DOC / COC",
+        "schemes": [],
+        "source_url": "https://sudact.ru/law/reshenie-komissii-tamozhennogo-soiuza-ot-09122011-n_1/tr-ts-0192011/5/",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第5.6款及附录4",
+        "title": "具体防护种类清单",
+        "description": "需要对照附录4的 PPE 类型、风险等级和相应评定方案，不能用“安全帽”泛称直接决定证书。",
+        "condition": "防护分类、结构设计、适用附录",
+        "document": "DOC / COC",
+        "schemes": [],
+        "source_url": "https://sudact.ru/law/reshenie-komissii-tamozhennogo-soiuza-ot-09122011-n_1/tr-ts-0192011/5/",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第5.7款",
+        "title": "证明方式",
+        "description": "声明通常依据自有证据或涉及认可实验室的第三方证据；具体方案依附录确认。",
+        "condition": "测试方式、技术文件、制造主体",
+        "document": "DOC",
+        "schemes": [],
+        "source_url": "https://sudact.ru/law/reshenie-komissii-tamozhennogo-soiuza-ot-09122011-n_1/tr-ts-0192011/5/",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      }
+    ],
+    "TR_CU_021_2011": [
+      {
+        "article": "第21条",
+        "title": "食品合格评定路径",
+        "description": "食品法规包含符合性声明、特殊食品国家注册、新型食品注册和兽医卫生检验等不同路径，不能只列“EAC认证”。",
+        "condition": "食品种类、是否特种食品、是否生鲜动物源",
+        "document": "DOC / SGR / 其他",
+        "schemes": [],
+        "source_url": "https://kirov.intecocert.ru/stati/normativno-pravovyie-aktyi/tr-ts-0212011-o-bezopasnosti-pishhevoj-produkczii",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第23条",
+        "title": "普通食品声明",
+        "description": "多数适用的工业化食品以符合性声明为主，但未加工动物源食品、特种食品等在条款中有排除，需要单独分类。",
+        "condition": "加工状态、食品类别、例外项目",
+        "document": "DOC",
+        "schemes": [],
+        "source_url": "https://kirov.intecocert.ru/stati/normativno-pravovyie-aktyi/tr-ts-0212011-o-bezopasnosti-pishhevoj-produkczii",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第24条",
+        "title": "特殊食品国家注册",
+        "description": "婴幼儿食品、治疗/预防性特殊膳食食品、特殊矿泉水、运动/孕产妇营养及营养补充剂等类别涉及国家注册。",
+        "condition": "特殊用途与目标消费者群",
+        "document": "SGR",
+        "schemes": [],
+        "source_url": "https://sudact.ru/law/reshenie-komissii-tamozhennogo-soiuza-ot-09122011-n_2/tr-ts-0212011/glava-4/statia-24/",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第24条第3款",
+        "title": "进口前完成注册",
+        "description": "适用国家注册的进口特殊食品，应在进口关境前完成注册程序。",
+        "condition": "货物进口时间、申请人资格",
+        "document": "SGR",
+        "schemes": [],
+        "source_url": "https://sudact.ru/law/reshenie-komissii-tamozhennogo-soiuza-ot-09122011-n_2/tr-ts-0212011/glava-4/statia-24/",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      },
+      {
+        "article": "第21条第1款",
+        "title": "兽医卫生检验等其他程序",
+        "description": "未加工动物源食品等可能需要兽医卫生检验，不能误判为DoC或SGR的通用替代。",
+        "condition": "原料动物来源、加工状态、产品类别",
+        "document": "其他",
+        "schemes": [],
+        "source_url": "https://kirov.intecocert.ru/stati/normativno-pravovyie-aktyi/tr-ts-0212011-o-bezopasnosti-pishhevoj-produkczii",
+        "examples": [],
+        "review_status": "reference_cross_checked_not_legally_approved"
+      }
+    ]
+  }
+}
