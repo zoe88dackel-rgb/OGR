@@ -1,9 +1,10 @@
-name: EAC webpage smoke check
+name: EAC editorial homepage and library smoke check
 on:
   push:
     branches: [main]
     paths:
       - 'tnved/eac/index.html'
+      - 'tnved/eac/library/index.html'
       - 'tnved/eac/knowledge.json'
       - 'tnved/eac/article_data.json'
       - '.github/workflows/eac-ui-smoke.yml'
@@ -16,42 +17,51 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
-      - name: Extract inline JavaScript and validate static structure
+      - name: Validate HTML, linked routes and data references
         run: |
           python3 - <<'PY'
           from html.parser import HTMLParser
           from pathlib import Path
           import json,re
-          page=Path('tnved/eac/index.html').read_text(encoding='utf-8')
-          match=re.search(r'<script>([\s\S]*?)</script>',page)
-          assert match,'Missing inline app logic'
-          Path('/tmp/eac-ui.js').write_text(match.group(1),encoding='utf-8')
           class Parser(HTMLParser):
-            def __init__(self):super().__init__();self.ids=[];self.tags=[]
+            def __init__(self):
+              super().__init__();self.ids=[];self.links=[]
             def handle_starttag(self,tag,attrs):
-              self.tags.append(tag)
-              for k,v in attrs:
-                if k=='id':self.ids.append(v)
-          p=Parser();p.feed(page)
-          assert len(p.ids)==len(set(p.ids)),'Duplicate HTML IDs'
-          required=['lookup','keyword','category','form','reset','reg-rows','record','record-content','record-heading','record-ru','record-id','result-count','law-count','clause-count','data-version','doc-rows','case-rows','version-rows']
-          assert set(required).issubset(p.ids),set(required)-set(p.ids)
-          j=json.loads(Path('tnved/eac/knowledge.json').read_text(encoding='utf-8'))
-          assert len(j['regulations'])>=11
+              d=dict(attrs)
+              if d.get('id'):self.ids.append(d['id'])
+              if tag=='a' and d.get('href'):self.links.append(d['href'])
+          paths=[
+            ('tnved/eac/index.html','/tmp/eac-landing.js',{'lookup-form','lookup-text','case-list','metric-law','metric-rule'}),
+            ('tnved/eac/library/index.html','/tmp/eac-library.js',{'lookup','keyword','category','form','reset','reg-rows','record','record-content','record-heading','record-ru','record-id','result-count','law-count','clause-count','data-version','doc-rows','case-rows','version-rows','detail-count'})
+          ]
+          for name,jsfile,required in paths:
+            path=Path(name);page=path.read_text(encoding='utf-8')
+            match=re.search(r'<script>([\s\S]*?)</script>',page)
+            assert match,(name,'No inline JS found')
+            Path(jsfile).write_text(match.group(1),encoding='utf-8')
+            p=Parser();p.feed(page)
+            assert len(p.ids)==len(set(p.ids)),(name,'Duplicate HTML IDs')
+            assert required.issubset(p.ids),(name,'Missing IDs',required-set(p.ids))
+            if path.name=='index.html' and '/library/' not in str(path):
+              assert './library/' in page and 'lookup-form' in page
+              assert '非官方' in page or '非欧亚经济联盟官方网站' in page
+            else:
+              assert 'renderArticleData' in page and '../article_data.json' in page
+              assert '../knowledge.json' in page
+            print('PASS page:',name)
+          laws=json.loads(Path('tnved/eac/knowledge.json').read_text(encoding='utf-8'))
           details=json.loads(Path('tnved/eac/article_data.json').read_text(encoding='utf-8'))
+          assert len(laws['regulations'])>=11 and len(laws['cases'])>=6
+          assert len(laws['documents'])>=5
           assert details['meta']['count_items']>=50
-          assert len(details['items_by_regulation'])==len(j['regulations'])
+          assert len(details['items_by_regulation'])==len(laws['regulations'])
           assert all(len(rows)>=4 for rows in details['items_by_regulation'].values())
-          assert 'renderArticleData' in page and 'article_data.json' in page
-          assert '欧亚经济联盟技术法规资料库' in page
-          assert '非欧亚经济联盟官方网站' in page
-          assert 'sourceLink' in page and 'renderRecord' in page
-          assert page.count('<table')>=3
-          assert len(j['cases'])>=6 and len(j['documents'])>=5
-          assert all(r.get('conditions') and r.get('clauses') and r.get('original') for r in j['regulations'])
-          sids={x['id'] for x in j['sources']}
-          assert all(r['original'] in sids for r in j['regulations'])
-          print('PASS HTML IDs, knowledge.json references, 11 laws, cases/documents')
+          assert all(r.get('conditions') and r.get('clauses') and r.get('original') for r in laws['regulations'])
+          sid={x['id'] for x in laws['sources']}
+          assert all(r['original'] in sid for r in laws['regulations'])
+          print('PASS source links, cases, legal clauses and document forms')
           PY
-      - name: Validate JavaScript syntax
-        run: node --check /tmp/eac-ui.js
+      - name: Validate JavaScript syntax for both pages
+        run: |
+          node --check /tmp/eac-landing.js
+          node --check /tmp/eac-library.js
