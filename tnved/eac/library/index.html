@@ -526,7 +526,10 @@ Promise.all([
  $("clause-count").textContent=result.regulations.reduce((sum,r)=>sum+r.clauses.length,0);
  $("detail-count").textContent=articleDb.meta.count_items;
  $("data-version").textContent=result.meta?.compiled_at||"待核实";
- currentId=result.regulations[0].id;getFilters();
+ currentId=result.regulations[0].id;
+ const prefill=new URLSearchParams(location.search).get("q");
+ if(prefill){$("keyword").value=prefill.slice(0,100);}
+ getFilters();
  renderTable();renderRecord();renderDocuments();renderCases();renderVersions();
 }).catch(e=>{
  $("result-count").textContent="数据加载失败";
