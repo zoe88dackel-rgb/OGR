@@ -1,0 +1,47 @@
+name: EAC webpage smoke check
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tnved/eac/index.html'
+      - 'tnved/eac/knowledge.json'
+      - '.github/workflows/eac-ui-smoke.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Extract inline JavaScript and validate static structure
+        run: |
+          python3 - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          import json,re
+          page=Path('tnved/eac/index.html').read_text(encoding='utf-8')
+          match=re.search(r'<script>([\s\S]*?)</script>',page)
+          assert match,'Missing inline app logic'
+          Path('/tmp/eac-ui.js').write_text(match.group(1),encoding='utf-8')
+          class Parser(HTMLParser):
+            def __init__(self):super().__init__();self.ids=[];self.tags=[]
+            def handle_starttag(self,tag,attrs):
+              self.tags.append(tag)
+              for k,v in attrs:
+                if k=='id':self.ids.append(v)
+          p=Parser();p.feed(page)
+          assert len(p.ids)==len(set(p.ids)),'Duplicate HTML IDs'
+          required=['search','reg-list','detail','filters','cases','docs','timeline','stat-reg','stat-clause','stat-case','edition','result-count','clear']
+          assert set(required).issubset(p.ids),set(required)-set(p.ids)
+          j=json.loads(Path('tnved/eac/knowledge.json').read_text(encoding='utf-8'))
+          assert len(j['regulations'])>=11
+          assert len(j['cases'])>=6 and len(j['documents'])>=5
+          assert all(r.get('conditions') and r.get('clauses') and r.get('original') for r in j['regulations'])
+          sids={x['id'] for x in j['sources']}
+          assert all(r['original'] in sids for r in j['regulations'])
+          print('PASS HTML IDs, knowledge.json references, 11 laws, cases/documents')
+          PY
+      - name: Validate JavaScript syntax
+        run: node --check /tmp/eac-ui.js
