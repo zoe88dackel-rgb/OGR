@@ -98,12 +98,37 @@ for c in data["cases"]:
         VALUES(?,?,?,?,?,?,?,?,?)""",
        (c["id"],c["zh"],c["category"],dump(c["regulations"]),dump(c["fields"]),
         dump(c["docs"]),c["result"],c["description"],"draft"))
+# Import individual, publicly cross-checked but not expert-approved legal references.
+article_file=ROOT/"eac"/"article_data.json"
+article_data=json.loads(article_file.read_text("utf-8"))
+assert len(article_data.get("items_by_regulation",{}))>=11
+expected_items=article_data["meta"]["count_items"]
+seen_items=0
+for regulation_id, entries in article_data["items_by_regulation"].items():
+    if not con.execute("SELECT 1 FROM eac_knowledge_regulations WHERE id=?",(regulation_id,)).fetchone():
+        raise SystemExit("Unknown regulation in article records: "+regulation_id)
+    for idx,item in enumerate(entries,1):
+        if not all(item.get(k) for k in ("article","title","description","condition","source_url")):
+            raise SystemExit("Missing concrete article data for "+regulation_id)
+        record_id=regulation_id+"_"+str(idx).zfill(2)
+        con.execute("""INSERT OR REPLACE INTO eac_article_requirements
+        (requirement_id,regulation_id,article_reference,title_zh,summary_zh,
+        applicability_condition,candidate_document,scheme_codes_json,source_url,checked_at,review_status)
+        VALUES (?,?,?,?,?,?,?,?,?,?,?)""",(
+          record_id,regulation_id,item["article"],item["title"],item["description"],
+          item["condition"],item.get("document"),dump(item.get("schemes",[])),
+          item["source_url"],article_data["meta"]["compiled_at"],"reference"
+        ))
+        seen_items+=1
+if seen_items!=expected_items or seen_items<50:
+    raise SystemExit("Incomplete EAC article import: "+str(seen_items)+" expected "+str(expected_items))
 con.commit()
 if con.execute("PRAGMA integrity_check").fetchone()[0]!="ok":raise SystemExit("Corrupt DB")
 fk=con.execute("PRAGMA foreign_key_check").fetchall()
 if fk:raise SystemExit("Foreign key errors: "+str(fk))
 stats={
 "regulations":con.execute("SELECT COUNT(*) FROM eac_knowledge_regulations").fetchone()[0],
+"article_requirements":con.execute("SELECT COUNT(*) FROM eac_article_requirements").fetchone()[0],
 "clauses_to_review":con.execute("SELECT COUNT(*) FROM eac_clause_summaries WHERE review_status='draft'").fetchone()[0],
 "draft_rules":con.execute("SELECT COUNT(*) FROM eac_candidate_rules WHERE review_status='draft'").fetchone()[0],
 "verified_rules":con.execute("SELECT COUNT(*) FROM eac_verified_candidate_rules").fetchone()[0],
@@ -113,7 +138,7 @@ stats={
 "seller_cases":con.execute("SELECT COUNT(*) FROM eac_case_templates").fetchone()[0],
 "registered_certificates":con.execute("SELECT COUNT(*) FROM eac_certificate_records").fetchone()[0],
 "integrity":"ok"}
-if stats["regulations"]!=11 or stats["draft_rules"]+stats["verified_rules"]<22 or stats["verified_rules"]!=len(reviews.get("rules",{})):
+if stats["article_requirements"]!=expected_items or stats["regulations"]!=11 or stats["draft_rules"]+stats["verified_rules"]<22 or stats["verified_rules"]!=len(reviews.get("rules",{})):
     raise SystemExit("Unexpected EAC verification state "+dump(stats))
 report_file=HERE/"build-report.json"
 report=json.loads(report_file.read_text("utf-8"))
