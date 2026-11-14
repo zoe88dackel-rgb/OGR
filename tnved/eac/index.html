@@ -1,541 +1,425 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#152f4e">
-<meta name="description" content="欧亚经济联盟技术法规参考资料库：按法规编号、商品类别、中文或俄文名称检索，查看法规原文来源、适用条件、文件形式、历史修订及审核状态。">
-<title>欧亚经济联盟技术法规资料库 · EAC 参考检索</title>
+<meta name="theme-color" content="#192d40">
+<meta name="description" content="欧亚商品合规查询入口。核对商品 TN VED 编码、EAC 技术法规、CoC/DoC/SGR 文件形式与官方来源，显示证据和待核事项。">
+<title>商品合规有据可查 · EAC 欧亚合规资料平台</title>
 <style>
-:root {
-  --navy:#17314f; --navy-deep:#102a46; --ink:#1c2c41; --text:#36495f; --sub:#64758a;
-  --line:#dce3ea; --line-soft:#e9edf2; --bg:#f4f6f8; --white:#fff;
-  --blue:#1462b6; --blue-light:#eff5fb; --button:#175c9f; --max:1170px;
-  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC","Microsoft Yahei",Arial,sans-serif;
-  color:var(--ink);font-size:14px;-webkit-font-smoothing:antialiased
+:root{
+  --paper:#f8f7f3;--white:#fff;--ink:#203144;--muted:#6d7882;--line:#deded7;
+  --navy:#192f45;--navy2:#243e56;--olive:#a4a06d;--pale:#f1f1e9;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,"Noto Sans SC","Microsoft Yahei",sans-serif;
+  color:var(--ink);background:var(--paper);font-synthesis:none;-webkit-font-smoothing:antialiased
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--bg);margin:0}
-a{color:var(--blue);text-decoration:none}
-a:hover{text-decoration:underline;text-underline-offset:3px}
-button,input,select{font:inherit}
+body{margin:0}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
 button{cursor:pointer}
-a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #79abdf;outline-offset:3px}
-.container{max-width:var(--max);margin:0 auto;padding:0 26px}
-.ribbon{background:var(--navy-deep);color:#e5edf7;height:37px}
-.ribbon .container{display:flex;align-items:center;justify-content:space-between;height:100%;gap:16px}
-.ribbon-label{font-size:11px;letter-spacing:.07em;font-weight:600}
-.ribbon-status{font-size:11px;color:#c9d5e3}
-.site-header{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
-.header-row{min-height:79px;display:flex;gap:22px;align-items:center}
-.identity{display:flex;align-items:center;gap:15px;color:var(--navy);min-width:0}
-.identity:hover{text-decoration:none}
-.identity-mark{height:43px;width:43px;display:grid;place-items:center;border:1.8px solid var(--navy);border-radius:3px;flex:none;font-size:12px;font-weight:800;letter-spacing:-.04em}
-.identity-text strong{display:block;font-weight:760;font-size:19px;letter-spacing:-.025em;line-height:1.3}
-.identity-text span{display:block;font-size:10px;color:#8794a2;letter-spacing:.07em;margin-top:3px}
-.header-links{margin-left:auto;display:flex;align-items:center;gap:26px;white-space:nowrap}
-.header-links a{font-size:12px;color:#536a83;font-weight:600}
-.header-links a:hover{color:var(--blue)}
-.header-links a.official{border-left:1px solid var(--line);padding-left:20px;color:var(--blue)}
-.page-heading{padding:38px 0 27px}
-.breadcrumbs{display:flex;gap:9px;color:#76879b;font-size:12px;align-items:center;margin-bottom:19px}
-.breadcrumbs a{color:#607a97}
-.page-heading h1{font-size:30px;font-weight:750;letter-spacing:-.038em;line-height:1.4;margin:0 0 12px}
-.page-heading p{color:#697a8d;line-height:1.85;margin:0;max-width:900px;font-size:13px}
-.head-info{display:flex;gap:16px;align-items:center;margin-top:19px;font-size:12px;color:#6c7f92;flex-wrap:wrap}
-.head-info strong{font-weight:720;color:#3b536b}
-.head-info .sep{height:13px;border-left:1px solid #cbd4df}
-.head-info .pill{border:1px solid #d3dfe9;border-radius:3px;padding:4px 8px;color:#54718e;background:#fff}
-.panel{background:#fff;border:1px solid #d7e0e9;border-radius:4px;box-shadow:0 1px 3px #17314f06}
-.panel-title{padding:19px 23px;border-bottom:1px solid var(--line-soft);display:flex;justify-content:space-between;align-items:center;gap:18px}
-.panel-title h2{font-size:17px;font-weight:760;margin:0;letter-spacing:-.015em}
-.panel-title small{font-size:11px;color:#8492a0}
-.form-body{padding:24px 23px 21px}
-.form-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(180px,1fr) minmax(180px,1fr);gap:17px}
-.field{display:flex;flex-direction:column;gap:9px}
-.field label{font-weight:650;color:#43576c;font-size:12px}
-.field input,.field select{background:#fff;color:var(--ink);border:1px solid #cbd5df;border-radius:3px;height:44px;width:100%;outline:0;padding:0 12px;font-size:13px}
-.field input:focus,.field select:focus{border-color:#2472b8;box-shadow:0 0 0 2px #dceafa}
-.field input::placeholder{color:#9aa6b2}
-.form-actions{display:flex;align-items:center;gap:9px;margin-top:21px;flex-wrap:wrap}
-.btn{height:40px;border-radius:3px;padding:0 22px;font-size:12px;font-weight:690;border:1px solid transparent}
-.btn-primary{background:var(--button);color:#fff;border-color:var(--button)}
-.btn-primary:hover{background:#104b84}
-.btn-secondary{background:#fff;color:#51677e;border-color:#c9d4df}
-.btn-secondary:hover{background:#f7fafc}
-.form-note{font-size:11px;color:#8190a2;margin-left:auto}
-.main-block{margin-top:23px}
-.results-head{padding:17px 21px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.results-head h2{font-size:16px;margin:0;font-weight:740}
-.results-head p{font-size:12px;color:#7a8a9b;margin:0}
-.tab-scroll{overflow-x:auto}
-.document-table{width:100%;border-collapse:collapse;text-align:left;table-layout:fixed}
-.document-table th{font-size:12px;color:#6a7d91;background:#f7f9fb;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line);font-weight:690;padding:13px 17px}
-.document-table td{padding:17px;vertical-align:middle;border-bottom:1px solid #ebeff3;color:#50647b;font-size:12px;line-height:1.65}
-.document-table tr:last-child td{border-bottom:0}
-.document-table tbody tr:hover{background:#f9fbfd}
-.document-table tbody tr.selected{background:#f0f6fc}
-.document-table .n{width:56px;color:#9aa9b7;text-align:center;font-variant-numeric:tabular-nums}
-.document-table .code{width:172px}
-.document-table .scope{width:230px}
-.document-table .state{width:115px}
-.document-table .action{width:90px}
-.code-btn{background:transparent;border:0;color:var(--blue);font-weight:760;padding:0;text-align:left;font-variant-numeric:tabular-nums;font-size:13px}
-.code-btn:hover{text-decoration:underline;text-underline-offset:3px}
-.document-name strong{display:block;font-size:13px;font-weight:680;color:#263d55}
-.document-name span{display:block;font-size:11px;color:#8b9baa;margin-top:5px;line-height:1.5}
-.state-text{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:#7a8794;white-space:nowrap}
-.state-text:before{content:"";height:6px;width:6px;border-radius:50%;background:#9fb0c0}
-.open-document{background:transparent;border:0;color:var(--blue);font-size:12px;font-weight:680;white-space:nowrap;padding:0}
-.open-document:hover{text-decoration:underline}
-.empty{padding:26px;color:#6f8296;font-size:13px;line-height:1.8}
-.record-panel{margin-top:23px;scroll-margin-top:120px}
-.record-header{padding:22px 23px;display:flex;gap:22px;align-items:flex-start;justify-content:space-between;border-bottom:1px solid var(--line)}
-.record-eyebrow{font-size:11px;color:#6f849b;letter-spacing:.08em;font-weight:720;margin:0 0 8px}
-.record-header h2{font-size:22px;letter-spacing:-.027em;font-weight:750;margin:0 0 9px;line-height:1.4}
-.record-header p{color:#8190a1;font-size:12px;line-height:1.75;margin:0}
-.record-top-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
-.record-key{display:inline-flex;padding:6px 9px;border:1px solid #d7e2ec;background:#f8fafc;color:#5e7389;border-radius:3px;font-size:11px;font-weight:680}
-.record-body{padding:5px 23px 22px}
-.metadata{display:grid;grid-template-columns:1fr 1fr 1fr;border-bottom:1px solid var(--line-soft);padding:18px 0;gap:15px}
-.meta-item span{font-size:11px;color:#8292a1;display:block;margin-bottom:8px}
-.meta-item strong{font-size:13px;font-weight:680;color:#3b5067;line-height:1.55}
-.section-label{margin:26px 0 13px;font-size:15px;font-weight:750;color:#30465d}
-.reading-table{border:1px solid var(--line);border-radius:3px}
-.reading-row{display:grid;grid-template-columns:170px 1fr}
-.reading-row+.reading-row{border-top:1px solid var(--line)}
-.reading-row dt,.reading-row dd{margin:0;padding:16px 18px;font-size:12px;line-height:1.9}
-.reading-row dt{color:#5b7289;background:#f8fafc;font-weight:740;border-right:1px solid var(--line)}
-.reading-row dd{color:#4d637a}
-.subsection{margin-top:22px}
-.subsection summary{cursor:pointer;padding:15px 16px;border:1px solid var(--line);font-size:13px;font-weight:730;display:flex;align-items:center;justify-content:space-between;list-style:none;background:#f9fbfd}
-.subsection summary::-webkit-details-marker{display:none}
-.subsection[open] summary{border-bottom:0}
-.subsection .content{border:1px solid var(--line);border-top:0;padding:6px 17px}
-.clause-row{display:grid;grid-template-columns:150px 1fr;gap:15px;padding:14px 0;border-bottom:1px solid var(--line-soft);font-size:12px;line-height:1.8}
-.clause-row:last-child{border-bottom:0}
-.clause-row strong{font-weight:710;color:#425d78}
-.clause-row span{color:#65798d}
-.attributes{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
-.attribute{border:1px solid #d5e2ed;color:#4b6884;background:#f6fafc;padding:8px 11px;font-size:12px;border-radius:2px}
-.rule-row{padding:15px 0;border-bottom:1px solid var(--line-soft)}
-.rule-row:last-child{border-bottom:0}
-.rule-row h4{font-size:12px;color:#405a74;margin:0 0 8px}
-.rule-row p{font-size:12px;color:#63778c;line-height:1.85;margin:0 0 6px}
-.record-sources{padding:18px 23px;border-top:1px solid var(--line);background:#f9fbfd;display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
-.record-sources p{font-size:11px;color:#758699;margin:0;line-height:1.65}
-.official-link{font-size:12px;font-weight:680;color:var(--blue)}
-.lower-section{margin-top:32px;scroll-margin-top:112px}
-.lower-header{display:flex;gap:20px;align-items:baseline;justify-content:space-between;margin-bottom:14px}
-.lower-header h2{font-size:19px;margin:0;font-weight:750}
-.lower-header span{font-size:12px;color:#8a97a6}
-.compact-table{width:100%;border-collapse:collapse;text-align:left;table-layout:fixed}
-.compact-table th{background:#f8fafc;color:#5f7589;font-size:12px;font-weight:690;padding:14px 18px;text-align:left;border-bottom:1px solid var(--line)}
-.compact-table td{padding:17px 18px;border-bottom:1px solid var(--line-soft);font-size:12px;color:#536a80;line-height:1.8;vertical-align:top}
-.compact-table tr:last-child td{border-bottom:0}
-.compact-table td strong{font-weight:740;font-size:13px;color:#2b4259}
-.compact-table .emph{font-weight:740;color:#275d8e;font-variant-numeric:tabular-nums}
-.compact-table .secondary{display:block;color:#889aab;font-size:11px;margin-top:4px}
-.compact-table .button-inline{border:1px solid #c7d9e9;background:white;color:#235e9b;padding:6px 9px;border-radius:3px;font-size:11px;font-weight:670;white-space:nowrap}
-.compact-table .button-inline:hover{background:#eff5fb}
-.compact-table a{font-size:12px}
-.reference-notice{background:#f9fbfd;padding:17px 22px;border:1px solid var(--line);border-left:3px solid #7c9cbb;margin-top:24px;font-size:12px;color:#60748a;line-height:1.85}
-.footer{border-top:1px solid var(--line);background:#fff;margin-top:50px;padding:26px 0 35px}
-.footer-in{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.footer p{font-size:11px;color:#8190a1;line-height:1.8;margin:5px 0}
-.footer strong{font-size:12px;color:#53687d}
-.footer a{font-size:11px}
-@media(max-width:900px){
- .form-grid{grid-template-columns:1fr 1fr}.field-main{grid-column:1/-1}
- .header-links{gap:15px}.header-links a:nth-child(2){display:none}
- .reading-row{grid-template-columns:140px 1fr}.metadata{grid-template-columns:1fr 1fr}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #92a9ba;outline-offset:4px}
+.container{width:min(1180px,calc(100% - 68px));margin:0 auto}
+.masthead{height:72px;background:var(--paper);border-bottom:1px solid #e1e1da;position:sticky;top:0;z-index:50}
+.masthead .container{height:100%;display:flex;align-items:center;gap:30px}
+.brand{display:flex;align-items:center;gap:12px;flex:none}
+.brand-mark{font-weight:780;color:#f8f7f3;background:var(--navy);font-size:12px;letter-spacing:.03em;width:36px;height:36px;display:grid;place-items:center;border-radius:2px}
+.brand-name{font-weight:730;font-size:14px;letter-spacing:-.02em}
+.brand-name small{display:block;font-size:9px;color:#8b8e8f;letter-spacing:.15em;font-weight:650;margin-top:3px}
+nav{display:flex;align-items:center;gap:28px;margin-left:auto}
+nav a{font-size:12px;font-weight:640;color:#5d6872}
+nav a:hover{color:var(--navy)}
+.nav-cta{border:1px solid #233a4f;border-radius:3px;color:#24384a;padding:11px 16px;font-size:12px;font-weight:720;white-space:nowrap;margin-left:18px}
+.nav-cta:hover{background:#e9ece9}
+.hero{padding:79px 0 87px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.kicker{font-size:11px;letter-spacing:.24em;font-weight:750;text-transform:uppercase;color:#69777a}
+.kicker.dark{color:#b5c0be}
+.hero h1{font-weight:740;font-size:clamp(44px,5.3vw,70px);line-height:1.23;letter-spacing:-.07em;margin:24px 0 25px;max-width:685px}
+.hero h1 em{font-style:normal;color:#89916d}
+.hero-sub{font-size:15px;line-height:2;color:#647178;max-width:530px;margin:0}
+.hero-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:35px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:47px;padding:11px 20px;border:1px solid var(--navy);border-radius:3px;font-size:12px;font-weight:750;text-align:center}
+.btn.primary{background:var(--navy);color:#fff}
+.btn.primary:hover{background:#2c455a}
+.btn.secondary{background:transparent;color:var(--ink)}
+.btn.secondary:hover{background:#edeee8}
+.btn.light{border-color:#b6c2c1;background:#f7f8f1;color:var(--ink)}
+.hero-note{margin-top:27px;font-size:11px;color:#929a9c;line-height:1.8}
+.hero-art{aspect-ratio:1/.91;position:relative;display:flex;align-items:center;justify-content:center}
+.art-back{position:absolute;inset:4% 0 0 8%;background:#edeee8;border-radius:43% 43% 3px 3px;overflow:hidden}
+.art-back:before{content:"";width:60%;height:140%;position:absolute;left:20%;top:-9%;border:1px solid #d9ddcf;border-radius:50%}
+.art-back:after{content:"";width:90%;height:94%;position:absolute;left:5%;top:5%;border:1px solid #d5d9ce;border-radius:50%}
+.art-sheet{position:absolute;width:66%;height:67%;left:18%;top:12%;background:#fdfdfa;border:1px solid #aab2ab;box-shadow:16px 20px 0 rgba(29,50,64,.05);transform:rotate(-6deg);padding:30px 31px}
+.art-sheet:after{content:"";height:100%;width:1px;background:#deded6;position:absolute;right:15%;top:0}
+.sheet-top{display:flex;justify-content:space-between;gap:12px;align-items:center}
+.sheet-top span{font-weight:750;font-size:11px;color:#2d4354}
+.sheet-top b{font-size:10px;color:#929b8a;letter-spacing:.12em}
+.art-bignum{font-family:Georgia,serif;font-size:clamp(49px,6vw,83px);line-height:1;color:#1c3548;letter-spacing:-.08em;margin-top:35px}
+.art-rule{height:1px;background:#d2d6cf;margin:27px 0 23px;width:85%}
+.art-lines i{display:block;height:6px;background:#e0e3dc;margin:13px 0;width:64%}
+.art-lines i:nth-child(2){width:81%}
+.art-lines i:nth-child(3){width:72%}
+.art-stamp{position:absolute;right:7%;bottom:9%;width:132px;height:132px;border:2px solid #929b85;transform:rotate(9deg);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#727f71;font-weight:780;letter-spacing:.08em;font-size:14px;background:#f8f8efb8}
+.art-stamp:before{content:"";position:absolute;inset:8px;border:1px dashed #9aa593;border-radius:50%}
+.metrics{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.metrics .container{display:grid;grid-template-columns:repeat(4,1fr)}
+.metric{padding:31px 22px 33px 0}
+.metric+.metric{padding-left:30px;border-left:1px solid var(--line)}
+.metric strong{font-size:27px;font-weight:710;letter-spacing:-.055em;display:block;font-variant-numeric:tabular-nums}
+.metric span{display:block;margin-top:8px;font-size:12px;color:#7a8686}
+.metric small{display:block;margin-top:6px;font-size:10px;color:#a1a8a4}
+.section{padding:104px 0}
+.section-head{display:grid;grid-template-columns:340px 1fr;gap:54px;align-items:start;margin-bottom:45px}
+.section-tag{font-size:11px;font-weight:730;color:#8a9083;letter-spacing:.18em}
+.section-head h2{margin:0;font-size:clamp(29px,3.6vw,45px);letter-spacing:-.065em;line-height:1.37;font-weight:720}
+.section-head p{margin:17px 0 0;line-height:1.95;color:#748080;font-size:14px;max-width:680px}
+.tools{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.tool{border:1px solid #dadcd4;background:#fbfbf7;min-height:310px;padding:30px;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.tool:hover{transform:translateY(-3px);box-shadow:0 13px 35px #34403810}
+.tool-icon{width:46px;height:46px;display:grid;place-items:center;border:1px solid #b4bcb3;color:#334d55;font-size:19px;font-family:Georgia,serif;border-radius:50%}
+.tool-head{font-size:12px;color:#8a948b;margin-top:30px;font-weight:730}
+.tool h3{font-size:23px;letter-spacing:-.045em;margin:10px 0 12px;font-weight:740}
+.tool p{font-size:13px;color:#707d7e;line-height:1.9;margin:0}
+.tool a{font-size:12px;font-weight:760;color:#254659;margin-top:auto;padding-top:24px}
+.tools-foot{margin-top:17px;font-size:12px;color:#929a9a}
+.panel-dark{background:#1e354a;color:#f8f8f3}
+.panel-dark .section-tag{color:#a5b2ab}
+.panel-dark .section-head p{color:#b1c0c7}
+.principles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid #506579;border-bottom:1px solid #506579}
+.principle{padding:31px 26px 35px;border-right:1px solid #506579}
+.principle:first-child{padding-left:0}
+.principle:last-child{border-right:0}
+.principle .num{font-family:Georgia,serif;font-size:28px;color:#b6bb9d}
+.principle h3{font-size:17px;font-weight:680;margin:37px 0 13px}
+.principle p{color:#acbcc5;font-size:12px;line-height:2;margin:0}
+.method{margin-top:35px;color:#c8d3d4;font-size:12px;line-height:1.9;display:flex;align-items:center;gap:25px}
+.method::before{content:"";width:44px;height:1px;background:#9caba0;flex:none}
+.workflow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.step{border-top:1px solid #9ca69d;padding-top:24px}
+.step .index{color:#8b978e;font-family:Georgia,serif;font-size:26px}
+.step h3{font-size:18px;margin:26px 0 14px}
+.step p{font-size:13px;color:#738083;line-height:2;margin:0}
+.example-search{margin-top:38px;background:#fff;border:1px solid #daddd6;padding:25px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}
+.example-search label{display:block;font-size:12px;font-weight:700;margin-bottom:10px}
+.search-field{display:flex;gap:12px}
+.search-field input{height:48px;border:1px solid #d6ddd8;background:#fdfdfa;padding:0 14px;flex:1;min-width:0;border-radius:2px;font-size:13px;color:#263b4b}
+.search-field button{border:0;background:var(--navy);color:#fff;padding:0 24px;font-size:12px;font-weight:750}
+.sample{font-size:11px;color:#9ba3a0;margin-top:11px}
+.sample button{background:transparent;border:0;color:#536e75;font-size:11px;text-decoration:underline;text-underline-offset:3px;padding:4px 7px}
+.example-search .side-note{border-left:1px solid #dfe3dc;padding-left:23px;max-width:240px;font-size:12px;line-height:1.9;color:#7a8582}
+.cases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.case{background:#fff;border:1px solid #e0e2dc;display:flex;flex-direction:column;min-height:300px;padding:27px}
+.case-top{display:flex;justify-content:space-between;color:#9aa59a;font-size:11px}
+.case-title{font-size:22px;font-weight:720;margin:43px 0 12px;letter-spacing:-.045em}
+.case-desc{font-size:13px;color:#727f7c;line-height:1.9;margin:0}
+.case-meta{font-size:11px;color:#83908c;margin:22px 0 0}
+.case a{margin-top:auto;padding-top:24px;font-size:12px;color:#284757;font-weight:750}
+.editorial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.editorial{padding:32px 26px;border-right:1px solid var(--line)}
+.editorial:first-child{padding-left:0}
+.editorial:last-child{border-right:0}
+.editorial .glyph{font-family:Georgia,serif;color:#a1a68a;font-size:35px;margin-bottom:33px}
+.editorial h3{font-size:18px;margin:0 0 14px}
+.editorial p{font-size:13px;color:#7b8786;line-height:2}
+.editorial a{display:inline-block;color:#27495c;font-size:12px;font-weight:740;margin-top:11px}
+.verification{background:#ebece5}
+.verify-main{display:grid;grid-template-columns:1fr 1fr;gap:58px;align-items:center}
+.verify-main h2{font-size:clamp(29px,3.6vw,46px);line-height:1.35;letter-spacing:-.065em;margin:19px 0 20px}
+.verify-main p{font-size:14px;color:#6e7d7b;line-height:2;max-width:490px}
+.checklist{background:#fafaf5;border:1px solid #d6d8ce;padding:28px 32px}
+.checklist .mini{font-size:11px;letter-spacing:.15em;color:#8e9888;font-weight:750}
+.checklist ol{padding-left:0;margin:17px 0 0;list-style:none}
+.checklist li{display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1px solid #e2e4da;padding:16px 0;font-size:13px}
+.checklist li:last-child{border-bottom:0}
+.checklist li strong{font-weight:700}
+.checklist li span{font-size:11px;color:#929e91}
+.qa{max-width:900px;margin-left:auto}
+.qa details{border-bottom:1px solid #d9dbd3;padding:19px 0}
+.qa details:first-child{border-top:1px solid #d9dbd3}
+.qa summary{font-size:15px;font-weight:680;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary:after{content:"+";font-size:19px;color:#929b90}
+.qa details[open] summary:after{content:"−"}
+.qa p{font-size:13px;color:#6b7977;line-height:2;padding-right:30px;max-width:750px}
+.final-cta{padding:90px 0 94px;border-top:1px solid var(--line)}
+.final-cta .container{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center}
+.final-cta h2{font-size:clamp(28px,3.5vw,44px);font-weight:720;letter-spacing:-.06em;margin:0 0 15px}
+.final-cta p{font-size:13px;line-height:1.8;color:#77827d;margin:0}
+footer{background:#1e354a;color:#d6e0df;padding:31px 0}
+footer .container{display:flex;justify-content:space-between;gap:22px;align-items:center}
+footer strong{font-size:12px}
+footer p{font-size:11px;line-height:1.8;color:#b0bdc1;margin:7px 0 0}
+footer a{color:#dce4df;font-size:12px}
+@media(max-width:970px){
+ .hero-grid{grid-template-columns:1fr}.hero-art{display:none}
+ .tools,.cases{grid-template-columns:repeat(2,1fr)}
+ .section-head{grid-template-columns:1fr;gap:14px}
+ .principles{grid-template-columns:repeat(2,1fr)}
+ .principle:nth-child(2){border-right:0}.principle:nth-child(-n+2){border-bottom:1px solid #506579}
+ .workflow{grid-template-columns:repeat(2,1fr)}
+ .example-search{grid-template-columns:1fr}
+ .example-search .side-note{max-width:none;padding:0;border:0}
 }
-@media(max-width:650px){
- .container{padding:0 16px}.ribbon-status{display:none}
- .site-header{position:static}.header-row{min-height:70px}
- .identity-text strong{font-size:15px}.identity-mark{width:38px;height:38px}
- .identity-text span{display:none}
- .header-links a:not(.official){display:none}
- .header-links a.official{border-left:0;padding-left:0;font-size:11px}
- .page-heading{padding:27px 0 21px}.page-heading h1{font-size:23px}
- .head-info{gap:8px;font-size:11px}
- .panel-title{padding:15px 16px}.form-body{padding:17px 16px}
- .form-grid{grid-template-columns:1fr}.field-main{grid-column:auto}
- .form-actions{margin-top:17px}.form-note{margin-left:0;width:100%}
- .btn{flex:1}
- .results-head{padding:16px}.results-head p{width:100%}
- .document-table,.document-table tbody,.document-table tr,.document-table td{display:block;width:100%!important}
- .document-table thead{display:none}
- .document-table tbody tr{display:grid;grid-template-columns:1fr auto;gap:6px 12px;padding:16px;border-bottom:1px solid var(--line)}
- .document-table tbody tr:last-child{border-bottom:0}
- .document-table td{padding:0;border:0}
- .document-table td.n{display:none}
- .document-table td.code{grid-column:1;grid-row:1}
- .document-table td.document-name{grid-column:1/-1;grid-row:2}
- .document-table td.scope{grid-column:1/-1;grid-row:3;color:#8192a4}
- .document-table td.state{grid-column:1;grid-row:4}
- .document-table td.action{grid-column:2;grid-row:4;text-align:right}
- .record-header{padding:18px 16px;flex-direction:column}
- .record-body{padding:4px 16px 20px}
- .metadata{grid-template-columns:1fr}
- .reading-row{display:block}
- .reading-row dt,.reading-row dd{display:block;padding:11px 14px}
- .reading-row dt{border-right:0;border-bottom:1px solid var(--line)}
- .clause-row{grid-template-columns:1fr;gap:2px}
- .record-sources{padding:18px 16px}
- .lower-header{align-items:flex-start;flex-direction:column;gap:5px}
- .compact-table,.compact-table thead,.compact-table tbody,.compact-table tr,.compact-table td{display:block;width:100%}
- .compact-table thead{display:none}
- .compact-table tbody tr{border-bottom:1px solid var(--line-soft);padding:16px}
- .compact-table td{border:0;padding:4px 0}
- .compact-table tbody tr:last-child{border:0}
- .reference-notice{padding:15px}
+@media(max-width:660px){
+ .container{width:calc(100% - 36px)}
+ .masthead{height:61px}.masthead .container{gap:10px}
+ .brand-name{font-size:12px}.brand-mark{height:33px;width:33px}
+ nav{display:none}.nav-cta{margin-left:auto;padding:10px 9px;font-size:11px}
+ .hero{padding:65px 0 69px}.hero h1{font-size:43px}
+ .hero-sub{font-size:13px}.hero-buttons{flex-direction:column;align-items:stretch}
+ .metrics .container{grid-template-columns:1fr 1fr}
+ .metric{padding:23px 8px 25px 0}.metric+.metric{padding-left:0;border:0}
+ .metric:nth-child(even){border-left:1px solid var(--line);padding-left:20px}
+ .metric:nth-child(n+3){border-top:1px solid var(--line)}
+ .metric strong{font-size:23px}
+ .section{padding:68px 0}
+ .section-head h2{font-size:31px}
+ .tools,.cases,.workflow,.editorial-grid,.verify-main{grid-template-columns:1fr}
+ .tool{min-height:270px}
+ .principles{grid-template-columns:1fr}
+ .principle{border-right:0;border-bottom:1px solid #506579;padding:26px 0}
+ .principle:nth-child(2){border-bottom:1px solid #506579}
+ .principle:last-child{border-bottom:0}
+ .principle h3{margin-top:20px}
+ .method{align-items:flex-start}
+ .editorial{border-right:0;border-bottom:1px solid var(--line);padding:27px 0}
+ .editorial:last-child{border-bottom:0}
+ .editorial .glyph{margin-bottom:12px}
+ .verify-main{gap:24px}.checklist{padding:20px}
+ .search-field{flex-direction:column}.search-field button{height:47px}
+ .case{min-height:255px}
+ .final-cta{padding:65px 0}
+ .final-cta .container{grid-template-columns:1fr}
+ footer .container{flex-direction:column;align-items:flex-start}
 }
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-
-.article-intro{color:#65798d;font-size:12px;line-height:1.85;margin:0 0 16px}
-.article-table{border:1px solid var(--line);border-radius:3px;overflow:hidden}
-.article-entry{padding:20px 20px 18px;background:#fff}
-.article-entry+.article-entry{border-top:1px solid var(--line)}
-.article-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
-.article-ref{font-size:11px;color:#2867a4;font-weight:740}
-.article-heading h4{margin:8px 0 0;color:#283f57;font-size:15px;font-weight:750}
-.article-type{white-space:nowrap;border:1px solid #ccdceb;background:#f3f8fc;color:#3d6688;font-size:11px;padding:6px 9px;border-radius:2px}
-.article-explain{font-size:12px;line-height:1.95;color:#4b6075;margin:14px 0}
-.article-fields{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border-top:1px solid #e9eff5;margin:0;padding:14px 0 0}
-.article-field{padding:0 13px}
-.article-field:first-child{padding-left:0}
-.article-field+.article-field{border-left:1px solid #e9eff5}
-.article-field dt{font-size:11px;color:#8797a7;margin:0 0 8px}
-.article-field dd{font-size:12px;line-height:1.8;color:#445d78;margin:0}
-.article-foot{border-top:1px solid #ecf0f5;padding-top:12px;margin-top:15px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
-.article-foot span{font-size:11px;color:#8b9cab}
-@media(max-width:700px){.article-entry{padding:16px}.article-fields{grid-template-columns:1fr;gap:12px}.article-field{padding:0!important;border:0!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </head>
 <body>
-<div class="ribbon"><div class="container">
- <span class="ribbon-label">EAEU / TECHNICAL REGULATIONS REFERENCE</span>
- <span class="ribbon-status">独立法规参考平台 · 非欧亚经济联盟官方网站</span>
-</div></div>
-<header class="site-header"><div class="container header-row">
- <a href="#top" class="identity"><span class="identity-mark">EAC</span><span class="identity-text"><strong>欧亚经济联盟技术法规资料库</strong><span>TECHNICAL REGULATIONS & CONFORMITY DOCUMENTS</span></span></a>
- <nav class="header-links" aria-label="主导航">
-   <a href="#catalogue">法规目录</a>
-   <a href="#documents">文件类型</a>
-   <a href="#versions">修订记录</a>
-   <a href="../">TN VED 编码查询</a>
-   <a class="official" href="https://docs.eaeunion.org/" target="_blank" rel="noopener noreferrer">官方法律门户 ↗</a>
- </nav>
-</div></header>
+<header class="masthead">
+ <div class="container">
+  <a class="brand" href="#top"><span class="brand-mark">EAC</span><span class="brand-name">欧亚商品合规资料平台<small>EURASIAN COMPLIANCE / 资料参考</small></span></a>
+  <nav aria-label="主要导航"><a href="#tools">查询工具</a><a href="#method">核对方法</a><a href="#examples">商品场景</a><a href="#sources">证据来源</a></nav>
+  <a class="nav-cta" href="./library/">进入法规库 &nbsp;↗</a>
+ </div>
+</header>
 <main id="top">
-<div class="container">
- <section class="page-heading">
-   <div class="breadcrumbs"><a href="../">商品归类工具</a><span>›</span><span>技术法规资料库</span></div>
-   <h1>欧亚经济联盟技术法规资料库</h1>
-   <p>收录常见 TR CU / TR EAEU 技术法规的检索索引、商品适用范围摘要、合格评定文件及决议来源。用于企业合规初步核对，原文与现行修订应以相关监管机构公布的文件为准。</p>
-   <div class="head-info">
-     <span class="pill">参考资料 · 未经完整法规审核</span>
-     <span>技术法规 <strong id="law-count">—</strong> 部</span><span class="sep"></span>
-     <span>条款索引 <strong id="clause-count">—</strong> 项</span><span class="sep"></span><span>可查具体要求 <strong id="detail-count">—</strong> 条</span><span class="sep"></span>
-     <span>资料版本 <strong id="data-version">加载中</strong></span>
+<section class="hero">
+ <div class="container hero-grid">
+  <div>
+   <div class="kicker">A TRACEABLE PATH TO EAEU COMPLIANCE</div>
+   <h1>一件商品的合规，<br>应该<em>有据可查。</em></h1>
+   <p class="hero-sub">从 TN VED 商品归类，到技术法规与认证文件，每一步都保留依据、条件和不确定之处。为准备进入俄罗斯及欧亚经济联盟市场的卖家，提供清晰的核对路径。</p>
+   <div class="hero-buttons">
+    <a class="btn primary" href="./library/">开始查询技术法规 <span aria-hidden="true">↗</span></a>
+    <a class="btn secondary" href="../">查询 TN VED 编码 <span aria-hidden="true">→</span></a>
    </div>
- </section>
-
- <section class="panel" id="search-panel" aria-labelledby="search-title">
-   <div class="panel-title"><h2 id="search-title">法规检索</h2><small>按编号、名称或产品类别检索参考资料</small></div>
-   <form id="lookup" class="form-body">
-    <div class="form-grid">
-      <div class="field field-main"><label for="keyword">法规编号 / 文件名称 / 商品关键词</label><input id="keyword" type="search" placeholder="例如：TR CU 008/2011、玩具、儿童用品、О безопасности" autocomplete="off"></div>
-      <div class="field"><label for="category">适用领域</label><select id="category">
-       <option value="all">全部领域</option><option value="children">玩具与儿童用品</option><option value="textile">服饰与纺织</option><option value="electric">电子电气</option><option value="daily">食品与日用品</option><option value="industry">机械与防护</option>
-      </select></div>
-      <div class="field"><label for="form">文件形式（候选）</label><select id="form">
-       <option value="all">全部文件</option><option value="COC">CoC 合格证书</option><option value="DOC">DoC 符合性声明</option><option value="SGR">SGR 国家注册</option>
-      </select></div>
+   <p class="hero-note">独立信息工具 · 非官方认证机构 · 不能替代专业合规审核</p>
+  </div>
+  <div class="hero-art" aria-hidden="true">
+   <div class="art-back"></div>
+   <div class="art-sheet">
+    <div class="sheet-top"><span>PRODUCT FILE / ЕАЭС</span><b>01 / 04</b></div>
+    <div class="art-bignum">EAC</div>
+    <div class="art-rule"></div>
+    <div class="art-lines"><i></i><i></i><i></i></div>
+   </div>
+   <div class="art-stamp">CHECKED<br>BY SOURCE</div>
+  </div>
+ </div>
+</section>
+<section class="metrics" aria-label="数据范围">
+ <div class="container">
+  <div class="metric"><strong id="metric-code">13,293</strong><span>TN VED 编码</span><small>FNS 2026-04 快照</small></div>
+  <div class="metric"><strong id="metric-law">11</strong><span>技术法规索引</span><small>首批重点领域</small></div>
+  <div class="metric"><strong id="metric-rule">52</strong><span>具体条款摘要</span><small>附来源与核对条件</small></div>
+  <div class="metric"><strong>0</strong><span>已获专业审核规则</span><small>如实显示覆盖边界</small></div>
+ </div>
+</section>
+<section class="section" id="tools">
+ <div class="container">
+  <div class="section-head">
+   <div class="section-tag">I / AVAILABLE TOOLS</div>
+   <div><h2>把复杂的法规，<br>拆成能实际查询的工具。</h2><p>不同任务用不同入口。编码检索、技术法规对照和证书官方登记查询各司其职，避免把一个编号当成所有认证要求的答案。</p></div>
+  </div>
+  <div class="tools">
+   <article class="tool">
+    <div class="tool-icon">01</div>
+    <div class="tool-head">TARIFF CLASSIFICATION</div>
+    <h3>TN VED 编码</h3>
+    <p>按中文、俄文名称或 10 位编码查询，查看商品候选分类与俄文官方名称。</p>
+    <a href="../">进入编码查询 ↗</a>
+   </article>
+   <article class="tool">
+    <div class="tool-icon">02</div>
+    <div class="tool-head">TECHNICAL REGULATIONS</div>
+    <h3>EAC 法规资料</h3>
+    <p>按法规编号、商品品类和 CoC、DoC、SGR 文件形式筛选，逐条查看依据与条件。</p>
+    <a href="./library/">进入法规资料库 ↗</a>
+   </article>
+   <article class="tool">
+    <div class="tool-icon">03</div>
+    <div class="tool-head">OFFICIAL DOCUMENT REGISTRY</div>
+    <h3>认证登记核验</h3>
+    <p>进入俄罗斯官方登记系统，核对证书或声明的主体、产品、法规与登记状态。</p>
+    <a href="https://pub.fsa.gov.ru/rss/certificate" target="_blank" rel="noopener noreferrer">打开官方 CoC 登记系统 ↗</a>
+   </article>
+  </div>
+  <p class="tools-foot">* 编码与法规查询基于公开资料；证书登记状态需前往主管机构网站实时核验。本站不声称自动签发或核验有效性。</p>
+ </div>
+</section>
+<section class="section panel-dark" id="principles">
+ <div class="container">
+  <div class="section-head">
+   <div class="section-tag">II / OUR VERIFICATION RULES</div>
+   <div><h2>任何合规结论，<br>都应该能够追溯。</h2><p>一个看起来明确的答案，如果缺少原始条款、适用条件或版本日期，可能比“不确定”更有风险。</p></div>
+  </div>
+  <div class="principles">
+   <div class="principle"><div class="num">01</div><h3>原文优先</h3><p>保留俄文官方条目、法规编号及出处。中文翻译用于辅助理解，不能取代原文。</p></div>
+   <div class="principle"><div class="num">02</div><h3>区分事实与推断</h3><p>已确认的法规条文、待补充的商品属性和未经审核的建议分别呈现。</p></div>
+   <div class="principle"><div class="num">03</div><h3>关注生效版本</h3><p>修订决议与过渡期单独记录，不将未来生效的要求提前作为现行规定。</p></div>
+   <div class="principle"><div class="num">04</div><h3>承认信息边界</h3><p>商品信息不够、适用范围不明时，明确标注待核查，而不推断必需证书。</p></div>
+  </div>
+  <div class="method">数据的价值，在于能够让每一步判断经得起复核。</div>
+ </div>
+</section>
+<section class="section" id="method">
+ <div class="container">
+  <div class="section-head">
+   <div class="section-tag">III / YOUR VERIFICATION ROUTE</div>
+   <div><h2>从一件商品出发，<br>把四个问题查清楚。</h2><p>不同商品需要的信息各不相同。先确认商品属性，再查看候选归类、适用法规和对应文件要求。</p></div>
+  </div>
+  <div class="workflow">
+   <article class="step"><div class="index">01 / 商品</div><h3>弄清它是什么</h3><p>名称、材质、用途、适用年龄、供电与无线功能；避免用模糊商品名开始判断。</p></article>
+   <article class="step"><div class="index">02 / 编码</div><h3>核对 TN VED</h3><p>查找候选编码，结合俄文税则说明与上级品目确认，不直接照搬中国海关后四位。</p></article>
+   <article class="step"><div class="index">03 / 法规</div><h3>确认适用范围</h3><p>核对 TR CU / TR EAEU 法规、排除条款及修订记录，可能涉及多部法规。</p></article>
+   <article class="step"><div class="index">04 / 文件</div><h3>确认需要的证明</h3><p>CoC、DoC、SGR 或其他要求需要分别评估；已有文件还要查登记状态及覆盖范围。</p></article>
+  </div>
+  <form class="example-search" id="lookup-form">
+   <div>
+    <label for="lookup-text">从商品或法规开始</label>
+    <div class="search-field"><input id="lookup-text" type="search" placeholder="输入：儿童积木 / 冲锋衣 / TR CU 008" aria-label="商品或法规关键词" required><button type="submit">查找法规 ↗</button></div>
+    <div class="sample">示例：
+     <button type="button" data-q="玩具">儿童积木</button>
+     <button type="button" data-q="轻工业">冲锋衣</button>
+     <button type="button" data-q="电磁兼容">耳机</button>
     </div>
-    <div class="form-actions">
-     <button type="submit" class="btn btn-primary">查询法规</button>
-     <button type="button" class="btn btn-secondary" id="reset">重置条件</button>
-     <span class="form-note">数据为参考索引，文件形式须按具体商品核实</span>
-    </div>
-   </form>
- </section>
-
- <section class="panel main-block" id="catalogue">
-  <div class="results-head"><h2>技术法规目录</h2><p id="result-count">正在加载目录…</p></div>
-  <div class="tab-scroll">
-   <table class="document-table">
-    <thead><tr>
-     <th class="n">序号</th><th class="code">法规编号</th><th>法规名称 / 俄文原文</th><th class="scope">涉及商品领域</th><th class="state">资料状态</th><th class="action">详情</th>
-    </tr></thead>
-    <tbody id="reg-rows"><tr><td colspan="6" class="empty">正在读取法规数据…</td></tr></tbody>
-   </table>
+   </div>
+   <div class="side-note">搜索将进入法规资料库，展示候选结果与来源；不会根据一个关键词自动给出最终认证结论。</div>
+  </form>
+ </div>
+</section>
+<section class="section" id="examples" style="padding-top:0">
+ <div class="container">
+  <div class="section-head">
+   <div class="section-tag">IV / REAL PRODUCT QUESTIONS</div>
+   <div><h2>六类商品，<br>六种需要厘清的情况。</h2><p>这些示例只演示如何补全信息与选择法规。没有完整商品资料时，我们保留待核定状态。</p></div>
   </div>
- </section>
-
- <section class="panel record-panel" id="record" aria-labelledby="record-heading">
-  <div class="record-header"><div>
-    <div class="record-eyebrow">REGULATORY DOCUMENT PROFILE / 法规资料档案</div>
-    <h2 id="record-heading">请选择法规</h2>
-    <p id="record-ru">通过上方查询结果查看具体法规信息。</p>
-  </div><div class="record-top-actions"><span class="record-key" id="record-id">—</span><span class="record-key">核对状态：未审核</span></div></div>
-  <div id="record-content" class="record-body"><div class="empty">选择法规后将展示适用范围、排除情况、条款索引和来源文件。</div></div>
-  <div class="record-sources"><p id="source-note">所有摘要仅供定位法规，不代替正式条款核验。</p><div id="source-url">—</div></div>
- </section>
-
- <section class="lower-section" id="documents">
-  <div class="lower-header"><h2>合格评定文件与相关标志</h2><span>不同文件的法律性质应分开核对</span></div>
-  <div class="panel tab-scroll">
-   <table class="compact-table"><thead><tr>
-    <th style="width:125px">标识</th><th style="width:240px">中文名称</th><th>俄文原名与用途说明</th><th style="width:148px">核对入口</th>
-   </tr></thead><tbody id="doc-rows"><tr><td colspan="4" class="empty">读取中…</td></tr></tbody></table>
+  <div class="cases" id="case-list">
+   <article class="case"><div class="case-top"><span>CASE 01</span><span>待核定</span></div><h3 class="case-title">塑料儿童积木</h3><p class="case-desc">先确认是否属于法规意义上的儿童玩具，再看适用的合格评定要求。</p><a href="./library/?q=TR%20CU%20008">查看相关法规 ↗</a></article>
+   <article class="case"><div class="case-top"><span>CASE 02</span><span>待核定</span></div><h3 class="case-title">加绒冲锋衣</h3><p class="case-desc">成人还是儿童？接触层级是什么？产品属性会影响适用法规与文件形式。</p><a href="./library/?q=TR%20CU%20017">查看相关法规 ↗</a></article>
+   <article class="case"><div class="case-top"><span>CASE 03</span><span>待核定</span></div><h3 class="case-title">摩托车头盔用耳机</h3><p class="case-desc">无线、供电和产品用途都需要核实，可能存在多项技术法规要求。</p><a href="./library/?q=TR%20CU%20020">查看相关法规 ↗</a></article>
   </div>
- </section>
-
- <section class="lower-section" id="cases">
-  <div class="lower-header"><h2>商品合规检索示例</h2><span>均为待补充商品参数的初筛示例</span></div>
-  <div class="panel tab-scroll">
-   <table class="compact-table"><thead><tr>
-    <th style="width:62px">序号</th><th style="width:215px">商品名称</th><th>需要确认的商品属性</th><th style="width:222px">可能涉及的法规</th><th style="width:104px">操作</th>
-   </tr></thead><tbody id="case-rows"><tr><td colspan="5" class="empty">读取中…</td></tr></tbody></table>
+ </div>
+</section>
+<section class="section" id="sources" style="padding-top:0">
+ <div class="container">
+  <div class="section-head">
+   <div class="section-tag">V / SOURCES OF RECORD</div>
+   <div><h2>资料不是答案，<br>来源才是判断的起点。</h2><p>每条资料保留可核对的出处。以下是目前工具采用的主要公开来源，法律适用以现行文本为准。</p></div>
   </div>
- </section>
-
- <section class="lower-section" id="versions">
-  <div class="lower-header"><h2>法律文件修订与版本记录</h2><span>仅收录已录入的部分决议，不代表完整修订历史</span></div>
-  <div class="panel tab-scroll">
-   <table class="compact-table"><thead><tr>
-    <th style="width:135px">发布日期</th><th style="width:176px">关联技术法规</th><th>相关决议与摘要</th><th style="width:155px">生效日期</th><th style="width:112px">原始文件</th>
-   </tr></thead><tbody id="version-rows"><tr><td colspan="5" class="empty">读取中…</td></tr></tbody></table>
+  <div class="editorial-grid">
+   <article class="editorial"><div class="glyph">I.</div><h3>TN VED 商品目录</h3><p>来自俄罗斯 FNS 可公开下载的编码资料。数据库保留俄文原名、日期和版本，中文译名标记为机器翻译。</p><a href="https://www.nalog.gov.ru/rn77/program/5961290/" target="_blank" rel="noopener noreferrer">俄罗斯 FNS 数据来源 ↗</a></article>
+   <article class="editorial"><div class="glyph">II.</div><h3>EAEU 法律文件</h3><p>以欧亚经济联盟及其委员会公布的决议、技术法规和修订为对照依据，尚未完成全部现行合并文本的法律审核。</p><a href="https://docs.eaeunion.org/" target="_blank" rel="noopener noreferrer">EAEU 官方法律门户 ↗</a></article>
+   <article class="editorial"><div class="glyph">III.</div><h3>证书与声明登记</h3><p>俄罗斯国家登记系统用于查 CoC 与 DoC。证书是否有效应按当前官方登记状态、申请人及具体产品范围确认。</p><a href="https://pub.fsa.gov.ru/rds/declaration" target="_blank" rel="noopener noreferrer">俄罗斯官方 DoC 登记 ↗</a></article>
   </div>
- </section>
-
- <p class="reference-notice"><strong>资料使用说明：</strong>本站是独立的合规参考工具，非欧亚经济联盟、欧亚经济委员会或任何发证机构的官方网站。当前记录是法规目录与待核条款摘要，不能仅凭 TN VED 编码或这份资料判断 CoC、DoC、SGR 是否必须办理；所有商品结论需要结合现行技术法规、商品属性及官方登记资料核验。</p>
-</div>
+ </div>
+</section>
+<section class="section verification">
+ <div class="container verify-main">
+  <div>
+   <div class="kicker">VI / BEFORE YOU RELY ON A CERTIFICATE</div>
+   <h2>证书有编号，<br>还要有可核对的记录。</h2>
+   <p>拿到一张证书或声明，不代表自动覆盖自己的商品。核对主体、制造商、产品型号、技术法规、批次及登记状态，才能判断是否与实际货物一致。</p>
+   <a class="btn primary" href="https://pub.fsa.gov.ru/rss/certificate" target="_blank" rel="noopener noreferrer">进入官方证书登记系统 ↗</a>
+  </div>
+  <div class="checklist">
+   <div class="mini">DOCUMENT VALIDATION CHECKLIST</div>
+   <ol>
+    <li><strong>01 · 登记号码</strong><span>官方记录</span></li>
+    <li><strong>02 · 申请人与制造商</strong><span>主体一致</span></li>
+    <li><strong>03 · 商品名称及型号</strong><span>范围覆盖</span></li>
+    <li><strong>04 · 技术法规与方案</strong><span>条款符合</span></li>
+    <li><strong>05 · 有效期及登记状态</strong><span>实时核验</span></li>
+   </ol>
+  </div>
+ </div>
+</section>
+<section class="section" id="faq">
+ <div class="container">
+  <div class="section-head">
+   <div class="section-tag">VII / COMMON QUESTIONS</div>
+   <div><h2>经常遇到的<br>三个问题。</h2></div>
+  </div>
+  <div class="qa">
+   <details><summary>知道 TN VED 编码，就能确定 EAC 文件吗？</summary><p>不能。编码帮助定位监管和品目，但还需结合材质、功能、用途、适用年龄、法规排除条件及现行版本判断。某些商品可能同时涉及多项法规。</p></details>
+   <details><summary>CoC、DoC、SGR 和豁免函是一回事吗？</summary><p>不是。CoC、DoC 对应不同的合格评定形式；SGR 是特定产品适用的国家注册；不适用说明函不构成 EAC 合格评定证书，不能代替依法必须办理的文件。</p></details>
+   <details><summary>这个平台能直接告诉我“认证通过”吗？</summary><p>目前不能。这里提供候选法规、公开条文摘要、核对条件和外部核验入口。现有条款尚未完成认证专业人员逐项签核，结果需要进一步确认。</p></details>
+  </div>
+ </div>
+</section>
+<section class="final-cta">
+ <div class="container">
+  <div><h2>从确定的一条法规开始。</h2><p>先看到来源，再作商品判断。现在可以直接查询法规、条款和候选适用条件。</p></div>
+  <a href="./library/" class="btn primary">打开技术法规资料库 ↗</a>
+ </div>
+</section>
 </main>
-<footer class="footer"><div class="container footer-in">
- <div><strong>欧亚经济联盟技术法规资料库</strong><p>Independent regulatory reference · 独立资料检索工具</p></div>
- <div><p>数据来源以法律门户及相关主管机构公开资料为准</p><a href="https://docs.eaeunion.org/" target="_blank" rel="noopener noreferrer">访问欧亚经济联盟官方法律门户 ↗</a></div>
-</div></footer>
+<footer>
+ <div class="container">
+  <div><strong>EAC / 欧亚商品合规资料平台</strong><p>信息检索与合规学习工具，非欧亚经济联盟官方网站、发证机构或认证服务承诺。</p></div>
+  <a href="https://docs.eaeunion.org/" target="_blank" rel="noopener noreferrer">官方法规门户 ↗</a>
+ </div>
+</footer>
 <script>
 (function(){
 "use strict";
-const $=id=>document.getElementById(id);
-const h=(tag,klass,value)=>{
- const e=document.createElement(tag);if(klass)e.className=klass;
- if(value!==undefined)e.textContent=String(value);return e;
-};
-let data=null,articleDb=null,currentId="",filters={keyword:"",category:"all",form:"all"};
-const categories={
- all:null,
- children:["TR_CU_008_2011","TR_CU_007_2011"],
- textile:["TR_CU_017_2011"],
- electric:["TR_CU_004_2011","TR_CU_020_2011","TR_EAEU_037_2016"],
- daily:["TR_CU_005_2011","TR_CU_009_2011","TR_CU_021_2011"],
- industry:["TR_CU_010_2011","TR_CU_019_2011"]
-};
-const byId=id=>data.regulations.find(r=>r.id===id);
-const bySource=id=>data.sources.find(s=>s.id===id);
-function urlAllowed(raw){
- try{const u=new URL(raw);return u.protocol==="https:"&&["docs.eaeunion.org","eec.eaeunion.org","protect.gost.ru","pub.fsa.gov.ru"].includes(u.hostname);}
- catch{return false;}
-}
-function sourceLink(id,title){
- const s=bySource(id);
- if(!s||!urlAllowed(s.url))return h("span","state-text","来源需进一步核对");
- const link=h("a","official-link",title||"打开来源文件 ↗");
- link.href=s.url;link.target="_blank";link.rel="noopener noreferrer";link.title=s.name||s.title||"官方来源";
- return link;
-}
-function normalize(s){return String(s||"").toLocaleLowerCase().replace(/\s+/g,"");}
-function matches(r){
- if(filters.category!=="all"&&!categories[filters.category].includes(r.id))return false;
- if(filters.form!=="all"&&!r.documents.includes(filters.form))return false;
- const q=normalize(filters.keyword);
- if(!q)return true;
- const rules=articleDb?.items_by_regulation?.[r.id]||[];
- return normalize([r.code,r.id,r.zh,r.ru,r.sector,r.scope,r.exclude,...rules.map(x=>[x.article,x.title,x.description,x.condition,x.document,(x.schemes||[]).join(" "),...(x.examples||[])].join(" "))].join(" ")).includes(q);
-}
-function getFilters(){
- filters={keyword:$("keyword").value.trim(),category:$("category").value,form:$("form").value};
-}
-function selectReg(id,scroll=false){
- if(!byId(id))return;
- currentId=id;renderTable();renderRecord();
- if(scroll)$("record").scrollIntoView({behavior:"smooth",block:"start"});
-}
-function renderTable(){
- const rows=data.regulations.filter(matches);
- $("result-count").textContent="符合条件 "+rows.length+" 条 / 已收录 "+data.regulations.length+" 条";
- const target=$("reg-rows");target.replaceChildren();
- if(!rows.length){
-  const tr=h("tr"),cell=h("td","empty","没有匹配结果。可调整检索词或重置筛选条件。");
-  cell.colSpan=6;tr.append(cell);target.append(tr);return;
- }
- rows.forEach((r,index)=>{
-  const tr=h("tr",currentId===r.id?"selected":"");
-  const n=h("td","n",String(index+1).padStart(2,"0"));
-  const code=h("td","code"),btn=h("button","code-btn",r.code);
-  btn.type="button";btn.title="查看 "+r.code+" 法规档案";
-  btn.addEventListener("click",()=>selectReg(r.id,true));code.append(btn);
-  const name=h("td","document-name");
-  name.append(h("strong","",r.zh),h("span","",r.ru));
-  const sector=h("td","scope",r.sector);
-  const status=h("td","state");status.append(h("span","state-text","索引待复核"));
-  const action=h("td","action"),open=h("button","open-document","查看档案");
-  open.type="button";open.addEventListener("click",()=>selectReg(r.id,true));action.append(open);
-  tr.append(n,code,name,sector,status,action);target.append(tr);
- });
-}
-function sectionTitle(title){return h("h3","section-label",title)}
-function kv(label,text){
- const row=h("div","reading-row"),dt=h("dt","",label),dd=h("dd","",text);
- row.append(dt,dd);return row;
-}
-function makeDisclosure(label,items,type){
- const d=h("details","subsection"),s=h("summary","",label),body=h("div","content");
- s.append(h("span","","＋"));d.append(s);
- for(const entry of items){
-  if(type==="clauses"){
-   const line=h("div","clause-row");
-   line.append(h("strong","",entry[0]),h("span","",entry[1]));body.append(line);
-  }else{
-   const line=h("div","rule-row");
-   line.append(h("h4","",(entry.type==="scope"?"适用范围":"文件要求")+" · 草稿，未经审核"),
-    h("p","",entry.note),
-    h("p","","需要核对："+entry.when.join("、")));
-   body.append(line);
-  }
- }
- d.append(body);return d;
-}
-function legalLink(url) {
- try {
-  const u=new URL(url);
-  if(u.protocol!=="https:"||!["sudact.ru","rags.ru","bazanpa.ru","mahachkala.intecocert.ru","kirov.intecocert.ru","xn--c1ad2agd.xn--p1ai","tr-ts.ru"].includes(u.hostname))return h("span","state-text","原文需核实");
-  const a=h("a","official-link","核对条文 ↗");
-  a.href=u.href;a.rel="noopener noreferrer";a.target="_blank";
-  a.title="阅读公开法律文本对照；以现行官方法规为准";return a;
- }catch{return h("span","state-text","原文链接无效")}
-}
-function renderArticleData(root,r){
- const rows=articleDb?.items_by_regulation?.[r.id]||[];
- root.append(sectionTitle("具体适用要求与法规依据（"+rows.length+" 条）"));
- if(!rows.length){root.append(h("p","empty","此法规尚未形成可逐条查询的资料，不能据此判定文件类型。"));return}
- const top=h("p","article-intro","以下是可逐条检索的中文法规摘要，保留条款编号、适用条件、文件形式、认证方案和法律文本链接。摘要仍需专业人员核验。");
- root.append(top);
- const tbl=h("div","article-table");
- for(const item of rows){
-  const card=h("section","article-entry");
-  const bar=h("div","article-heading");
-  const left=h("div");left.append(h("span","article-ref",item.article),h("h4","",item.title));bar.append(left);
-  const flag=h("span","article-type",item.document||"需核定");bar.append(flag);
-  card.append(bar,h("p","article-explain",item.description));
-  const fields=h("dl","article-fields");
-  for(const [label,txt] of [["适用/判断条件",item.condition],["文件形式",item.document||"—"],["可适用方案",(item.schemes||[]).join("、")||"按具体条款及商品核定"]]){
-    const row=h("div","article-field");row.append(h("dt","",label),h("dd","",txt));fields.append(row);
-  }
-  card.append(fields);
-  const foot=h("div","article-foot");foot.append(h("span","", "法律文本参考 · 尚未完成专业审定"),legalLink(item.source_url));
-  card.append(foot);tbl.append(card);
- }
- root.append(tbl);
-}
-function renderRecord(){
- const r=byId(currentId);if(!r)return;
- $("record-heading").textContent=r.zh;
- $("record-ru").textContent=r.ru;
- $("record-id").textContent=r.code;
- const box=$("record-content");box.replaceChildren();
- const metadata=h("div","metadata");
- for(const [label,value] of [
-  ["法规编号",r.code],["参考分类",r.sector],["审核状态","目录参考 / 条款未完成复核"]
- ]){
-  const cell=h("div","meta-item");cell.append(h("span","",label),h("strong","",value));metadata.append(cell);
- }
- box.append(metadata);
- renderArticleData(box,r);
- box.append(sectionTitle("法规适用性总览"));
- const description=h("dl","reading-table");
- description.append(kv("适用范围",r.scope),kv("排除条件",r.exclude),kv("合格评定形式",r.assessment));
- box.append(description,sectionTitle("需要核实的商品属性"));
- const attrs=h("div","attributes");
- r.attributes.forEach(v=>attrs.append(h("span","attribute",v)));
- box.append(attrs,makeDisclosure("法规条款索引（"+r.clauses.length+" 项）",r.clauses,"clauses"),
-   makeDisclosure("适用条件草稿（"+r.conditions.length+" 项）",r.conditions,"rules"));
- const s=bySource(r.original);
- $("source-note").textContent=s&&s.type==="adoption_listing"
-  ?"来源为原始决议目录列表，需进一步定位对应编号及最新合并修订文本。"
-  :"来源为原始法规文件或决议，需进一步核对现行修订版本。";
- const root=$("source-url");root.replaceChildren();
- root.append(sourceLink(r.original,"打开法律文件来源 ↗"));
-}
-function renderDocuments(){
- const target=$("doc-rows");target.replaceChildren();
- const labels={COC:"CoC",DOC:"DoC",SGR:"SGR",EXEMPTION_OPINION:"不适用说明函",EAC_MARK:"EAC 标志"};
- for(const d of data.documents){
-  const tr=h("tr"),code=h("td","emph",labels[d.id]||d.id),
-    name=h("td");name.append(h("strong","",d.zh));
-  const desc=h("td");desc.append(h("span","",d.notes),h("span","secondary",d.ru));
-  const verify=h("td");
-  verify.append(d.verify?sourceLink(d.verify,"官方登记入口 ↗"):h("span","state-text","根据文件性质核查"));
-  tr.append(code,name,desc,verify);target.append(tr);
- }
-}
-function renderCases(){
- const target=$("case-rows");target.replaceChildren();
- data.cases.forEach((c,i)=>{
-  const tr=h("tr"),index=h("td","",String(i+1).padStart(2,"0")),
-    name=h("td");name.append(h("strong","",c.zh),h("span","secondary",c.category));
-  const props=h("td","",c.fields.join("、"));
-  const laws=h("td","",c.regulations.map(id=>{const x=byId(id);return x?x.code:id}).join("；"));
-  const action=h("td"),b=h("button","button-inline","关联法规");
-  b.type="button";b.addEventListener("click",()=>{
-   $("keyword").value="";$("category").value="all";$("form").value="all";
-   getFilters();selectReg(c.regulations[0]);$("record").scrollIntoView({behavior:"smooth",block:"start"});
-  });action.append(b);tr.append(index,name,props,laws,action);target.append(tr);
- });
-}
-function renderVersions(){
- const target=$("version-rows");target.replaceChildren();
- const vs=[...data.versions].sort((a,b)=>(b.published||"").localeCompare(a.published||""));
- for(const v of vs){
-  const tr=h("tr"),date=h("td","emph",v.published||"待核实"),
-    law=h("td","",byId(v.regulation)?.code||v.regulation),
-    detail=h("td");detail.append(h("strong","",v.decision),h("span","secondary",v.note));
-  const effective=h("td","",v.effective||"待核实"),source=h("td");
-  source.append(sourceLink(v.source,"决议原文 ↗"));tr.append(date,law,detail,effective,source);target.append(tr);
- }
-}
-$("lookup").addEventListener("submit",e=>{e.preventDefault();if(!data)return;getFilters();renderTable();$("catalogue").scrollIntoView({behavior:"smooth",block:"start"})});
-$("reset").addEventListener("click",()=>{
- $("keyword").value="";$("category").value="all";$("form").value="all";
- if(!data)return;getFilters();renderTable();
+const EAC="./library/";
+function openQuery(q){window.location.href=EAC+"?q="+encodeURIComponent(q)}
+document.getElementById("lookup-form").addEventListener("submit",e=>{
+ e.preventDefault();
+ const q=document.getElementById("lookup-text").value.trim();
+ if(q.length)openQuery(q);
 });
+document.querySelectorAll("[data-q]").forEach(btn=>btn.addEventListener("click",()=>openQuery(btn.dataset.q)));
+const box=document.getElementById("case-list");
 Promise.all([
- fetch("./knowledge.json",{cache:"no-cache"}).then(resp=>{if(!resp.ok)throw Error("法规目录 HTTP "+resp.status);return resp.json()}),
- fetch("./article_data.json",{cache:"no-cache"}).then(resp=>{if(!resp.ok)throw Error("具体条款 HTTP "+resp.status);return resp.json()})
-]).then(([result,articles])=>{
- if(!articles.items_by_regulation||articles.meta.count_items<50)throw Error("具体条款数据缺失或不完整");
- articleDb=articles;
- if(!Array.isArray(result.regulations)||result.regulations.length<11||!Array.isArray(result.sources))throw Error("数据结构不完整");
- data=result;
- $("law-count").textContent=result.regulations.length;
- $("clause-count").textContent=result.regulations.reduce((sum,r)=>sum+r.clauses.length,0);
- $("detail-count").textContent=articleDb.meta.count_items;
- $("data-version").textContent=result.meta?.compiled_at||"待核实";
- currentId=result.regulations[0].id;getFilters();
- renderTable();renderRecord();renderDocuments();renderCases();renderVersions();
-}).catch(e=>{
- $("result-count").textContent="数据加载失败";
- $("reg-rows").replaceChildren();
- const tr=h("tr"),td=h("td","empty","无法读取法规资料（"+e.message+"）。请刷新页面重试。");
- td.colSpan=6;tr.append(td);$("reg-rows").append(tr);
- $("record-heading").textContent="资料暂不可用";
- $("data-version").textContent="待更新";
-});
+ fetch("./knowledge.json").then(r=>{if(!r.ok)throw Error("regulation dataset unavailable");return r.json()}),
+ fetch("./article_data.json").then(r=>{if(!r.ok)throw Error("article dataset unavailable");return r.json()})
+]).then(([laws,articles])=>{
+ if(!Array.isArray(laws.regulations)||laws.regulations.length<11||articles.meta.count_items<50)throw Error("incomplete dataset");
+ document.getElementById("metric-law").textContent=laws.regulations.length;
+ document.getElementById("metric-rule").textContent=articles.meta.count_items;
+ const frag=document.createDocumentFragment();
+ laws.cases.forEach((c,i)=>{
+  const item=document.createElement("article");item.className="case";
+  const head=document.createElement("div");head.className="case-top";
+  for(const text of ["CASE "+String(i+1).padStart(2,"0"),"资料待核对"]){
+   const s=document.createElement("span");s.textContent=text;head.appendChild(s);
+  }
+  const title=document.createElement("h3");title.className="case-title";title.textContent=c.zh;
+  const desc=document.createElement("p");desc.className="case-desc";desc.textContent=c.description;
+  const meta=document.createElement("p");meta.className="case-meta";
+  meta.textContent="需确认："+c.fields.slice(0,3).join(" · ");
+  const link=document.createElement("a");link.textContent="查看关联法规 ↗";
+  const reg=laws.regulations.find(x=>x.id===c.regulations[0]);
+  link.href=EAC+"?q="+encodeURIComponent(reg?reg.code:c.zh);
+  item.append(head,title,desc,meta,link);frag.appendChild(item);
+ });
+ box.replaceChildren(frag);
+}).catch(()=>{/* Preserve static examples and links when the dataset is unavailable. */});
 })();
 </script>
 </body>
