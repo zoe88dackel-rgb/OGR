@@ -7,11 +7,12 @@
   "regulations": 11,
   "verified_EAC_rules": 0,
   "snapshot": "2026-04-27",
-  "db_bytes": 10100736,
+  "db_bytes": 10125312,
   "integrity": "ok",
   "warning": "Unofficial machine translation; EAC results must be reviewed against current law.",
   "eac_library": {
     "regulations": 11,
+    "article_requirements": 52,
     "clauses_to_review": 50,
     "draft_rules": 22,
     "verified_rules": 0,
