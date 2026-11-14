@@ -117,3 +117,28 @@ FROM eac_candidate_rules WHERE review_status='draft'
 UNION ALL
 SELECT 'clause',id,regulation_id,summary_zh
 FROM eac_clause_summaries WHERE review_status='draft';
+
+-- Clause-based, concrete sourced legal-reference records for the EAC catalogue.
+-- Status 'reference' does NOT authorize automatic compliance or certification decisions.
+CREATE TABLE IF NOT EXISTS eac_article_requirements(
+  requirement_id TEXT PRIMARY KEY,
+  regulation_id TEXT NOT NULL REFERENCES eac_knowledge_regulations(id),
+  article_reference TEXT NOT NULL,
+  title_zh TEXT NOT NULL,
+  summary_zh TEXT NOT NULL,
+  applicability_condition TEXT NOT NULL,
+  candidate_document TEXT,
+  scheme_codes_json TEXT NOT NULL DEFAULT '[]',
+  source_url TEXT NOT NULL,
+  checked_at TEXT NOT NULL,
+  review_status TEXT NOT NULL DEFAULT 'reference'
+    CHECK(review_status IN ('reference','expert_approved','withdrawn')),
+  reviewed_by TEXT,
+  reviewed_at TEXT,
+  CHECK (review_status!='expert_approved' OR
+    (reviewed_by IS NOT NULL AND reviewed_at IS NOT NULL))
+);
+CREATE INDEX IF NOT EXISTS idx_eac_requirement_regulation
+ON eac_article_requirements(regulation_id,article_reference);
+CREATE INDEX IF NOT EXISTS idx_eac_requirement_review
+ON eac_article_requirements(review_status,regulation_id);
