@@ -193,6 +193,25 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
  .reference-notice{padding:15px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.article-intro{color:#65798d;font-size:12px;line-height:1.85;margin:0 0 16px}
+.article-table{border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.article-entry{padding:20px 20px 18px;background:#fff}
+.article-entry+.article-entry{border-top:1px solid var(--line)}
+.article-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
+.article-ref{font-size:11px;color:#2867a4;font-weight:740}
+.article-heading h4{margin:8px 0 0;color:#283f57;font-size:15px;font-weight:750}
+.article-type{white-space:nowrap;border:1px solid #ccdceb;background:#f3f8fc;color:#3d6688;font-size:11px;padding:6px 9px;border-radius:2px}
+.article-explain{font-size:12px;line-height:1.95;color:#4b6075;margin:14px 0}
+.article-fields{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border-top:1px solid #e9eff5;margin:0;padding:14px 0 0}
+.article-field{padding:0 13px}
+.article-field:first-child{padding-left:0}
+.article-field+.article-field{border-left:1px solid #e9eff5}
+.article-field dt{font-size:11px;color:#8797a7;margin:0 0 8px}
+.article-field dd{font-size:12px;line-height:1.8;color:#445d78;margin:0}
+.article-foot{border-top:1px solid #ecf0f5;padding-top:12px;margin-top:15px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.article-foot span{font-size:11px;color:#8b9cab}
+@media(max-width:700px){.article-entry{padding:16px}.article-fields{grid-template-columns:1fr;gap:12px}.article-field{padding:0!important;border:0!important}}
 </style>
 </head>
 <body>
@@ -219,7 +238,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
    <div class="head-info">
      <span class="pill">参考资料 · 未经完整法规审核</span>
      <span>技术法规 <strong id="law-count">—</strong> 部</span><span class="sep"></span>
-     <span>条款索引 <strong id="clause-count">—</strong> 项</span><span class="sep"></span>
+     <span>条款索引 <strong id="clause-count">—</strong> 项</span><span class="sep"></span><span>可查具体要求 <strong id="detail-count">—</strong> 条</span><span class="sep"></span>
      <span>资料版本 <strong id="data-version">加载中</strong></span>
    </div>
  </section>
@@ -308,7 +327,7 @@ const h=(tag,klass,value)=>{
  const e=document.createElement(tag);if(klass)e.className=klass;
  if(value!==undefined)e.textContent=String(value);return e;
 };
-let data=null,currentId="",filters={keyword:"",category:"all",form:"all"};
+let data=null,articleDb=null,currentId="",filters={keyword:"",category:"all",form:"all"};
 const categories={
  all:null,
  children:["TR_CU_008_2011","TR_CU_007_2011"],
@@ -336,7 +355,8 @@ function matches(r){
  if(filters.form!=="all"&&!r.documents.includes(filters.form))return false;
  const q=normalize(filters.keyword);
  if(!q)return true;
- return normalize([r.code,r.id,r.zh,r.ru,r.sector,r.scope,r.exclude].join(" ")).includes(q);
+ const rules=articleDb?.items_by_regulation?.[r.id]||[];
+ return normalize([r.code,r.id,r.zh,r.ru,r.sector,r.scope,r.exclude,...rules.map(x=>[x.article,x.title,x.description,x.condition,x.document,(x.schemes||[]).join(" "),...(x.examples||[])].join(" "))].join(" ")).includes(q);
 }
 function getFilters(){
  filters={keyword:$("keyword").value.trim(),category:$("category").value,form:$("form").value};
@@ -391,6 +411,38 @@ function makeDisclosure(label,items,type){
  }
  d.append(body);return d;
 }
+function legalLink(url) {
+ try {
+  const u=new URL(url);
+  if(u.protocol!=="https:"||!["sudact.ru","rags.ru","bazanpa.ru","mahachkala.intecocert.ru","kirov.intecocert.ru","xn--c1ad2agd.xn--p1ai","tr-ts.ru"].includes(u.hostname))return h("span","state-text","原文需核实");
+  const a=h("a","official-link","核对条文 ↗");
+  a.href=u.href;a.rel="noopener noreferrer";a.target="_blank";
+  a.title="阅读公开法律文本对照；以现行官方法规为准";return a;
+ }catch{return h("span","state-text","原文链接无效")}
+}
+function renderArticleData(root,r){
+ const rows=articleDb?.items_by_regulation?.[r.id]||[];
+ root.append(sectionTitle("具体适用要求与法规依据（"+rows.length+" 条）"));
+ if(!rows.length){root.append(h("p","empty","此法规尚未形成可逐条查询的资料，不能据此判定文件类型。"));return}
+ const top=h("p","article-intro","以下是可逐条检索的中文法规摘要，保留条款编号、适用条件、文件形式、认证方案和法律文本链接。摘要仍需专业人员核验。");
+ root.append(top);
+ const tbl=h("div","article-table");
+ for(const item of rows){
+  const card=h("section","article-entry");
+  const bar=h("div","article-heading");
+  const left=h("div");left.append(h("span","article-ref",item.article),h("h4","",item.title));bar.append(left);
+  const flag=h("span","article-type",item.document||"需核定");bar.append(flag);
+  card.append(bar,h("p","article-explain",item.description));
+  const fields=h("dl","article-fields");
+  for(const [label,txt] of [["适用/判断条件",item.condition],["文件形式",item.document||"—"],["可适用方案",(item.schemes||[]).join("、")||"按具体条款及商品核定"]]){
+    const row=h("div","article-field");row.append(h("dt","",label),h("dd","",txt));fields.append(row);
+  }
+  card.append(fields);
+  const foot=h("div","article-foot");foot.append(h("span","", "法律文本参考 · 尚未完成专业审定"),legalLink(item.source_url));
+  card.append(foot);tbl.append(card);
+ }
+ root.append(tbl);
+}
 function renderRecord(){
  const r=byId(currentId);if(!r)return;
  $("record-heading").textContent=r.zh;
@@ -403,7 +455,9 @@ function renderRecord(){
  ]){
   const cell=h("div","meta-item");cell.append(h("span","",label),h("strong","",value));metadata.append(cell);
  }
- box.append(metadata,sectionTitle("法规内容索引"));
+ box.append(metadata);
+ renderArticleData(box,r);
+ box.append(sectionTitle("法规适用性总览"));
  const description=h("dl","reading-table");
  description.append(kv("适用范围",r.scope),kv("排除条件",r.exclude),kv("合格评定形式",r.assessment));
  box.append(description,sectionTitle("需要核实的商品属性"));
@@ -460,14 +514,17 @@ $("reset").addEventListener("click",()=>{
  $("keyword").value="";$("category").value="all";$("form").value="all";
  if(!data)return;getFilters();renderTable();
 });
-fetch("./knowledge.json",{cache:"no-cache"}).then(resp=>{
- if(!resp.ok)throw Error("HTTP "+resp.status);
- return resp.json();
-}).then(result=>{
+Promise.all([
+ fetch("./knowledge.json",{cache:"no-cache"}).then(resp=>{if(!resp.ok)throw Error("法规目录 HTTP "+resp.status);return resp.json()}),
+ fetch("./article_data.json",{cache:"no-cache"}).then(resp=>{if(!resp.ok)throw Error("具体条款 HTTP "+resp.status);return resp.json()})
+]).then(([result,articles])=>{
+ if(!articles.items_by_regulation||articles.meta.count_items<50)throw Error("具体条款数据缺失或不完整");
+ articleDb=articles;
  if(!Array.isArray(result.regulations)||result.regulations.length<11||!Array.isArray(result.sources))throw Error("数据结构不完整");
  data=result;
  $("law-count").textContent=result.regulations.length;
  $("clause-count").textContent=result.regulations.reduce((sum,r)=>sum+r.clauses.length,0);
+ $("detail-count").textContent=articleDb.meta.count_items;
  $("data-version").textContent=result.meta?.compiled_at||"待核实";
  currentId=result.regulations[0].id;getFilters();
  renderTable();renderRecord();renderDocuments();renderCases();renderVersions();
