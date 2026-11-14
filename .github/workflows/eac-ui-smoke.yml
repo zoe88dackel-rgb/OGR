@@ -33,10 +33,14 @@ jobs:
                 if k=='id':self.ids.append(v)
           p=Parser();p.feed(page)
           assert len(p.ids)==len(set(p.ids)),'Duplicate HTML IDs'
-          required=['search','reg-list','detail','filters','cases','docs','timeline','stat-reg','stat-clause','stat-case','edition','result-count','clear']
+          required=['lookup','keyword','category','form','reset','reg-rows','record','record-content','record-heading','record-ru','record-id','result-count','law-count','clause-count','data-version','doc-rows','case-rows','version-rows']
           assert set(required).issubset(p.ids),set(required)-set(p.ids)
           j=json.loads(Path('tnved/eac/knowledge.json').read_text(encoding='utf-8'))
           assert len(j['regulations'])>=11
+          assert '欧亚经济联盟技术法规资料库' in page
+          assert '非欧亚经济联盟官方网站' in page
+          assert 'sourceLink' in page and 'renderRecord' in page
+          assert page.count('<table')>=3
           assert len(j['cases'])>=6 and len(j['documents'])>=5
           assert all(r.get('conditions') and r.get('clauses') and r.get('original') for r in j['regulations'])
           sids={x['id'] for x in j['sources']}
