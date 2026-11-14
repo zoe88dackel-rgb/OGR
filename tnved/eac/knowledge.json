@@ -10,21 +10,21 @@
   "sources": [
     {
       "id": "eec_008_adoption",
-      "url": "https://docs.eaeunion.org/documents/162/?PAGEN_1=4",
-      "name": "EEC 2011 Decision 798 and annex TR CU 008/2011",
+      "url": "https://docs.eaeunion.org/upload/iblock/e70/y86a5zrw9p2ollbtx0bu2o7qa94d30od/cuc_30092011_798_att.pdf",
+      "name": "TR CU 008/2011 original text annex, Customs Union Commission Decision No. 798 (23 September 2011)",
       "publisher": "Eurasian Economic Commission",
       "published": "2011-09-30",
-      "type": "adoption_listing",
-      "note": "官方决议目录，原文附件在同页面"
+      "type": "adoption_attachment",
+      "note": "已核对原始决议附件链接。不是截至今日的合并修订文本，须核对后续修订。"
     },
     {
       "id": "eec_007_adoption",
-      "url": "https://docs.eaeunion.org/documents/162/?PAGEN_1=4",
-      "name": "EEC 2011 Decision 797 and annex TR CU 007/2011",
+      "url": "https://docs.eaeunion.org/be/documents/201/670/",
+      "name": "Customs Union Commission Decision No.797 official entry with TR CU 007/2011 attachment",
       "publisher": "Eurasian Economic Commission",
       "published": "2011-09-30",
-      "type": "adoption_listing",
-      "note": "官方决议目录，原文附件在同页面"
+      "type": "adoption_decision",
+      "note": "已核对官方决议记录（页面含俄文原始技术法规附件）；须核对后续修订。"
     },
     {
       "id": "eec_004_adoption",
