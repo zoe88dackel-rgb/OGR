@@ -19,6 +19,12 @@ assert db.execute("SELECT count(*) FROM eac_certificate_checks").fetchone()[0]==
 assert db.execute("SELECT count(*) FROM eac_document_forms").fetchone()[0]==5
 assert db.execute("SELECT count(*) FROM eac_regulation_events").fetchone()[0]>=5
 assert db.execute("SELECT count(*) FROM eac_case_templates").fetchone()[0]==6
+data=json.loads((HERE.parent/"eac"/"article_data.json").read_text("utf-8"))
+assert db.execute("SELECT count(*) FROM eac_article_requirements").fetchone()[0]==data["meta"]["count_items"]
+assert db.execute("SELECT count(distinct regulation_id) FROM eac_article_requirements").fetchone()[0]==11
+assert db.execute("SELECT count(*) FROM eac_article_requirements WHERE review_status='expert_approved'").fetchone()[0]==0
+assert db.execute("SELECT count(*) FROM eac_article_requirements WHERE length(source_url)<12").fetchone()[0]==0
+assert db.execute("SELECT count(*) FROM eac_article_requirements WHERE length(applicability_condition)<5").fetchone()[0]==0
 assert db.execute("PRAGMA foreign_key_check").fetchall()==[]
 assert db.execute("SELECT COUNT(*) FROM eac_candidate_rules WHERE required_attributes_json='[]'").fetchone()[0]==0
 assert db.execute("SELECT COUNT(*) FROM eac_candidate_rules WHERE source_id NOT IN (SELECT id FROM eac_reference_sources)").fetchone()[0]==0
