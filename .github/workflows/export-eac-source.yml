@@ -1,0 +1,66 @@
+name: Export independent EAC/TN VED source bundle
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/export-eac-source.yml'
+permissions:
+  contents: read
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify independently developed product files
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json,sqlite3
+          base=Path('tnved')
+          essential=[
+            'index.html','catalog.json','zh.json',
+            'eac/index.html','eac/library/index.html',
+            'eac/knowledge.json','eac/article_data.json',
+            'database/schema.sql','database/build.py',
+            'database/enrich_eac.py','database/eac_extra_schema.sql',
+            'database/compliance.sqlite'
+          ]
+          for rel in essential:
+              p=base/rel
+              assert p.is_file() and p.stat().st_size>0,f'Missing {p}'
+          catalog=json.loads((base/'catalog.json').read_text('utf-8'))
+          assert len(catalog['rows'])>=13000
+          chinese=json.loads((base/'zh.json').read_text('utf-8'))
+          assert len(chinese['translations'])==len(catalog['rows'])
+          db=sqlite3.connect(base/'database/compliance.sqlite')
+          assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
+          assert db.execute('SELECT count(*) FROM tariff_codes').fetchone()[0]==len(catalog['rows'])
+          assert db.execute('SELECT count(*) FROM eac_article_requirements').fetchone()[0]>=52
+          print('VERIFIED',len(catalog['rows']),'codes,',db.execute('SELECT count(*) FROM eac_article_requirements').fetchone()[0],'EAC requirements')
+          PY
+      - name: Copy product source and product-specific build workflows
+        run: |
+          mkdir -p export/.github/workflows
+          cp -a tnved export/tnved
+          for file in \
+            tnved-catalog.yml tnved-compliance-db.yml tnved-translate-zh.yml \
+            tnved-d1-validate.yml eac-source-watch.yml eac-ui-smoke.yml export-eac-source.yml
+          do
+            if test -f ".github/workflows/$file"; then
+              cp ".github/workflows/$file" "export/.github/workflows/$file"
+            fi
+          done
+          printf '%s\n' 'Independent EAC / TN VED code snapshot from OGR repo' \
+            'This bundle contains existing source and data, not a finished future M1 Cloudflare service.' \
+            'The SQLite is a static snapshot; Chinese names and EAC requirements are not legally certified.' \
+            'No N55 code or project dependency is included.' > export/EXPORT_NOTE.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: independent-eac-tnved-source
+          path: export/
+          retention-days: 7
+          compression-level: 6
+          if-no-files-found: error
