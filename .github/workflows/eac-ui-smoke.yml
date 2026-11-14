@@ -5,6 +5,7 @@ on:
     paths:
       - 'tnved/eac/index.html'
       - 'tnved/eac/knowledge.json'
+      - 'tnved/eac/article_data.json'
       - '.github/workflows/eac-ui-smoke.yml'
   workflow_dispatch:
 permissions:
@@ -37,6 +38,11 @@ jobs:
           assert set(required).issubset(p.ids),set(required)-set(p.ids)
           j=json.loads(Path('tnved/eac/knowledge.json').read_text(encoding='utf-8'))
           assert len(j['regulations'])>=11
+          details=json.loads(Path('tnved/eac/article_data.json').read_text(encoding='utf-8'))
+          assert details['meta']['count_items']>=50
+          assert len(details['items_by_regulation'])==len(j['regulations'])
+          assert all(len(rows)>=4 for rows in details['items_by_regulation'].values())
+          assert 'renderArticleData' in page and 'article_data.json' in page
           assert '欧亚经济联盟技术法规资料库' in page
           assert '非欧亚经济联盟官方网站' in page
           assert 'sourceLink' in page and 'renderRecord' in page
