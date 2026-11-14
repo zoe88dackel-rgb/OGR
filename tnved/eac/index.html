@@ -1,149 +1,481 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="欧亚经济联盟EAC技术法规知识库：法规、适用范围、文件形式、版本、证书核验。官方来源链接，所有候选规则均明确审核状态。">
-<title>EAC 技术法规知识库｜俄罗斯合规工具</title>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f8fafd">
+<meta name="description" content="EAC 欧亚产品合规法规资料库。查询 TR CU / TR EAEU 技术法规、商品范围、文件形式、法规版本及官方来源。">
+<title>EAC 法规资料库 · 欧亚商品合规参考</title>
 <style>
-:root{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;--ink:#19304e;--muted:#7286a0;--blue:#2269dc;--line:#dae6f4;--bg:#f6f9fe;color:var(--ink);background:var(--bg)}
-*{box-sizing:border-box}body{margin:0}button,input,select{font:inherit}a{text-decoration:none;color:inherit}
-.site{position:sticky;top:0;z-index:10;background:#ffffffee;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.inner{width:min(1050px,calc(100% - 40px));margin:auto}.head{height:67px;display:flex;justify-content:space-between;align-items:center;gap:20px}
-.mark{font-weight:800;font-size:16px;letter-spacing:-.02em}.mark b{background:var(--blue);border-radius:8px;color:white;padding:6px 9px;margin-right:9px}
-nav{display:flex;gap:22px;font-size:13px;font-weight:600;color:#637c9b}nav a:hover{color:var(--blue)}
-.hero{background:radial-gradient(ellipse at 80% 3%,#e4efff 5%,transparent 47%),#f7faff;padding:73px 0 46px}
-.kicker{font-size:12px;letter-spacing:.18em;color:var(--blue);font-weight:780}.hero h1{font-size:clamp(32px,6vw,54px);letter-spacing:-.06em;margin:15px 0 18px;line-height:1.2}.hero p{color:#6d829c;font-size:15px;line-height:1.85;max-width:760px}.metrics{display:flex;gap:36px;flex-wrap:wrap;margin-top:29px}.metrics strong{display:block;font-size:23px}.metrics span{color:var(--muted);font-size:12px}
-.notice{margin-top:26px;padding:15px 18px;border:1px solid #cbdcf4;border-radius:12px;color:#536f91;background:#ecf4ff;font-size:13px;line-height:1.7}
-.section{padding-top:58px}.section-title{font-size:25px;letter-spacing:-.04em;margin:0 0 20px}.controls{display:flex;align-items:center;gap:10px;background:white;padding:10px;border:1px solid var(--line);border-radius:16px}
-.controls input{flex:1;min-width:0;padding:13px 15px;border:0;outline:none;font-size:15px}.controls select{padding:13px 12px;border:1px solid #e2eaf5;border-radius:9px;background:#f8fbff;color:#34567f}
-.layout{display:grid;grid-template-columns:300px minmax(0,1fr);gap:17px;align-items:start;margin-top:20px}
-.side,.detail,.panel{background:#fff;border:1px solid var(--line);border-radius:16px}
-.side{padding:12px;max-height:670px;overflow:auto}.side button{width:100%;text-align:left;padding:15px 13px;border:0;border-radius:11px;background:transparent;color:var(--ink);cursor:pointer;margin-bottom:3px}
-.side button:hover,.side button.active{background:#edf4ff}.side .id{font-size:11px;color:#3770bf;font-weight:800;letter-spacing:.04em}
-.side .name{font-weight:760;display:block;margin-top:5px;font-size:14px}.side .sector{color:var(--muted);font-size:12px;display:block;margin-top:5px}
-.detail{padding:30px;min-height:370px}.detail .flag{display:inline-block;color:#687f9a;background:#f0f5fb;border-radius:7px;padding:6px 9px;font-size:11px;font-weight:700}
-.detail h3{font-size:25px;margin:17px 0 7px;letter-spacing:-.03em}.detail .ru{font-size:13px;color:#8093aa;line-height:1.65;margin-bottom:24px}
-.detail h4{font-size:14px;margin:22px 0 10px}.detail p{font-size:14px;color:#5b728c;line-height:1.85;margin:0 0 8px}
-.chips{display:flex;flex-wrap:wrap;gap:7px}.chip{border:1px solid #d7e6fa;background:#f2f7ff;color:#376ca9;font-size:12px;padding:7px 11px;border-radius:8px}
-.refs{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:23px}.refs a,.case a,.footer a{font-size:12px;color:#2569c5;text-decoration:underline;text-underline-offset:3px}.small{color:var(--muted);font-size:12px}
-.rules-list{display:grid;gap:9px;margin-top:13px}.rule{border-left:3px solid #d6e4f8;padding:9px 12px;background:#f8fbff}.rule strong{font-size:12px}.rule p{margin-top:5px;font-size:12px}
-.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.panel{padding:22px}.panel small{font-weight:700;letter-spacing:.06em;color:#3978c8;font-size:11px}.panel h3{font-size:19px;margin:12px 0}.panel p{color:#6a7e96;line-height:1.8;font-size:13px;margin:8px 0}.case-head{display:flex;align-items:center;justify-content:space-between;gap:14px}
-.case-badge{padding:6px 9px;border-radius:10px;background:#edf5ff;font-size:11px;color:#3b71b2;font-weight:700}
-.open-reg{border:0;background:#e9f2ff;color:#185db7;padding:9px 13px;font-weight:700;border-radius:9px;cursor:pointer;font-size:12px}
-.table{display:grid;gap:12px}.doc{border:1px solid var(--line);border-radius:14px;background:white;padding:19px;display:grid;grid-template-columns:130px 1fr;gap:15px}.doc strong{font-size:20px;color:#2167ca}.doc p{font-size:13px;line-height:1.7;color:#71859e;margin:4px 0}.doc a{color:#2367be;text-decoration:underline;font-size:12px}
-.timeline{display:grid;gap:10px}.event{border:1px solid var(--line);border-radius:12px;padding:17px;background:white}.event strong{font-size:13px}.event p{font-size:13px;color:#70859b;line-height:1.75;margin:8px 0 0}.event .date{font-size:11px;color:#2470bf;display:block;margin-top:9px}
-footer{background:#ebf1f9;margin-top:76px;padding:26px 0;font-size:12px;color:#7588a0}
-.footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
-.empty{padding:36px;font-size:14px;color:#7185a0}
-@media(max-width:760px){.layout{grid-template-columns:1fr}.side{max-height:255px}.cards{grid-template-columns:1fr}.detail{padding:23px}.doc{grid-template-columns:1fr}.hero{padding:44px 0 33px}nav{gap:12px;font-size:12px}nav a:first-child{display:none}.controls{flex-wrap:wrap}.controls input{flex-basis:100%}.controls select{flex:1}}
-</style></head>
+:root{
+  color-scheme:light;
+  --bg:#f8fafd;--surface:#fff;--ink:#17273e;--text:#34445c;--muted:#78879b;
+  --line:#e5eaf1;--line-strong:#d7e0ec;--blue:#245fe3;--blue-deep:#1548b3;
+  --blue-tint:#eff4ff;--max:1180px;
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-size:14px}
+button,input{font:inherit}button{cursor:pointer}
+a{color:inherit;text-decoration:none}a,button{ -webkit-tap-highlight-color:transparent}
+button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #88b0fa;outline-offset:3px}
+.shell{width:min(var(--max),calc(100% - 64px));margin-inline:auto}
+.topbar{height:70px;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.topbar-in{height:100%;display:flex;align-items:center;gap:26px}
+.wordmark{font-weight:800;letter-spacing:-.035em;font-size:18px;white-space:nowrap;display:flex;gap:12px;align-items:center}
+.wordmark-icon{height:36px;width:36px;display:grid;place-items:center;border:1.5px solid var(--blue);border-radius:11px;color:var(--blue);font-size:12px;letter-spacing:-.06em}
+.wordmark span:last-child{font-size:13px;letter-spacing:.02em;font-weight:650}
+.topnav{margin-left:auto;display:flex;align-items:center;gap:28px;font-size:13px;color:#53647c}
+.topnav a:hover{color:var(--blue)}
+.link-out{display:inline-flex;gap:7px;align-items:center;color:var(--blue);font-weight:680}
+.link-out svg{width:14px;height:14px}
+.header-link{border:1px solid var(--line-strong);padding:10px 13px;border-radius:9px;white-space:nowrap}
+.header-link:hover{background:var(--blue-tint)}
+.hero{padding:64px 0 32px;border-bottom:1px solid #edf1f7;background:linear-gradient(105deg,#fff 10%,#f9fbff 62%,#edf4ff 100%)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 325px;gap:54px;align-items:end}
+.eyebrow{color:var(--blue);font-weight:780;letter-spacing:.18em;font-size:11px;text-transform:uppercase}
+.hero h1{font-size:clamp(34px,4.8vw,55px);letter-spacing:-.067em;line-height:1.2;font-weight:760;margin:18px 0 18px}
+.hero h1 span{color:var(--blue)}
+.hero-desc{color:#64758d;line-height:1.9;max-width:610px;font-size:15px;margin:0}
+.hero-side{border:1px solid #dee7f4;background:#fff;border-radius:18px;padding:23px 25px;box-shadow:0 14px 34px rgba(29,74,135,.045)}
+.hero-side .overline{font-size:10px;font-weight:760;letter-spacing:.18em;color:#7589a5}
+.hero-side-header{display:flex;justify-content:space-between;gap:10px;align-items:center}
+.hero-side-marker{font-size:11px;color:var(--blue);font-weight:700}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:17px}
+.stat-grid>div{padding:10px 0}
+.stat-grid>div+div{padding-left:17px;border-left:1px solid var(--line)}
+.stat-value{font-size:26px;line-height:1.1;font-weight:750;letter-spacing:-.055em;display:block}
+.stat-name{font-size:11px;color:var(--muted);margin-top:8px;display:block}
+.hero-note{border-top:1px solid var(--line);margin-top:13px;padding-top:14px;display:flex;align-items:flex-start;gap:9px;font-size:11px;line-height:1.65;color:#71849c}
+.hero-note svg{width:15px;height:15px;flex:none;color:#7087a8;margin-top:1px}
+.utility{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:33px}
+.utility .caption{font-size:12px;color:var(--muted)}
+.utility .caption b{color:var(--ink);font-weight:700}
+.utility a{font-size:12px;color:var(--blue);font-weight:700}
+.main-section{padding-top:40px;scroll-margin-top:100px}
+.section-heading{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:22px}
+.section-heading h2{font-size:26px;letter-spacing:-.045em;margin:6px 0 0;font-weight:740}
+.section-heading p{color:var(--muted);font-size:13px;margin:0 0 3px}
+.section-number{font-size:11px;font-weight:760;letter-spacing:.13em;color:var(--blue)}
+.search-box{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line-strong);height:62px;padding:7px 9px 7px 18px;border-radius:14px;box-shadow:0 7px 22px rgba(32,67,115,.035)}
+.search-box:focus-within{border-color:#88abef;box-shadow:0 0 0 3px rgba(56,118,236,.1)}
+.search-box svg{width:19px;height:19px;color:#6b819d;flex:none}
+.search-box input{min-width:0;flex:1;border:0;background:transparent;outline:none;color:var(--ink);font-size:15px}
+.search-box input::placeholder{color:#9aa7b7}
+.search-shortcut{padding:6px 9px;border:1px solid var(--line);color:#9ba8b8;border-radius:7px;font-size:12px}
+.clear-search{border:0;background:#f3f6fa;color:#667c99;border-radius:8px;padding:8px 12px;font-size:12px;display:none}
+.clear-search.show{display:block}
+.filter-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;margin-bottom:19px}
+.filter{border:1px solid #dde5ef;background:#fff;color:#64758d;border-radius:8px;padding:9px 13px;font-size:12px;font-weight:620;transition:background .15s,border-color .15s,color .15s}
+.filter:hover{border-color:#a9c1f0;color:var(--blue)}
+.filter.active{background:#eef4ff;border-color:#afc7f9;color:#164db4}
+.workspace{display:grid;grid-template-columns:312px minmax(0,1fr);gap:17px;align-items:start}
+.sidebar,.detail-panel{border:1px solid var(--line);background:var(--surface);border-radius:16px}
+.sidebar{overflow:hidden;position:sticky;top:91px}
+.sidebar-heading{padding:17px 19px 15px;display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line)}
+.sidebar-heading span:first-child{font-size:13px;font-weight:750}
+.count{font-size:11px;color:var(--muted)}
+.reg-list{max-height:650px;overflow-y:auto;padding:7px}
+.reg-btn{background:transparent;border:1px solid transparent;width:100%;display:flex;align-items:center;gap:12px;text-align:left;border-radius:10px;padding:15px 12px;transition:background .15s,border-color .15s}
+.reg-btn+.reg-btn{margin-top:2px}
+.reg-btn:hover{background:#f7faff}
+.reg-btn.active{background:#f0f5ff;border-color:#d8e6ff}
+.reg-btn .reg-text{flex:1;min-width:0}
+.reg-btn .reg-code{font-size:11px;display:block;color:#587aa9;font-weight:750;font-variant-numeric:tabular-nums;letter-spacing:.015em}
+.reg-btn .reg-name{font-size:13px;display:block;font-weight:720;line-height:1.45;margin-top:7px}
+.reg-btn .reg-sector{color:#90a0b3;font-size:11px;display:block;margin-top:4px;line-height:1.45}
+.reg-btn svg{color:#8ca3bd;width:15px;height:15px;flex:none}
+.reg-btn.active svg{color:var(--blue)}
+.detail-panel{min-height:570px;padding:29px 32px}
+.detail-kicker{font-size:10px;font-weight:790;letter-spacing:.17em;color:var(--blue);display:flex;align-items:center;gap:10px}
+.detail-kicker:after{content:"";height:1px;background:#e4ebf5;flex:1}
+.detail-top{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;margin:14px 0 11px}
+.detail-code{color:var(--blue);font-size:12px;font-weight:760;margin-bottom:8px}
+.detail-name{font-size:clamp(23px,2.9vw,30px);font-weight:760;letter-spacing:-.045em;line-height:1.25;margin:0}
+.detail-ru{font-size:12px;line-height:1.85;color:#8796aa;margin:11px 0 0}
+.review-tag{flex:none;white-space:nowrap;font-size:11px;color:#7a8da2;background:#f3f6f9;padding:8px 10px;border-radius:8px}
+.detail-summary{margin-top:22px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.summary-part{padding:19px;min-width:0}
+.summary-part+.summary-part{border-left:1px solid var(--line)}
+.meta-label{font-size:11px;color:#90a0b3;font-weight:700;margin-bottom:11px}
+.summary-part p{font-size:12px;color:#556982;line-height:1.78;margin:0;overflow-wrap:anywhere}
+.detail-sub{font-size:16px;letter-spacing:-.025em;font-weight:750;margin:30px 0 15px}
+.attr-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.attr{display:flex;gap:12px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:13px 15px;background:#fcfdff}
+.attr .index{color:#9aafc9;font-size:11px;font-weight:750;font-variant-numeric:tabular-nums}
+.attr span:last-child{font-size:12px;color:#52657d;line-height:1.5}
+.accordion{border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:7px}
+.accordion summary{padding:16px 17px;font-size:13px;font-weight:720;list-style:none;display:flex;align-items:center;justify-content:space-between;cursor:pointer;background:#fff}
+.accordion summary::-webkit-details-marker{display:none}
+.accordion summary .open{color:#7b93ae;transition:transform .15s}
+.accordion[open] summary .open{transform:rotate(45deg)}
+.accordion-body{border-top:1px solid var(--line);padding:8px 17px 14px}
+.clause-line{display:grid;grid-template-columns:105px minmax(0,1fr);gap:12px;padding:12px 0}
+.clause-line+.clause-line{border-top:1px solid #edf1f5}
+.clause-line strong{font-weight:750;color:#2d527f;font-size:12px}
+.clause-line span{color:#63758c;font-size:12px;line-height:1.75}
+.rule-block{border-left:2px solid #bdd2fb;padding:11px 15px;margin-top:9px;background:#f8faff;border-radius:0 8px 8px 0}
+.rule-block .rule-top{display:flex;gap:10px;align-items:center;justify-content:space-between}
+.rule-block strong{font-size:12px;color:#2f4f78}
+.rule-block small{font-size:11px;color:#8a9caf}
+.rule-block p{font-size:12px;line-height:1.8;margin:7px 0 0;color:#697e96}
+.detail-footer{display:flex;gap:14px;justify-content:space-between;align-items:center;flex-wrap:wrap;margin-top:30px;padding-top:21px;border-top:1px solid var(--line)}
+.source-link{display:inline-flex;gap:8px;align-items:center;font-size:12px;font-weight:740;color:var(--blue)}
+.source-link:hover{color:var(--blue-deep)}
+.source-link svg{width:14px;height:14px}
+.disclaimer{font-size:11px;color:#93a2b5;line-height:1.7}
+.empty{padding:30px;color:#71849a;font-size:13px;line-height:1.8}
+.section-quiet{padding-top:74px;scroll-margin-top:100px}
+.case-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.case-card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:24px;display:flex;flex-direction:column;gap:17px;min-height:244px;transition:box-shadow .18s,transform .18s,border-color .18s}
+.case-card:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(31,65,100,.06);border-color:#cbd9eb}
+.case-top{display:flex;align-items:center;justify-content:space-between;gap:15px}
+.case-num{color:#91a7c4;font-size:11px;font-weight:780;letter-spacing:.06em}
+.case-state{color:#90a0b1;font-size:11px}
+.case-card h3{font-size:17px;letter-spacing:-.035em;margin:0;line-height:1.4}
+.case-card p{color:#6c7f96;font-size:12px;line-height:1.8;margin:0}
+.case-spacer{flex:1}
+.tagline{display:flex;flex-wrap:wrap;gap:6px}
+.tagline span{font-size:11px;color:#5375a3;background:#f2f6fc;padding:6px 8px;border-radius:6px}
+.case-btn{border:0;background:transparent;text-align:left;display:flex;gap:8px;align-items:center;padding:7px 0 0;font-size:12px;color:var(--blue);font-weight:760;align-self:flex-start}
+.case-btn:hover{text-decoration:underline;text-underline-offset:4px}
+.doc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.doc-card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:24px;min-height:221px;display:flex;flex-direction:column}
+.doc-card .doc-code{font-size:22px;font-weight:780;letter-spacing:-.05em;color:#315d9f}
+.doc-card h3{font-size:15px;letter-spacing:-.025em;margin:14px 0 8px}
+.doc-card p{font-size:12px;color:#76869a;line-height:1.75;margin:0 0 8px}
+.doc-card .ru{color:#95a2b3;font-size:11px;margin-bottom:10px}
+.doc-card .doc-foot{margin-top:auto;padding-top:10px}
+.timeline{border:1px solid var(--line);border-radius:15px;background:#fff;overflow:hidden}
+.event{display:grid;grid-template-columns:154px minmax(0,1fr) 115px;gap:22px;padding:22px 24px;align-items:start}
+.event+.event{border-top:1px solid var(--line)}
+.event-date{font-size:12px;font-weight:720;color:#375d8d}
+.event-type{font-size:10px;letter-spacing:.08em;color:#99a7ba;margin-top:8px}
+.event strong{font-size:14px;letter-spacing:-.015em}
+.event p{font-size:12px;line-height:1.8;margin:8px 0 0;color:#718297}
+.event a{font-size:12px;color:var(--blue);font-weight:700;white-space:nowrap}
+.footer{padding:38px 0 44px;margin-top:87px;border-top:1px solid var(--line);background:#fff}
+.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.footer p{font-size:12px;color:#8999ae;line-height:1.8;margin:6px 0}
+.footer b{font-size:13px}
+.footer a{font-size:12px;color:var(--blue)}
+@media(max-width:1020px){.hero-grid{grid-template-columns:1fr;gap:28px}.hero-side{max-width:460px}.case-grid,.doc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.workspace{grid-template-columns:280px minmax(0,1fr)}.detail-summary{grid-template-columns:1fr}.summary-part+.summary-part{border-left:0;border-top:1px solid var(--line)}}
+@media(max-width:720px){
+  .shell{width:min(var(--max),calc(100% - 32px))}
+  .topbar{height:61px}.wordmark{font-size:16px}.wordmark-icon{height:33px;width:33px}
+  .wordmark span:last-child{display:none}.topnav{gap:12px}.topnav a:nth-child(2),.topnav a:nth-child(3){display:none}
+  .header-link{padding:9px 10px;font-size:11px}
+  .hero{padding:43px 0 25px}.hero h1{font-size:38px}.hero-desc{font-size:13px}
+  .hero-side{padding:18px 20px}.stat-value{font-size:23px}
+  .utility{margin-top:22px}.utility .caption{font-size:11px}
+  .section-heading h2{font-size:23px}.section-heading p{display:none}.main-section{padding-top:30px}
+  .search-box{height:58px}.search-shortcut{display:none}
+  .filter-row{flex-wrap:nowrap;overflow:auto;padding-bottom:6px;scrollbar-width:none;margin-right:-16px}.filter-row::-webkit-scrollbar{display:none}.filter{white-space:nowrap}
+  .workspace{grid-template-columns:1fr;gap:10px}.sidebar{position:static}.reg-list{max-height:212px;overflow:auto}
+  .detail-panel{padding:23px 18px}.detail-top{flex-direction:column;gap:10px}
+  .detail-name{font-size:26px}.attr-grid{grid-template-columns:1fr}
+  .section-quiet{padding-top:57px}.case-grid,.doc-grid{grid-template-columns:1fr}
+  .case-card{min-height:unset}.doc-card{min-height:unset}
+  .event{grid-template-columns:1fr;gap:10px;padding:18px 19px}
+  .event-type{margin-top:3px}.event a{margin-top:4px}
+  .footer{margin-top:58px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
+</style>
+</head>
 <body>
-<header class="site"><div class="inner head"><a href="#top" class="mark"><b>EAC</b>欧亚法规知识库</a><nav><a href="../">TN VED 编码</a><a href="#laws">技术法规</a><a href="#examples">商品案例</a><a href="#documents">证明文件</a></nav></div></header>
-<main id="top">
-<div class="hero"><div class="inner"><div class="kicker">EAEU · CONFORMITY REFERENCE LIBRARY</div><h1>俄罗斯商品合规，<br>从法规依据开始查。</h1><p>整理技术法规、适用范围、排除条件、文件形式及版本来源。可结合商品资料初步定位适用法规，并跳转官方来源核对。</p><div class="metrics"><div><strong id="n-reg">11</strong><span>首批技术法规</span></div><div><strong id="n-clause">50</strong><span>待审条款索引</span></div><div><strong id="n-doc">5</strong><span>文件及标识类型</span></div></div><div class="notice"><b>使用说明：</b>当前为法规资料库，所有商品判断及规则仍待专业审核。任何 EAC、CoC、DoC、SGR 结果都需结合实际商品、现行法规及登记状态确认。</div></div></div>
-<section id="laws" class="inner section"><h2 class="section-title">技术法规查询</h2><div class="controls"><input id="search" type="search" placeholder="搜索玩具 / 童装 / 低压 / TR CU 017/2011" aria-label="搜索技术法规"><select id="kind" aria-label="领域筛选"><option value="all">全部法规</option><option value="玩具">玩具</option><option value="儿童">儿童用品</option><option value="服饰">服饰</option><option value="电气">电子电气</option><option value="包装">包装</option><option value="化妆品">化妆品</option><option value="机械">机械</option><option value="防护">防护用品</option><option value="食品">食品</option></select></div><div class="layout"><div id="side" class="side">读取法规目录中…</div><article id="detail" class="detail">请选择法规查看具体内容</article></div></section>
-<section id="examples" class="inner section"><h2 class="section-title">商品参考案例</h2><div class="cards" id="cases"></div></section>
-<section id="documents" class="inner section"><h2 class="section-title">合规文件区别与官方核验</h2><div class="table" id="docs"></div></section>
-<section class="inner section"><h2 class="section-title">法规修订与生效日期</h2><div class="timeline" id="timeline"></div></section>
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M13 5h6v6m0-6-9 9m8-1v6H5V6h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.7" stroke="currentColor" stroke-width="1.7" fill="none"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M12 10.5v6m0-9v.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+</svg>
+<header class="topbar">
+  <div class="shell topbar-in">
+    <a class="wordmark" href="#home" aria-label="EAC 法规库首页"><span class="wordmark-icon">EAC</span><span>欧亚合规资料库</span></a>
+    <nav class="topnav" aria-label="主导航"><a href="#regulations">法规检索</a><a href="#scenarios">商品案例</a><a href="#documents">证明文件</a></nav>
+    <a class="header-link link-out" href="../" title="TN VED 海关编码查询">TN VED 查码 <svg><use href="#i-arrow"/></svg></a>
+  </div>
+</header>
+<main id="home">
+  <section class="hero">
+    <div class="shell">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">EURASIAN ECONOMIC UNION / REGULATORY ATLAS</div>
+          <h1>俄罗斯商品合规<br><span>法规资料库</span></h1>
+          <p class="hero-desc">从技术法规、适用范围到合格评定要求，建立清晰可追溯的查询入口。每项资料保留来源、条款及版本信息，便于跨境卖家核查。</p>
+        </div>
+        <div class="hero-side">
+          <div class="hero-side-header"><span class="overline">LIBRARY OVERVIEW</span><span class="hero-side-marker">EAEU / 2026</span></div>
+          <div class="stat-grid">
+            <div><strong class="stat-value" id="stat-reg">—</strong><span class="stat-name">法规索引</span></div>
+            <div><strong class="stat-value" id="stat-clause">—</strong><span class="stat-name">条款索引</span></div>
+            <div><strong class="stat-value" id="stat-case">—</strong><span class="stat-name">商品场景</span></div>
+          </div>
+          <div class="hero-note"><svg><use href="#i-info"/></svg><span>资料索引阶段。法规摘要及文件类型尚待专业核验，不作为最终认证结论。</span></div>
+        </div>
+      </div>
+      <div class="utility">
+        <span class="caption">数据版本 <b id="edition">正在加载…</b></span>
+        <a href="#regulations">探索法规库 &nbsp;↗</a>
+      </div>
+    </div>
+  </section>
+  <section class="shell main-section" id="regulations">
+    <div class="section-heading"><div><span class="section-number">01 / REGULATIONS</span><h2>技术法规检索</h2></div><p>按法规编号、商品类别及中文关键词查询</p></div>
+    <div class="search-box" role="search">
+      <svg aria-hidden="true"><use href="#i-search"/></svg>
+      <input id="search" type="search" placeholder="搜索法规编号、商品关键词，例如：玩具、TR CU 017" aria-label="搜索法规" autocomplete="off">
+      <span class="search-shortcut" aria-hidden="true">/</span>
+      <button class="clear-search" id="clear" type="button" aria-label="清空搜索">清除</button>
+    </div>
+    <div class="filter-row" id="filters" role="group" aria-label="法规分类筛选">
+      <button class="filter active" type="button" data-group="all" aria-pressed="true">全部法规</button>
+      <button class="filter" type="button" data-group="children" aria-pressed="false">玩具 · 儿童</button>
+      <button class="filter" type="button" data-group="textile" aria-pressed="false">服装 · 纺织</button>
+      <button class="filter" type="button" data-group="electric" aria-pressed="false">电子 · 电气</button>
+      <button class="filter" type="button" data-group="daily" aria-pressed="false">食品 · 日用</button>
+      <button class="filter" type="button" data-group="industry" aria-pressed="false">机械 · 防护</button>
+    </div>
+    <div class="workspace">
+      <aside class="sidebar" aria-label="法规列表">
+        <div class="sidebar-heading"><span>法规目录</span><span class="count" id="result-count">加载中</span></div>
+        <div class="reg-list" id="reg-list" aria-live="polite"><div class="empty">正在读取法规资料…</div></div>
+      </aside>
+      <article class="detail-panel" id="detail" aria-live="polite"><div class="empty">选择法规，查看适用范围、条款和官方来源。</div></article>
+    </div>
+  </section>
+  <section class="shell section-quiet" id="scenarios">
+    <div class="section-heading"><div><span class="section-number">02 / USE CASES</span><h2>从商品场景出发</h2></div><p>点击案例，跳转关联法规</p></div>
+    <div class="case-grid" id="cases"><div class="empty">加载商品参考案例…</div></div>
+  </section>
+  <section class="shell section-quiet" id="documents">
+    <div class="section-heading"><div><span class="section-number">03 / DOCUMENT TYPES</span><h2>文件与标志类型</h2></div><p>不同文件对应不同法律要求</p></div>
+    <div class="doc-grid" id="docs"><div class="empty">加载文件分类…</div></div>
+  </section>
+  <section class="shell section-quiet" id="updates">
+    <div class="section-heading"><div><span class="section-number">04 / REGULATORY UPDATES</span><h2>法规版本记录</h2></div><p>历史变更与待生效文件，需以原文核对</p></div>
+    <div class="timeline" id="timeline"><div class="empty">加载版本记录…</div></div>
+  </section>
 </main>
-<footer><div class="inner footer"><span>独立 EAC 法规知识库 · 资料检索与审核参考</span><a href="https://docs.eaeunion.org" target="_blank" rel="noopener">欧亚经济联盟官方法律门户</a></div></footer>
+<footer class="footer">
+  <div class="shell footer-row">
+    <div><b>EAC · Regulatory Reference</b><p>仅供法规资料检索及合规初筛参考。最终判断应以商品实情、现行法规与官方核验结果为准。</p></div>
+    <div><p>数据源与版本可追溯</p><a href="https://docs.eaeunion.org/" target="_blank" rel="noopener noreferrer">欧亚经济联盟法律文件门户 ↗</a></div>
+  </div>
+</footer>
 <script>
 (function(){
-'use strict';
-const el=id=>document.getElementById(id),make=(tag,cls,txt)=>{const x=document.createElement(tag);if(cls)x.className=cls;if(txt!==undefined)x.textContent=String(txt);return x};
-let data=null,selected=null;
-const findSource=id=>data.sources.find(x=>x.id===id);
-function sourceLink(id,label){
- const s=findSource(id),a=make('a','',label||'官方来源');
- if(s&&/^https:\/\/(docs\.eaeunion\.org|eec\.eaeunion\.org|pub\.fsa\.gov\.ru|protect\.gost\.ru)/.test(s.url)){
-  a.href=s.url;a.target='_blank';a.rel='noopener noreferrer';
- }else a.textContent='来源待核实';
- return a;
+"use strict";
+const $=id=>document.getElementById(id);
+const el=(tag,cls,text)=>{
+  const node=document.createElement(tag);
+  if(cls)node.className=cls;
+  if(text!==undefined)node.textContent=String(text);
+  return node;
+};
+const icon=(id)=>{
+  const svg=document.createElementNS("http://www.w3.org/2000/svg","svg");
+  const use=document.createElementNS("http://www.w3.org/2000/svg","use");
+  use.setAttribute("href","#"+id);svg.appendChild(use);return svg;
+};
+let db=null,activeId="",filter="all";
+const families={
+  all:null,
+  children:["TR_CU_008_2011","TR_CU_007_2011"],
+  textile:["TR_CU_017_2011"],
+  electric:["TR_CU_004_2011","TR_CU_020_2011","TR_EAEU_037_2016"],
+  daily:["TR_CU_005_2011","TR_CU_009_2011","TR_CU_021_2011"],
+  industry:["TR_CU_010_2011","TR_CU_019_2011"]
+};
+function source(id){
+  if(!db)return null;
+  const record=db.sources.find(x=>x.id===id);
+  if(!record)return null;
+  try{
+    const url=new URL(record.url);
+    if(url.protocol!=="https:")return null;
+    if(!["docs.eaeunion.org","eec.eaeunion.org","protect.gost.ru","pub.fsa.gov.ru"].includes(url.hostname))return null;
+    return record;
+  }catch{return null}
 }
-function drawList(){
- const q=el('search').value.trim().toLowerCase(),kind=el('kind').value;
- const matches=data.regulations.filter(r=>{
-  const txt=[r.code,r.zh,r.ru,r.sector,r.scope,r.assessment,r.exclude].join(' ').toLowerCase();
-  if(!txt.includes(q))return false;
-  if(kind==='all')return true;
-  if(kind==='服饰')return r.id==='TR_CU_017_2011';
-  if(kind==='玩具')return r.id==='TR_CU_008_2011';
-  if(kind==='儿童')return r.id==='TR_CU_007_2011';
-  if(kind==='电气')return ['TR_CU_004_2011','TR_CU_020_2011','TR_EAEU_037_2016'].includes(r.id);
-  return r.sector.includes(kind)||r.zh.includes(kind);
- });
- const side=el('side');side.replaceChildren();
- matches.forEach(r=>{
-  const b=make('button',selected===r.id?'active':'');
-  b.type='button';b.append(make('span','id',r.code),make('span','name',r.zh),make('span','sector',r.sector));
-  b.addEventListener('click',()=>{selected=r.id;drawList();drawDetail()});side.append(b);
- });
- if(!matches.length)side.append(make('div','empty','没有匹配法规，尝试名称或编号'));
- if(matches.length&&!matches.some(x=>x.id===selected))selected=matches[0].id;
- drawDetail();
+function linkToSource(id,label){
+  const rec=source(id);
+  if(!rec)return el("span","disclaimer","来源链接待确认");
+  const a=el("a","source-link",label||"查看官方目录");
+  a.href=rec.url;a.target="_blank";a.rel="noopener noreferrer";
+  a.append(icon("i-external"));
+  a.title=rec.name||rec.title||"官方来源";
+  return a;
 }
-function pair(root,title,value){
- root.append(make('h4','',title),make('p','',value));
+function regById(id){return db&&db.regulations.find(r=>r.id===id)}
+function codeLabel(id){const r=regById(id);return r?r.code:id}
+function matches(r,q){
+  const content=[r.zh,r.ru,r.code,r.id,r.sector,r.scope,r.exclude,r.assessment,...r.attributes].join(" ").toLocaleLowerCase();
+  const norm=q.trim().toLocaleLowerCase();
+  return !norm||content.includes(norm);
 }
-function drawDetail(){
- const root=el('detail');root.replaceChildren();
- const r=data.regulations.find(x=>x.id===selected);
- if(!r){root.append(make('div','empty','暂无详情'));return}
- root.append(make('span','flag',r.code+' · 资料待专家审核'),make('h3','',r.zh),make('p','ru',r.ru));
- pair(root,'法规适用范围（辅助中文概述）',r.scope);
- pair(root,'例外和排除项目',r.exclude);
- pair(root,'合格评定形式',r.assessment);
- root.append(make('h4','','需要补充的商品参数'));
- const chips=make('div','chips');r.attributes.forEach(s=>chips.append(make('span','chip',s)));root.append(chips);
- root.append(make('h4','','条款索引（内容待逐条核对）'));
- const box=make('div','rules-list');
- r.clauses.forEach(([id,zh])=>{const node=make('div','rule');node.append(make('strong','',id),make('p','',zh));box.append(node)});root.append(box);
- root.append(make('h4','','拟建立的判断规则（未审核，不自动执行）'));
- const rules=make('div','rules-list');
- r.conditions.forEach(x=>{
-  const item=make('div','rule');item.append(make('strong','',x.type==='scope'?'适用范围待判断':'文件形式待核实'),make('p','',x.note),
-   make('p','','必要属性：'+x.when.join('、')));rules.append(item);
- });root.append(rules);
- const ref=make('div','refs');ref.append(make('span','small','法规原文/目录：'),sourceLink(r.original,'查看欧亚经济联盟官方文件'));root.append(ref);
+function renderList(){
+  if(!db)return;
+  const q=$("search").value;
+  const regs=db.regulations.filter(r=>(!families[filter]||families[filter].includes(r.id))&&matches(r,q));
+  $("result-count").textContent=regs.length+" / "+db.regulations.length;
+  const box=$("reg-list");box.replaceChildren();
+  if(!regs.length){
+    box.append(el("p","empty","没有找到匹配的法规。可尝试缩短关键词或切换分类。"));
+    activeId="";renderDetail();return;
+  }
+  if(!regs.some(r=>r.id===activeId))activeId=regs[0].id;
+  for(const r of regs){
+    const b=el("button","reg-btn"+(r.id===activeId?" active":""));
+    b.type="button";b.setAttribute("aria-pressed",String(r.id===activeId));
+    const w=el("span","reg-text");w.append(el("span","reg-code",r.code),el("span","reg-name",r.zh),el("span","reg-sector",r.sector));
+    b.append(w,icon("i-arrow"));
+    b.addEventListener("click",()=>{activeId=r.id;renderList();if(matchMedia("(max-width:720px)").matches)$("detail").scrollIntoView({behavior:"smooth",block:"start"})});
+    box.append(b);
+  }
+  renderDetail();
 }
-function drawDocs(){
- const root=el('docs');root.replaceChildren();
- data.documents.forEach(d=>{
-  const card=make('article','doc'),head=make('div');head.append(make('strong','',d.id),make('p','',d.zh));
-  const body=make('div');body.append(make('p','',d.ru),make('p','',d.notes));
-  if(d.verify)body.append(sourceLink(d.verify,'打开官方登记系统'));
-  card.append(head,body);root.append(card);
- });
+function sectionTitle(text){return el("h3","detail-sub",text)}
+function renderDetail(){
+  const root=$("detail");root.replaceChildren();
+  const r=regById(activeId);
+  if(!r){root.append(el("p","empty","请选择其他分类或搜索条件。"));return}
+  root.append(el("div","detail-kicker","TECHNICAL REGULATION"));
+  const top=el("div","detail-top"),copy=el("div");
+  copy.append(el("div","detail-code",r.code),el("h2","detail-name",r.zh),el("p","detail-ru",r.ru));
+  top.append(copy,el("span","review-tag","资料待专业复核"));root.append(top);
+  const summary=el("div","detail-summary");
+  for(const [label,text] of [
+    ["适用范围",r.scope],["排除条件",r.exclude],["合格评定",r.assessment]
+  ]){
+    const cell=el("div","summary-part");
+    cell.append(el("div","meta-label",label),el("p","",text));summary.append(cell);
+  }
+  root.append(summary,sectionTitle("判断前需要确认的商品信息"));
+  const attrs=el("div","attr-grid");
+  r.attributes.forEach((v,i)=>{
+    const item=el("div","attr");
+    item.append(el("span","index",String(i+1).padStart(2,"0")),el("span","",v));attrs.append(item);
+  });root.append(attrs);
+  const accordion=el("details","accordion");
+  const trigger=el("summary");
+  trigger.append(el("span","", "法规条款索引 · "+r.clauses.length+" 项"),el("span","open","+"));
+  accordion.append(trigger);
+  const acBody=el("div","accordion-body");
+  for(const [ref,desc] of r.clauses){
+    const line=el("div","clause-line");
+    line.append(el("strong","",ref),el("span","",desc));acBody.append(line);
+  }
+  accordion.append(acBody);root.append(sectionTitle("条款与核对记录"),accordion);
+  const rules=el("details","accordion"),ruleTrigger=el("summary");
+  ruleTrigger.append(el("span","", "候选判断条件 · "+r.conditions.length+" 项"),el("span","open","+"));
+  rules.append(ruleTrigger);
+  const ruleBody=el("div","accordion-body");
+  for(const item of r.conditions){
+    const block=el("div","rule-block"),head=el("div","rule-top");
+    head.append(el("strong","",item.type==="scope"?"适用范围核对":"合格评定形式核对"),el("small","", "待审核"));
+    block.append(head,el("p","",item.note),el("p","", "需要： "+item.when.join("、")));
+    ruleBody.append(block);
+  }
+  rules.append(ruleBody);root.append(rules);
+  const footer=el("div","detail-footer");
+  footer.append(linkToSource(r.original,"查看法规原始决议目录"),
+    el("span","disclaimer","已整理为检索线索，非经核验的法规全文。"));
+  root.append(footer);
 }
-function drawCases(){
- const root=el('cases');root.replaceChildren();
- data.cases.forEach(c=>{
-  const card=make('article','panel case'),head=make('div','case-head');
-  head.append(make('small','',c.category),make('span','case-badge','示例 · 待核实'));
-  card.append(head,make('h3','',c.zh),make('p','',c.description),
-   make('p','','需要确认：'+c.fields.join('、')));
-  const reg=c.regulations.map(id=>data.regulations.find(x=>x.id===id)?.code||id).join(' · ');
-  card.append(make('p','','可能相关法规：'+reg));
-  const btn=make('button','open-reg','查看相关法规');
-  btn.addEventListener('click',()=>{selected=c.regulations[0];el('search').value='';el('kind').value='all';drawList();el('laws').scrollIntoView({behavior:'smooth'})});
-  card.append(btn);root.append(card);
- });
+function openReg(id){
+  if(!regById(id))return;
+  filter="all";$("search").value="";
+  document.querySelectorAll("[data-group]").forEach(btn=>{
+    const active=btn.dataset.group==="all";btn.classList.toggle("active",active);btn.setAttribute("aria-pressed",String(active));
+  });
+  $("clear").classList.remove("show");
+  activeId=id;renderList();
+  $("regulations").scrollIntoView({behavior:"smooth",block:"start"});
 }
-function drawVersion(){
- const root=el('timeline');root.replaceChildren();
- const list=[...data.versions].sort((a,b)=>(b.effective||b.published||'').localeCompare(a.effective||a.published||''));
- list.forEach(v=>{
-  const r=data.regulations.find(x=>x.id===v.regulation);
-  const item=make('article','event');
-  item.append(make('strong','',(r?r.code:'')+' · '+v.decision),make('p','',v.note));
-  item.append(make('span','date','生效日期：'+(v.effective||'待核实')+(v.state==='future'?' · 尚未生效':'')));
-  const row=make('div','refs');row.append(sourceLink(v.source,'查看决议来源'));item.append(row);root.append(item);
- });
+function renderCases(){
+  const box=$("cases");box.replaceChildren();
+  for(const [i,c] of db.cases.entries()){
+    const card=el("article","case-card"),top=el("div","case-top");
+    top.append(el("span","case-num","CASE "+String(i+1).padStart(2,"0")),el("span","case-state","初筛参考"));
+    card.append(top,el("h3","",c.zh),el("p","",c.description));
+    const spacer=el("div","case-spacer"),tags=el("div","tagline");
+    c.regulations.slice(0,3).forEach(id=>tags.append(el("span","",codeLabel(id))));
+    card.append(spacer,tags);
+    const btn=el("button","case-btn","查看关联法规");
+    btn.type="button";btn.append(icon("i-arrow"));btn.addEventListener("click",()=>openReg(c.regulations[0]));
+    card.append(btn);box.append(card);
+  }
 }
-fetch('./knowledge.json').then(r=>{if(!r.ok)throw Error('知识库文件加载失败');return r.json()}).then(d=>{
- if(!d.regulations||d.regulations.length<11)throw Error('法规资料不完整');
- data=d;el('n-reg').textContent=d.regulations.length;el('n-clause').textContent=d.regulations.reduce((n,r)=>n+r.clauses.length,0);el('n-doc').textContent=d.documents.length;
- selected=d.regulations[0].id;drawList();drawCases();drawDocs();drawVersion();
- }).catch(e=>{el('side').textContent=e.message});
-el('search').addEventListener('input',drawList);el('kind').addEventListener('change',drawList);
+function renderDocs(){
+  const box=$("docs");box.replaceChildren();
+  for(const d of db.documents){
+    const card=el("article","doc-card");
+    const name=d.id==="EXEMPTION_OPINION"?"LETTER":d.id==="EAC_MARK"?"EAC":d.id;
+    card.append(el("span","doc-code",name),el("h3","",d.zh),el("p","ru",d.ru),el("p","",d.notes));
+    const foot=el("div","doc-foot");
+    if(d.verify)foot.append(linkToSource(d.verify,"官方登记查询"));
+    else foot.append(el("span","disclaimer",d.type==="mark_not_document"?"标志，不属于证书":"核验方式需按文件类型确认"));
+    card.append(foot);box.append(card);
+  }
+}
+function renderTimeline(){
+  const box=$("timeline");box.replaceChildren();
+  const versions=[...db.versions].sort((a,b)=>(b.effective||b.published||"").localeCompare(a.effective||a.published||""));
+  for(const v of versions){
+    const r=regById(v.regulation),card=el("article","event");
+    const date=el("div");
+    date.append(el("div","event-date",v.effective||"生效日期待核实"),
+      el("div","event-type",v.state==="future"?"FUTURE EFFECTIVE":v.kind.replaceAll("_"," ").toUpperCase()));
+    const mid=el("div");
+    mid.append(el("strong","",(r?r.code+" · ":"")+v.decision),el("p","",v.note));
+    const a=linkToSource(v.source,"官方来源 ↗");card.append(date,mid,a);box.append(card);
+  }
+}
+function setGroup(group){
+  filter=group;
+  document.querySelectorAll("[data-group]").forEach(b=>{
+    const on=b.dataset.group===group;b.classList.toggle("active",on);b.setAttribute("aria-pressed",String(on));
+  });
+  renderList();
+}
+document.querySelectorAll("[data-group]").forEach(btn=>btn.addEventListener("click",()=>setGroup(btn.dataset.group)));
+$("search").addEventListener("input",()=>{
+  $("clear").classList.toggle("show",Boolean($("search").value));
+  renderList();
+});
+$("clear").addEventListener("click",()=>{
+  $("search").value="";$("clear").classList.remove("show");$("search").focus();renderList();
+});
+document.addEventListener("keydown",e=>{
+  const target=e.target,editing=target&&["INPUT","TEXTAREA"].includes(target.tagName);
+  if(e.key==="/"&&!editing){e.preventDefault();$("search").focus();}
+  if(e.key==="Escape"&&document.activeElement===$("search")){
+    $("search").value="";$("clear").classList.remove("show");$("search").blur();renderList();
+  }
+});
+fetch("./knowledge.json",{cache:"no-cache"}).then(response=>{
+  if(!response.ok)throw new Error("法规数据无法读取（HTTP "+response.status+"）");
+  return response.json();
+}).then(data=>{
+  if(!Array.isArray(data.regulations)||data.regulations.length<11)throw new Error("法规目录不完整");
+  if(!Array.isArray(data.cases)||!Array.isArray(data.documents))throw new Error("商品案例或文件数据缺失");
+  db=data;activeId=db.regulations[0].id;
+  $("stat-reg").textContent=String(db.regulations.length).padStart(2,"0");
+  $("stat-clause").textContent=String(db.regulations.reduce((sum,r)=>sum+r.clauses.length,0));
+  $("stat-case").textContent=String(db.cases.length).padStart(2,"0");
+  $("edition").textContent=data.meta&&data.meta.compiled_at?data.meta.compiled_at+" · 参考版本":"参考版本";
+  renderList();renderCases();renderDocs();renderTimeline();
+}).catch(error=>{
+  $("reg-list").replaceChildren(el("p","empty",error.message));
+  $("detail").replaceChildren(el("p","empty","请刷新页面重试。数据未加载时不展示任何法规判断。"));
+  $("edition").textContent="数据暂不可用";
+});
 })();
 </script>
-</body></html>
+</body>
+</html>
